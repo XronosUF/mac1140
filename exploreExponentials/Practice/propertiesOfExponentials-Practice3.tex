@@ -1,0 +1,296 @@
+\documentclass{ximeraXloud}
+\input{../../preamble}
+\title{Practice Solving Exponential Equations 3}
+
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Radicals.
+\end{abstract}
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem p1
+
+p1b1 = NonZeroInt(2,15,[4,8,9])
+
+p1r1 = RandInt(-5,5)
+p1r2 = RandInt(-5,5)
+p1r3 = RandInt(-5,5)
+p1r4 = RandInt(-5,5)
+p1r5 = RandInt(-5,5)
+p1r6 = RandInt(-5,5)
+p1r7 = RandInt(2,10)
+p1r8 = RandInt(-5,5)
+p1r9 = RandInt(-5,5)
+p1r10 = RandInt(-5,5)
+p1r11 = RandInt(-5,5)
+p1r12 = RandInt(-5,5)
+
+p1a1 = p1r1*x+p1r2+p1r3*y+p1r4+p1r5*z+p1r6-(p1r7*x+p1r8+p1r9*y+p1r10+p1r11*z+p1r12)
+
+p1q1 = (p1b1^(p1r1*x + p1r2)*p1b1^(p1r3*y + p1r4)*p1b1^(p1r5*z + p1r6))/(p1b1^(p1r7*x + p1r8)*p1b1^(p1r9*y + p1r10)*p1b1^(p1r11*z + p1r12))
+
+
+### Problem p2
+
+p2b1 = NonZeroInt(2,15,[4,8,9])
+p2b2 = RandInt(1,3)
+p2b3 = RandInt(1,3)
+p2b4 = RandInt(1,3)
+
+p2r1 = NonZeroInt(-5,5)
+p2r2 = RandInt(-5,5)
+p2r3 = NonZeroInt(-5,5)
+p2r4 = RandInt(-5,5)
+p2r5 = NonZeroInt(-5,5)
+p2r6 = RandInt(-5,5)
+p2r7 = NonZeroInt(2,10)
+p2r8 = RandInt(-5,5)
+p2r9 = NonZeroInt(-5,5)
+p2r10 = RandInt(-5,5)
+p2r11 = NonZeroInt(-5,5)
+p2r12 = RandInt(-5,5)
+
+p2a1 = p2b2*(p2r1*x+p2r2)+p2b3*(p2r3*y+p2r4)+p2b4*(p2r5*z+p2r6)-(p2b4*(p2r7*x+p2r8)+p2b2*(p2r9*y+p2r10)+p2b3*(p2r11*z+p2r12))
+
+p2q1 = ((p2b1^(p2b2))^(p2r1*x + p2r2)*(p2b1^(p2b3))^(p2r3*y + p2r4)*(p2b1^(p2b4))^(p2r5*z + p2r6))/((p2b1^(p2b4))^(p2r7*x + p2r8)*(p2b1^(p2b2))^(p2r9*y + p2r10)*(p2b1^(p2b3))^(p2r11*z + p2r12))
+
+
+
+### Problem p3
+
+p3b1 = NonZeroInt(2,15,[4,8,9])
+
+p3r1 = RandInt(-5,5)
+p3r2 = RandInt(-5,5)
+p3r3 = RandInt(-5,5)
+p3r4 = RandInt(-5,5)
+p3r5 = RandInt(-5,5)
+p3r6 = RandInt(-5,5)
+p3r7 = RandInt(2,10)
+p3r8 = RandInt(-5,5)
+p3r9 = RandInt(-5,5)
+p3r10 = RandInt(-5,5)
+p3r11 = RandInt(-5,5)
+p3r12 = RandInt(-5,5)
+
+p3a1 = p3r1*x+p3r2+p3r3*y+p3r4+p3r5*z+p3r6-(p3r7*x+p3r8+p3r9*y+p3r10+p3r11*z+p3r12)
+
+p3q1 = (p3b1^(p3r1*x + p3r2)*p3b1^(p3r3*y + p3r4)*p3b1^(p3r5*z + p3r6))/(p3b1^(p3r7*x + p3r8)*p3b1^(p3r9*y + p3r10)*p3b1^(p3r11*z + p3r12))
+
+
+### Problem p4
+
+p4b1 = NonZeroInt(2,15,[4,8,9])
+p4b2 = RandInt(1,3)
+p4b3 = RandInt(1,3)
+p4b4 = RandInt(1,3)
+
+p4r1 = NonZeroInt(-5,5)
+p4r2 = RandInt(-5,5)
+p4r3 = NonZeroInt(-5,5)
+p4r4 = RandInt(-5,5)
+p4r5 = NonZeroInt(-5,5)
+p4r6 = RandInt(-5,5)
+p4r7 = NonZeroInt(2,10)
+p4r8 = RandInt(-5,5)
+p4r9 = NonZeroInt(-5,5)
+p4r10 = RandInt(-5,5)
+p4r11 = NonZeroInt(-5,5)
+p4r12 = RandInt(-5,5)
+
+p4a1 = p4b2*(p4r1*x+p4r2)+p4b3*(p4r3*y+p4r4)+p4b4*(p4r5*z+p4r6)-(p4b4*(p4r7*x+p4r8)+p4b2*(p4r9*y+p4r10)+p4b3*(p4r11*z+p4r12))
+
+p4q1 = ((p4b1^(p4b2))^(p4r1*x + p4r2)*(p4b1^(p4b3))^(p4r3*y + p4r4)*(p4b1^(p4b4))^(p4r5*z + p4r6))/((p4b1^(p4b4))^(p4r7*x + p4r8)*(p4b1^(p4b2))^(p4r9*y + p4r10)*(p4b1^(p4b3))^(p4r11*z + p4r12))
+
+
+
+### Problem p5
+
+p5b1 = NonZeroInt(2,15,[4,8,9])
+
+p5r1 = RandInt(-5,5)
+p5r2 = RandInt(-5,5)
+p5r3 = RandInt(-5,5)
+p5r4 = RandInt(-5,5)
+p5r5 = RandInt(-5,5)
+p5r6 = RandInt(-5,5)
+p5r7 = RandInt(2,10)
+p5r8 = RandInt(-5,5)
+p5r9 = RandInt(-5,5)
+p5r10 = RandInt(-5,5)
+p5r11 = RandInt(-5,5)
+p5r12 = RandInt(-5,5)
+
+p5a1 = p5r1*x+p5r2+p5r3*y+p5r4+p5r5*z+p5r6-(p5r7*x+p5r8+p5r9*y+p5r10+p5r11*z+p5r12)
+
+p5q1 = (p5b1^(p5r1*x + p5r2)*p5b1^(p5r3*y + p5r4)*p5b1^(p5r5*z + p5r6))/(p5b1^(p5r7*x + p5r8)*p5b1^(p5r9*y + p5r10)*p5b1^(p5r11*z + p5r12))
+
+
+### Problem p6
+
+p6b1 = NonZeroInt(2,15,[4,8,9])
+p6b2 = RandInt(1,3)
+p6b3 = RandInt(1,3)
+p6b4 = RandInt(1,3)
+
+p6r1 = NonZeroInt(-5,5)
+p6r2 = RandInt(-5,5)
+p6r3 = NonZeroInt(-5,5)
+p6r4 = RandInt(-5,5)
+p6r5 = NonZeroInt(-5,5)
+p6r6 = RandInt(-5,5)
+p6r7 = NonZeroInt(2,10)
+p6r8 = RandInt(-5,5)
+p6r9 = NonZeroInt(-5,5)
+p6r10 = RandInt(-5,5)
+p6r11 = NonZeroInt(-5,5)
+p6r12 = RandInt(-5,5)
+
+p6a1 = p6b2*(p6r1*x+p6r2)+p6b3*(p6r3*y+p6r4)+p6b4*(p6r5*z+p6r6)-(p6b4*(p6r7*x+p6r8)+p6b2*(p6r9*y+p6r10)+p6b3*(p6r11*z+p6r12))
+
+p6q1 = ((p6b1^(p6b2))^(p6r1*x + p6r2)*(p6b1^(p6b3))^(p6r3*y + p6r4)*(p6b1^(p6b4))^(p6r5*z + p6r6))/((p6b1^(p6b4))^(p6r7*x + p6r8)*(p6b1^(p6b2))^(p6r9*y + p6r10)*(p6b1^(p6b3))^(p6r11*z + p6r12))
+
+
+### Problem p7
+
+p7b1 = RandInt(2,6)
+p7b2 = RandInt(2,5)
+p7b3 = NonZeroInt(2,5,[p7b2])
+p7b4 = NonZeroInt(2,5,[p7b2,p7b3])
+
+p7r1 = NonZeroInt(-5,5)
+p7r2 = NonZeroInt(-5,5)
+p7r3 = NonZeroInt(-5,5)
+p7r4 = NonZeroInt(-5,5)
+
+p7q1 = p7b1^(p7b2*x^p7r1 + p7b3*y^p7r2 + p7b4*z^p7r3 + p7r4)
+
+p7a1 = p7b1^p7r4
+
+
+### Problem p8
+
+p8b1 = RandInt(2,6)
+p8b2 = RandInt(2,5)
+p8b3 = NonZeroInt(2,5,[p8b2])
+p8b4 = NonZeroInt(2,5,[p8b2,p8b3])
+
+p8r1 = NonZeroInt(-5,5)
+p8r2 = NonZeroInt(-5,5)
+p8r3 = NonZeroInt(-5,5)
+p8r4 = NonZeroInt(-5,5)
+
+p8q1 = p8b1^(p8b2*x^p8r1 + p8b3*y^p8r2 + p8b4*z^p8r3 + p8r4)
+
+p8a1 = p8b1^p8r4
+
+
+### Problem p9
+
+p9b1 = RandInt(2,6)
+p9b2 = RandInt(2,5)
+p9b3 = NonZeroInt(2,5,[p9b2])
+p9b4 = NonZeroInt(2,5,[p9b2,p9b3])
+
+p9r1 = NonZeroInt(-5,5)
+p9r2 = NonZeroInt(-5,5)
+p9r3 = NonZeroInt(-5,5)
+p9r4 = NonZeroInt(-5,5)
+
+p9q1 = p9b1^(p9b2*x^p9r1 + p9b3*y^p9r2 + p9b4*z^p9r3 + p9r4)
+
+p9a1 = p9b1^p9r4
+
+
+### Problem p10
+
+p10b1 = RandInt(2,6)
+p10b2 = RandInt(2,5)
+p10b3 = NonZeroInt(2,5,[p10b2])
+p10b4 = NonZeroInt(2,5,[p10b2,p10b3])
+
+p10r1 = NonZeroInt(-5,5)
+p10r2 = NonZeroInt(-5,5)
+p10r3 = NonZeroInt(-5,5)
+p10r4 = NonZeroInt(-5,5)
+
+p10q1 = p10b1^(p10b2*x^p10r1 + p10b3*y^p10r2 + p10b4*z^p10r3 + p10r4)
+
+p10a1 = p10b1^p10r4
+
+
+\end{sagesilent}
+
+
+\textbf{Note to the below problems:} I included some hints that will almost certainly be redundant or stupid (like $14^1 = 14$), but this is a byproduct of generating these things using random numbers. I wanted to make sure to provide you with any crazy computation without you needing to figure it out on it's own (since that wasn't the point of these problems), so I supplied everything, even if it's redundant or silly.
+
+\textbf{However:} Keep in mind that on any assessments (quizzes, exams, etc) the ability to recognize different `bases' as powers of the same base (eg $4 = 2^2$ or $\frac{1}{81} = 3^{-4}$ \textit{will be expected and probably required}. On assessments however, we will make sure to keep the numbers very reasonable; nothing bigger than 3 digits, and they should be fairly recognizable. Remember, if worst-comes-to-worst, you can always make a factor tree to find the prime factors and figure out the lowest base.
+\begin{problem}
+    Condense the following expression into a single exponential.
+    \begin{itemize}
+        \item $\sage{p1q1} = {\sage{p1b1}}^{\answer{\sage{p1a1}}}$
+        \item $\sage{p3q1} = {\sage{p3b1}}^{\answer{\sage{p3a1}}}$
+        \item $\sage{p5q1} = {\sage{p5b1}}^{\answer{\sage{p5a1}}}$
+        \item $\sage{p2q1} = {\sage{p2b1}}^{\answer{\sage{p2a1}}}$ \\[0.3cm] 
+            (Hint: $\sage{p2b1}^{\sage{p2b2}} = \sage{p2b1^p2b2}$, 
+                $\sage{p2b1}^{\sage{p2b3}} = \sage{p2b1^p2b3}$, 
+                $\sage{p2b1}^{\sage{p2b4}} = \sage{p2b1^p2b4}$)
+        \item $\sage{p4q1} = {\sage{p4b1}}^{\answer{\sage{p4a1}}}$ \\[0.3cm] 
+            (Hint: $\sage{p4b1}^{\sage{p4b2}} = \sage{p4b1^p4b2}$, 
+                $\sage{p4b1}^{\sage{p4b3}} = \sage{p4b1^p4b3}$, 
+                $\sage{p4b1}^{\sage{p4b4}} = \sage{p4b1^p4b4}$)
+        \item $\sage{p6q1} = {\sage{p6b1}}^{\answer{\sage{p6a1}}}$ \\[0.3cm] 
+            (Hint: $\sage{p6b1}^{\sage{p6b2}} = \sage{p6b1^p6b2}$, 
+                $\sage{p6b1}^{\sage{p6b3}} = \sage{p6b1^p6b3}$, 
+                $\sage{p6b1}^{\sage{p6b4}} = \sage{p6b1^p6b4}$)
+    \end{itemize}
+\end{problem}
+
+\begin{problem}
+    Expand the following exponential so that each exponent has at most one term.
+    
+    \begin{itemize}
+        \item $\sage{p7q1} 
+            = \answer{\sage{p7a1}} \cdot \sage{p7b1^p7b2}^{\answer{x^{\sage{p7r1}}}} \cdot  \sage{p7b1^p7b3}^{\answer{y^{\sage{p7r2}}}} \cdot \sage{p7b1^p7b4}^{\answer{z^{\sage{p7r3}}}}$
+        \item $\sage{p8q1} 
+            = \answer{\sage{p8a1}} \cdot \answer{\sage{p8b1^p8b2}}^{{x^{\sage{p8r1}}}} \cdot  \sage{p8b1^p8b3}^{\answer{y^{\sage{p8r2}}}} \cdot \answer{\sage{p8b1^p8b4}}^{{z^{\sage{p8r3}}}}$
+        \item $\sage{p9q1} 
+            = \answer{\sage{p9a1}} \cdot \sage{p9b1^p9b2}^{\answer{x^{\sage{p9r1}}}} \cdot  \answer{\sage{p9b1^p9b3}}^{y^{\answer{\sage{p9r2}}}} \cdot \sage{p9b1^p9b4}^{z^{\answer{\sage{p9r3}}}}$
+        \item $\sage{p10q1} 
+            = \answer{\sage{p10a1}} \cdot \sage{p10b1^p10b2}^{\answer{x^{\sage{p10r1}}}} \cdot  \sage{p10b1^p10b3}^{\answer{y^{\sage{p10r2}}}} \cdot \sage{p10b1^p10b4}^{\answer{z^{\sage{p10r3}}}}$
+    \end{itemize}
+\end{problem}
+
+
+
+\end{document}

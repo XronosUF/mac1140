@@ -1,0 +1,196 @@
+\documentclass{ximeraXloud}
+%\usepackage{sagetex}
+%\usepackage{amsfonts}
+\title{Functions Practice 1}
+\renewcommand{\text}[1]{#1}
+\newcommand{\sagecheck}[2]{
+    \ifthenelse{}{}{}\textit{}
+    }
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#### Start of problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10,[p1c1])
+p1domvec = [ 'x' + LatexExpr(r"\leq") + str(p1c1), str(x < p1c1), 'x' + LatexExpr(r"\geq") + str(p1c1), str(x > p1c1) ]
+p1codomvec = [ 'x' + LatexExpr(r"\leq") + str(p1c2), str(x < p1c2), 'x' + LatexExpr(r"\geq") + str(p1c2), str(x > p1c2) ]
+
+p1dompick =RandInt(0,3)
+p1codompick = NonZeroInt(0,3,[p1dompick])
+
+p1var1 = p1domvec[p1dompick]
+p1var2 = p1codomvec[p1codompick]
+
+p1ans1 = p1domvec[p1dompick]
+p1ans2 = p1codomvec[p1codompick]
+p1ans3 = p1domvec[3 - p1dompick]
+p1ans4 = p1codomvec[3 - p1codompick]
+
+
+#### Start of problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10,[p2c1])
+
+p2domvec = [ 'x' + LatexExpr(r"\leq") + str(p2c1), str(x < p2c1), 'x' + LatexExpr(r"\geq") + str(p2c1), str(x > p2c1) ]
+p2codomvec = [ 'x' + LatexExpr(r"\leq") + str(p2c2), str(x < p2c2), 'x' + LatexExpr(r"\geq") + str(p2c2), str(x > p2c2) ]
+
+p2dompick =RandInt(0,3)
+p2codompick = NonZeroInt(0,3,[p2dompick])
+
+p2var1 = p2domvec[p2dompick]
+p2var2 = p2codomvec[p2codompick]
+
+p2ans1 = p2domvec[p2dompick]
+p2ans2 = p2codomvec[p2codompick]
+p2ans3 = p2domvec[3 - p2dompick]
+p2ans4 = p2codomvec[3 - p2codompick]
+
+
+#### Start of problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10,[p3c1])
+p3domvec = [ 'x' + LatexExpr(r"\leq") + str(p3c1), str(x < p3c1), 'x' + LatexExpr(r"\geq") + str(p3c1), str(x > p3c1) ]
+p3codomvec = [ 'x' + LatexExpr(r"\leq") + str(p3c2), str(x < p3c2), 'x' + LatexExpr(r"\geq") + str(p3c2), str(x > p3c2) ]
+
+p3dompick =RandInt(0,3)
+p3codompick = NonZeroInt(0,3,[p3dompick])
+
+p3var1 = p3domvec[p3dompick]
+p3var2 = p3codomvec[p3codompick]
+
+p3ans1 = p3domvec[p3dompick]
+p3ans2 = p3codomvec[p3codompick]
+p3ans3 = p3domvec[3 - p3dompick]
+p3ans4 = p3codomvec[3 - p3codompick]
+
+
+#### Start of problem p4
+p4c1 = NonZeroInt(-10,10)
+p4c2 = NonZeroInt(-10,10,[p4c1])
+p4domvec = [ 'x' + LatexExpr(r"\leq") + str(p4c1), str(x < p4c1), 'x' + LatexExpr(r"\geq") + str(p4c1), str(x > p4c1) ]
+p4codomvec = [ 'x' + LatexExpr(r"\leq") + str(p4c2), str(x < p4c2), 'x' + LatexExpr(r"\geq") + str(p4c2), str(x > p4c2) ]
+
+
+p4dompick =RandInt(0,3)
+p4codompick = NonZeroInt(0,3,[p4dompick])
+
+p4var1 = p4domvec[p4dompick]
+p4var2 = p4codomvec[p4codompick]
+
+p4ans1 = p4domvec[p4dompick]
+p4ans2 = p4codomvec[p4codompick]
+p4ans3 = p4domvec[3 - p4dompick]
+p4ans4 = p4codomvec[3 - p4codompick]
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the function 
+    \[
+        f:\{ x \in \mathbb{R} : \sage{p1var1} \} \longrightarrow \{ x \in \mathbb{R} : \sage{p1var2} \}
+    \]
+    
+    What is the domain of the function $f$?
+    \begin{multipleChoice}
+        \choice[correct]{ $ \{ x \in \mathbb{R} : \sage{p1ans1} \}  $ }
+        \choice{$\{ x \in \mathbb{R} : \sage{p1ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p1ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p1ans4} \} $}        
+    \end{multipleChoice}
+    
+    What is the codomain of the function $f$?
+    
+    \begin{multipleChoice}
+        \choice{ $ \{ x \in \mathbb{R} : \sage{p1ans1} \}  $ }
+        \choice[correct]{$\{ x \in \mathbb{R} : \sage{p1ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p1ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p1ans4} \} $}        
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the function 
+    \[
+        f:\{ x \in \mathbb{R} : \sage{p2var1} \} \longrightarrow \{ x \in \mathbb{R} : \sage{p2var2} \}
+    \]
+    
+    What is the domain of the function $f$?
+    \begin{multipleChoice}
+        \choice[correct]{ $ \{ x \in \mathbb{R} : \sage{p2ans1} \}  $ }
+        \choice{$\{ x \in \mathbb{R} : \sage{p2ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p2ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p2ans4} \} $}        
+    \end{multipleChoice}
+    
+    What is the codomain of the function $f$?
+    
+    \begin{multipleChoice}
+        \choice{ $ \{ x \in \mathbb{R} : \sage{p2ans1} \}  $ }
+        \choice[correct]{$\{ x \in \mathbb{R} : \sage{p2ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p2ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p2ans4} \} $}        
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the function 
+    \[
+        f:\{ x \in \mathbb{R} : \sage{p3var1} \} \longrightarrow \{ x \in \mathbb{R} : \sage{p3var2} \}
+    \]
+    
+    What is the domain of the function $f$?
+    \begin{multipleChoice}
+        \choice[correct]{ $ \{ x \in \mathbb{R} : \sage{p3ans1} \}  $ }
+        \choice{$\{ x \in \mathbb{R} : \sage{p3ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p3ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p3ans4} \} $}        
+    \end{multipleChoice}
+    
+    What is the codomain of the function $f$?
+    
+    \begin{multipleChoice}
+        \choice{ $ \{ x \in \mathbb{R} : \sage{p3ans1} \}  $ }
+        \choice[correct]{$\{ x \in \mathbb{R} : \sage{p3ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p3ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p3ans4} \} $}        
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the function 
+    \[
+        f:\{ x \in \mathbb{R} : \sage{p4var1} \} \longrightarrow \{ x \in \mathbb{R} : \sage{p4var2} \}
+    \]
+    
+    What is the domain of the function $f$?
+    \begin{multipleChoice}
+        \choice[correct]{ $ \{ x \in \mathbb{R} : \sage{p4ans1} \}  $ }
+        \choice{$\{ x \in \mathbb{R} : \sage{p4ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p4ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p4ans4} \} $}        
+    \end{multipleChoice}
+    
+    What is the codomain of the function $f$?
+    
+    \begin{multipleChoice}
+        \choice{ $ \{ x \in \mathbb{R} : \sage{p4ans1} \}  $ }
+        \choice[correct]{$\{ x \in \mathbb{R} : \sage{p4ans2} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p4ans3} \} $}
+        \choice{$\{ x \in \mathbb{R} : \sage{p4ans4} \} $}        
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+
+\end{document}

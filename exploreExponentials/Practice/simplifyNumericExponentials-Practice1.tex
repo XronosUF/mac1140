@@ -1,0 +1,107 @@
+\documentclass{ximeraXloud}
+\title{Simplifying Numeric Exponentials}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+
+##### Problem p1
+p1b1 = RandInt(2,7)
+p1pwr1 = RandInt(0,5)
+p1ans1 = p1b1^p1pwr1
+p1ans2 = p1b1^(-p1pwr1)
+
+##### Problem p2
+p2b1 = NonZeroInt(2,7,[p1b1])
+p2pwr1 = RandInt(0,5)
+p2ans1 = p2b1^p2pwr1
+p2ans2 = p2b1^(-p2pwr1)
+
+##### Problem p3
+p3b1 = NonZeroInt(2,7,[p1b1,p2b1])
+p3pwr1 = RandInt(0,5)
+p3ans1 = p3b1^p3pwr1
+p3ans2 = p3b1^(-p3pwr1)
+
+##### Problem p4
+p4b1 = NonZeroInt(2,7,[p1b1,p2b1,p3b1])
+p4pwr1 = RandInt(0,5)
+p4ans1 = p4b1^p4pwr1
+p4ans2 = p4b1^(-p4pwr1)
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+Compute the following numeric exponential value.
+
+\begin{itemize}
+    \item $\sage{p1b1}^{\sage{p1pwr1}} = \answer{\sage{p1ans1}}$
+    
+    \item $\left(\frac{1}{\sage{p1b1}}\right)^{\sage{p1pwr1}} = \answer{\sage{p1ans2}}$
+    
+    \item $\left(\sage{p1b1}\right)^{-\sage{p1pwr1}} = \answer{\sage{p1ans2}}$
+    
+    \item $\left(\frac{1}{\sage{p1b1}}\right)^{-\sage{p1pwr1}} = \answer{\sage{p1ans1}}$
+
+\end{itemize}
+
+\end{problem}
+
+\begin{problem}
+Compute the following numeric exponential value.
+
+\begin{itemize}
+    \item $\sage{p2b1}^{\sage{p2pwr1}} = \answer{\sage{p2ans1}}$
+    
+    \item $\left(\frac{1}{\sage{p2b1}}\right)^{\sage{p2pwr1}} = \answer{\sage{p2ans2}}$
+    
+    \item $\left(\sage{p2b1}\right)^{-\sage{p2pwr1}} = \answer{\sage{p2ans2}}$
+    
+    \item $\left(\frac{1}{\sage{p2b1}}\right)^{-\sage{p2pwr1}} = \answer{\sage{p2ans1}}$
+
+\end{itemize}
+
+\end{problem}
+
+
+\begin{problem}
+Compute the following numeric exponential value.
+
+\begin{itemize}
+    \item $\sage{p3b1}^{\sage{p3pwr1}} = \answer{\sage{p3ans1}}$
+    
+    \item $\left(\frac{1}{\sage{p3b1}}\right)^{\sage{p3pwr1}} = \answer{\sage{p3ans2}}$
+    
+    \item $\left(\sage{p3b1}\right)^{-\sage{p3pwr1}} = \answer{\sage{p3ans2}}$
+    
+    \item $\left(\frac{1}{\sage{p3b1}}\right)^{-\sage{p3pwr1}} = \answer{\sage{p3ans1}}$
+
+\end{itemize}
+
+\end{problem}
+
+
+\begin{problem}
+Compute the following numeric exponential value.
+
+\begin{itemize}
+    \item $\sage{p4b1}^{\sage{p4pwr1}} = \answer{\sage{p4ans1}}$
+    
+    \item $\left(\frac{1}{\sage{p4b1}}\right)^{\sage{p4pwr1}} = \answer{\sage{p4ans2}}$
+    
+    \item $\left(\sage{p4b1}\right)^{-\sage{p4pwr1}} = \answer{\sage{p4ans2}}$
+    
+    \item $\left(\frac{1}{\sage{p4b1}}\right)^{-\sage{p4pwr1}} = \answer{\sage{p4ans1}}$
+
+\end{itemize}
+
+\end{problem}
+
+
+\end{document}

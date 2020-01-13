@@ -1,0 +1,152 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = NonZeroInt(-5,5)
+p1pwr1 = RandInt(1,3)
+
+p1f1 = (p1c2*x^p1pwr1)^2 - p1c1^2
+p1f2 = (p1c2*x^p1pwr1)^3 - p1c1^3
+p1tog = RandInt(0,1)
+p1f3 = p1f1^p1tog*p1f2^(1-p1tog)
+
+p1f4 = expand(p1f3)
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2pwr1 = RandInt(1,3)
+p2pwr2 = RandInt(2,3)
+p2f1 = (p2c1*x^p2pwr1 - p2c2)^p2pwr2
+
+p2f2 = expand(p2f1)
+
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = NonZeroInt(-5,5)
+p3pwr1 = RandInt(1,3)
+
+p3f1 = (p3c2*x^p3pwr1)^2 - p3c1^2
+p3f2 = (p3c2*x^p3pwr1)^3 - p3c1^3
+p3tog = RandInt(0,1)
+p3f3 = p3f1^p3tog*p3f2^(1-p3tog)
+
+p3f4 = expand(p3f3)
+
+
+###### Problem p4
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4pwr1 = RandInt(1,3)
+p4pwr2 = RandInt(2,3)
+p4f1 = (p4c1*x^p4pwr1 - p4c2)^p4pwr2
+
+p4f2 = expand(p4f1)
+
+
+###### Problem p5
+p5c1 = RandInt(-10,10)
+p5c2 = NonZeroInt(-5,5)
+p5pwr1 = RandInt(1,3)
+
+p5f1 = (p5c2*x^p5pwr1)^2 - p5c1^2
+p5f2 = (p5c2*x^p5pwr1)^3 - p5c1^3
+p5tog = RandInt(0,1)
+p5f3 = p5f1^p5tog*p5f2^(1-p5tog)
+
+p5f4 = expand(p5f3)
+
+
+###### Problem p6
+p6c1 = NonZeroInt(-5,5)
+p6c2 = RandInt(-5,5)
+p6pwr1 = RandInt(1,3)
+p6pwr2 = RandInt(2,3)
+p6f1 = (p6c1*x^p6pwr1 - p6c2)^p6pwr2
+
+p6f2 = expand(p6f1)
+
+
+\end{sagesilent}
+
+%\begin{javascript}
+%linearFactoring = function(correctAns,f1,f2,f3) {
+%    var i;
+%    var Truth;
+%    var Prod;
+%    var Temp;
+%    Truth=1;
+%    Prod=1;
+%    if (isNaN(f1.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f2.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f3.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    parser.evaluate('f(x) = f1(x)*f2(x)*f3(x));
+%    if (f('x').equals(correctAns('x'))){Truth = Truth*1;}else{Truth=Truth*0;}
+%    if (Truth === 0){return !1}else{return !0}
+%    };
+%\end{javascript}
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p1f4} = \answer{\sage{p1f3}}
+    \]
+
+\end{problem}
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p2f2} = \answer{\sage{p2f1}}
+    \]
+
+\end{problem}
+
+
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p3f4} = \answer{\sage{p3f3}}
+    \]
+
+\end{problem}
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p4f2} = \answer{\sage{p4f1}}
+    \]
+
+\end{problem}
+
+
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p5f4} = \answer{\sage{p5f3}}
+    \]
+
+\end{problem}
+
+\begin{problem}
+Factor the following polynomial:
+    \[
+        \sage{p6f2} = \answer{\sage{p6f1}}
+    \]
+
+\end{problem}
+
+
+
+\end{document}

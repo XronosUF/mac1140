@@ -1,0 +1,165 @@
+\documentclass{ximeraXloud}
+\input{../../preamble}
+\title{Absolute Value: Analytic View Practice 1}
+\begin{document}
+\begin{abstract}
+    This gives practice for understanding the absolute value analytically.
+\end{abstract}
+\maketitle
+
+\input{Useful-Sage-Macros}
+\begin{sagesilent}
+#### Problem p1
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = RandInt(-5,5)
+p1c4 = RandInt(-5,5)
+
+p1f1 = p1c1*x - p1c2
+p1f2 = p1c3*x - p1c4
+
+if p1c1 > 0:
+    p1ans1 = -p1f1 + p1f2
+    p1ans2 = p1f1 + p1f2
+else:
+    p1ans1 = p1f1 + p1f2
+    p1ans2 = -p1f1 + p1f2
+p1ans3 = p1c2/p1c1
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = RandInt(-5,5)
+p2c4 = RandInt(-5,5)
+
+p2f1 = p2c1*x - p2c2
+p2f2 = p2c3*x - p2c4
+
+if p2c1 > 0:
+    p2ans1 = -p2f1 + p2f2
+    p2ans2 = p2f1 + p2f2
+else:
+    p2ans1 = p2f1 + p2f2
+    p2ans2 = -p2f1 + p2f2
+p2ans3 = p2c2/p2c1
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = RandInt(-5,5)
+p3c4 = RandInt(-5,5)
+
+p3f1 = p3c1*x - p3c2
+p3f2 = p3c3*x - p3c4
+
+if p3c1 > 0:
+    p3ans1 = -p3f1 + p3f2
+    p3ans2 = p3f1 + p3f2
+else:
+    p3ans1 = p3f1 + p3f2
+    p3ans2 = -p3f1 + p3f2
+p3ans3 = p3c2/p3c1
+
+
+#### Problem p4
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = RandInt(-5,5)
+p4c4 = RandInt(-5,5)
+
+p4f1 = p4c1*x - p4c2
+p4f2 = p4c3*x - p4c4
+
+if p4c1 > 0:
+    p4ans1 = -p4f1 + p4f2
+    p4ans2 = p4f1 + p4f2
+else:
+    p4ans1 = p4f1 + p4f2
+    p4ans2 = -p4f1 + p4f2
+p4ans3 = p4c2/p4c1
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the following absolute value expression:
+    \[
+        |\sage{p1f1}| + \sage{p1f2}
+    \]
+    
+    Fill in the missing pieces of the following piecewise definition
+    
+    \[
+        |\sage{p1f1}| + \sage{p1f2} = 
+            \begin{cases}
+                \answer{\sage{p1ans1}} & x < \answer{\sage{p1ans3}} \\
+                \answer{\sage{p1ans2}} & x \geq \answer{\sage{p1ans3}}
+            \end{cases}
+    \]
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the following absolute value expression:
+    \[
+        |\sage{p2f1}| + \sage{p2f2}
+    \]
+    
+    Fill in the missing pieces of the following piecewise definition
+    
+    \[
+        |\sage{p2f1}| + \sage{p2f2} = 
+            \begin{cases}
+                \answer{\sage{p2ans1}} & x < \answer{\sage{p2ans3}} \\
+                \answer{\sage{p2ans2}} & x \geq \answer{\sage{p2ans3}}
+            \end{cases}
+    \]
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the following absolute value expression:
+    \[
+        |\sage{p3f1}| + \sage{p3f2}
+    \]
+    
+    Fill in the missing pieces of the following piecewise definition
+    
+    \[
+        |\sage{p3f1}| + \sage{p3f2} = 
+            \begin{cases}
+                \answer{\sage{p3ans1}} & x < \answer{\sage{p3ans3}} \\
+                \answer{\sage{p3ans2}} & x \geq \answer{\sage{p3ans3}}
+            \end{cases}
+    \]
+    
+\end{problem}
+
+
+\begin{problem}
+    Consider the following absolute value expression:
+    \[
+        |\sage{p4f1}| + \sage{p4f2}
+    \]
+    
+    Fill in the missing pieces of the following piecewise definition
+    
+    \[
+        |\sage{p4f1}| + \sage{p4f2} = 
+            \begin{cases}
+                \answer{\sage{p4ans1}} & x < \answer{\sage{p4ans3}} \\
+                \answer{\sage{p4ans2}} & x \geq \answer{\sage{p4ans3}}
+            \end{cases}
+    \]
+    
+\end{problem}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,132 @@
+\documentclass{ximeraXloud}
+\title{Functions Practice 1}
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+p1pwr = RandInt(1,3)
+p1funcvec = [x^p1pwr, e^x, log(abs(x)), sqrt(x)]
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = NonZeroInt(-5,5)
+p1c4 = RandInt(-5,5)
+
+p1choice1 = RandInt(0,3)
+p1choice2 = NonZeroInt(0,3,[3-p1choice1])
+
+p1func1 = p1c1*p1funcvec[p1choice1](x + p1c2)
+p1func2 = p1c3*p1funcvec[p1choice2](x + p1c4)
+
+p1ans1 = p1func1(p1func2(x))
+p1ans2 = p1func2(p1func1(x))
+
+
+p2pwr = RandInt(1,3)
+p2funcvec = [x^p2pwr, e^x, log(abs(x)), sqrt(x)]
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = NonZeroInt(-5,5)
+p2c4 = RandInt(-5,5)
+
+p2choice1 = RandInt(0,3)
+p2choice2 = NonZeroInt(0,3,[3-p2choice1])
+
+p2func1 = p2c1*p2funcvec[p2choice1](x + p2c2)
+p2func2 = p2c3*p2funcvec[p2choice2](x + p2c4)
+
+p2ans1 = p2func1(p2func2(x))
+p2ans2 = p2func2(p2func1(x))
+
+
+p3pwr = RandInt(1,3)
+p3funcvec = [x^p3pwr, e^x, log(abs(x)), sqrt(x)]
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = NonZeroInt(-5,5)
+p3c4 = RandInt(-5,5)
+
+p3choice1 = RandInt(0,3)
+p3choice2 = NonZeroInt(0,3,[3-p3choice1])
+
+p3func1 = p3c1*p3funcvec[p3choice1](x + p3c2)
+p3func2 = p3c3*p3funcvec[p3choice2](x + p3c4)
+
+p3ans1 = p3func1(p3func2(x))
+p3ans2 = p3func2(p3func1(x))
+
+
+p4pwr = RandInt(1,3)
+p4funcvec = [x^p4pwr, e^x, log(abs(x)), sqrt(x)]
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = RandInt(-5,5)
+
+p4choice1 = RandInt(0,3)
+p4choice2 = NonZeroInt(0,3,[3-p4choice1])
+
+p4func1 = p4c1*p4funcvec[p4choice1](x + p4c2)
+p4func2 = p4c3*p4funcvec[p4choice2](x + p4c4)
+
+p4ans1 = p4func1(p4func2(x))
+p4ans2 = p4func2(p4func1(x))
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p1func1}$ and $g(x) = \sage{p1func2(x)}$. Compute:
+
+$f(g(x)) = \answer{\sage{p1ans1}}$
+
+$g(f(x)) = \answer{\sage{p1ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p1ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p1ans2}}$
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p2func1}$ and $g(x) = \sage{p2func2(x)}$. Compute:
+
+$f(g(x)) = \answer{\sage{p2ans1}}$
+
+$g(f(x)) = \answer{\sage{p2ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p2ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p2ans2}}$
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p3func1}$ and $g(x) = \sage{p3func2(x)}$. Compute:
+
+$f(g(x)) = \answer{\sage{p3ans1}}$
+
+$g(f(x)) = \answer{\sage{p3ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p3ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p3ans2}}$
+\end{problem}
+
+
+\begin{problem}
+Consider the following functions: $f(x) = \sage{p4func1}$ and $g(x) = \sage{p4func2(x)}$. Compute:
+
+$f(g(x)) = \answer{\sage{p4ans1}}$
+
+$g(f(x)) = \answer{\sage{p4ans2}}$
+
+$(f\circ g)(x) = \answer{\sage{p4ans1}}$
+
+$((g\circ f)(x) = \answer{\sage{p4ans2}}$
+\end{problem}
+
+
+
+\end{document}

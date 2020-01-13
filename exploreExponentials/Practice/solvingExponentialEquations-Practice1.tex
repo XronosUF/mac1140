@@ -1,0 +1,124 @@
+\documentclass{ximeraXloud}
+\title{Practice Solving Exponential Equations 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+
+###### Problem p1
+p1b1 = RandInt(2,7)
+p1pwr1 = NonZeroInt(-4,4)
+p1pwr2 = NonZeroInt(-4,4)
+p1b2 = p1b1^p1pwr1
+p1b3 = p1b1^p1pwr2
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = NonZeroInt(-5,5,[p1c1*p1pwr1/p1pwr2])
+p1c4 = RandInt(-5,5)
+
+p1f1 = p1c1*x + p1c2
+p1f2 = p1c3*x + p1c4
+
+p1ans1 = (p1c4*p1pwr2 - p1c2*p1pwr1)/(p1c1*p1pwr1 - p1c3*p1pwr2)
+
+
+###### Problem p2
+p2b1 = RandInt(2,7)
+p2pwr1 = NonZeroInt(-4,4)
+p2pwr2 = NonZeroInt(-4,4)
+p2b2 = p2b1^p2pwr1
+p2b3 = p2b1^p2pwr2
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = NonZeroInt(-5,5,[p2c1*p2pwr1/p2pwr2])
+p2c4 = RandInt(-5,5)
+
+p2f1 = p2c1*x + p2c2
+p2f2 = p2c3*x + p2c4
+
+p2ans1 = (p2c4*p2pwr2 - p2c2*p2pwr1)/(p2c1*p2pwr1 - p2c3*p2pwr2)
+
+
+###### Problem p3
+p3b1 = RandInt(2,7)
+p3pwr1 = NonZeroInt(-4,4)
+p3pwr2 = NonZeroInt(-4,4)
+p3b2 = p3b1^p3pwr1
+p3b3 = p3b1^p3pwr2
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = NonZeroInt(-5,5,[p3c1*p3pwr1/p3pwr2])
+p3c4 = RandInt(-5,5)
+
+p3f1 = p3c1*x + p3c2
+p3f2 = p3c3*x + p3c4
+
+p3ans1 = (p3c4*p3pwr2 - p3c2*p3pwr1)/(p3c1*p3pwr1 - p3c3*p3pwr2)
+
+
+###### Problem p4
+p4b1 = RandInt(2,7)
+p4pwr1 = NonZeroInt(-4,4)
+p4pwr2 = NonZeroInt(-4,4)
+p4b2 = p4b1^p4pwr1
+p4b3 = p4b1^p4pwr2
+
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = NonZeroInt(-5,5,[p4c1*p4pwr1/p4pwr2])
+p4c4 = RandInt(-5,5)
+
+p4f1 = p4c1*x + p4c2
+p4f2 = p4c3*x + p4c4
+
+p4ans1 = (p4c4*p4pwr2 - p4c2*p4pwr1)/(p4c1*p4pwr1 - p4c3*p4pwr2)
+
+\end{sagesilent}
+
+\begin{problem}
+    Solve for $x$ in the following exponential equation:
+    \[
+        \left(\sage{p1b2}\right)^{\sage{p1f1}} = \left(\sage{p1b3}\right)^{\sage{p1f2}}
+    \]
+
+    $x = \answer{\sage{p1ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following exponential equation:
+    \[
+        \left(\sage{p2b2}\right)^{\sage{p2f1}} = \left(\sage{p2b3}\right)^{\sage{p2f2}}
+    \]
+
+    $x = \answer{\sage{p2ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following exponential equation:
+    \[
+        \left(\sage{p3b2}\right)^{\sage{p3f1}} = \left(\sage{p3b3}\right)^{\sage{p3f2}}
+    \]
+
+    $x = \answer{\sage{p3ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following exponential equation:
+    \[
+        \left(\sage{p4b2}\right)^{\sage{p4f1}} = \left(\sage{p4b3}\right)^{\sage{p4f2}}
+    \]
+
+    $x = \answer{\sage{p4ans1}}$.
+\end{problem}
+
+
+\end{document}

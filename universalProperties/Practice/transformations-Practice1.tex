@@ -1,0 +1,107 @@
+\documentclass{ximeraXloud}
+
+\title{Rigid Translation Practice}
+\begin{document}
+\begin{abstract}
+    This is practice for the analytic view of rigid translations.
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+#### Problem p1
+p1c1 = NonZeroInt(-10,10,[-1,0,1])
+p1c2 = NonZeroInt(-10,10,[-1,0,1])
+p1c3 = RandInt(-10,10)
+p1c4 = RandInt(-10,10)
+
+p1ans1 = p1c3/p1c2
+p1ans2 = p1c1*p1c4
+
+
+#### Problem p2
+p2c1 = NonZeroInt(-10,10,[-1,0,1])
+p2c2 = NonZeroInt(-10,10,[-1,0,1])
+p2c3 = RandInt(-10,10)
+p2c4 = RandInt(-10,10)
+
+p2ans1 = p2c3/p2c2
+p2ans2 = p2c1*p2c4
+
+
+#### Problem p3
+p3c1 = NonZeroInt(-10,10,[-1,0,1])
+p3c2 = NonZeroInt(-10,10,[-1,0,1])
+p3c3 = RandInt(-10,10)
+p3c4 = RandInt(-10,10)
+
+p3ans1 = p3c3/p3c2
+p3ans2 = p3c1*p3c4
+
+
+#### Problem p4
+p4c1 = NonZeroInt(-10,10,[-1,0,1])
+p4c2 = NonZeroInt(-10,10,[-1,0,1])
+p4c3 = RandInt(-10,10)
+p4c4 = RandInt(-10,10)
+
+p4ans1 = p4c3/p4c2
+p4ans2 = p4c1*p4c4
+
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the transformation of the function $f(x)$ given by 
+    \[
+        g(x) = \sage{p1c1}f( \sage{p1c2}x ).
+    \] 
+    If the point $(\sage{p1c3}, \sage{p1c4})$ is on the graph of $f(x)$, what point must be on the graph of $g(x)$? $(\answer{\sage{p1ans1}},\answer{\sage{p1ans2}})$.
+\end{problem}
+
+
+\begin{problem}
+    Consider the transformation of the function $f(x)$ given by 
+    \[
+        g(x) = \sage{p2c1}f( \sage{p2c2}x ).
+    \] 
+    If the point $(\sage{p2c3}, \sage{p2c4})$ is on the graph of $f(x)$, what point must be on the graph of $g(x)$? $(\answer{\sage{p2ans1}},\answer{\sage{p2ans2}})$.
+\end{problem}
+
+\begin{problem}
+    Consider the transformation of the function $f(x)$ given by 
+    \[
+        g(x) = \sage{p3c1}f( \sage{p3c2}x ).
+    \] 
+    If the point $(\sage{p3c3}, \sage{p3c4})$ is on the graph of $f(x)$, what point must be on the graph of $g(x)$? $(\answer{\sage{p3ans1}},\answer{\sage{p3ans2}})$.
+\end{problem}
+
+\begin{problem}
+    Consider the transformation of the function $f(x)$ given by 
+    \[
+        g(x) = \sage{p4c1}f( \sage{p4c2}x ).
+    \] 
+    If the point $(\sage{p4c3}, \sage{p4c4})$ is on the graph of $f(x)$, what point must be on the graph of $g(x)$? $(\answer{\sage{p4ans1}},\answer{\sage{p4ans2}})$.
+\end{problem}
+
+
+
+\end{document}

@@ -1,0 +1,176 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1c3 = NonZeroInt(-10,10,[0,p1c1])
+p1c4 = RandInt(-10,10)
+p1c5 = RandInt(-3,3)
+
+p1f1 = p1c1*x + p1c2
+p1f2 = p1c3*x + p1c4
+
+if p1c5 == 0:
+    p1ans1 = 0
+    p1TempAns1 = (p1c4-p1c2)/(p1c1-p1c3)
+    if p1TempAns1*p1c1 > -p1c2 and p1TempAns1*p1c3 > -p1c4:# Check for domain issues
+        p1ans1 = p1TempAns1
+else:
+    p1ans1 = 0
+    p1TempA = ((p1c1-p1c3)/(2*p1c5))^2
+    p1TempB = (p1c2-p1c4-p1c5^2)*(p1c1-p1c3)/(2*p1c5^2)-p1c3
+    p1TempC = ((p1c2-p1c4-p1c5^2)/(2*p1c5))^2-p1c4
+    p1TempAns1 = (-p1TempB + sqrt(p1TempB^2 - 4*p1TempA*p1TempC))/(2*p1TempA)
+    p1TempAns2 = (-p1TempB - sqrt(p1TempB^2 - 4*p1TempA*p1TempC))/(2*p1TempA)
+    if p1TempAns1 * p1c1 > -p1c2 and p1TempAns1 * p1c3 > -p1c4:# Check for domain issues
+        if sqrt(p1c1*p1TempAns1 + p1c2) == sqrt(p1c3*p1TempAns1 + p1c4) + p1c5:# Check answer for validity
+            p1ans1 = p1ans1 + p1TempAns1
+    
+    if p1TempAns2 * p1c1 > -p1c2 and p1TempAns2 * p1c3 > -p1c4:# Check for domain issues
+        if sqrt(p1c1*p1TempAns2 + p1c2) == sqrt(p1c3*p1TempAns2 + p1c4) + p1c5:# Check answer for validity
+            p1ans1 = p1ans1 + p1TempAns2
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2c3 = NonZeroInt(-10,10,[0,p2c1])
+p2c4 = RandInt(-10,10)
+p2c5 = RandInt(-3,3)
+
+p2f1 = p2c1*x + p2c2
+p2f2 = p2c3*x + p2c4
+
+if p2c5 == 0:
+    p2TempAns1 = (p2c4-p2c2)/(p2c1-p2c3)
+    if p2TempAns1*p2c1 > -p2c2 and p2TempAns1*p2c3 > -p2c4:
+        p2ans1 = p2TempAns1
+    else:
+        p2ans1 = 0
+else:
+    p2ans1 = 0
+    p2TempA = ((p2c1-p2c3)/(2*p2c5))^2
+    p2TempB = (p2c2-p2c4-p2c5^2)*(p2c1-p2c3)/(2*p2c5^2)-p2c3
+    p2TempC = ((p2c2-p2c4-p2c5^2)/(2*p2c5))^2-p2c4
+    p2TempAns1 = (-p2TempB + sqrt(p2TempB^2 - 4*p2TempA*p2TempC))/(2*p2TempA)
+    p2TempAns2 = (-p2TempB - sqrt(p2TempB^2 - 4*p2TempA*p2TempC))/(2*p2TempA)
+    if p2TempAns1 * p2c1 > -p2c2 and p2TempAns1 * p2c3 > -p2c4:# Check for domain issues
+        if sqrt(p2c1*p2TempAns1 + p2c2) == sqrt(p2c3*p2TempAns1 + p2c4) + p2c5:# Check answer for validity
+            p2ans1 = p2ans1 + p2TempAns1
+    
+    if p2TempAns2 * p2c1 > -p2c2 and p2TempAns2 * p2c3 > -p2c4:# Check for domain issues
+        if sqrt(p2c1*p2TempAns2 + p2c2) == sqrt(p2c3*p2TempAns2 + p2c4) + p2c5:# Check answer for validity
+            p2ans1 = p2ans1 + p2TempAns2
+
+
+###### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3c3 = NonZeroInt(-10,10,[0,p3c1])
+p3c4 = RandInt(-10,10)
+p3c5 = RandInt(-3,3)
+
+p3f1 = p3c1*x + p3c2
+p3f2 = p3c3*x + p3c4
+
+if p3c5 == 0:
+    p3TempAns1 = (p3c4-p3c2)/(p3c1-p3c3)
+    if p3TempAns1*p3c1 > -p3c2 and p3TempAns1*p3c3 > -p3c4:
+        p3ans1 = p3TempAns1
+    else:
+        p3ans1 = 0
+else:
+    p3ans1 = 0
+    p3TempA = ((p3c1-p3c3)/(2*p3c5))^2
+    p3TempB = (p3c2-p3c4-p3c5^2)*(p3c1-p3c3)/(2*p3c5^2)-p3c3
+    p3TempC = ((p3c2-p3c4-p3c5^2)/(2*p3c5))^2-p3c4
+    p3TempAns1 = (-p3TempB + sqrt(p3TempB^2 - 4*p3TempA*p3TempC))/(2*p3TempA)
+    p3TempAns2 = (-p3TempB - sqrt(p3TempB^2 - 4*p3TempA*p3TempC))/(2*p3TempA)
+    if p3TempAns1 * p3c1 > -p3c2 and p3TempAns1 * p3c3 > -p3c4:# Check for domain issues
+        if sqrt(p3c1*p3TempAns1 + p3c2) == sqrt(p3c3*p3TempAns1 + p3c4) + p3c5:# Check answer for validity
+            p3ans1 = p3ans1 + p3TempAns1
+    
+    if p3TempAns2 * p3c1 > -p3c2 and p3TempAns2 * p3c3 > -p3c4:# Check for domain issues
+        if sqrt(p3c1*p3TempAns2 + p3c2) == sqrt(p3c3*p3TempAns2 + p3c4) + p3c5:# Check answer for validity
+            p3ans1 = p3ans1 + p3TempAns2
+
+
+###### Problem p4
+p4c1 = NonZeroInt(-10,10)
+p4c2 = RandInt(-10,10)
+p4c3 = NonZeroInt(-10,10,[0,p4c1])
+p4c4 = RandInt(-10,10)
+p4c5 = RandInt(-3,3)
+
+p4f1 = p4c1*x + p4c2
+p4f2 = p4c3*x + p4c4
+
+if p4c5 == 0:
+    p4TempAns1 = (p4c4-p4c2)/(p4c1-p4c3)
+    if p4TempAns1*p4c1 > -p4c2 and p4TempAns1*p4c3 > -p4c4:
+        p4ans1 = p4TempAns1
+    else:
+        p4ans1 = 0
+else:
+    p4ans1 = 0
+    p4TempA = ((p4c1-p4c3)/(2*p4c5))^2
+    p4TempB = (p4c2-p4c4-p4c5^2)*(p4c1-p4c3)/(2*p4c5^2)-p4c3
+    p4TempC = ((p4c2-p4c4-p4c5^2)/(2*p4c5))^2-p4c4
+    p4TempAns1 = (-p4TempB + sqrt(p4TempB^2 - 4*p4TempA*p4TempC))/(2*p4TempA)
+    p4TempAns2 = (-p4TempB - sqrt(p4TempB^2 - 4*p4TempA*p4TempC))/(2*p4TempA)
+    if p4TempAns1 * p4c1 > -p4c2 and p4TempAns1 * p4c3 > -p4c4:# Check for domain issues
+        if sqrt(p4c1*p4TempAns1 + p4c2) == sqrt(p4c3*p4TempAns1 + p4c4) + p4c5:# Check answer for validity
+            p4ans1 = p4ans1 + p4TempAns1
+    
+    if p4TempAns2 * p4c1 > -p4c2 and p4TempAns2 * p4c3 > -p4c4:# Check for domain issues
+        if sqrt(p4c1*p4TempAns2 + p4c2) == sqrt(p4c3*p4TempAns2 + p4c4) + p4c5:# Check answer for validity
+            p4ans1 = p4ans1 + p4TempAns2
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    What is the \textbf{sum} of the answers to the following unsimplified radical?
+    \[
+        \sqrt{\sage{p1f1}} = \sqrt{\sage{p1f2}} + (\sage{p1c5})
+    \]
+    The sum of solutions is: $\answer{\sage{p1ans1}}$ (if there are no solutions, enter $0$ as the answer)
+\end{problem}
+
+
+\begin{problem}
+    What is the \textbf{sum} of the answers to the following unsimplified radical?
+    \[
+        \sqrt{\sage{p2f1}} = \sqrt{\sage{p2f2}} + (\sage{p2c5})
+    \]
+    The sum of solutions is: $\answer{\sage{p2ans1}}$ (if there are no solutions, enter $0$ as the answer)
+\end{problem}
+
+
+\begin{problem}
+    What is the \textbf{sum} of the answers to the following unsimplified radical?
+    \[
+        \sqrt{\sage{p3f1}} = \sqrt{\sage{p3f2}} + (\sage{p3c5})
+    \]
+    The sum of solutions is: $\answer{\sage{p3ans1}}$ (if there are no solutions, enter $0$ as the answer)
+\end{problem}
+
+
+\begin{problem}
+    What is the \textbf{sum} of the answers to the following unsimplified radical?
+    \[
+        \sqrt{\sage{p4f1}} = \sqrt{\sage{p4f2}} + (\sage{p4c5})
+    \]
+    The sum of solutions is: $\answer{\sage{p4ans1}}$ (if there are no solutions, enter $0$ as the answer)
+\end{problem}
+
+
+\end{document}

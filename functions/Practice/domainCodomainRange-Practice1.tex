@@ -1,0 +1,168 @@
+\documentclass{ximeraXloud}
+%\usepackage{sagetex}
+\title{Functions Practice 1}
+\renewcommand{\text}[1]{#1}
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+p1c1 = NonZeroInt(-10,10)
+p1c2 = -p1c1
+
+p2c1 = NonZeroInt(-10,10)
+p2c2 = -p2c1
+p2rvec = [ 'x' + LatexExpr(r"\leq") + str(p1c1), str(x < p1c1), 'x' + LatexExpr(r"\geq") + str(p1c1), str(x > p1c1) ]
+p2vecfalse = [RealSet.open_closed(-infinity,p2c1), RealSet(-infinity, p2c1), RealSet.closed_open(p2c1,infinity), RealSet(p2c1,infinity),RealSet.open_closed(-infinity,-p2c1), RealSet(-infinity, -p2c1), RealSet.closed_open(-p2c1,infinity), RealSet(-p2c1,infinity)]
+p2vecpick = RandInt(0,3)
+p2relate = p2rvec[p2vecpick]
+p2false = [p2vecfalse[i] for i in range(8) if abs(i - p2vecpick)>0]
+
+p2ans1 = p2false[0]
+p2ans2 = p2false[1]
+p2ans3 = p2vecfalse[p2vecpick]
+p2ans4 = p2false[2]
+p2ans5 = p2false[3]
+p2ans6 = p2false[4]
+p2ans7 = p2false[5]
+p2ans8 = p2false[6]
+
+p3c1 = NonZeroInt(-10,10)
+p3c2 = -p3c1
+
+p4c1 = NonZeroInt(-10,10)
+p4c2 = -p4c1
+p4rvec = [ 'x' + LatexExpr(r"\leq") + str(p1c1), str(x < p1c1), 'x' + LatexExpr(r"\geq") + str(p1c1), str(x > p1c1) ]
+p4vecfalse = [RealSet.open_closed(-infinity,p4c1), RealSet(-infinity, p4c1), RealSet.closed_open(p4c1,infinity), RealSet(p4c1,infinity),RealSet.open_closed(-infinity,-p4c1), RealSet(-infinity, -p4c1), RealSet.closed_open(-p4c1,infinity), RealSet(-p4c1,infinity)]
+p4vecpick = RandInt(0,3)
+p4relate = p4rvec[p4vecpick]
+p4false = [p4vecfalse[i] for i in range(8) if abs(i - p4vecpick)>0]
+
+p4ans1 = p4false[0]
+p4ans2 = p4false[1]
+p4ans3 = p4vecfalse[p4vecpick]
+p4ans4 = p4false[2]
+p4ans5 = p4false[3]
+p4ans6 = p4false[4]
+p4ans7 = p4false[5]
+p4ans8 = p4false[6]
+
+p5c1 = NonZeroInt(-10,10)
+p5c2 = -p5c1
+
+p6c1 = NonZeroInt(-10,10)
+p6c2 = -p6c1
+p6rvec = [ 'x' + LatexExpr(r"\leq") + str(p1c1), str(x < p1c1), 'x' + LatexExpr(r"\geq") + str(p1c1), str(x > p1c1) ]
+p6vecfalse = [RealSet.open_closed(-infinity,p6c1), RealSet(-infinity, p6c1), RealSet.closed_open(p6c1,infinity), RealSet(p6c1,infinity),RealSet.open_closed(-infinity,-p6c1), RealSet(-infinity, -p6c1), RealSet.closed_open(-p6c1,infinity), RealSet(-p6c1,infinity)]
+p6vecpick =RandInt(0,3)
+p6relate = p6rvec[p6vecpick]
+p6false = [p6vecfalse[i] for i in range(8) if abs(i - p6vecpick)>0]
+
+p6ans1 = p6false[0]
+p6ans2 = p6false[1]
+p6ans3 = p6vecfalse[p6vecpick]
+p6ans4 = p6false[2]
+p6ans5 = p6false[3]
+p6ans6 = p6false[4]
+p6ans7 = p6false[5]
+p6ans8 = p6false[6]
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Which of the following is equivalent to: $(\sage{p1c1}, \infty)$?
+    \begin{multipleChoice}
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p1c1} \}$ }
+        \choice[correct]{ $\{ x \in \mathbb{R} : x > \sage{p1c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p1c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p1c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p1c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x > \sage{p1c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p1c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p1c2} \}$ }
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Which of the following is equivalent to: $\{ x \in \mathbb{R} : \sage{p2relate} \}$?
+    \begin{multipleChoice}
+        \choice{ $ \sage{p2ans1} $ }
+        \choice{ $ \sage{p2ans2} $ }
+        \choice[correct]{ $ \sage{p2ans3} $ }
+        \choice{ $ \sage{p2ans4} $ }
+        \choice{ $ \sage{p2ans5} $ }
+        \choice{ $ \sage{p2ans6} $ }
+        \choice{ $ \sage{p2ans7} $ }
+        \choice{ $ \sage{p2ans8} $ }
+    \end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}
+    Which of the following is equivalent to: $(\sage{p3c1}, \infty)$?
+    \begin{multipleChoice}
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p3c1} \}$ }
+        \choice[correct]{ $\{ x \in \mathbb{R} : x > \sage{p3c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p3c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p3c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p3c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x > \sage{p3c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p3c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p3c2} \}$ }
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Which of the following is equivalent to: $\{ x \in \mathbb{R} : \sage{p4relate} \}$?
+    \begin{multipleChoice}
+        \choice{ $ \sage{p4ans1} $ }
+        \choice{ $ \sage{p4ans2} $ }
+        \choice[correct]{ $ \sage{p4ans3} $ }
+        \choice{ $ \sage{p4ans4} $ }
+        \choice{ $ \sage{p4ans5} $ }
+        \choice{ $ \sage{p4ans6} $ }
+        \choice{ $ \sage{p4ans7} $ }
+        \choice{ $ \sage{p4ans8} $ }
+    \end{multipleChoice}
+\end{problem}
+
+
+\begin{problem}
+    Which of the following is equivalent to: $(\sage{p5c1}, \infty)$?
+    \begin{multipleChoice}
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p5c1} \}$ }
+        \choice[correct]{ $\{ x \in \mathbb{R} : x > \sage{p5c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p5c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p5c1} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x < \sage{p5c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x > \sage{p5c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \leq \sage{p5c2} \}$ }
+        \choice{ $\{ x \in \mathbb{R} : x \geq \sage{p5c2} \}$ }
+    \end{multipleChoice}
+    
+\end{problem}
+
+
+\begin{problem}
+    Which of the following is equivalent to: $\{ x \in \mathbb{R} : \sage{p6relate} \}$?
+    \begin{multipleChoice}
+        \choice{ $ \sage{p6ans1} $ }
+        \choice{ $ \sage{p6ans2} $ }
+        \choice[correct]{ $ \sage{p6ans3} $ }
+        \choice{ $ \sage{p6ans4} $ }
+        \choice{ $ \sage{p6ans5} $ }
+        \choice{ $ \sage{p6ans6} $ }
+        \choice{ $ \sage{p6ans7} $ }
+        \choice{ $ \sage{p6ans8} $ }
+    \end{multipleChoice}
+\end{problem}
+
+
+
+
+\end{document}

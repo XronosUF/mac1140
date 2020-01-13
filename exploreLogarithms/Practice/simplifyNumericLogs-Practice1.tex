@@ -1,0 +1,99 @@
+\documentclass{ximeraXloud}
+\title{Practice with Simplifying Numeric Logarithms}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+
+##### Problem p1
+p1b1 = RandInt(2,7)
+p1arg1 = 9999
+while p1arg1 > 500:
+    p1pwr1 = RandInt(0,5)
+    p1arg1 = p1b1^p1pwr1
+    p1arg2 = p1b1^(-p1pwr1)
+p1ans1 = p1pwr1
+p1ans2 = -p1pwr1
+
+##### Problem p2
+p2b1 = RandInt(2,7)
+p2arg1 = 9999
+while p2arg1 > 500:
+    p2pwr1 = RandInt(0,5)
+    p2arg1 = p2b1^p2pwr1
+    p2arg2 = p2b1^(-p2pwr1)
+p2ans1 = p2pwr1
+p2ans2 = -p2pwr1
+
+##### Problem p3
+p3b1 = RandInt(2,7)
+p3arg1 = 9999
+while p3arg1 > 500:
+    p3pwr1 = RandInt(0,5)
+    p3arg1 = p3b1^p3pwr1
+    p3arg2 = p3b1^(-p3pwr1)
+p3ans1 = p3pwr1
+p3ans2 = -p3pwr1
+
+##### Problem p4
+p4pwr1 = RandInt(0,5)
+p4arg1 = 9999
+while p4arg1 > 500:
+    p4b1 = RandInt(2,7)
+    p4arg1 = p4b1^p4pwr1
+    p4arg2 = p4b1^(-p4pwr1)
+p4ans1 = p4pwr1
+p4ans2 = -p4pwr1
+
+\end{sagesilent}
+
+\begin{problem}
+    Compute the following numeric exponential value.
+    
+    \begin{itemize}
+        \item $\log_{\sage{p1b1}}\left({\sage{p1arg1}}\right) = \answer{\sage{p1ans1}}$
+        
+        \item $\log_{\sage{p1b1}}\left({\sage{p1arg2}}\right) = \answer{\sage{p1ans2}}$
+    \end{itemize}
+    
+\end{problem}
+
+\begin{problem}
+    Compute the following numeric exponential value.
+    
+    \begin{itemize}
+        \item $\log_{\sage{p2b1}}\left({\sage{p2arg1}}\right) = \answer{\sage{p2ans1}}$
+        
+        \item $\log_{\sage{p2b1}}\left({\sage{p2arg2}}\right) = \answer{\sage{p2ans2}}$
+    \end{itemize}
+    
+\end{problem}
+
+\begin{problem}
+    Compute the following numeric exponential value.
+    
+    \begin{itemize}
+        \item $\log_{\sage{p3b1}}\left({\sage{p3arg1}}\right) = \answer{\sage{p3ans1}}$
+        
+        \item $\log_{\sage{p3b1}}\left({\sage{p3arg2}}\right) = \answer{\sage{p3ans2}}$
+    \end{itemize}
+    
+\end{problem}
+
+\begin{problem}
+    Compute the following numeric exponential value.
+    
+    \begin{itemize}
+        \item $\log_{\sage{p4b1}}\left({\sage{p4arg1}}\right) = \answer{\sage{p4ans1}}$
+        
+        \item $\log_{\sage{p4b1}}\left({\sage{p4arg2}}\right) = \answer{\sage{p4ans2}}$
+    \end{itemize}
+    
+\end{problem}
+
+
+
+\end{document}

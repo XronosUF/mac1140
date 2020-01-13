@@ -1,0 +1,166 @@
+\documentclass{ximeraXloud}
+%\usepackage{sagetex}
+%\usepackage{amsfonts}
+\title{Functions Practice 1}
+\renewcommand{\text}[1]{#1}
+\newcommand{\sagecheck}[2]{
+    \ifthenelse{}{}{}\textit{}
+    }
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+funcvec = [x, x^2, x^3]
+
+#### Start of problem p1
+p1choice1 = RandInt(0,2)
+p1choice2 = RandInt(0,2)
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = NonZeroInt(-5,5)
+p1c4 = NonZeroInt(-5,5,[p1c2])
+p1c5 = NonZeroInt(-5,5)
+p1c6 = NonZeroInt(-5,5)
+p1c7 = NonZeroInt(-5,5)
+p1c8 = NonZeroInt(-5,5)
+p1c9 = NonZeroInt(-5,5)
+p1c10 = NonZeroInt(-5,5)
+
+
+
+p1f1 = p1c1 * funcvec[p1choice1](x + p1c2)
+p1f2 = p1c3 * funcvec[p1choice2](x + p1c4)
+
+p1ans1 = p1f1 + p1f2
+p1ans2 = p1f1 - p1f2
+p1ans3 = p1f1 *p1f2
+p1ans4 = p1f1/p1f2
+
+
+#### Start of problem p2
+p2choice1 = RandInt(0,2)
+p2choice2 = RandInt(0,2)
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = NonZeroInt(-5,5)
+p2c4 = NonZeroInt(-5,5,[p2c2])
+p2c5 = NonZeroInt(-5,5)
+p2c6 = NonZeroInt(-5,5)
+p2c7 = NonZeroInt(-5,5)
+p2c8 = NonZeroInt(-5,5)
+p2c9 = NonZeroInt(-5,5)
+p2c10 = NonZeroInt(-5,5)
+
+
+
+p2f1 = p2c1 * funcvec[p2choice1](x + p2c2)
+p2f2 = p2c3 * funcvec[p2choice2](x + p2c4)
+
+p2ans1 = p2f1 + p2f2
+p2ans2 = p2f1 - p2f2
+p2ans3 = p2f1 *p2f2
+p2ans4 = p2f1/p2f2
+
+
+#### Start of problem p3
+p3choice1 = RandInt(0,2)
+p3choice2 = RandInt(0,2)
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = NonZeroInt(-5,5)
+p3c4 = NonZeroInt(-5,5,[p3c2])
+p3c5 = NonZeroInt(-5,5)
+p3c6 = NonZeroInt(-5,5)
+p3c7 = NonZeroInt(-5,5)
+p3c8 = NonZeroInt(-5,5)
+p3c9 = NonZeroInt(-5,5)
+p3c10 = NonZeroInt(-5,5)
+
+
+
+p3f1 = p3c1 * funcvec[p3choice1](x + p3c2)
+p3f2 = p3c3 * funcvec[p3choice2](x + p3c4)
+
+p3ans1 = p3f1 + p3f2
+p3ans2 = p3f1 - p3f2
+p3ans3 = p3f1 *p3f2
+p3ans4 = p3f1/p3f2
+
+
+#### Start of problem p4
+p4choice1 = RandInt(0,2)
+p4choice2 = RandInt(0,2)
+
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = NonZeroInt(-5,5,[p4c2])
+p4c5 = NonZeroInt(-5,5)
+p4c6 = NonZeroInt(-5,5)
+p4c7 = NonZeroInt(-5,5)
+p4c8 = NonZeroInt(-5,5)
+p4c9 = NonZeroInt(-5,5)
+p4c10 = NonZeroInt(-5,5)
+
+
+
+p4f1 = p4c1 * funcvec[p4choice1](x + p4c2)
+p4f2 = p4c3 * funcvec[p4choice2](x + p4c4)
+
+p4ans1 = p4f1 + p4f2
+p4ans2 = p4f1 - p4f2
+p4ans3 = p4f1 *p4f2
+p4ans4 = p4f1/p4f2
+
+
+\end{sagesilent}
+
+\begin{problem}
+Consider the functions $f(x) = \sage{p1f1}$ and $g(x) = \sage{p1f2}$. Compute the following:
+\begin{itemize}
+\item $\left(f+g\right)(x) = \answer{\sage{p1ans1}}$
+\item $\left(f-g\right)(x) = \answer{\sage{p1ans2}}$
+\item $\left(fg\right)(x) = \answer{\sage{p1ans3}}$
+\item $\left(\frac{f}{g}\right)(x) = \answer{\sage{p1ans4}}$
+\end{itemize}
+\end{problem}
+
+
+\begin{problem}
+Consider the functions $f(x) = \sage{p2f1}$ and $g(x) = \sage{p2f2}$. Compute the following:
+\begin{itemize}
+\item $\left(f+g\right)(x) = \answer{\sage{p2ans1}}$
+\item $\left(f-g\right)(x) = \answer{\sage{p2ans2}}$
+\item $\left(fg\right)(x) = \answer{\sage{p2ans3}}$
+\item $\left(\frac{f}{g}\right)(x) = \answer{\sage{p2ans4}}$
+\end{itemize}
+\end{problem}
+
+
+\begin{problem}
+Consider the functions $f(x) = \sage{p3f1}$ and $g(x) = \sage{p3f2}$. Compute the following:
+\begin{itemize}
+\item $\left(f+g\right)(x) = \answer{\sage{p3ans1}}$
+\item $\left(f-g\right)(x) = \answer{\sage{p3ans2}}$
+\item $\left(fg\right)(x) = \answer{\sage{p3ans3}}$
+\item $\left(\frac{f}{g}\right)(x) = \answer{\sage{p3ans4}}$
+\end{itemize}
+\end{problem}
+
+
+\begin{problem}
+Consider the functions $f(x) = \sage{p4f1}$ and $g(x) = \sage{p4f2}$. Compute the following:
+\begin{itemize}
+\item $\left(f+g\right)(x) = \answer{\sage{p4ans1}}$
+\item $\left(f-g\right)(x) = \answer{\sage{p4ans2}}$
+\item $\left(fg\right)(x) = \answer{\sage{p4ans3}}$
+\item $\left(\frac{f}{g}\right)(x) = \answer{\sage{p4ans4}}$
+\end{itemize}
+\end{problem}
+
+
+
+\end{document}

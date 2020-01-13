@@ -1,0 +1,110 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = NonZeroInt(-5,5)
+p1c3 = RandInt(-10,10)
+
+p1f1 = p1c2*(x-p1c1)^2 + p1c3
+p1f2 = expand(p1f1)
+
+
+
+###### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = NonZeroInt(-5,5)
+p2c3 = RandInt(-10,10)
+
+p2f1 = p2c2*(x-p2c1)^2 + p2c3
+p2f2 = expand(p2f1)
+
+
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = NonZeroInt(-5,5)
+p3c3 = RandInt(-10,10)
+
+p3f1 = p3c2*(x-p3c1)^2 + p3c3
+p3f2 = expand(p3f1)
+
+
+
+###### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = NonZeroInt(-5,5)
+p4c3 = RandInt(-10,10)
+
+p4f1 = p4c2*(x-p4c1)^2 + p4c3
+p4f2 = expand(p4f1)
+
+
+
+
+\end{sagesilent}
+
+%\begin{javascript}
+%linearFactoring = function(correctAns,f1,f2,f3) {
+%    var i;
+%    var Truth;
+%    var Prod;
+%    var Temp;
+%    Truth=1;
+%    Prod=1;
+%    if (isNaN(f1.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f2.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f3.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    parser.evaluate('f(x) = f1(x)*f2(x)*f3(x));
+%    if (f('x').equals(correctAns('x'))){Truth = Truth*1;}else{Truth=Truth*0;}
+%    if (Truth === 0){return !1}else{return !0}
+%    };
+%\end{javascript}
+
+\begin{problem}
+Complete the square on the following quadratic:
+\[
+    \sage{p1f2} = \answer{\sage{p1c2}}(\answer{\sage{x-p1c1}})^2 + \answer{\sage{p1c3}}
+\]
+
+\end{problem}
+
+
+
+\begin{problem}
+Complete the square on the following quadratic:
+\[
+    \sage{p2f2} = \answer{\sage{p2c2}}(\answer{\sage{x-p2c1}})^2 + \answer{\sage{p2c3}}
+\]
+
+\end{problem}
+
+
+
+\begin{problem}
+Complete the square on the following quadratic:
+\[
+    \sage{p3f2} = \answer{\sage{p3c2}}(\answer{\sage{x-p3c1}})^2 + \answer{\sage{p3c3}}
+\]
+
+\end{problem}
+
+
+
+\begin{problem}
+Complete the square on the following quadratic:
+\[
+    \sage{p4f2} = \answer{\sage{p4c2}}(\answer{\sage{x-p4c1}})^2 + \answer{\sage{p4c3}}
+\]
+
+\end{problem}
+
+
+
+\end{document}

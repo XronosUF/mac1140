@@ -1,0 +1,180 @@
+\documentclass{ximeraXloud}
+\title{Practice with Properties of Logarithms: Expansion}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+var('x','y','z','r')
+###### Problem p1
+
+p1c1 = RandInt(-6,6)
+p1c2 = RandInt(-6,6)
+p1c3 = RandInt(-6,6)
+p1c4 = RandInt(-6,6)
+p1c5 = RandInt(-6,6)
+p1c6 = RandInt(-6,6)
+p1c7 = RandInt(-6,6)
+p1c8 = RandInt(-6,6)
+p1c9 = RandInt(-6,6)
+p1c10 = RandInt(-6,6)
+p1c11 = RandInt(-6,6)
+p1c12 = RandInt(-6,6)
+p1c13 = RandInt(-6,6)
+p1c14 = RandInt(-6,6)
+p1c15 = RandInt(-6,6)
+p1c16 = RandInt(-6,6)
+p1pwr1 = RandInt(-6,6)
+p1pwr2 = RandInt(-6,6)
+
+p1f1 = x^p1c1*y^p1c2*z^p1c3*r^p1c4
+p1f2 = x^p1c5*y^p1c6*z^p1c7*r^p1c8
+
+p1f3 = x^p1c9*y^p1c10*z^p1c11*r^p1c12
+p1f4 = x^p1c13*y^p1c14*z^p1c15*r^p1c16
+
+p1ans1 = (p1c1-p1c5)*p1pwr1 + (p1c9-p1c13)*p1pwr2
+p1ans2 = (p1c2-p1c6)*p1pwr1 + (p1c10-p1c14)*p1pwr2
+p1ans3 = (p1c3-p1c7)*p1pwr1 + (p1c11-p1c15)*p1pwr2
+p1ans4 = (p1c4-p1c8)*p1pwr1 + (p1c12-p1c16)*p1pwr2
+
+
+###### Problem p2
+
+p2c1 = RandInt(-6,6)
+p2c2 = RandInt(-6,6)
+p2c3 = RandInt(-6,6)
+p2c4 = RandInt(-6,6)
+p2c5 = RandInt(-6,6)
+p2c6 = RandInt(-6,6)
+p2c7 = RandInt(-6,6)
+p2c8 = RandInt(-6,6)
+p2c9 = RandInt(-6,6)
+p2c10 = RandInt(-6,6)
+p2c11 = RandInt(-6,6)
+p2c12 = RandInt(-6,6)
+p2c13 = RandInt(-6,6)
+p2c14 = RandInt(-6,6)
+p2c15 = RandInt(-6,6)
+p2c16 = RandInt(-6,6)
+p2pwr1 = RandInt(-6,6)
+p2pwr2 = RandInt(-6,6)
+
+p2f1 = x^p2c1*y^p2c2*z^p2c3*r^p2c4
+p2f2 = x^p2c5*y^p2c6*z^p2c7*r^p2c8
+
+p2f3 = x^p2c9*y^p2c10*z^p2c11*r^p2c12
+p2f4 = x^p2c13*y^p2c14*z^p2c15*r^p2c16
+
+p2ans1 = (p2c1-p2c5)*p2pwr1 + (p2c9-p2c13)*p2pwr2
+p2ans2 = (p2c2-p2c6)*p2pwr1 + (p2c10-p2c14)*p2pwr2
+p2ans3 = (p2c3-p2c7)*p2pwr1 + (p2c11-p2c15)*p2pwr2
+p2ans4 = (p2c4-p2c8)*p2pwr1 + (p2c12-p2c16)*p2pwr2
+
+
+###### Problem p3
+
+p3c1 = RandInt(-6,6)
+p3c2 = RandInt(-6,6)
+p3c3 = RandInt(-6,6)
+p3c4 = RandInt(-6,6)
+p3c5 = RandInt(-6,6)
+p3c6 = RandInt(-6,6)
+p3c7 = RandInt(-6,6)
+p3c8 = RandInt(-6,6)
+p3c9 = RandInt(-6,6)
+p3c10 = RandInt(-6,6)
+p3c11 = RandInt(-6,6)
+p3c12 = RandInt(-6,6)
+p3c13 = RandInt(-6,6)
+p3c14 = RandInt(-6,6)
+p3c15 = RandInt(-6,6)
+p3c16 = RandInt(-6,6)
+p3pwr1 = RandInt(-6,6)
+p3pwr2 = RandInt(-6,6)
+
+p3f1 = x^p3c1*y^p3c2*z^p3c3*r^p3c4
+p3f2 = x^p3c5*y^p3c6*z^p3c7*r^p3c8
+
+p3f3 = x^p3c9*y^p3c10*z^p3c11*r^p3c12
+p3f4 = x^p3c13*y^p3c14*z^p3c15*r^p3c16
+
+p3ans1 = (p3c1-p3c5)*p3pwr1 + (p3c9-p3c13)*p3pwr2
+p3ans2 = (p3c2-p3c6)*p3pwr1 + (p3c10-p3c14)*p3pwr2
+p3ans3 = (p3c3-p3c7)*p3pwr1 + (p3c11-p3c15)*p3pwr2
+p3ans4 = (p3c4-p3c8)*p3pwr1 + (p3c12-p3c16)*p3pwr2
+
+
+###### Problem p4
+
+p4c1 = RandInt(-6,6)
+p4c2 = RandInt(-6,6)
+p4c3 = RandInt(-6,6)
+p4c4 = RandInt(-6,6)
+p4c5 = RandInt(-6,6)
+p4c6 = RandInt(-6,6)
+p4c7 = RandInt(-6,6)
+p4c8 = RandInt(-6,6)
+p4c9 = RandInt(-6,6)
+p4c10 = RandInt(-6,6)
+p4c11 = RandInt(-6,6)
+p4c12 = RandInt(-6,6)
+p4c13 = RandInt(-6,6)
+p4c14 = RandInt(-6,6)
+p4c15 = RandInt(-6,6)
+p4c16 = RandInt(-6,6)
+p4pwr1 = RandInt(-6,6)
+p4pwr2 = RandInt(-6,6)
+
+p4f1 = x^p4c1*y^p4c2*z^p4c3*r^p4c4
+p4f2 = x^p4c5*y^p4c6*z^p4c7*r^p4c8
+
+p4f3 = x^p4c9*y^p4c10*z^p4c11*r^p4c12
+p4f4 = x^p4c13*y^p4c14*z^p4c15*r^p4c16
+
+p4ans1 = (p4c1-p4c5)*p4pwr1 + (p4c9-p4c13)*p4pwr2
+p4ans2 = (p4c2-p4c6)*p4pwr1 + (p4c10-p4c14)*p4pwr2
+p4ans3 = (p4c3-p4c7)*p4pwr1 + (p4c11-p4c15)*p4pwr2
+p4ans4 = (p4c4-p4c8)*p4pwr1 + (p4c12-p4c16)*p4pwr2
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Use rules of logarithms to expand the following expression completely.
+    \[
+        \log\left[\left(\frac{\sage{p1f1}}{\sage{p1f2}}\right)^{\sage{p1pwr1}} \cdot \left(\frac{\sage{p1f3}}{\sage{p1f4}}\right)^{\sage{p1pwr2}}\right] = \answer{\sage{p1ans1}} \log (x) + \answer{\sage{p1ans2}} \log(y) + \answer{\sage{p1ans3}} \log(z) + \answer{\sage{p1ans4}} \log(r)
+    \]
+
+\end{problem}
+
+
+\begin{problem}
+    Use rules of logarithms to expand the following expression completely.
+    \[
+        \log\left[\left(\frac{\sage{p2f1}}{\sage{p2f2}}\right)^{\sage{p2pwr1}} \cdot \left(\frac{\sage{p2f3}}{\sage{p2f4}}\right)^{\sage{p2pwr2}}\right] = \answer{\sage{p2ans1}} \log (x) + \answer{\sage{p2ans2}} \log(y) + \answer{\sage{p2ans3}} \log(z) + \answer{\sage{p2ans4}} \log(r)
+    \]
+
+\end{problem}
+
+\begin{problem}
+    Use rules of logarithms to expand the following expression completely.
+    \[
+        \log\left[\left(\frac{\sage{p3f1}}{\sage{p3f2}}\right)^{\sage{p3pwr1}} \cdot \left(\frac{\sage{p3f3}}{\sage{p3f4}}\right)^{\sage{p3pwr2}}\right] = \answer{\sage{p3ans1}} \log (x) + \answer{\sage{p3ans2}} \log(y) + \answer{\sage{p3ans3}} \log(z) + \answer{\sage{p3ans4}} \log(r)
+    \]
+
+\end{problem}
+
+\begin{problem}
+    Use rules of logarithms to expand the following expression completely.
+    \[
+        \log\left[\left(\frac{\sage{p4f1}}{\sage{p4f2}}\right)^{\sage{p4pwr1}} \cdot \left(\frac{\sage{p4f3}}{\sage{p4f4}}\right)^{\sage{p4pwr2}}\right] = \answer{\sage{p4ans1}} \log (x) + \answer{\sage{p4ans2}} \log(y) + \answer{\sage{p4ans3}} \log(z) + \answer{\sage{p4ans4}} \log(r)
+    \]
+
+\end{problem}
+
+
+\end{document}

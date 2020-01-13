@@ -1,0 +1,152 @@
+\documentclass{ximeraXloud}
+
+\title{Functions Practice 1}
+\begin{document}
+
+%
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+
+p1pairvec = [(1,3),(1,3)]
+while len(p1pairvec) > len(uniq(p1pairvec)):# This will force a check to make sure we don't have the same exact point multiple times.
+    p1c1x = RandInt(-10, 10)
+    p1c1y = RandInt(-10, 10)
+    p1c2x = RandInt(-10, 10)
+    p1c2y = RandInt(-10, 10)
+    p1c3x = RandInt(-10, 10)
+    p1c3y = RandInt(-10, 10)
+    p1c4x = RandInt(-10, 10)
+    p1c4y = RandInt(-10, 10)
+    p1c5x = RandInt(-10, 10)
+    p1c5y = RandInt(-10, 10)
+    p1c6x = RandInt(-10, 10)
+    p1c6y = RandInt(-10, 10)
+    p1c7x = RandInt(-10, 10)
+    p1c7y = RandInt(-10, 10)
+    p1c8x = RandInt(-10, 10)
+    p1c8y = RandInt(-10, 10)
+    p1pairvec = [(p1c1x,p1c1y),(p1c2x,p1c2y),(p1c3x,p1c3y),(p1c4x,p1c4y),(p1c5x,p1c5y),(p1c6x,p1c6y),(p1c7x,p1c7y),(p1c8x,p1c8y)]
+p1checkvec = [p1c1x,p1c2x,p1c3x,p1c4x,p1c5x,p1c6x,p1c7x,p1c8x]
+p1checkedvec = len(uniq(p1checkvec))
+
+if p1checkedvec == 8:
+    p1ans = 1
+else:
+    p1ans = 0
+
+p2pairvec = [(1,3),(1,3)]
+while len(p2pairvec) > len(uniq(p2pairvec)):# This will force a check to make sure we don't have the same exact point multiple times.
+    p2c1x = RandInt(-10, 10)
+    p2c1y = RandInt(-10, 10)
+    p2c2x = RandInt(-10, 10)
+    p2c2y = RandInt(-10, 10)
+    p2c3x = RandInt(-10, 10)
+    p2c3y = RandInt(-10, 10)
+    p2c4x = RandInt(-10, 10)
+    p2c4y = RandInt(-10, 10)
+    p2c5x = RandInt(-10, 10)
+    p2c5y = RandInt(-10, 10)
+    p2c6x = RandInt(-10, 10)
+    p2c6y = RandInt(-10, 10)
+    p2c7x = RandInt(-10, 10)
+    p2c7y = RandInt(-10, 10)
+    p2c8x = RandInt(-10, 10)
+    p2c8y = RandInt(-10, 10)
+    p2pairvec = [(p2c1x,p2c1y),(p2c2x,p2c2y),(p2c3x,p2c3y),(p2c4x,p2c4y),(p2c5x,p2c5y),(p2c6x,p2c6y),(p2c7x,p2c7y),(p2c8x,p2c8y)]
+p2checkvec = [p2c1x,p2c2x,p2c3x,p2c4x,p2c5x,p2c6x,p2c7x,p2c8x]
+p2checkedvec = len(uniq(p2checkvec))
+
+if p2checkedvec == 8:
+    p2ans = 1
+else:
+    p2ans = 0
+
+p3pairvec = [(1,3),(1,3)]
+while len(p3pairvec) > len(uniq(p3pairvec)):# This will force a check to make sure we don't have the same exact point multiple times.
+    p3c1x = RandInt(-10, 10)
+    p3c1y = RandInt(-10, 10)
+    p3c2x = RandInt(-10, 10)
+    p3c2y = RandInt(-10, 10)
+    p3c3x = RandInt(-10, 10)
+    p3c3y = RandInt(-10, 10)
+    p3c4x = RandInt(-10, 10)
+    p3c4y = RandInt(-10, 10)
+    p3c5x = RandInt(-10, 10)
+    p3c5y = RandInt(-10, 10)
+    p3c6x = RandInt(-10, 10)
+    p3c6y = RandInt(-10, 10)
+    p3c7x = RandInt(-10, 10)
+    p3c7y = RandInt(-10, 10)
+    p3c8x = RandInt(-10, 10)
+    p3c8y = RandInt(-10, 10)
+    p3pairvec = [(p3c1x,p3c1y),(p3c2x,p3c2y),(p3c3x,p3c3y),(p3c4x,p3c4y),(p3c5x,p3c5y),(p3c6x,p3c6y),(p3c7x,p3c7y),(p3c8x,p3c8y)]
+p3checkvec = [p3c1x,p3c2x,p3c3x,p3c4x,p3c5x,p3c6x,p3c7x,p3c8x]
+p3checkedvec = len(uniq(p3checkvec))
+
+if p3checkedvec == 8:
+    p3ans = 1
+else:
+    p3ans = 0
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Consider the following set of ordered pairs that represent input-output values of a relation (ie for an ordered pair $(3, 7)$ the `input' is $3$ and the `output' is $7$);
+    
+    \[
+        (\sage{p1c1x}, \sage{p1c1y}), 
+        (\sage{p1c2x}, \sage{p1c2y}), 
+        (\sage{p1c3x}, \sage{p1c3y}), 
+        (\sage{p1c4x}, \sage{p1c4y}), 
+        (\sage{p1c5x}, \sage{p1c5y}), 
+        (\sage{p1c6x}, \sage{p1c6y}), 
+        (\sage{p1c7x}, \sage{p1c7y}), 
+        (\sage{p1c8x}, \sage{p1c8y}), 
+    \]
+
+    Is this relation a function? Enter the number 1 if the above represents a function, or 0 if it does not. $\answer{\sage{p1ans}}$
+\end{problem}
+
+\begin{problem}
+    Consider the following set of ordered pairs that represent input-output values of a relation (ie for an ordered pair $(3, 7)$ the `input' is $3$ and the `output' is $7$);
+    
+    \[
+        (\sage{p2c1x}, \sage{p2c1y}), 
+        (\sage{p2c2x}, \sage{p2c2y}), 
+        (\sage{p2c3x}, \sage{p2c3y}), 
+        (\sage{p2c4x}, \sage{p2c4y}), 
+        (\sage{p2c5x}, \sage{p2c5y}), 
+        (\sage{p2c6x}, \sage{p2c6y}), 
+        (\sage{p2c7x}, \sage{p2c7y}), 
+        (\sage{p2c8x}, \sage{p2c8y}), 
+    \]
+
+    Is this relation a function? Enter the number 1 if the above represents a function, or 0 if it does not. $\answer{\sage{p2ans}}$
+\end{problem}
+\begin{problem}
+    Consider the following set of ordered pairs that represent input-output values of a relation (ie for an ordered pair $(3, 7)$ the `input' is $3$ and the `output' is $7$);
+    
+    \[
+        (\sage{p3c1x}, \sage{p3c1y}), 
+        (\sage{p3c2x}, \sage{p3c2y}), 
+        (\sage{p3c3x}, \sage{p3c3y}), 
+        (\sage{p3c4x}, \sage{p3c4y}), 
+        (\sage{p3c5x}, \sage{p3c5y}), 
+        (\sage{p3c6x}, \sage{p3c6y}), 
+        (\sage{p3c7x}, \sage{p3c7y}), 
+        (\sage{p3c8x}, \sage{p3c8y}), 
+    \]
+
+    Is this relation a function? Enter the number 1 if the above represents a function, or 0 if it does not. $\answer{\sage{p3ans}}$
+\end{problem}
+
+
+
+
+\end{document}

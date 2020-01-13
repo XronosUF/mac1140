@@ -1,0 +1,172 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = RandInt(-10,10)
+p1c2 = RandInt(-10,10)
+p1c3 = NonZeroInt(-5,5)
+p1c4 = RandInt(1,10)
+p1f1 = p1c3*x + p1c1
+p1f2 = p1c3*x - p1c1
+p1f3 = p1c4*x + p1c2
+
+p1f4 = expand(p1f1*p1f2*p1f3)
+
+
+
+###### Problem p2
+p2c1 = RandInt(-10,10)
+p2c2 = RandInt(-10,10)
+p2c3 = NonZeroInt(-5,5)
+p2c4 = RandInt(1,10)
+p2f1 = p2c3*x + p2c1
+p2f2 = p2c3*x - p2c1
+p2f3 = p2c4*x + p2c2
+
+p2f4 = expand(p2f1*p2f2*p2f3)
+
+
+
+###### Problem p3
+p3c1 = RandInt(-10,10)
+p3c2 = RandInt(-10,10)
+p3c3 = NonZeroInt(-5,5)
+p3c4 = RandInt(1,10)
+p3f1 = p3c3*x + p3c1
+p3f2 = p3c3*x - p3c1
+p3f3 = p3c4*x + p3c2
+
+p3f4 = expand(p3f1*p3f2*p3f3)
+
+
+
+###### Problem p4
+p4c1 = RandInt(-10,10)
+p4c2 = RandInt(-10,10)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = RandInt(1,10)
+p4f1 = p4c3*x + p4c1
+p4f2 = p4c3*x - p4c1
+p4f3 = p4c4*x + p4c2
+
+p4f4 = expand(p4f1*p4f2*p4f3)
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Factor the following polynomial:
+    \[
+        \sage{p1f4} = \answer{\sage{p1f4}}
+    \]
+\end{problem}
+
+\begin{problem}
+    Factor the following polynomial:
+    \[
+        \sage{p2f4} = \answer{\sage{p2f4}}
+    \]
+\end{problem}
+
+\begin{problem}
+    Factor the following polynomial:
+    \[
+        \sage{p3f4} = \answer{\sage{p3f4}}
+    \]
+\end{problem}
+
+\begin{problem}
+    Factor the following polynomial:
+    \[
+        \sage{p4f4} = \answer{\sage{p4f4}}
+    \]
+\end{problem}
+
+%
+%\begin{javascript}
+%linearFactoring = function(correctAns,f1,f2,f3) {
+%    var i;
+%    var Truth;
+%    var Prod;
+%    var Temp;
+%    Truth=1;
+%    Prod=1;
+%    if (isNaN(f1.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f2.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f3.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    parser.evaluate('f(x) = f1(x)*f2(x)*f3(x));
+%    if (f('x').equals(correctAns('x'))){Truth = Truth*1;}else{Truth=Truth*0;}
+%    if (Truth === 0){return !1}else{return !0}
+%    };
+%\end{javascript}
+%
+%\begin{problem}
+%    Note: This is a beta testing problem, please report any strange behavior!
+%    
+%    Factor the quadratic $p(x) = \sage{p1f4}$ using the AC-Method. 
+%    
+%    (Copy the equation $\sage{p1f4}$ into the first answer box following ``$p(x) = $''.)
+%    \begin{validator}[linearFactoring(ans,p1f1,p1f2,p1f3)]
+%      \[
+%          p(x) = \answer[id=ans]{\sage{p1f4}} =  (\answer[id=p1f1]{\sage{p1f1}})(\answer[id=p1f2]{\sage{p1f2}})(\answer[id=p1f3]{\sage{p1f3}})
+%      \]
+%    
+%    \end{validator}
+%\end{problem}
+%
+%
+%\begin{problem}
+%    Note: This is a beta testing problem, please report any strange behavior!
+%    
+%    Factor the quadratic $p(x) = \sage{p2f4}$ using the AC-Method. 
+%    
+%    (Copy the equation $\sage{p2f4}$ into the first answer box following ``$p(x) = $''.)
+%    \begin{validator}[linearFactoring(ans,p2f1,p2f2,p2f3)]
+%      \[
+%          p(x) = \answer[id=ans]{\sage{p2f4}} =  (\answer[id=p2f1]{\sage{p2f1}})(\answer[id=p2f2]{\sage{p2f2}})(\answer[id=p2f3]{\sage{p2f3}})
+%      \]
+%    
+%    \end{validator}
+%\end{problem}
+%
+%
+%\begin{problem}
+%    Note: This is a beta testing problem, please report any strange behavior!
+%    
+%    Factor the quadratic $p(x) = \sage{p3f4}$ using the AC-Method. 
+%    
+%    (Copy the equation $\sage{p3f4}$ into the first answer box following ``$p(x) = $''.)
+%    \begin{validator}[linearFactoring(ans,p3f1,p3f2,p3f3)]
+%      \[
+%          p(x) = \answer[id=ans]{\sage{p3f4}} =  (\answer[id=p3f1]{\sage{p3f1}})(\answer[id=p3f2]{\sage{p3f2}})(\answer[id=p3f3]{\sage{p3f3}})
+%      \]
+%    
+%    \end{validator}
+%\end{problem}
+%
+%
+%\begin{problem}
+%    Note: This is a beta testing problem, please report any strange behavior!
+%    
+%    Factor the quadratic $p(x) = \sage{p4f4}$ using the AC-Method. 
+%    
+%    (Copy the equation $\sage{p4f4}$ into the first answer box following ``$p(x) = $''.)
+%    \begin{validator}[linearFactoring(ans,p4f1,p4f2,p4f3)]
+%      \[
+%          p(x) = \answer[id=ans,given=true]{\sage{p4f4}} =  (\answer[id=p4f1,given=false]{\sage{p4f1}})(\answer[id=p4f2]{\sage{p4f2}})(\answer[id=p4f3]{\sage{p4f3}})
+%      \]
+%    
+%    \end{validator}
+%\end{problem}
+
+
+
+\end{document}

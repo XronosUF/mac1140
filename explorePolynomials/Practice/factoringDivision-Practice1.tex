@@ -1,0 +1,120 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+###### Problem p1
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-10,10)
+p1pwr1 = RandInt(1,2)
+p1pwr2 = RandInt(2,5)
+p1f0 = sum([RandInt(-5,5)*x^t for t in [0..p1pwr1-1]])
+
+
+p1f1 = p1c1*x^p1pwr1 + sum([RandInt(-5,5)*x^t for t in [0..p1pwr1-1]])
+p1f2 = NonZeroInt(-5,5)*x^p1pwr2 + sum([RandInt(-5,5)*x^t for t in [0..p1pwr2-1]])
+p1f3 = expand(p1f1*p1f2) + p1f0
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-10,10)
+p2pwr1 = RandInt(1,2)
+p2pwr2 = RandInt(2,5)
+p2f0 = sum([RandInt(-5,5)*x^t for t in [0..p2pwr1-1]])
+
+
+p2f1 = p2c1*x^p2pwr1 + sum([RandInt(-5,5)*x^t for t in [0..p2pwr1-1]])
+p2f2 = NonZeroInt(-5,5)*x^p2pwr2 + sum([RandInt(-5,5)*x^t for t in [0..p2pwr2-1]])
+p2f3 = expand(p2f1*p2f2) + p2f0
+
+
+###### Problem p3
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-10,10)
+p3pwr1 = RandInt(1,2)
+p3pwr2 = RandInt(2,5)
+p3f0 = sum([RandInt(-5,5)*x^t for t in [0..p3pwr1-1]])
+
+
+p3f1 = p3c1*x^p3pwr1 + sum([RandInt(-5,5)*x^t for t in [0..p3pwr1-1]])
+p3f2 = NonZeroInt(-5,5)*x^p3pwr2 + sum([RandInt(-5,5)*x^t for t in [0..p3pwr2-1]])
+p3f3 = expand(p3f1*p3f2) + p3f0
+
+
+###### Problem p4
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-10,10)
+p4pwr1 = RandInt(1,2)
+p4pwr2 = RandInt(2,5)
+p4f0 = sum([RandInt(-5,5)*x^t for t in [0..p4pwr1-1]])
+
+
+p4f1 = p4c1*x^p4pwr1 + sum([RandInt(-5,5)*x^t for t in [0..p4pwr1-1]])
+p4f2 = NonZeroInt(-5,5)*x^p4pwr2 + sum([RandInt(-5,5)*x^t for t in [0..p4pwr2-1]])
+p4f3 = expand(p4f1*p4f2) + p4f0
+
+
+
+\end{sagesilent}
+
+%\begin{javascript}
+%linearFactoring = function(correctAns,f1,f2,f3) {
+%    var i;
+%    var Truth;
+%    var Prod;
+%    var Temp;
+%    Truth=1;
+%    Prod=1;
+%    if (isNaN(f1.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f2.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    if (isNaN(f3.derivative('x'))){Truth = Truth * 0;}else{Truth = Truth * 1;}
+%    parser.evaluate('f(x) = f1(x)*f2(x)*f3(x));
+%    if (f('x').equals(correctAns('x'))){Truth = Truth*1;}else{Truth=Truth*0;}
+%    if (Truth === 0){return !1}else{return !0}
+%    };
+%\end{javascript}
+
+\begin{problem}
+
+Compute the following division:
+\[
+    \left(\sage{p1f3}\right) \div \left(\sage{p1f1}\right) = \answer{\sage{p1f2}} + \frac{\answer{\sage{p1f0}}}{\answer{\sage{p1f1}}}
+\]
+
+\end{problem}
+
+\begin{problem}
+
+Compute the following division:
+\[
+    \left(\sage{p2f3}\right) \div \left(\sage{p2f1}\right) = \answer{\sage{p2f2}} + \frac{\answer{\sage{p2f0}}}{\answer{\sage{p2f1}}}
+\]
+
+\end{problem}
+
+\begin{problem}
+
+Compute the following division:
+\[
+    \left(\sage{p3f3}\right) \div \left(\sage{p3f1}\right) = \answer{\sage{p3f2}} + \frac{\answer{\sage{p3f0}}}{\answer{\sage{p3f1}}}
+\]
+
+\end{problem}
+
+\begin{problem}
+
+Compute the following division:
+\[
+    \left(\sage{p4f3}\right) \div \left(\sage{p4f1}\right) = \answer{\sage{p4f2}} + \frac{\answer{\sage{p4f0}}}{\answer{\sage{p4f1}}}
+\]
+
+\end{problem}
+
+
+
+\end{document}

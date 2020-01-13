@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?> 
+<?xml-stylesheet href="invertibleFunctions.css" type="text/css"?> 
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="363.478pt" height="221.84601pt" viewBox="-13.94957 -54.17752 363.478 221.84601 "> 
+<g transform="translate(0, 167.66849 ) scale(1,-1) translate(0,54.17752 )"> 
+    </p>
+    <g stroke="#000" fill="#000">
+ <g stroke-width="0.4">
+ <path d=" M 56.90549 5.69089 C 72.69653 8.05954 105.91547 6.80774 113.81097 17.07181 C 121.70648 27.33588 117.75873 62.29721 113.81097 79.66733 C 109.86322 97.03745 94.83282 133.57858 85.35822 142.2637 C 75.8836 150.94882 54.99915 152.5279 45.52454 142.2637 C 36.04993 131.99951 24.96732 83.28784 17.07181 68.2864 C 9.1763 53.28497 -9.01227 43.61823 -11.38092 34.14362 C -13.74957 24.669 -9.47461 3.94775 0.0 0.0 C 9.47461 -3.94775 41.11444 3.32224 56.90549 5.69089 Z  " fill="none"/>
+ <g transform="translate(39.75267,53.48883)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(17.15282,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> Domain</g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 284.52744 5.69089 C 300.31848 8.05954 333.53741 6.80774 341.43292 17.07181 C 349.32843 27.33588 345.38068 62.29721 341.43292 79.66733 C 337.48517 97.03745 322.45477 133.57858 312.98016 142.2637 C 303.50555 150.94882 282.6211 152.5279 273.14648 142.2637 C 263.67188 131.99951 252.58926 83.28784 244.69376 68.2864 C 236.79825 53.28497 218.60965 43.61823 216.241 34.14362 C 213.87234 24.669 218.14734 3.94775 227.62195 0.0 C 237.09656 -3.94775 268.73639 3.32224 284.52744 5.69089 Z  " fill="none"/>
+ <g transform="translate(262.16626,53.43327)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(22.36118,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> Codomain</g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 56.90549 85.35822 C 56.90549 85.35822 94.92007 142.2637 170.71646 142.2637 C 246.51285 142.2637 284.52744 85.35822 279.89731 92.28941  " fill="none"/>
+ <g transform="matrix(0.55545,-0.8315,0.8315,0.55545,279.89731,92.28943)">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linejoin="miter">
+ <path d=" M 7.51122 0.0 C 6.5888 0.22229 2.53418 1.48193 0.0 2.85272 L 0.0 -2.85272 C 2.53418 -1.48193 6.5888 -0.22229 7.51122 0.0 Z  " />
+ </g>
+ </g>
+  </g>
+ <g transform="translate(160.9838,156.83551)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(9.73267,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> f(x) </g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 59.05441 85.88599 C 59.05441 87.07281 58.09232 88.03491 56.90549 88.03491 C 55.71866 88.03491 54.75656 87.07281 54.75656 85.88599 C 54.75656 84.69916 55.71866 83.73706 56.90549 83.73706 C 58.09232 83.73706 59.05441 84.69916 59.05441 85.88599 Z M 56.90549 85.88599  " stroke="none"/>
+ <g transform="translate(55.5166,85.35822)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(1.38889,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> . </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(51.8048,75.41997)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(5.1007,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> x<tspan baseline-shift="sub">1 </tspan> </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(279.65358,78.48677)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.87386,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> y<tspan baseline-shift="sub">1 </tspan> </g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 284.52744 31.29819 C 284.52744 31.29819 246.51285 -27.50522 170.71646 -28.45273 C 94.92007 -29.40024 56.90549 28.45273 61.48282 21.48668  " fill="none"/>
+ <g transform="matrix(-0.54912,0.83568,-0.83568,-0.54912,61.48283,21.48668)">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linejoin="miter">
+ <path d=" M 7.51122 0.0 C 6.5888 0.22229 2.53418 1.48193 0.0 2.85272 L 0.0 -2.85272 C 2.53418 -1.48193 6.5888 -0.22229 7.51122 0.0 Z  " />
+ </g>
+ </g>
+  </g>
+ <g transform="translate(167.22348,-48.34454)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(14.8739,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> f<tspan baseline-shift="sub">−1 </tspan> (y) </g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 286.67636 31.82596 C 286.67636 33.01279 285.71426 33.97488 284.52744 33.97488 C 283.3406 33.97488 282.37851 33.01279 282.37851 31.82596 C 282.37851 30.63913 283.3406 29.67703 284.52744 29.67703 C 285.71426 29.67703 286.67636 30.63913 286.67636 31.82596 Z M 284.52744 31.82596  " stroke="none"/>
+ <g transform="translate(283.13855,31.29819)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(1.38889,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> . </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(279.65358,38.65309)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.87386,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> y<tspan baseline-shift="sub">2 </tspan> </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(51.8048,32.74083)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(5.1007,0)" text-anchor="middle"  font-size="10"> 
+<g fill="#000">
+ <g stroke="none"> x<tspan baseline-shift="sub">2 </tspan> </g> </g>
+ </text> 
+</g>
+ </g>
+ </g>
+ </g>
+ 
+                                                                                                                                       </g> 
+</svg> 

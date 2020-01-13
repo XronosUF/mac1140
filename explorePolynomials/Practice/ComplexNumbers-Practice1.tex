@@ -1,0 +1,88 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+\input{../../preamble}
+%\usepackage{sagetex}
+
+\begin{document}
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`.
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+
+var('i')
+###### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10)
+
+p1f1 = p1c1 - p1c2*i
+p1f2 = p1c1 + p1c2*i
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10)
+
+p2f1 = p2c1 - p2c2*i
+p2f2 = p2c1 + p2c2*i
+
+
+###### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10)
+
+p3f1 = p3c1 - p3c2*i
+p3f2 = p3c1 + p3c2*i
+
+
+###### Problem p4
+p4c1 = NonZeroInt(-10,10)
+p4c2 = NonZeroInt(-10,10)
+
+p4f1 = p4c1 - p4c2*i
+p4f2 = p4c1 + p4c2*i
+
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+If the complex number $\sage{p1f1}$ is a zero of the polynomial $p(x)$, what other number do you know \emph{must} be a zero of $p(x)$? $\answer{\sage{p1f2}}$
+
+\end{problem}
+
+
+\begin{problem}
+If the complex number $\sage{p2f1}$ is a zero of the polynomial $p(x)$, what other number do you know \emph{must} be a zero of $p(x)$? $\answer{\sage{p2f2}}$
+
+\end{problem}
+
+
+\begin{problem}
+If the complex number $\sage{p3f1}$ is a zero of the polynomial $p(x)$, what other number do you know \emph{must} be a zero of $p(x)$? $\answer{\sage{p3f2}}$
+
+\end{problem}
+
+
+\begin{problem}
+If the complex number $\sage{p4f1}$ is a zero of the polynomial $p(x)$, what other number do you know \emph{must} be a zero of $p(x)$? $\answer{\sage{p4f2}}$
+
+\end{problem}
+
+
+
+\end{document}

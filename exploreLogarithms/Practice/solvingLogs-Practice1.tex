@@ -1,0 +1,102 @@
+\documentclass{ximeraXloud}
+\title{Practice with Solving Logarithmic Equations}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+
+###### Problem p1
+p1b1 = RandInt(2,7)
+
+p1c1 = NonZeroInt(-5,5)
+p1c2 = RandInt(-5,5)
+p1c3 = RandInt(-5,5)
+
+p1f1 = p1c1*x + p1c2
+
+p1ans1 = (p1b1^p1c3-p1c2)/p1c1
+
+
+###### Problem p2
+p2b1 = RandInt(2,7)
+
+p2c1 = NonZeroInt(-5,5)
+p2c2 = RandInt(-5,5)
+p2c3 = RandInt(-5,5)
+
+p2f1 = p2c1*x + p2c2
+
+p2ans1 = (p2b1^p2c3-p2c2)/p2c1
+
+
+###### Problem p3
+p3b1 = RandInt(2,7)
+
+p3c1 = NonZeroInt(-5,5)
+p3c2 = RandInt(-5,5)
+p3c3 = RandInt(-5,5)
+
+p3f1 = p3c1*x + p3c2
+
+p3ans1 = (p3b1^p3c3-p3c2)/p3c1
+
+
+###### Problem p4
+p4b1 = RandInt(2,7)
+
+p4c1 = NonZeroInt(-5,5)
+p4c2 = RandInt(-5,5)
+p4c3 = RandInt(-5,5)
+
+p4f1 = p4c1*x + p4c2
+
+p4ans1 = (p4b1^p4c3-p4c2)/p4c1
+
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Solve for $x$ in the following logarithmic equation:
+    \[
+        \log_{\sage{p1b1}}\left(\sage{p1f1}\right) = \sage{p1c3}
+    \]
+
+    $x = \answer{\sage{p1ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following logarithmic equation:
+    \[
+        \log_{\sage{p2b1}}\left(\sage{p2f1}\right) = \sage{p2c3}
+    \]
+
+    $x = \answer{\sage{p2ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following logarithmic equation:
+    \[
+        \log_{\sage{p3b1}}\left(\sage{p3f1}\right) = \sage{p3c3}
+    \]
+
+    $x = \answer{\sage{p3ans1}}$.
+\end{problem}
+
+
+\begin{problem}
+    Solve for $x$ in the following logarithmic equation:
+    \[
+        \log_{\sage{p4b1}}\left(\sage{p4f1}\right) = \sage{p4c3}
+    \]
+
+    $x = \answer{\sage{p4ans1}}$.
+\end{problem}
+
+
+\end{document}

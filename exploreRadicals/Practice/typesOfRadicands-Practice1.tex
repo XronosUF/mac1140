@@ -1,0 +1,139 @@
+\documentclass{ximeraXloud}
+\title{Factor Coefficients Method Practice 1}
+
+
+
+\begin{document}
+\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+funcvec = [x^2, x, e^x, log(x)]
+
+###### Problem p1
+p1c1 = NonZeroInt(-10,10)
+p1c2 = NonZeroInt(-10,10,[0,p1c1])
+p1pick1 = RandInt(0,3)
+p1pick2 = NonZeroInt(0,3,[p1pick1])
+
+p1rad = p1c1*funcvec[p1pick1]+p1c2*funcvec[p1pick2]
+
+
+###### Problem p2
+p2c1 = NonZeroInt(-10,10)
+p2c2 = NonZeroInt(-10,10,[0,p2c1])
+p2pick1 = RandInt(0,3)
+p2pick2 = NonZeroInt(0,3,[p2pick1])
+
+p2rad = p2c1*funcvec[p2pick1]*p2c2*funcvec[p2pick2]
+
+
+###### Problem p3
+p3c1 = NonZeroInt(-10,10)
+p3c2 = NonZeroInt(-10,10,[0,p3c1])
+p3pick1 = RandInt(0,3)
+p3pick2 = NonZeroInt(0,3,[p3pick1])
+
+p3rad = p3c1*funcvec[p3pick1]+p3c2*funcvec[p3pick2]
+
+
+###### Problem p4
+p4c1 = NonZeroInt(-10,10)
+p4c2 = NonZeroInt(-10,10,[0,p4c1])
+p4pick1 = RandInt(0,3)
+p4pick2 = NonZeroInt(0,3,[p4pick1])
+
+p4rad = p4c1*funcvec[p4pick1]*p4c2*funcvec[p4pick2]
+
+
+\end{sagesilent}
+
+\begin{problem}
+    Is the following radical a Type 1 or Type 2 Radical?
+    \[
+        \sqrt{\sage{p1rad}}
+    \]
+    
+    \begin{multipleChoice}
+        \choice{Type 1 (aka only one term within the radical)}
+        \choice[correct]{Type 2 (aka more than one term within the radical)}
+    \end{multipleChoice}
+    
+    \begin{problem}
+        Can you simplify this radical as it is currently written?
+        \begin{multipleChoice}
+            \choice{Only if the numbers happen to be perfect squares}
+            \choice{Potentially; depending on the values, since it is a Type 2 it is at least possible to simplify.}
+            \choice[correct]{Not as it is written. Type 2 radicals cannot be simplified without manipulating them first into Type 1 radicals.}
+            \choice{No, there is never anything we can do to simplify Type 2 radicals.}
+        \end{multipleChoice}
+    \end{problem}
+\end{problem}
+
+\begin{problem}
+    Is the following radical a Type 1 or Type 2 Radical?
+    \[
+        \sqrt{\sage{p2rad}}
+    \]
+    
+    \begin{multipleChoice}
+        \choice[correct]{Type 1 (aka only one term within the radical)}
+        \choice{Type 2 (aka more than one term within the radical)}
+    \end{multipleChoice}
+    
+    \begin{problem}
+        Can you simplify this radical as it is currently written?
+        \begin{multipleChoice}
+            \choice{Only if the numbers happen to be perfect squares}
+            \choice[correct]{Potentially; depending on the values, since it is a Type 1 it is at least possible to simplify.}
+            \choice{Not as it is written. Type 1 radicals cannot be simplified without manipulating them first into Type 2 radicals.}
+            \choice{No, there is never anything we can do to simplify Type 1 radicals.}
+        \end{multipleChoice}
+    \end{problem}
+\end{problem}
+
+\begin{problem}
+    Is the following radical a Type 1 or Type 2 Radical?
+    \[
+        \sqrt{\sage{p3rad}}
+    \]
+    
+    \begin{multipleChoice}
+        \choice{Type 1 (aka only one term within the radical)}
+        \choice[correct]{Type 2 (aka more than one term within the radical)}
+    \end{multipleChoice}
+    
+    \begin{problem}
+        Can you simplify this radical as it is currently written?
+        \begin{multipleChoice}
+            \choice{Only if the numbers happen to be perfect squares}
+            \choice{Potentially; depending on the values, since it is a Type 2 it is at least possible to simplify.}
+            \choice[correct]{Not as it is written. Type 2 radicals cannot be simplified without manipulating them first into Type 1 radicals.}
+            \choice{No, there is never anything we can do to simplify Type 2 radicals.}
+        \end{multipleChoice}
+    \end{problem}
+\end{problem}
+
+\begin{problem}
+    Is the following radical a Type 1 or Type 2 Radical?
+    \[
+        \sqrt{\sage{p4rad}}
+    \]
+    
+    \begin{multipleChoice}
+        \choice[correct]{Type 1 (aka only one term within the radical)}
+        \choice{Type 2 (aka more than one term within the radical)}
+    \end{multipleChoice}
+    
+    \begin{problem}
+        Can you simplify this radical as it is currently written?
+        \begin{multipleChoice}
+            \choice{Only if the numbers happen to be perfect squares}
+            \choice[correct]{Potentially; depending on the values, since it is a Type 1 it is at least possible to simplify.}
+            \choice{Not as it is written. Type 1 radicals cannot be simplified without manipulating them first into Type 2 radicals.}
+            \choice{No, there is never anything we can do to simplify Type 1 radicals.}
+        \end{multipleChoice}
+    \end{problem}
+\end{problem}
+
+
+\end{document}
