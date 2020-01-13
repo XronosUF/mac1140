@@ -1,0 +1,108 @@
+\documentclass{ximeraXloud}
+
+\title{Properties of Exponentials}
+\begin{document}
+\begin{abstract}
+    This section gives the properties of exponential expressions. Most of these should be familiar, although we go into slightly more details as to how and why these properties hold in some cases.
+\end{abstract}
+\maketitle
+
+
+First we start by explicitly stating the properties that you need to know. But as usual we will try to explain the properties in a way that should (hopefully) make them clear and `obvious', which should help you \textit{learn} them rather than \textit{memorize} them. For each of the below, $a,b,c$ are any real numbers.
+\begin{itemize}
+    \item $a^b \cdot a^c = a^{b+c}$
+    \item $\dfrac{a^b}{a^c} = a^{b-c}$
+    \item $\left(a^b\right)^c = a^{bc}$. Similarly $(ab)^c = a^cb^c$.
+    \item $a^b = \dfrac{1}{a^{-b}}$, and similarly $a^{-b} = \dfrac{1}{a^b}$. Moreover if $a \neq 0$ then $a^0 = 1$.
+    \item $a^b + a^b = 2a^b$. However, if $b \neq c$ then $a^b + a^c$ \textit{cannot be combined} in any `nice' way, and neither can $b^a + c^a$.%
+    \footnote{%
+        That's not to say they can't be combined at all, there are ways to do so and there are reasons to do so as we will address later. However, these are `artificial' ways to combine these terms that are used in very specific settings and are not generally considered as `simplifying' outside of those specific settings.
+        }
+    \item For $c \in \mathbb{Z}^+$, $c \geq 2$ (ie $c$ is a whole positive number bigger than one), then $\sqrt[c]{a} = a^{\frac{1}{c}}$. More generally, for $b,c$ non-zero integers, $a^{\frac{b}{c}} = \sqrt[c]{a^b}$.
+\end{itemize}
+
+The above are the important `properties' of exponents, but since exponents are essentially just a \textit{notation}, we should be able to ``prove" each of these properties explicitly without actually memorizing any of them. That is what we aim to do/explain next. This may seem like a section you want to skip over, but I strongly urge you to read it as it will (theoretically) make each of the above properties ``obvious" and help avoid the memorization which can be easy to forget/mix up.
+
+\subsection*{Mechanical Properties of Exponents Explained.}
+    Many of these `explanations' will be very short as they are fairly immediate or obvious on their own. Some of them will involve a more lengthy (and insightful/worthwhile) explanation. Again I urge you to carefully read each of them as the `obvious' ones will be short and thus not take much time to read, whereas the longer ones will contain content worth reading.
+    
+    \subsubsection*{$a^b \cdot a^c = a^{b+c}$}
+    
+        This property follows just from the notation. In fact one can see this by simply writing out what each of these mean:
+        \[
+            a^b\cdot a^c = \underbrace{\big(a\cdot a\cdot a \cdots a\big)}_\text{`b' times}\cdot 
+                \underbrace{\big(a\cdot a\cdot a \cdots a\big)}_\text{`c' times} =
+                \underbrace{a\cdot a\cdot a \cdots a}_\text{`b' + `c' times} = a^{b+c}
+        \]
+    
+    \subsubsection*{$\frac{a^b}{a^c} = a^{b-c}$}
+        
+        It's easier to see what is happening if we assume $b > c$, but by the (as yet unproven) property about negative exponents we can see that the property works even if $b \leq c$. For now assume $b > c$ for the sake of demonstration (so $b-c > 0$).
+        \[
+            \frac{a^b}{a^c} = 
+                \frac{\overbrace{\big(a\cdot a\cdot a \cdots a\big)}^\text{`b' times}}{
+                \underbrace{\big(a\cdot a\cdot a \cdots a\big)}_\text{`c' times}} =
+                \frac{\overbrace{\big(a\cdot a\cdot a \cdots a\big)}^\text{`c' times}\cdot\overbrace{\big(a\cdot a\cdot a \cdots a\big)}^\text{`b-c' times}}{
+                \underbrace{\big(a\cdot a\cdot a \cdots a\big)}_\text{`c' times}} =
+                \frac{a^c}{a^c}\cdot \frac{a^{b-c}}{1} = a^{b-c}
+        \]
+    
+    \subsubsection*{$\left(a^b\right)^c = a^{bc}$}
+        Again, by writing out the definition for each of these we get our result.
+        \[
+            \left(a^b\right)^c = 
+                \underbrace{\big(\overbrace{a \cdot a \cdots a}^\text{`b' times}\big)\cdot \big(a \cdot a \cdots a\big) \cdots \big(a \cdot a \cdots a\big)}_\text{`c' groups} =
+                \underbrace{a \cdot a \cdot a \cdots a}_{\text{`b} \cdot \text{c' times}} =
+                a^{b\cdot c} 
+        \]
+        
+    \subsubsection*{$a^{-b} = \frac{1}{a^b}$ and $a^0 = 1$}
+        This is the first property that really deserves explanation, as it is generally considered a `mystery' that students memorize, but the reason it is true turns out to be fairly obvious when one returns to the repeated-multiplication idea. Moreover the reason why the negative exponents work this way also sheds light on why something to the zero power is one; it's \textit{not} by definition, it's actually because of how powers work!
+        
+        
+        First we start by writing out a few consecutive exponents according to the definition.
+        
+        \begin{center}
+            \begin{tabular}{ccl}
+                $a^1$ & $ = $ & $a$ \\
+                $a^2$ & $ = $ & $a \cdot a$ \\
+                $a^3$ & $ = $ & $a \cdot a \cdot a$ \\
+                $a^4$ & $ = $ & $a \cdot a \cdot a \cdot a$ \\
+            \end{tabular}
+        \end{center}
+        
+        If we look at the exponents above, we can see that if we increase the exponent by one, that corresponds to multiplying by the base (ie, multiplying by another $a$). This is usually how one learns exponents, but it is insightful to consider what it means to go the other direction, ie \textit{decreasing the exponent by one}. In that case we can see that decreasing the exponent by one corresponds to dividing by the base.
+        
+        So, if we want to determine what $a^0$ should be, we can start by going `up' one exponent level, and then use the division idea to decrease the exponent. So we would have:
+        \[
+            a^0 = \frac{a^1}{a} = \frac{a}{a} = 1
+        \]
+        Thus we can see that, \textit{almost} regardless of the base%
+        \footnote{%
+            There is one particular value of $a$ that is concerning here, which is if $a = 0$. In this case $\frac{a}{a} = \frac{0}{0}$ is undefined, which is why we specify that $a \neq 0$ in our list of properties!
+            }
+        when we have $a^0$ it must equal $1$, because it is a number divided by itself.
+        
+        Moreover, if we keep subtracting values from the exponent to get into negative exponents, that corresponds to continuously dividing by the base. For example; if we have $a^{-2}$ that corresponds to starting with $a^0$ and dividing by $a$ twice (which we can do by multiplying by $\frac{1}{a}$), which gives:
+        \[
+            a^{-2} = a^0 \cdot \frac{1}{a} \cdot \frac{1}{a} = \frac{a^0}{a^2} = \frac{1}{a^2}.
+        \]
+        Similarly, replacing the `$-2$' exponent in the above by `$-b$' we can see why the negative exponent property, not only is what it is, but in fact why it \textit{must be} what it is.
+
+    \subsubsection*{$\sqrt[c]{a} = a^{\frac{1}{c}}$}
+    
+        For this we need a bit more explanation. Here the usual definition doesn't work, since trying to write out a fractional number of terms being multiplied doesn't really make sense. Instead we want to return to the idea that a power and a root should `undo' each other. Specifically, if we take the `$c$' power of $\sqrt[c]{a}$ it should return $a$. So, if we want to represent the radical part of $\sqrt[c]{a}$ as some exponent (let's say the exponent that represents the radical is some value `$k$' for a moment. That is, suppose $\sqrt[c]{a} = a^k$ for `some' unknown $k$) we have that 
+        \[
+            a^1 = \left(\sqrt[c]{a}\right)^c = \left(a^k\right)^c = a^{kc}
+        \]
+        Thus using a property we will discuss below, we have that $kc = 1$, which means that $k$ (the value that is suppose to represent the ``$c$ root") must, in fact, be $\frac{1}{c}$, which is what we wanted to show.
+
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+
+
+\end{document}

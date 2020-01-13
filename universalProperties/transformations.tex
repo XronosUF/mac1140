@@ -1,0 +1,166 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Transforms}
+\begin{document}
+\begin{abstract}
+    This section describes what makes a transformation, where the name comes from, and how to use the function notation to perform (or read) a transformation quickly and easily.
+\end{abstract}
+\maketitle
+Transformations are similar to translations in that they are easiest to understand by considering the geometric view, but easiest to write down using the analytic view. Thus, similar to last time we will consider the geometric view first.
+
+\subsection*{The geometric view}
+
+    In essence, a (function) transformation in this context is the process of stretching, contracting, or flipping the graph. It is important to notice that, unlike the rigid translation case, transformations involve changing the \textit{shape} of the graph, although it might be more accurate to say it involves \textit{exaggerating} the shape of the graph. It can sometimes be difficult to tell whether a function has been compressed in one direction or stretched in another however. Consider the following two graphs;
+    
+    \begin{minipage}{\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=1, 
+                x label style={at={(axis description cs:1,0.1)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-4, 
+                xmax=4, 
+                ymin=-1, 
+                ymax=10
+                ]
+            \addplot[<->,domain=-3:3, samples=300]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=1, 
+                x label style={at={(axis description cs:1,0.1)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-4, 
+                xmax=4, 
+                ymin=-1, 
+                ymax=10
+                ]
+            \addplot[<->,domain=-3:3, samples=300]{4*x^2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    
+    Is the second graph a vertical stretch, or a horizontal compression? It turns out, it could be either one in this case.%
+    \footnote{%
+        Although it could be either one, the `factor' of the stretch would be different than the `factor' of the compression because of how these things are described. We will get into this more in the analytic view%
+        }
+    This is why the graphical representation can be difficult to determine exactly what happened. Nonetheless, it is clear that a compression or stretch \textit{has} occurred by looking at the graph, thus understanding \textit{what} happened is easier to see in the graph, even if the \textit{how} is a bit harder to determine.
+
+\subsection*{The analytic view}
+    Transformations are about stretching and compressing, and typically one discusses stretching or compressing by a factor. This is a hint that the analytic way to attain stretching/compressing is to use multiplication. Specifically we will consider the function representation
+    \[
+        g(x) = a \cdot f(b\cdot x)
+    \]
+    Much like the rigid translations case, the transformations work the way we would expect for the $y$ values, and the opposite of the way we would think for the $x$ values. That is to say that, when we multiply by a larger number we would expect the values to get bigger (stretch), and if we multiply by smaller values (ie values less than one), we would expect the resulting values to shrink (compress).
+    
+    In the case of the $y$ values, multiplying by a number larger than one (ie $a > 1$) will stretch the graph vertically; like the graph is on a stretchable fabric and we are pulling that fabric vertically. Consider the following graph of $f(x)$;
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-4:4, samples=300]{sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The original $f(x)$}
+    \end{figure}
+    
+    If we look at the transformation $3f(x)$ we would expect that it gets about 3 times as tall, ie to stretch to three times it's size. And we would be correct!
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-4:4, samples=300]{3*sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The $3\cdot f(x)$}
+    \end{figure}
+    
+    Next, if we multiplied the $x$ variable in our original $f(x)$ by 4 we would `expect' the x values to stretch out to the sides... but of course the $x$ transformations (like the $x$ rigid translations) do the \textit{exact opposite} of what we'd expect as we can see in the graph of $f(4x)$ below.
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-5, 
+                xmax=5, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-1:1, samples=300]{sin(deg(4*x))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{$f(4x)$}
+    \end{figure}
+    
+    
+    Again, we could counter this attack on our intuition by rewriting the `form' we use to counter this effect. Specifically let's consider the form;
+    \[
+        a\cdot f\left(\frac{x}{b}\right)
+    \]
+    Here plugging in the `intuitive' $b$ value will yield our expected result. For example, if we wanted $f(x)$ to be 4 times as wide, we could use $b = 4$ in this form and have the following graph (Notice the $x$-axis values in comparison to the original $f(x)$);
+    
+    \begin{figure}[H]\centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-18, 
+                xmax=18, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-16:16, samples=300]{sin(deg(x/4))};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{The $f\left(\frac{1}{4}x\right)$}
+    \end{figure}
+    
+    Try playing around with this interactive graph to get a feel for how transformations work
+    
+    \desmos{olp1izgafc}{}{500}
+    
+\end{document}

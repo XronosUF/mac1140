@@ -1,0 +1,171 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Polynomial Division Practice}
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Polynomial Division.
+\end{abstract}%
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    return QQ(randint(int(a),int(b)))
+
+def NonZeroInt(b,c, avoid = [0]):
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem 1
+p1Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p1Remain = RandInt(-10,10)*x + RandInt(-10,10)
+p1Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p1Divisor(x),x)==0:
+    p1Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p1f1 = expand(p1Poly1*p1Divisor + p1Remain)
+
+### Problem 2
+p2Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p2Remain = RandInt(-10,10)*x + RandInt(-10,10)
+p2Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p2Divisor(x),x)==0:
+    p2Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p2f1 = expand(p2Poly1*p2Divisor + p2Remain)
+
+
+### Problem 3
+p3Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p3Remain = RandInt(-10,10)*x + RandInt(-10,10)
+p3Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p3Divisor(x),x)==0:
+    p3Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p3f1 = expand(p3Poly1*p3Divisor + p3Remain)
+
+
+### Problem 4
+p4Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p4Remain = RandInt(-10,10)
+p4Divisor = RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p4Divisor(x),x)==0:
+    p4Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p4f1 = expand(p4Poly1*p4Divisor + p4Remain)
+
+
+### Problem 5
+p5Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p5Remain = RandInt(-10,10)
+p5Divisor = RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p5Divisor(x),x)==0:
+    p5Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p5f1 = expand(p5Poly1*p5Divisor + p5Remain)
+
+
+### Problem 6
+p6Poly1 = RandInt(-10,10)*x^4 + RandInt(-10,10)*x^3 + RandInt(-10,10)*x^2 + RandInt(-10,10)*x + RandInt(-10,10)
+p6Remain = RandInt(-10,10)
+p6Divisor = RandInt(-10,10)*x+RandInt(-10,10)
+while derivative(p6Divisor(x),x)==0:
+    p6Divisor = RandInt(-10,10)*x^2+RandInt(-10,10)*x+RandInt(-10,10)
+
+p6f1 = expand(p6Poly1*p6Divisor + p6Remain)
+
+
+\end{sagesilent}
+
+\begin{problem}% Problem 1
+    Perform the following division: 
+    \[
+        p(x) = \frac{\sage{p1f1}}{\sage{p1Divisor(x)}}
+    \]
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p1Poly1(x)}}$ with Remainder: $\answer{\sage{p1Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p1Poly1(x)}} + \dfrac{\answer{\sage{p1Remain}}}{\sage{p1Divisor(x)}}
+    \]
+\end{problem}
+
+\begin{problem}% Problem 2
+    Perform the following division: 
+    \[
+        p(x) = \frac{\sage{p2f1(x)}}{\sage{p2Divisor(x)}}
+    \]
+    
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p2Poly1(x)}}$ with Remainder: $\answer{\sage{p2Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p2Poly1(x)}} + \dfrac{\answer{\sage{p2Remain}}}{\sage{p2Divisor(x)}}
+    \]
+\end{problem}
+
+\begin{problem}% Problem 3
+    Perform the following division: 
+    \[
+        p(x) = \dfrac{\sage{p3f1(x)}}{\sage{p3Divisor(x)}}
+    \]
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p3Poly1(x)}}$ with Remainder: $\answer{\sage{p3Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p3Poly1(x)}} + \dfrac{\answer{\sage{p3Remain}}}{\sage{p3Divisor(x)}}
+    \]
+\end{problem}
+
+\begin{problem}% Problem 4
+    Perform the following division using \textit{synthetic division}: 
+    \[
+        p(x) = \dfrac{\sage{p4f1(x)}}{\sage{p4Divisor(x)}}
+    \]
+    
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p4Poly1(x)}}$ with Remainder: $\answer{\sage{p4Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p4Poly1(x)}} + \dfrac{\answer{\sage{p4Remain}}}{\sage{p4Divisor(x)}}
+    \]
+\end{problem}
+
+\begin{problem}% Problem 5
+    Perform the following division using \textit{synthetic division}: 
+    \[
+        p(x) = \dfrac{\sage{p5f1(x)}}{\sage{p5Divisor(x)}}
+    \]
+    
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p5Poly1(x)}}$ with Remainder: $\answer{\sage{p5Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p5Poly1(x)}} + \dfrac{\answer{\sage{p5Remain}}}{\sage{p5Divisor(x)}}
+    \]
+\end{problem}
+
+\begin{problem}% Problem 6
+    Perform the following division using \textit{synthetic division}: 
+    \[
+        p(x) = \dfrac{\sage{p6f1(x)}}{\sage{p6Divisor(x)}}
+    \]
+    
+    The Result of the division is: (The Polynomial Result): $\answer{\sage{p6Poly1(x)}}$ with Remainder: $\answer{\sage{p6Remain}}$ Thus we may write the original polynomial as:
+    
+    \[
+        p(x) = \answer{\sage{p6Poly1(x)}} + \dfrac{\answer{\sage{p6Remain}}}{\sage{p6Divisor(x)}}
+    \]
+\end{problem}
+
+
+\end{document}

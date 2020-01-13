@@ -1,0 +1,174 @@
+\documentclass{ximeraXloud}
+
+\title{Vertical Line Test}
+\begin{document}
+\begin{abstract}
+This section describes the vertical line test and why it works.
+\end{abstract}
+\maketitle
+ 
+When you learned about functions in grade school you were probably taught the ``vertical line test"; a method for determining if a graph represents a function. Recall the property that defines a function is that every input only has one output, which is not inherently graphical. It turns out that this is easy to \textit{see} in a graphical setting though. Consider the following graph:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[axis x line=middle, 
+                axis y line=middle, 
+                xlabel={$x$}, 
+                ylabel={$y$}, 
+                axis equal, 
+                xtick={-1,0,...,8,9}, 
+                ytick={-8,-7,...,8},
+                xmin=-1, xmax=9.5, 
+                ymin=-4.5, ymax=4.5]
+            \addplot[->,domain=0:9, samples=300]{x^(1/2)};
+            \addplot[->,domain=0:9, samples=300]{-x^(1/2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+In order to determine if this graph represents a function, we would need to know if there is one output ($y$-value) for each input ($x$-value). What would it look like if this weren't the case? If there were more than one output for the same input, that means that one $x$-value would have more than one $y$-value associated to it. Since $y$ values are the vertical value between the $x$-axis and the point, if we had multiple $y$-values for the same $x$-value, there would be two points on the same vertical line. This is the Vertical Line Test.
+
+\begin{definition}[Vertical Line Test]
+    The process of checking the graph of a relation to see if it is a function by checking every vertical line to see if it intersects the graph of the curve in more than one place. 
+\end{definition}
+
+The easiest way to apply the vertical line test is to imagine a straight edge (or actually get one if you can) sweeping from left to right across the entire plot and see if the curve hits the straight edge more than once at any point.
+
+Consider the previous graph again but this time apply the vertical line test.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[axis x line=middle, 
+                axis y line=middle, 
+                xlabel={$x$}, 
+                ylabel={$y$}, 
+                axis equal, 
+                xtick={-1,0,...,8,9}, 
+                ytick={-8,-7,...,8},
+                xmin=-1, xmax=9.5, 
+                ymin=-4.5, ymax=4.5]
+            \addplot[->,domain=0:9, samples=300]{x^(1/2)};
+            \addplot[->,domain=0:9, samples=300]{-x^(1/2)};
+            \addplot +[mark=none,blue,dashed,thick] coordinates {(4, -4) (4, 4)};
+            \addplot[mark=*,blue,thick] coordinates{(4,2)};
+            \addplot[mark=*,blue,thick] coordinates{(4,-2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+As we can see, the vertical line appears to intersect the plot in two distinct places. Thus this quick visual observation (the vertical line test) can tell us at a glance that the relation we are looking at is \textit{not} a function.
+
+\begin{problem}
+    Consider the following graph
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[axis x line=middle, 
+                    axis y line=middle, 
+                    xlabel={$x$}, 
+                    ylabel={$y$}, 
+                    axis equal, 
+                    xtick={-3,-2,...,2,3}, 
+                    ytick={-1,0,...,9},
+                    xmin=-3.5, xmax=3.5, 
+                    ymin=-1, ymax=9.5]
+                \addplot[->,domain=-3:3, samples=300]{x^2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Is the relation represented by the above graph a function?
+    \begin{multipleChoice}
+        \choice[correct]{Yes}
+        \choice{No}
+        \choice{There is not enough information to tell.}
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    Consider the following graph
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[axis x line=middle, 
+                    axis y line=middle, 
+                    xlabel={$x$}, 
+                    ylabel={$y$}, 
+                    axis equal, 
+                    xtick={-1,0,...,8,9}, 
+                    ytick={-2,-1,...,4},
+                    xmin=-1, xmax=9.5, 
+                    ymin=-3, ymax=3.5]
+                \addplot[->,domain=0:9, samples=300]{x^(1/2)};
+                \addplot[->,domain=0.2:9, samples=300]{ln(x)};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Is the relation represented by the above graph a function?
+    \begin{multipleChoice}
+        \choice{Yes}
+        \choice[correct]{No}
+        \choice{There is not enough information to tell.}
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    Consider the following graph
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[axis x line=middle, 
+                    axis y line=middle, 
+                    xlabel={$x$}, 
+                    ylabel={$y$}, 
+                    axis equal, 
+                    xtick={-1,0,...,8,9}, 
+                    ytick={-2,-1,...,4},
+                    xmin=-1, xmax=9.5, 
+                    ymin=-3, ymax=3.5]
+                \addplot[-,domain=0:4, samples=300]{x^(1/2)};
+                \addplot[->,domain=4:9, samples=300]{ln(x)};
+                \addplot[mark=*] coordinates{(4,2)};
+                \addplot[mark=*] coordinates{( 4,1.386294)};% Used 1.386294 instead of ln(4) because pgfplots is bitchy.
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Is the relation represented by the above graph a function?
+    \begin{multipleChoice}
+        \choice{Yes}
+        \choice[correct]{No}
+        \choice{There is not enough information to tell.}
+    \end{multipleChoice}
+\end{problem}
+
+\begin{problem}
+    Consider the following graph
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[axis x line=middle, 
+                    axis y line=middle, 
+                    xlabel={$x$}, 
+                    ylabel={$y$}, 
+                    axis equal, 
+                    xtick={-1,0,...,8,9}, 
+                    ytick={-2,-1,...,4},
+                    xmin=-1, xmax=9.5, 
+                    ymin=-3, ymax=3.5]
+                \addplot[-,domain=0:4, samples=300]{x^(1/2)};
+                \addplot[->,domain=4:9, samples=300]{ln(x)};
+                \addplot[mark=*] coordinates{(4,2)};
+                \addplot[mark=*,white] coordinates{( 4,1.386294)};% Used 1.386294 instead of ln(4) because pgfplots is bitchy.
+                \addplot[mark=o] coordinates{( 4,1.386294)};% Used 1.386294 instead of ln(4) because pgfplots is bitchy.
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Is the relation represented by the above graph a function?
+    \begin{multipleChoice}
+        \choice[correct]{Yes}
+        \choice{No}
+        \choice{There is not enough information to tell.}
+    \end{multipleChoice}
+\end{problem}
+
+
+\end{document}

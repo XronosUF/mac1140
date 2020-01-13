@@ -1,0 +1,375 @@
+\Lecture{An in-depth investigation of Radicals}
+\injectBox{Terminology To Know}{%
+    \newTerm{Radical (expression)}{%
+        A mathematical expression comprised of a radical symbol and a radicand. \\
+        \textbf{For Example:} $\sqrt[5]{32}$ is a radical expression.\\
+        \textbf{Note:} This is often just referred to as a `radical', where context is used to determine if the symbol or the entire expression is meant.
+        }%
+    \newTerm{Radical (symbol)}{%
+        A symbol denoting a root value of the radicand.\\
+        \textbf{For Example:} In the radical expression $\sqrt[5]{32}$, the $\sqrt[5]{\text{     }}$ is the radical.\\
+        \textbf{Note:} This is often just referred to as a `radical', where context is used to determine if the symbol or the entire expression is meant.        }%
+    \newTerm{Root-value}{%
+        The root-value of a radical is the number writing as part of the radical symbol. Specifically it is the exponent that the radical cancels.
+        \textbf{For Example:} In the radical expression $\sqrt[5]{32}$, the root-value is $5$.
+        }%
+    \newTerm{Radicand}{%
+        The content contained inside of a radical symbol. \\
+        \textbf{For Example:} In the radical expression $\sqrt[5]{32}$, the $32$ is the radicand.
+        }%
+    \newTerm{Inverse Function}{%
+        If $f(x)$ is a function, then an inverse function is another function, (commonly denoted as $f^{-1}(x)$) such that
+        \[
+        f^{-1}(f(x)) = f(f^{-1}(x)) = x
+        \]
+        }%
+    \newTerm{Type 1 Radical}{%
+        Type one radicals have radicands that are entirely factored, meaning that each term of the radicand is multiplied against the other terms of the radicand. There are no addition or subtraction signs between terms in the radicand.\\
+        \textbf{For example:} The radical $\sqrt[4]{x^2(x+1)(e^x + 3x)}$ is a type one radical because each of its terms are multiplied against the other terms. Specifically, the only addition or subtraction symbols are \textit{inside} terms, and each term is surrounded by parentheses (implicitly or explicitly).
+        }
+    \newTerm{Type 2 Radical}{%
+        Type two radicals have radicands that are \textbf{not} entirely factored, meaning that there are terms in the radicand that are separated by addition or subtraction symbols.\\
+        \textbf{For example:} The radical $\sqrt{x^2(x+1)^2 - 9}$ is a type two radical because not all its terms are multiplied against the other terms. Specifically, there are terms that are being added or subtracted to the other terms (in this case, the $9$ is a term being subtracted from the other term(s) $x^2(x+1)^2$).
+        }%
+    \newTerm{Extraneous Solution}{%
+        An extraneous solution is a `solution' that is acquired as a result of some solution method, but the solution doesn't actually satisfy the original problem. See Example 9 in this topic for an example of extraneous solutions.
+        }%
+    }% End of Terminology to Know.
+
+\injectBox{Questions To Answer}{%
+    What is a radical function, and why do they appear?\\
+    What role do inverse functions play in models?\\
+    How do you remove a radical from an equality and what consequences might occur as a result?
+    }% End of Questions to Answer
+
+\ifcompletedNotes
+    \injectBox{Goal for Lecture Content}{%
+        Radicals have a few uses in modeling, but are mostly a result of "backward engineering" the polynomial behavior of another model.
+        Coverage of the important points/values of radicals such as...
+        \begin{itemize}
+        \item Zeros.
+        \item Roots.
+        \item Even vs Odd radicals.
+        \item Given vs injected radicals (the dreaded $\pm$).
+        \end{itemize}
+        Coverage of the important tools of the radical functions such as...
+        \begin{itemize}
+        \item Expansion vs non-expandable radicals.
+        \item Rules of powers.
+        \item Radicals as powers.
+        \item Addition/multiplication/subtraction/division of radicals (what works, what doesn't).
+        \item Simplifying Radicals.
+        \item Geometric vs arithmetic intuition; approximating roots vs division.
+        \item Geometric explanation of why $(x+y)^2 \neq x^2 + y^2$.
+        \end{itemize}
+    }% End of "Goal for Lecture Content".
+\fi
+
+
+\subsection{Why radicals?}
+    Radicals are often a source of mild confusion mechanically, if not conceptually. However, it is worth giving at least a cursory motivation as to how radicals appear in practice, which will also motivate our alternate method of writing radicals (as powers) in the next topic.
+
+    Recall that a radical is the symbol used or the entire expression that involves the symbol (as determined by context), and the radicand is the content of the radical as mentioned in the definitions above. We will use this terminology in the sections below.
+
+    \subsubsection{Where do we find a radical in the wild?}
+        A radical is most often found in practice by trying to isolate something that is being raised to a power. In fact, the most common way to encounter a radical is when we know some end-result information we want, but need to determine some initial information in order to get to the end-result... ie when we are trying to ``work backward" to find a solution. This is often the case because we are usually working in the real-world of three dimensional space and powers occur rather naturally in the geometry of the real world.%
+        \footnote{In fact, this is especially true because most optimal conditions tend to involve finding spaces that maximize or minimize a dimension-level relative to another. Specifically you may want to ``maximize volume while minimizing surface area" to minimize costs to build a container. It turns out that, without other constraints, almost always the answers to these problems are ``regular" polygons, ie things like cubes or spheres, which involve a single dimension raised to a power. A cube has volume $w^3$ and each face has area $w^2$ for example.}
+        Let's see an example of the kind of problem we aim to solve by the end of this topic.
+
+        \textbf{Note:} the below example contains most of the things we aim to learn, but not all, which means it's ok if you don't follow every step yet. Make sure to return to this example at the end of the topic, at which point this should seem like an `obviously easy' problem.
+
+        \example{Find the dimensions of a cube if its total volume is 400 cubic units}{%
+            We know the formula for the volume of a box is length ($l$) times width ($w$) times height ($h$). In the special case where our box is a cube, all these dimensions are equal, so we have that $w = l = h$ and our equation for volume ($V$) becomes:
+            \[
+            400 = V = l \times w \times h = w \times w \times w = w^3
+            \]
+            Thus, to find the width (which is also the length and height) we need to solve the equation $w^3 = 400$, which involves taking a cube root. So we have $w = \sqrt[3]{400} = 2\sqrt[3]{50}$. So our answer is that the box has dimensions $2\sqrt[3]{50} \times 2\sqrt[3]{50} \times 2\sqrt[3]{50}$.
+            }% End example
+
+\subsection{Mechanics of radicals}
+
+    There are a number of common mistakes made with radicals and simplifying radicals, but before we get to this we should begin with the basic notions of what we will want to do with radicals and why. In general we will need to be able to accomplish the following mechanical skills involving radicals:
+    \begin{itemize}
+    \item simplify numerical radicals
+    \item identify types of radicands so we know when we can, or can't, simplify.
+    \item Remove radicals from an equation in order to solve for a variable inside the radical.
+    \item identify the fundamental differences between even and odd radicals.
+    \item understand when we need to use the dreaded $\pm$ and when we don't.
+    \item (similar to the previous point) understand radicals as \textit{functions} versus \textit{operations}
+    \end{itemize}
+
+    The two primary skills that are easily misunderstood and thus most often cause problems for students, are the issue of when to use $\pm$ and how to identify what you can and cannot do with radicands to simplify radicals. To this end I will be introducing my own terminology about types of radicands in an effort to clarify and avoid the most common issues around simplifying radicals, as well as discussing in some depth the issue of a function versus operations of radicals.
+
+    \subsubsection{Simplifying Numeric Radicals}
+        To start with, we will discuss how to simplify numerical radicals. This will be useful both as a review (or introduction) to some of the mechanics of radicals and as motivation for non-numeric radicals.%
+        \footnote{Essentially, you can think of numeric radicals as the `numeric long division' equivalent to polynomial long division. We will use the steps we cover here dealing with numeric radicals to then deal with non-numeric radicals; even though the results look different (and in fact are a bit more complex).}
+        The first thing we will need is to revisit a numeric factorization tool that you may (or may not) have learned quite some time ago, called a prime factor tree. This will be supremely helpful in determining the prime factors of any given number.
+
+        Recall (or learn if you were never told this) that any number can be written \textit{uniquely} as a product of prime numbers. For example, $90 = 2 \times 3^2 \times 5$. This will allow us to simplify radicals by decomposing the radicand into it's prime factors. We will follow a sequence of steps to go from something like $\sqrt{90}$ to the simplified version of $3\sqrt{10}$.
+
+        \begin{enumerate}
+            \item First we use a prime factor decomposition tree (aka a `prime factor tree') to find all the prime factors.
+            \item Next we will write out the radicand in its prime-factor form and we will write the radical symbol with the actual root-value showing (this is just to be clear, you don't \textit{have} to write this, but it will help). In our example of $90$ we would write $\sqrt{90} = \sqrt[2]{2 \times 3^2 \times 5}$.
+            \item Next we write each prime that has a power greater than or equal to the root value (in our case 2), as the prime to the root value to some power plus any remainder. \\
+            In our case the only prime with a power greater than or equal to the root-value (which is two) is the prime $3$. In our prime decomposition ($2^1 \times 3^2 \times 5^1$) the prime $3$ has a power of $2$. So we take the power of $3$ and divide it by the root-value ($2 \div 2$). The whole-number of the result is the number of $3^2$ terms we have in the prime composition, and fractional part (aka remainder) is how much is `left over'. Thus in our case we have $2 \div 2 = 1$, so the `whole part' is $1$ and the remainder is $0$. Finally we write the prime as its $(3^2)^{\text{(whole part)}}$ and it's $3^{\text{(remainder part)}}$; so we would write $3^2$ as $(3^2)^1 \cdot 3^0$ which is the same as just $(3^2)^1$.\\
+            \textbf{Note:} This part is a bit confusing but I will provide another example below that should help clarify.
+            \item Now we pull out however many groups of each $\text{(prime)}^{\text{root-value}}$ we have. In the current example we had 1 group of $3^2$ so we pull out one $3$. The proper way to do this is to split the radical over multiplication by putting all of the `whole part' primes in the first radical and the `remainder' parts in the second radical. In our case we have;
+            \[
+                \sqrt[2]{2 \times (3^2)^1 \times 5} = \left(\sqrt[2]{(3^2)^1}\right)\left(\sqrt[2]{2\times 3^0 \times 5}\right)  = \left(\sqrt[2]{(3^2)^1}\right)\left(\sqrt[2]{2\times 5}\right)
+            \]
+            \item Finally we simplify each of the square roots by evaluating the first root (which by design should be a whole number). \\
+            In our example the first radical should simplify as: $\sqrt[2]{(3^2)^1} = 3^1 = 3$. \\
+            The second radical we want to multiply all the numbers in the radicand back to a single number.\\
+            In our example the second radical should simplify as: $\sqrt[2]{2 \times 5} = \sqrt{10}$. \\
+            Thus we are left with the simplified form $\sqrt{90} = 3 \sqrt{10}$.
+        \end{enumerate}
+
+        Ok, the above is a bit confusing to write, and much easier (I hope) to understand with an example that actually has some remainders. Let's consider the example of trying to ``simplify" $\sqrt[3]{15120}$. This may seem intimidating at first, but the key here is to use the prime factor tree to decompose that giant number into a product of smaller numbers. Let's revisit how to do this before we continue.
+
+        \injectBox{Use a prime factor tree to decompose $15120$.}{%
+            Remember that a (prime) factor tree is a simple iterative process (meaning we just keep repeating the same steps(s) until we finish) where we take the current number and find two numbers that multiply to that number. Once we find two such numbers, we draw two branches below the number, each ending in one of the numbers we discovered multiply to the given number. Then we repeat these steps on each of those two numbers. If one of the two numbers is a prime, we circle it and that `branch' of the tree is done. Once we have ended every branch as a circled prime we are done factoring, and the original number is the product of all the circled numbers (which we commonly write at the top to keep track). In our case we would get:\\
+            \begin{center}
+            \PrimeTree{15120}
+            \end{center}
+
+            It is worth a mention that it's actually faster and more ideal if you can think of larger numbers to multiply together to get the target value. So, in our case above, it would have been better if we saw that $16 \times 945 = 15120$ as it would have made our tree branch out faster and more efficiently, and thus taken less effort after that step. However, being `better' doesn't mean you \textit{must} do it this way, any number you see that works, go with that number... eventually you will have to divide down to the same prime numbers no matter what and spending time looking for a `better' number-pair to use is just wasting time instead of using the value you already know works.
+            }% End prime factor tree box
+
+        Now that we have the prime factorization we can continue to our example.
+
+        \example{Simplify the numeric root: $\sqrt[3]{15120}$}{%
+            Since we have already determined the prime factorization, we will write out our radical with the radicand in the factored form:
+            \[
+                \sqrt[3]{15120} = \sqrt[3]{2^4\times 3^3\times 5\times 7}
+            \]
+            As before, we want to group these terms as each factor to the root level ($3$ in this case) with remainders. Specifically we have $2^4 = (2^3)^1 \times 2^1$ and $3^3 = (3^3)^1 \times 3^0 = (3^3)^1$, and the $5$ and $7$ are both left alone (since they have powers less than $3$ to start with). So we would write;
+            \[
+                \sqrt[3]{2^4\times 3^3\times 5\times 7} = \sqrt[3]{(2^3)^1 \times 2^1 \times (3^3)^1\times 5\times 7}
+            \]
+            Then, pulling out the pieces that are grouped in the form $\text{(factor)}^{\text{(root value)}}$ (ie $\text{(factor)}^3$) we get:
+            \[
+                \sqrt[3]{(2^3)^1 \times 2^1 \times (3^3)^1\times 5\times 7} = \sqrt[3]{(2^3)^1\times (3^3)^1}\sqrt[3]{2^1 \times 5 \times 7}
+            \]
+            And, finally we can simplify the first cube root and combine the factors in the second cube root to get:
+            \[
+                \sqrt[3]{(2^3)^1\times (3^3)^1}\sqrt[3]{2^1 \times 5 \times 7} = (2 \times 3) \sqrt[3]{2\times 5 \times 7} =
+                6\sqrt[3]{70}
+            \]
+
+            And so we have our final simplified expression and we conclude:
+            \[
+                \sqrt[3]{15120} = 6\sqrt[3]{70}
+            \]
+            }% End example.
+
+
+\subsection{Types of Radicands}
+    There are two main types of radicands we wish to distinguish here.%
+    \footnote{
+        I will note again that distinguishing these radicands as we will in this section is a pedagogical choice, meaning that the mathematical community (and future courses) will not distinguish between these two, but I find it extremely useful to do so to help students know what they can (and can't) do to simplify radicals.
+        }
+
+    \begin{description}
+    \item[\textbf{Type 1 Radical:}] Type one radicals have radicands that are entirely factored, meaning that each term of the radicand is multiplied against the other terms of the radicand. Specifically, \textbf{there are no addition or subtraction signs between terms in the radicand}.\\
+    \textbf{For example:} The radical $\sqrt[4]{x^2(x+1)(e^x + 3x)}$ is a type one radical because each of its terms are multiplied against the other terms. Specifically, the only addition or subtraction symbols are \textit{inside} terms that are multiplied against (all) the other factors in the radicand.
+    \item[\textbf{Type 2 Radical:}] Type two radicals have radicands that are \textit{not} entirely factored, meaning that there are terms in the radicand that are separated by addition or subtraction symbols.\\
+    \textbf{For example:} The radical $\sqrt{x^2(x+1)^2 - 9}$ is a type two radical because not all its terms are multiplied against the other terms. Specifically, there are terms that are being added or subtracted to the other terms (in this case, the $9$ is a term being subtracted from the other term(s) $x^2(x+1)^2$).\\
+    \textbf{Note:} It may be possible to factor/manipulate a type two radical into becoming a type one radical. This is discussed below.
+    \end{description}
+
+
+    We saw in the previous section how to simplify radicals where the radicand is entirely numeric. Obviously numeric radicals can always be made into type one radicals (if you have a radical that looks like two constants being added or subtracted, simply perform the addition or subtraction until the radicand is a single number). Typically the best way to deal with numeric radicals is to simplify them as far as possible in order to determine what kind of simplification we can do in the overall expression or equation where the radical is found.
+
+    Since numeric radicals can always be forced into being a type one radical, the real difficulty only begins when we are using non-numeric radicals, ie radicals where the radicand includes variables.
+
+    \subsubsection*{Radicands and variables, sounds like a blast...}
+
+        So, we have determined how to tackle radicals when they have purely numeric radicands, but what do we do when our alphabet starts making appearances in the radicand? As one might expect, things get more difficult, although perhaps not always for the reasons one might think.
+
+        It is worth a note, although it is likely intuitively clear, that radical expressions should be treated as an unbreakable `term' when they are separated by addition or subtraction. Thus the only way to put two radical expressions together that are separated by addition or subtraction is if they are \textit{\textbf{exactly} the same radical expression}. Consider the following example:
+
+        \example{Simplify the expression $\sqrt{28x^2} - \sqrt{7}$}{%
+            In this example we will simplify the given radicals using techniques that will be discussed in the sections to follow. Like the first example of this topic, it's ok if you don't immediately follow how some of the computations are done, but you should return to this example once you have finished the topic to verify that you understand every single step at that point. Specifically, the appearance of the absolute value may be unclear, but the rest of the mechanics should be familiar.
+
+            First we note that the second radical, $\sqrt{7}$ is a numeric radical and, since $7$ is prime, it is already in it's simplest form (there are no perfect squares to factor out). Moreover, since the current (first and second) radicals are not \textit{absolutely identical} we cannot `merge' or `factor' or otherwise `simplify' this difference of radicals... yet. \\
+            The key is to observe that the first radical \textit{can} be simplified. Specifically; $$\sqrt{28x^2} = \sqrt{2^2 x^2}\sqrt{7} = 2|x|\sqrt{7}.$$ Now we can observe that the \textit{remaining} radical piece has a radicand of $7$, so the radical in the simplified form of $\sqrt{28x^2}$ \textit{is exactly identical} to the radical piece of the second radical. Thus, putting our terms together we have;
+            \[
+                \sqrt{28x^2} - \sqrt{7} = 2|x|\sqrt{7} - \sqrt{7} = \sqrt{7}(2|x| - 1)
+            \]
+
+            So we conclude that the simplified (or factored) form of the original expression is $\sqrt{7}(2|x| - 1)$.
+            }% End of Example
+
+    \subsubsection{Type Two Radicals and how to `simplify' them.}
+
+        In some senses, type two radicals are the most straight forward type which is why we start with the type two instead of the type one. In short, a type two radical is `easy' purely because there isn't anything we can do when it is in this form in terms of `simplifying' the radical (without manipulating the radicand). The key thing here is that you \textit{\textbf{absolutely cannot simplify a type two radical!}} This may seem straight forward, but it is often easy to overlook this and simplify things because it seems like it should work. For example;
+
+        \example{Find values of $x$ so that $\sqrt{x^2 + 9} = 10$.}{%
+            Notice that the radical in the problem is type 2. Nonetheless many reading this example will want to immediately `simplify' the radical to get the equation: $x + 3 = 10$ (by square rooting each of the terms). But let's see what happens if we do so.
+
+            Doing this `simplification' gets us that $x = 7$. An astute student might want to include the $\pm$ option because of the $x^2$, so let's consider that possibility as well; ie $x + 3 = - 10$ which gives $x = -13$. Now let's plug these ``solutions" of $x$ back into the original equation to see what happens;
+            \begin{tabular}{lcrcccccccc}
+            $x$ & $=$ & $7$: & \hspace{1cm} & $\sqrt{x^2 + 9}$ & $=$ & $\sqrt{7^2 + 9}$ & $=$ & $\sqrt{49 + 9}$ & $=$ & $\sqrt{58} \neq 10$.\\
+            $x$ &  $=$ & $-13$: & & $\sqrt{x^2 + 9}$ & $=$ & $\sqrt{(-13)^2 + 9}$ & $=$ & $\sqrt{169 + 9}$ & $=$ & $\sqrt{178} \neq 10$.
+            \end{tabular}
+
+            As we can see, in both these cases our `solutions' didn't work, this is because you \textbf{\textit{cannot simplify type two radicals}}. Thus we will need a different way of solving these kinds of equations, which we will discuss later in this topic.
+            }% end of the Example.
+
+        So, when you are confronted with the need to simplify a type two radical, your best bet to start with is to see if you can manipulate the radicand to make the type two radical into a type one radical. In short, you want to factor the radicand. If possible this is almost always the best way to go, as other techniques to `solve' equations with type two radicals come with a variety of possible drawbacks.
+
+
+    \subsubsection{Type One Radicals and how to simplify them.}
+
+        Whether you have managed to factor the radicand of a type two radical, or were lucky enough to have a type one to begin with, once the radicand is a product of terms, the radical can be simplified. In this case, each term should be viewed as a `factor' of the radicand in the same way that primes were `factors' of numeric radicals earlier. Specifically, we want to write each term as a piece that has a power equal to the root value, and the `remainder'. The following example may be helpful to understand what is meant by this.
+
+        \example{Simplify the type one radical: $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$.}{%
+            First we should observe that the given radical really is a type one radical as each of the terms in the radicand is being multiplied against each other term. Thus, to simplify we will want to group each of the (multiplicative) terms of the radicand into ``perfect cube" pieces (since the root-value is $3$), and ``remainder'' pieces, just like we did with the prime factors in the numeric radical instance.
+            \begin{tabular}{ll}
+                $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$ & $= \sqrt[3]{(x^3)^1 x^2 \cdot (z^3)^3 z^2 \cdot (x+2)^2 \cdot ((x-z)^3)^2 (x-z)}$ \\
+                &$= \left(\sqrt[3]{(x^3)^1(z^3)^3((x-z)^3)^2}\right) \left(\sqrt[3]{x^2 z^2 (x+2)^2 (x-z)}\right)$ \\
+                &$= \bigg(x z^3 (x-z)^2\bigg) \sqrt[3]{x^2 z^2 (x+2)^2 (x-z)}$
+            \end{tabular}
+            }% End example
+
+        The good news is that the simplification \textit{process} is the same as the numeric examples we've seen (albeit with a looser definition of `prime factor'). It should not be a total surprise that the factored form treats each (multiplicative) factor as a `prime factor' in terms of simplifying the radical in a similar fashion to simplifying numeric radicals. After all we've already seen that roots are analogous to `prime-numbers' when it comes to decomposing polynomials to their `most basic parts', so it shouldn't be surprising that they end up being treated similarly in other situations as well.
+
+        Unfortunately, the bad news is that the \textit{result} isn't quite as straightforward as in the case of the numeric radical case. To motivate the next part, we will first proceed with an example.
+
+        \example{Find all $x$ that satisfy the equation $\sqrt{x^2} = 2$}{%
+            This example seems straight forward. According to our rules of simplifying it seems like $\sqrt{x^2} = x$. Indeed, if we do that then we get as an answer $x = 2$ and, plugging that back in to the original equation, we get $\sqrt{2^2} = \sqrt{4} = 2$. So far so good right? But what about $x = -2$? If we plug that in we will also get $\sqrt{(-2)^2} = \sqrt{4} = 2$, so $x = -2$ is also a solution. So, why didn't our method give us this solution as well?
+            }% end of Example.
+
+        If we look closely at the previous example it may become apparent that the reason that $x = -2$ is also a solution, is that the $x^2$ in the original equation obliterates the negative sign. Thus, since $2$ is a solution, and the even power nullifies the effect of the negative sign, then $-2$ is also a solution (ie since $2^2 = 4$ and $(-2)^2 = 4$, there is no difference between the two solutions once we square them in the equation). But understanding why the solution is valid is not quite the same thing as figuring out why we didn't find it the first time. After all if the our methodology were correct, it should have given us \textit{all} the valid solutions the first time around.
+
+        The key observation is that the radical (symbol) is defined to \textit{only give positive outputs}. To understand why this is the case though, we need to revisit the primary reason we have radicals... namely to `undo' powers.
+
+\subsection{Square Root as an Inverse Function}
+    In its essence, a square root is an attempt to solve the equation $x^2 = c$ for some constant $c$. In particular we want to be able to solve something like $x^2 = 4$. Although one might ``know" what the answer is intuitively, remember that mathematics is a language so we need a ``word" (really a symbol in mathematics) to represent this process of getting what we ``know" should be the right answer from the unknown equality. Moreover, once we have something that does this process, we can use it to answer questions where the answer is less obvious, like $\sqrt{841}$. Hence the square root symbol is created, and the square root function is born.
+
+    There is a deceptively important word in that phrase though, which is \textit{function}. We like functions;%
+    \footnote{Not just because we're crazy math people that like weird things. Well, not \textit{only} because of that anyway.}
+    they allow us to do lots of things that don't work if we aren't sure that the relationship is a function. But this presents a problem. In our example of $x^2 = 4$ we can easily determine that both $2$ and $-2$ work. So, if we use the square root function to `cancel' the power on $x$ to get $x = \sqrt{4}$ we now have a situation where the right hand side could be either $2$ or $-2$... and in fact it would need to be \textit{both} if we want to make sure to get \textit{all} the valid solutions. But a function can \textit{only output a single answer} and now we have a pretty big problem.
+
+    The first step to getting around this problem is to simply \textit{pick a default answer}. Since positives are generally easier to deal with than negatives, we \textit{decide by convention} to have the square root return the positive valued answer.%
+    \footnote{This decision of a `default' actually has a special name in math, called the ``principle branch" of the square root. This isn't something you would likely hear again unless you take senior level math major courses or math graduate courses so no need to remember this... just another fun fact!}
+    Thus even though the \textit{solutions} to $x^2 = 4$ are \textit{both} $2$ \textit{and} $-2$, the \textit{solution to} $x = \sqrt{4}$ is \textit{only} $x = 2$. You might object at this point by saying that this doesn't actually get around our problem... and you'd be right! In fact, we're still in a bit of a bind; on the one hand if we relax the requirement on the square root operation to give both positive and negative values, it is no longer a function (which is all kinds of bad). On the other hand, if we only use the positive value result, we lose half of the `valid answers' ... which is also bad. Luckily we have come up with a solution to this conundrum, although our solution introduces one of the most common sources of confusion for precalc students%
+    \footnote{In holding with Murphy's law; each clever solution comes with an equally clever source of confusion and error},
+    the dreaded $\pm$ symbol.
+
+    To understand where the $\pm$ symbol comes from, we first want to recognize \textit{when} our sign problem is actually a problem, and when it isn't. In our example $x^2 = 4$, the sign problem is obviously an issue. In contrast however, the example $x^3 = 8$ only has one (real) solution, $x = 2$, so the sign problem isn't actually an issue. So what's the difference? We hopefully recall that our original observation was that the even power obliterates any negative sign... but the odd power preserves it. Thus $-2$ is a solution to $x^2 = 4$ because the even power turns the negative in $-2$ into a positive. In contrast, $-2$ is \textit{not} a solution to $x^3 = 8$ because the odd power preserves the negative sign, so $(-2)^3 = -8$ not $8$. Thus this sign problem only occurs when we are dealing with \textit{even} root-values.
+
+    Moreover, when an even root value is ``simplified" we can represent the fact that we are forcing the output to be the ``positive value" of the answer by using another function that only outputs positive values; the absolute value. So, when we evaluate something like $\sqrt{x^2}$ we wouldn't want to write $x$ as it is not clear that we are `choosing' the positive output, so instead we write $\sqrt{x^2} = |x|$.%
+    \footnote{Recall that the definition of $|x|$ i.e. absolute value of $x$, is $x$ for non-negative values of $x$ and $-x$ for negative values of $x$. We will discuss this more in the future topic on piecewise functions.}
+
+    Using this notation however, we can more easily see that what we actually get when we simplify our example of $x^2 = 4$ is the following:\\
+    \begin{center}
+    \begin{tabular}{ccc}
+        $4$ & = & $x^2$ \\
+        $\sqrt{4}$ & = & $\sqrt{x^2}$ \\
+        $2$ & = & $|x|$
+    \end{tabular}
+    \end{center}
+    That is to say, we are now trying to solve the equality $|x| = 2$, which makes it more clear that we should have $\pm 2$ as our solutions. Indeed, \textit{this} is really where the $\pm$ is coming from; from solving/simplifying a situation of the kind $\sqrt[2]{(\text{something})^2}=|$something$|$ (where the $2$ of the root and/or the power can be replaced with any even number).
+
+\subsubsection*{Ok... that was an awful lot to digest, can you narrow this down some?}
+
+    The short version of the $\pm$ symbol is the last paragraph of the above. Essentially the $\pm$ situation comes up when you simplify an even root-value radical of something to an even power, which gives you an absolute value. In practice it is rare for someone to give you a problem that isn't simplified (at least in terms of even power vs even root). It is \textit{far} more common that you have something being raised to an even power and \textit{you the solver}, introduce the even root-value radical as part of your solution method. Thus there is a handy rule of thumb as follows; \textit{If you are the one to introduce the square (or other even root-value) root, always consider the possibility of the }$\pm$. \textit{If you are given a square root (or other even root-value), then it only outputs a positive.}
+
+    The narrow bit of gray area is when you are given an even root of an even power (ie an unsimplified problem) because, even though the output is positive by the definition of the root \textit{function}, that doesn't mean the absolute value that you get when you simplify the even root with an even power won't give you a $\pm$ style answer. So our rule of thumb listed above is merely that, and in general you should always be careful when simplifying a given radical to see if both positive and negative answers would work. What you really want to look for is if the given (even) root represents an \textit{even function}.%
+    \footnote{In fact, one way to determine if you need a $\pm$ is to see if plugging in $-1$ and $1$ for your variable in the radicand resolves the radical to the same number. If it does, you almost certainly need a $\pm$, and if it doesn't, you almost certainly \textit{don't} need a $\pm$.}
+
+\subsubsection*{Ok, even powers against even roots means I need an absolute value and $\pm$, is that all?}
+
+    Unsurprisingly, there is more we must consider. However, when it comes to type one radicals that is pretty much it. So let's consider the following example in an effort to see a (full) proper solution to an equation involving a type one radical.
+
+    \example{Find all real values of $x$ so that $\sqrt{x^2(x+1)^2} = 2$.}{%
+        We start by observing that we can simplify the type one radical into the following form:
+        \[
+        2 = \sqrt{x^2(x+1)^2} = |x(x+1)|
+        \]
+        Then, for $x$ such that $x(x+1) \geq 0$ we want to solve the equation $2 = x(x+1) = x^2 + x$ which, moving the $2$ over and factoring gives us: $0 = x^2 + x - 2 = (x + 2)(x - 1)$ which gives us $x$ values of $1$ and $-2$ as (tentative) solutions. We have to be careful to check that both those values satisfy the initial requirement of $x(x+1) \geq 0$ (which they both do).
+        Next we check for $x(x+1) < 0$ which means we want to solve the equation $2 = -x(x+1) = -x^2 - x$ which, again moving the terms to one side gives us: $0 = x^2 + x + 2$ which has no real solutions.
+
+        Thus we have as our proposed solutions, $x = 1$ and $x = -2$. If we plug in each into the original equation, we verify that each of them do, in fact, satisfy the equation and we have our solutions.
+        }% End of example
+
+\subsection{Dealing with radicals that can't be simplified away.}
+
+    So far, we have been working with equations where the radicals were able to be simplified away entirely, such as the previous example where we turned $\sqrt{x^2(x+1)^2}$ into $|x(x+1)|$ thereby removing the radical entirely. Unfortunately that is rarely the case, in reality it is far more common that we cannot simplify our problem to the point of removing the radical entirely, either because we can't factor the radicand in a type two radical, or the powers just don't happen to work out the way we need them to in order to remove the radical. In this case, we need to use the inverse function property to remove the radical, but we use it in the opposite direction than we have so far. See the following example;
+
+    \example{Determine which values of $x$ satisfy $\sqrt{x^2 + 4x - 1} = 2$}{%
+        In this case we cannot factor the radicand on the left, and it certainly isn't a perfect square. Thus, the only way to remove the square root function is to use it's inverse function; the square. Specifically we need to square both sides of the equality, which gives the `equivalent' function to solve; $x^2 + 4x - 1 = 4$. Subtracting $4$ from both sides to get our quadratic equal to zero, and then factoring yields $x^2 + 4x - 5 = (x + 5)(x - 1) = 0$, and so we have as potential solutions $x = -5$ and $x = 1$. Checking both these values by plugging into the original function we get that both the values satisfy the equation.
+        }% End of Example
+
+    The previous example may seem a bit straight forward, but let's look at another one to see what kind of dangers tend to lurk in this process.
+
+    \example{Determine which values of $x$ satisfy $\sqrt{x^2 + 4x - 1} = -2$}{%
+        Just as before we can manipulate this type two radical by squaring both sides and factoring, which gets: $x^2 + 4x - 1 = (-2)^2 = 4$. This factors as the last example did into $(x + 5)(x - 1) = 0$ yielding the same solution set of $x = -5$ and $x = 1$.
+
+        However, when we plug in those values to the original equation we get (predictably) $2$, not $-2$. Thus $-5$ and $1$ are extraneous solutions.
+        }% End of Example
+
+    So, in the previous example we discover that, in fact, \textit{neither} of our proposed solutions actually work. So what gives? The fact that we got positive two and not negative two when we plugged the proposed solutions back in should have been predictable, since we were essentially solving the problem from example 8 all over again. But the starting equations weren't the same, so why did the solution methods merge and give us the same answers in both examples? Again it comes back to the negative sign; notice that the real difference is that in one example the square root was equal to positive two, but in the other case it was equal to negative two. But the first step of our method was to square both sides, which means we annihilate the negative sign and the two equations became the same.%
+    \footnote{In fact, an especially clever student might have skipped the entire solution process and determined there were no real solutions to example 9, purely because the square root was equal to a negative number, and remember square roots can \textit{only} yield non-negative numbers (ie zero or positive numbers).}
+
+    Essentially the issue here is that, by squaring both sides of the equality, we are obliterating any potential negative multipliers, which could accidentally change the solution set. The good news is that the process will still find any real solutions that exist, but the bad news is that it may find a number of extra solutions as well. These `extra' solutions that don't \textit{actually} satisfy the original equality are called \textit{extraneous solutions}.
+
+    An easy conceptual way to see why using a power on both sides of the equality can increase your solution set is to consider a polynomial. If you had some polynomial, say $x^2 + 3x + 1 = 0$, then the number of solutions to a polynomial is equal to the degree of the polynomial (by the fundamental theorem of algebra, if we don't worry about requiring real versus complex solutions). However, if we square both sides the polynomial then the left goes from degree 2 to degree 4, meaning that (again by the fundamental theorem of algebra) now there are four solutions instead of just two. So, raising the polynomial to a power has added two new solutions to the solution set.%
+    \footnote{Strictly speaking these solutions would almost certainly be repeated roots of the original function since it was already set equal to zero, but as mentioned this is a conceptual explanation, the mechanics are considerably more complicated in practice most of the time, especially when the equality has non zero terms on both sides.}
+
+
+    We conclude this section with an example of an especially difficult version of this type. Sometimes the setup is such that you have to use powers more than once. Typically the goal is to isolate the root on one side of the equation before using a power, but if there is more than one root that might not be possible. Consider the following:
+
+    \example{Find all $x$ that satisfy the equation $2\sqrt{x} = 2 - \sqrt{x - 1}$.}{%
+        Typically we would try to isolate each root. If we didn't have the ``$2 -$" part above, and only had $2\sqrt{x} = \sqrt{x - 1}$ then squaring both sides would lift both square roots simultaneously. Unfortunately, that isn't the case, so first we must square both sides, then isolate any remaining roots before doing it again. Thus squaring both sides would give;\\
+        \begin{center}
+        \begin{tabular}{ll}
+        $(2\sqrt{x})^2$ &$= (2 - \sqrt{x - 1})^2$\\
+        $4x$ &$= 2(2 - \sqrt{x - 1}) - \sqrt{x - 1}(2 - \sqrt{x - 1})$\\
+            &$= 4 - 2\sqrt{x - 1} - 2\sqrt{x - 1} + \sqrt{x - 1}^2$ \\
+            &$= 4 - 4\sqrt{x - 1} + x - 1$\\
+        $4x - 3 - x $ &$= 4\sqrt{x - 1}$\\
+        $3x - 3$ &$= 4\sqrt{x - 1}$
+        \end{tabular}
+        \end{center}
+        Now we can square both sides again in order to get rid of the square root, giving:
+        \begin{center}
+        \begin{tabular}{ll}
+        $(3(x-1))^2$ &$ = (4\sqrt{x - 1})^2$ \\
+        $ 9(x-1)^2 $ & $= 16(x - 1)$\\
+        $9(x-1)^2 - 16x + 16$ &$ = 0$
+        \end{tabular}
+        \end{center}
+        Then factoring the quadratic we get the factored form $(x-1)(9x-25) = 0$, which gives solutions of $x = 1$ and $x = \frac{25}{9}$. Plugging these back in we have:
+
+        For $x = 1$;
+        \begin{tabular}{ccc}
+            $2\sqrt{1}$ & = & $2 - \sqrt{1 - 1}$\\
+            $2$ & = & $2$
+        \end{tabular}
+        So $x = 1$ works. $\checkmark$
+
+        For $x = \frac{25}{9}$, on the left hand side we have:
+        \[
+            2 \sqrt{x} \rightarrow 2 \sqrt{\frac{25}{9}} = 2 \frac{5}{3} = \frac{10}{3}
+        \]
+        for the right hand side we have:
+        \[
+            2 - \sqrt{x - 1} \rightarrow 2 - \sqrt{\frac{25}{9} - 1} = 2 - \sqrt{\frac{16}{9}} = 2 - \frac{4}{3} = \frac{2}{3}
+        \]
+        So, since the left hand side is $\frac{10}{3}$ and the right hand side is $\frac{2}{3}$ we have that $\frac{25}{9}$ does \textit{not} satisfy the equality, which means it is an \textit{extraneous} solution.
+        }% End of Example.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Square Root: the Inverse Function}
+\begin{document}
+\begin{abstract}
+This section views the square root function as an inverse function of a monomial. This is used to explain the dreaded $\pm$ symbol and when to use (and not use) absolute values.
+\end{abstract}
+\maketitle
+
+In its essence, a square root is an attempt to solve the equation $x^2 = c$ for some constant $c$. In particular we want to be able to solve something like $x^2 = 4$. Although one might ``know" what the answer is intuitively, remember that mathematics is a language so we need a ``word" (really a symbol in mathematics) to represent this process of getting what we ``know" should be the right answer from the unknown equality. Moreover, once we have something that does this process, we can use it to answer questions where the answer is less obvious, like $\sqrt{841}$. Hence the square root symbol is created, and the square root function is born.
+
+There is a deceptively important word in that phrase though, which is \textit{function}. We like functions;%
+\footnote{%
+    Not just because we're crazy math people that like weird things. Well, not \textit{only} because of that anyway.%
+}%
+they allow us to do lots of things that don't work if we aren't sure that the relationship is a function. But this presents a problem. In our example of $x^2 = 4$ we can easily determine that both $2$ and $-2$ work. So, if we use the square root function to `cancel' the power on $x$ to get $x = \sqrt{4}$ we now have a situation where the right hand side could be either $2$ or $-2$... and in fact it would need to be \textit{both} if we want to make sure to get \textit{all} the valid solutions. But a function can \textit{only output a single answer} and now we have a pretty big problem.
+
+The first step to getting around this problem is to simply \textit{pick a default answer}. Since positives are generally easier to deal with than negatives, we \textit{decide by convention} to have the square root return the positive valued answer.%
+\footnote{%
+    This decision of a `default' actually has a special name in math, called the ``principle branch" of the square root. This isn't something you would likely hear again unless you take senior level math major courses or math graduate courses so no need to remember this... just another fun fact!%
+    }
+Thus even though the \textit{solutions} to $x^2 = 4$ are \textit{both} $2$ \textit{and} $-2$, the \textit{solution to} $x = \sqrt{4}$ is \textit{only} $x = 2$. You might object at this point by saying that this doesn't actually get around our problem... and you'd be right! In fact, we're still in a bit of a bind; on the one hand if we relax the requirement on the square root operation to give both positive and negative values, it is no longer a function (which is all kinds of bad). On the other hand, if we only use the positive value result, we lose half of the `valid answers' ... which is also bad. Luckily we have come up with a solution to this conundrum, although our solution introduces one of the most common sources of confusion for precalc students,%
+\footnote{%
+    In holding with Murphy's law; each clever solution comes with an equally clever source of confusion and error%
+    }%
+the dreaded $\pm$ symbol.
+
+To understand where the $\pm$ symbol comes from, we first want to recognize \textit{when} our sign problem is actually a problem, and when it isn't. In our example $x^2 = 4$, the sign problem is obviously an issue. In contrast however, the example $x^3 = 8$ only has one (real) solution, $x = 2$, so the sign problem isn't actually an issue. So what's the difference? We hopefully recall that our original observation was that the even power obliterates any negative sign... but the odd power preserves it. Thus $-2$ is a solution to $x^2 = 4$ because the even power turns the negative in $-2$ into a positive. In contrast, $-2$ is \textit{not} a solution to $x^3 = 8$ because the odd power preserves the negative sign, so $(-2)^3 = -8$ not $8$. Thus this sign problem only occurs when we are dealing with \textit{even} root-values.
+
+Moreover, when an even root value is ``simplified" we can represent the fact that we are forcing the output to be the ``positive value" of the answer by using another function that only outputs positive values; the absolute value. So, when we evaluate something like $\sqrt{x^2}$ we wouldn't want to write $x$ as it is not clear that we are `choosing' the positive output, so instead we write $\sqrt{x^2} = |x|$.%
+\footnote{Recall that the definition of $|x|$ i.e. absolute value of $x$, is $x$ for non-negative values of $x$ and $-x$ for negative values of $x$. We will discuss this more in the future topic on piecewise functions.}
+
+Using this notation however, we can more easily see that what we actually get when we simplify our example of $x^2 = 4$ is the following:\\
+\begin{center}
+    \begin{tabular}{ccc}
+        $4$         & = & $x^2$         \\
+        $\sqrt{4}$  & = & $\sqrt{x^2}$  \\
+        $2$         & = & $|x|$
+    \end{tabular}
+\end{center}
+That is to say, we are now trying to solve the equality $|x| = 2$, which makes it more clear that we should have $\pm 2$ as our solutions. Indeed, \textit{this} is really where the $\pm$ is coming from; from solving/simplifying a situation of the kind $\sqrt[2]{(\text{something})^2}=|$something$|$ (where the $2$ of the root and/or the power can be replaced with any even number).
+
+\subsection*{Ok... that was an awful lot to digest, can you narrow this down some?}
+
+    The short version of the $\pm$ symbol is the last paragraph of the above. Essentially the $\pm$ situation comes up when you simplify an even root-value radical of something to an even power, which gives you an absolute value. In practice it is rare for someone to give you a problem that isn't simplified (at least in terms of even power vs even root). It is \textit{far} more common that you have something being raised to an even power and \textit{you the solver}, introduce the even root-value radical as part of your solution method. Thus there is a handy rule of thumb as follows; \textit{If you are the one to introduce the square (or other even root-value) root, always consider the possibility of the }$\pm$. \textit{If you are given a square root (or other even root-value), then it only outputs a positive.}
+
+    The narrow bit of gray area is when you are given an even root of an even power (ie an unsimplified problem) because, even though the output is positive by the definition of the root \textit{function}, that doesn't mean the absolute value that you get when you simplify the even root with an even power won't give you a $\pm$ style answer. So our rule of thumb listed above is merely that, and in general you should always be careful when simplifying a given radical to see if both positive and negative answers would work. What you really want to look for is if the given (even) root represents an \textit{even function}.%
+    \footnote{%
+        In fact, one way to determine if you need a $\pm$ is to see if plugging in $-1$ and $1$ for your variable in the radicand resolves the radical to the same number. If it does, you almost certainly need a $\pm$, and if it doesn't, you almost certainly \textit{don't} need a $\pm$.%
+        }
+        
+
+\subsection*{Ok, even powers against even roots means I need an absolute value and $\pm$, is that all?}
+
+    Unsurprisingly, there is more we must consider. However, when it comes to type one radicals that is pretty much it. So let's consider the following example in an effort to see a (full) proper solution to an equation involving a type one radical.
+
+    \begin{example}[Find all real values of $x$ so that $\sqrt{x^2(x+1)^2} = 2$]%
+        We start by observing that we can simplify the type one radical into the following form:
+        \[
+            \answer{2} = \sqrt{x^2(x+1)^2} = |x(x+1)|
+        \]
+        Then, for $x$ such that $x(x+1) \geq 0$ we want to solve the equation $2 = x(x+1) = x^2 + x$ which, moving the $2$ over and factoring gives us: $0 = x^2 + x - 2 = \answer{(x + 2)(x - 1)}$ which gives us $x$ values of $\answer{1}$ and $\answer{-2}$ as (tentative) solutions. We have to be careful to check that both those values satisfy the initial requirement of $x(x+1) \geq 0$ (which they both do).
+        Next we check for $x(x+1) < 0$ which means we want to solve the equation $2 = -x(x+1) = -x^2 - x$ which, again moving the terms to one side gives us: $0 = x^2 + x + 2$ which has no real solutions.
+
+        Thus we have as our proposed solutions, $x = \answer{1}$ and $x = \answer{-2}$. If we plug in each into the original equation, we verify that each of them do, in fact, satisfy the equation and we have our solutions.
+    \end{example}% End of example
+%
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

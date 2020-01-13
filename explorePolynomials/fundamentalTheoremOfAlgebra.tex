@@ -1,0 +1,76 @@
+\documentclass{ximeraXloud}
+
+\title{Fundamental Theorem of Algebra}
+\begin{document}
+\begin{abstract}
+    This section covers one of the most important results in the last couple centuries in algebra; the so-called ``Fundamental Theorem of Algebra."
+\end{abstract}
+\maketitle
+
+We will spend considerable time learning how to manipulate polynomials, typically in an effort to ascertain certain properties or values. Thus it may help to spend a little time discussing what those properties/values are, what they represent, and why we care about them in the first place.%
+\footnote{For those of you that are moving on to a calculus course it is perhaps motivation enough to mention that all of this section is \textit{absolutely essential} to doing almost anything in calculus. Moreover, if you are not able to do \textit{all} of the mechanics in this section quickly and efficiently, it is \textit{almost certain} that you will fail calculus. The \textit{vast} majority of students that fail calculus, fail because they are not capable of doing the things taught in this section.}
+
+\subsubsection*{Fundamental Theorem of Algebra, aka Gauss makes everyone look bad.}
+    In grade school, many of you likely learned some variant of a theorem that says any polynomial can be factored to be a product of smaller polynomials; specifically polynomials of degree one or two (depending on your math book/teacher they may have specified that they are polynomials of degree one, or so-called `linear' polynomials). This is a paraphrased version of a \textit{very} important and surprisingly recent theorem in mathematics called \textit{The fundamental theorem of algebra} which we write formally here (don't worry, explanation will follow).
+    \begin{theorem}
+        Any polynomial $p(x)$ may be factored into a product of irreducible factors, where those factors are, at most, degree one in the complex numbers. That is to say for any $p(x)$ of the following form;
+        \[
+            p(x) = c_nx^n + c_{n-1}x^{n-1} + c_{n-2}x^{n-2} + \dots + c_2x^2 + c_1x^1 + c_0x^0
+        \]
+        where each of $c_1, c_2, \dots, c_n \in \mathbb{R}$ (that is to say, each coefficient is a real number),%
+        \footnote{It's actually not necessary for the coefficients to be real valued for this, but we will only consider this case.}
+        then we can factor $p(x)$ and rewrite it into the following form;
+        \[
+            p(x) = (a_1x - b_1)(a_2x - b_2) \cdots (a_{n-1}x - b_{n-1})(a_nx - b_n)
+        \]
+        Where $a_1, a_2, \dots, a_n$ and $b_1, b_2, \dots, b_n$ may be complex numbers.
+    \end{theorem}
+    
+    In essence, what this theorem is saying, is that each polynomial can be factored down to the product of smaller polynomials, and that those polynomials can be made to be at most degree one if we allow complex numbers. This has a corollary,%
+    \footnote{A corollary is like a `theorem' except it follows immediately from the theorem it is a corollary of. You can think of a corollary to some theorem as being an immediate followup of the theorem that wasn't mentioned already in the theorem itself.}
+    specifically;
+    
+    \begin{corollary}
+        Let $p(x)$ be a polynomial of degree $n$ with the form:
+        \[
+            p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_2x^2 + a_1x + a_0
+        \]
+        Then the equation $p(x) = 0$ has at most $n$ real solutions and \textit{exactly} $n$ complex solutions \textit{up to multiplicity}.
+    \end{corollary}
+    
+    Let's see this corollary in action in an example...
+    
+    \begin{example}[Number of solutions of a polynomial]%
+        Let's say we have the following polynomial;
+        \[
+            p(x) = x^4 + x^3 - 12 x^2 + 13
+        \]
+        and we want to determine how many $x$ values satisfy the equation $p(x) = 13$. Currently our corollary doesn't quite work because it only applies when polynomials are equal to zero, but we can rewrite our current polynomial and manipulate it into that form. Specifically;
+        \begin{align*}
+            p(x) & = x^4 + x^3 - 12 x^2 + 13 \\
+            13 & = x^4 + x^3 - 12 x^2 + 13 \\
+            0 & = \answer{x^4 + x^3 - 12 x^2}
+        \end{align*}
+    
+        In the last line above we have now manipulated our polynomial into a form where it equals zero, so our corollary tells us that there are \textit{at most} $4$ real solutions (ie at most $4$ values of $x$ that satisfies this equality) and \textit{exactly} $4$ complex solutions. Remember that in both of these cases the ``$4$" is \textit{up to multiplicity}.
+    
+        With a little manipulation we can see explicitly what values of $x$ work;
+        \begin{align*}
+            0 & = x^4 + x^3 - 12 x^2 \\
+            & = x^2 ( x^2 + x - 12 ) \\
+            & = x^2 \answer{( x - 3 )( x + 4 )}
+        \end{align*}
+        Thus we see we have solutions of: $x = 0$ with multiplicity of 2, $x = \answer{3}$ and $x = \answer{-4}$ both with multiplicity of 1. In this case, we do indeed have 4 solutions to the equation, but they are not unique as one of them has multiplicity of 2. That is to say, if we list the solutions from lowest (most negative) to largest (most positive) as: $\answer{-4}, \answer{0}, \answer{0}, \answer{3}$ we have four solutions as the corollary claimed.
+    \end{example}% End of example
+    
+    As mentioned this theorem is incredibly important but it seems (relatively) straightforward... polynomials can be factored. In reality though factoring polynomials has, historically, been a \textit{major} area of fascination; not just in mathematics but culturally as well.
+
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+
+\end{document}

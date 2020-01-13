@@ -1,0 +1,51 @@
+\documentclass{ximeraXloud}
+
+\title{Set Notation}
+\begin{document}
+\begin{abstract}
+    In this section we cover how to actual write sets and specifically domains, codomains, and ranges.
+\end{abstract}
+\maketitle
+
+
+\subsubsection*{Notating Sets: how we write domains, codomains, and ranges.}
+
+    An important piece of the mathematical language is properly writing sets, and there are a number of ways to do this. One such way, which we will outline below, is the so-called `set-builder notation'. This is essentially building a set by listing the properties that each element of the set has. Consider the following statement:
+    \[
+        \{x : x \text{ is a drink in the vending machine} \}
+    \]
+    The above statement has a number of very important symbols.%
+\footnote{%
+    I will describe them more formally, but then revise what the above set says in English to try and clarify. You may need/want to read this part a few times. If you don't understand set notation you have a near-zero chance of passing this course, so take the time now as it will be worth it in the long run.
+    }
+    The braces on either end are the notation for a set. Essentially the braces are saying `this is a set/collection of things'. The variable $x$ in the first part (before the colon) is a generic placeholder for something in the set. The colon is a delimiter that transitions from the notation for the generic representative to the notation that is telling you the properties that the thing must have. Finally, the content after the colon is a (comma-separated) list of traits the elements of that set have.
+    
+    That may seem pretty dense and hard to understand, but it helps to translate the set that we wrote into English. That set, if you translate it literally, says: `This is the set of things (which we will call $x$ for a second), such that each of those $x$ is a drink in the vending machine'. In a more human translation you would say that `this is the set of drinks in the vending machine'.
+    
+    There are a number of commonly used symbols and notations that will be listed in the ``additional content" section at the end that a precalculus student would be expected to know and recognize and are used often in set-building notation. Such a student would be well advised to read through the notation section of the ``additional content".
+    
+    \begin{question}
+        Which of the following would be the best set-builder notation to describe ``the set of all positive real numbers"?
+        \begin{multipleChoice}
+            \choice{$\{$ all positive real numbers. $\}$}
+            \choice{$\{x: x \geq 0\}$}
+            \choice[correct]{$\{x:x>0, x\in\mathbb{R}\}$}
+            \choice{$\{x : x \text{ is positive }\}$}
+        \end{multipleChoice}
+    \end{question}
+    
+    \begin{question}
+        Which of the following is the English-translation of the following: $\{x : x\in\mathbb{Z}, -30 < x < 45 \}$?
+        \begin{multipleChoice}
+            \choice{The set of everything between negative thirty and fourty five.}
+            \choice[correct]{The set of integers (strictly) between negative thirty and fourty five.}
+            \choice{The set of complex numbers (strictly) between negative thirty and forty five.}
+            \choice{Dear God Why? Wait no... the \textbf{set of} Dear God Why?}
+        \end{multipleChoice}
+    \end{question}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass{ximeraXloud}
+
+\title{Examples of Logs}
+\begin{document}
+\begin{abstract}
+    This is a demonstration of several examples of using log rules to handle logs mechanically.
+\end{abstract}
+\maketitle
+
+
+\subsection*{Ok, so we have all these log rules. Now what do we do with them?}
+     
+    There are two primary (mechanical) uses of logs. The most common usage is to convert a large product of things into a sum of things, but this usage primarily occurs in calculus. For our course, the primary usage will be to expand, simplify, and/or condense logs. This is best demonstrated with some examples.
+    
+    \begin{example}[Fully expand the expression $\log_2(4x^2(y+1)^3) - \log_2\left(\dfrac{x^3+4x^2-5x}{x^2-4}\right)$]%
+        Recall that we can only apply log rules when the argument is completely factored, so the very first step is to factor the arguments. Once we have done so, we have the following;
+        \[
+            \log_2\left(4x^2(y+1)^3\right) - \log_2\left(\frac{x(x-1)(x+5)}{(x-2)(x+2)}\right)
+        \]
+        Next we want to fully expand the above expression using our log rules, this will also help us find cancellations. Doing so yields
+        \[
+            \log_2(4) + \log_2(x^2) + \log_2((y+1)^3) - 
+                \left[ \log_2(x-1) + \log_2(x+5) + \log_2(x) - \log_2(x-2) - \log_2(x + 2) \right]
+        \]
+        
+        Note that $\log_2(4) = 2$, and we will use the log rules to remove powers, to get;
+        
+        \[
+            2 + 2\log_2(x) + 3\log_2(y+1) - \log_2(x-1) - \log_2(x+5) - \log_2(x) + \log_2(x-2) + \log_2(x+2)
+        \]
+        
+        Finally, we can combine like terms.
+        \[
+            2 + \log_{\answer{2}}(x) + 3\log_{\answer{2}}(y+1) + \log_{\answer{2}}(x-2) + \log_{\answer{2}}(x+2) - \log_{\answer{2}}(x-1) - \log_{\answer{2}}(x+5)
+        \]
+        
+    \end{example}%
+    
+    \begin{example}
+    {\bfseries Simplify the expression 
+    \[
+        \log\left( \dfrac{(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right) + \log\left( \dfrac{(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right)
+    \]
+    }\\%
+    
+        As before, we will begin by expanding each of the logs fully. Also like before, we must fully factor the argument of the log before we can apply the log rules to expand it. For the sake of clarity I will factor and then simplify the first log on it's own, and then do the same with the second log on it's own.\\
+        %\renewcommand{\arraystretch}{1.5}
+        
+        \begin{tabular}{ll}
+            $\log\left( \dfrac{(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right)$ & $= \log\left( \dfrac{30x(x-1)^2yz}{(y+1)(z-1)} \right)$\\
+            & $= \log(30) + \log(x) + \log((x-1)^{\answer{2}}) + \log(y) + \log(z)$\\
+            & $ - \log(y+1) - \log(z-1)$\\
+            & $= 1 + \log(3) + \log(x) + \answer{2}\log(x-1) + \log(y) + \log(z)$\\
+            & $ - \log(y+1) - \log(z-1)$
+        \end{tabular}
+        
+        Next we do the same with the second log;
+        
+        \begin{tabular}{ll}
+            $\log\left( \dfrac{(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right)$ 
+            & $= \log\left( \dfrac{(y-1)(y+1)(z+1)(z-1)}{(x-1)^3z} \right)$\\
+            & $= \log(y-1) + \log(y+1) + \log(z+1) + \log(z-1)$\\
+            & $  - \log((x-1)^3) - \log(z)$\\
+            & $= \log(y-1) + \log(y+1) + \log(z+1) + \log(z-1)$\\
+            & $  - \answer{3}\log(x-1) - \log(z)$
+        \end{tabular}
+        
+        Finally we combine the two expanded expressions we got above;
+        
+        \begin{tabular}{ll}
+            & $ \log\left( \dfrac{(30x^3 - 60x^2 + 30x)yz}{(y+1)(z-1)} \right) + \log\left( \dfrac{(y^2-1)(z^2-1)}{(x^3 - 3x^2 + 3x - 1)z} \right) $ \\
+            & $= \answer{1} + \log(3) + \log(x) + \answer{2}\log(x-1) + \log(y) + \log(z) - \log(y+1) - \log(z-1) + $\\
+            & $  \log(y-1) + \log(y+1) + \log(z+1) + \log(z-1) - \answer{3}\log(x-1) - \log(z)$ \\
+            & $= 1 + \log(3) + \log(x) - \log(x-1) + \log(y) + \log(y-1) + \log(z+1)$
+        \end{tabular}
+    \end{example}% End Example
+
+
+    \begin{example}[Condense the following expression to a single log:\\ $\ln(x^2) - 3\ln(y) + \frac{1}{2}\ln(x)$]%
+    
+        In order to condense separated log terms we need to get them into the \textit{exactly} correct forms for the log rules, that is, either $\log($stuff$) + \log($stuff$)$ or $\log($stuff$) - \log($stuff$)$. In particular, we need to make sure there are \textit{\textbf{no} coefficients in front of the log term}. To accomplish this, we will use the fact that, for any coefficient $c$ we can transform $c\log_b(x)$ into $\log_b(x^b)$, ie we can move the coefficient to the argument as a power. Thus, for our expression we would start with,
+        \[
+            \ln(x^2) - 3\ln(y) + \frac{1}{2}\ln(x) = \ln(x^2) + \ln\left(y^{-3}\right) + \ln\left(x^{\frac{1}{2}}\right)
+        \]
+        Note that we could have left the negative sign and written $- \ln(y^3)$ instead of $\ln(y^{-3})$. There is nothing wrong with doing this, but I find that often the negative sign generates computational errors, so putting it into the power is a way to avoid that trouble.\\
+        
+        Next we will condense the logs using the property that $\log(xy) = \log(x) + \log(y)$ in `reverse', meaning we will go from the right hand side to the left hand side of the equality, which gives us;
+        \[
+            \ln(x^2) + \ln\left(y^{-3}\right) + \ln\left(x^{\frac{1}{2}}\right) = 
+            \ln\left( x^2y^{\answer{-3}}x^{\answer{\frac{1}{2}}} \right) = 
+            \ln\left(\dfrac{x^{\answer{\frac{5}{2}}}}{y^{\answer{3}}}\right)
+        \]
+        Now we are done. $\ln\left(\dfrac{x^{\answer{\frac{5}{2}}}}{y^{\answer{3}}}\right)$ is the condensed form of the log. 
+    \end{example}%
+
+%    
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

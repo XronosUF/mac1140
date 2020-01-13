@@ -1,0 +1,117 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+
+\title{Types of Radicands}
+\begin{document}
+\begin{abstract}
+    This section introduces two types of radicands with variables and covers how to simplify them... or not.
+\end{abstract}
+\maketitle
+
+There are two main types of radicands we wish to distinguish here.%
+\footnote{%
+    I will note again that distinguishing these radicands as we will in this section is a pedagogical choice, meaning that the mathematical community (and future courses) will not distinguish between these two, but I find it extremely useful to do so to help students know what they can (and can't) do to simplify radicals.%
+    }
+
+\begin{description}
+    \item[\textbf{Type 1 Radical:}] Type one radicals have radicands that are entirely factored, meaning that each term of the radicand is multiplied against the other terms of the radicand. Specifically, \textbf{there are no addition or subtraction signs between terms in the radicand}.\\
+    \textbf{For example:} The radical $\sqrt[4]{x^2(x+1)(e^x + 3x)}$ is a type one radical because each of its terms are multiplied against the other terms. Specifically, the only addition or subtraction symbols are \textit{inside} terms that are multiplied against (all) the other factors in the radicand.
+    \item[\textbf{Type 2 Radical:}] Type two radicals have radicands that are \textit{not} entirely factored, meaning that there are terms in the radicand that are separated by addition or subtraction symbols.\\
+    \textbf{For example:} The radical $\sqrt{x^2(x+1)^2 - 9}$ is a type two radical because not all its terms are multiplied against the other terms. Specifically, there are terms that are being added or subtracted to the other terms (in this case, the $9$ is a term being subtracted from the other term(s) $x^2(x+1)^2$).\\
+    \textbf{Note:} It may be possible to factor/manipulate a type two radical into becoming a type one radical. This is discussed below.
+\end{description}
+
+
+We saw in the previous section how to simplify radicals where the radicand is entirely numeric. Obviously numeric radicals can always be made into type one radicals (if you have a radical that looks like two constants being added or subtracted, simply perform the addition or subtraction until the radicand is a single number). Typically the best way to deal with numeric radicals is to simplify them as far as possible in order to determine what kind of simplification we can do in the overall expression or equation where the radical is found.
+
+Since numeric radicals can always be forced into being a type one radical, the real difficulty only begins when we are using non-numeric radicals, ie radicals where the radicand includes variables.
+
+\subsection*{Radicands and variables, sounds like a blast...}
+
+    So, we have determined how to tackle radicals when they have purely numeric radicands, but what do we do when our alphabet starts making appearances in the radicand? As one might expect, things get more difficult, although perhaps not always for the reasons one might think.
+
+    It is worth a note, although it is likely intuitively clear, that radical expressions should be treated as an unbreakable `term' when they are separated by addition or subtraction. Thus the only way to put two radical expressions together that are separated by addition or subtraction is if they are \textit{\textbf{exactly} the same radical expression}. Consider the following example:
+
+    \begin{example}[Simplify the expression $\sqrt{28x^2} - \sqrt{7}$]%
+        In this example we will simplify the given radicals using techniques that will be discussed in the sections to follow. Like the first example of this topic, it's ok if you don't immediately follow how some of the computations are done, but you should return to this example once you have finished the topic to verify that you understand every single step at that point. Specifically, the appearance of the absolute value may be unclear, but the rest of the mechanics should be familiar.
+
+        First we note that the second radical, $\sqrt{7}$ is a numeric radical and, since $7$ is prime, it is already in it's simplest form (there are no perfect squares to factor out). Moreover, since the current (first and second) radicals are not \textit{absolutely identical} we cannot `merge' or `factor' or otherwise `simplify' this difference of radicals... yet. \\
+        The key is to observe that the first radical \textit{can} be simplified. Specifically; 
+        \[
+            \sqrt{28x^2} = \sqrt{2^2 x^2}\sqrt{7} = 2|x|\sqrt{7} 
+        \]
+        Now we can observe that the \textit{remaining} radical piece has a radicand of $7$, so the radical in the simplified form of $\sqrt{28x^2}$ \textit{is exactly identical} to the radical piece of the second radical. Thus, putting our terms together we have;
+        \[
+            \sqrt{28x^2} - \sqrt{7} = 2|x|\sqrt{7} - \sqrt{7} = \sqrt{7}(2|x| - 1)
+        \]
+
+        So we conclude that the simplified (or factored) form of the original expression is $\answer{\sqrt{7}(2|x| - 1)}$.
+    \end{example}% End of Example
+
+\subsection*{Type Two Radicals and how to `simplify' them.}
+
+    In some senses, type two radicals are the most straight forward type which is why we start with the type two instead of the type one. In short, a type two radical is `easy' purely because there isn't anything we can do when it is in this form in terms of `simplifying' the radical (without manipulating the radicand). The key thing here is that you \textit{\textbf{absolutely cannot simplify a type two radical!}} This may seem straight forward, but it is often easy to overlook this and simplify things because it seems like it should work. For example;
+
+    \begin{example}[Find values of $x$ so that $\sqrt{x^2 + 9} = 10$]%
+        Notice that the radical in the problem is type 2. Nonetheless many reading this example will want to immediately `simplify' the radical to get the equation: $x + 3 = 10$ (by square rooting each of the terms). But let's see what happens if we do so.
+
+        Doing this `simplification' gets us that $x = 7$. An astute student might want to include the $\pm$ option because of the $x^2$, so let's consider that possibility as well; ie $x + 3 = - 10$ which gives $x = -13$. Now let's plug these ``solutions" of $x$ back into the original equation to see what happens;
+        
+        \begin{tabular}{lcrcccccccc}
+            $x$ & $=$   & $7$:      & \hspace{1cm}  & $\sqrt{x^2 + 9}$ & $=$ & $\sqrt{7^2 + 9}$     & $=$ & $\sqrt{49 + 9}$     & $=$ & $\sqrt{58} \neq 10$.\\
+            $x$ &  $=$  & $-13$:    &               & $\sqrt{x^2 + 9}$ & $=$ & $\sqrt{(-13)^2 + 9}$ & $=$ & $\sqrt{169 + 9}$    & $=$ & $\sqrt{178} \neq 10$.
+        \end{tabular}
+
+        As we can see, in both these cases our `solutions' didn't work, this is because \wordChoice{\choice[correct]{\textbf{\textit{you cannot simplify type two radicals}}}\choice{math loves wasting our time.}\choice{because there is a better way to simplify these radicals.}}. Thus we will need a different way of solving these kinds of equations, which we will discuss later in this topic.
+    \end{example}% end of the Example.
+
+    So, when you are confronted with the need to simplify a type two radical, your best bet to start with is to see if you can manipulate the radicand to make the type two radical into a type one radical. In short, you want to factor the radicand. If possible this is almost always the best way to go, as other techniques to `solve' equations with type two radicals come with a variety of possible drawbacks.
+
+
+\subsection*{Type One Radicals and how to simplify them.}
+
+    Whether you have managed to factor the radicand of a type two radical, or were lucky enough to have a type one to begin with, once the radicand is a product of terms, the radical can be simplified. In this case, each term should be viewed as a `factor' of the radicand in the same way that primes were `factors' of numeric radicals earlier. Specifically, we want to write each term as a piece that has a power equal to the root value, and the `remainder'. The following example may be helpful to understand what is meant by this.
+
+    \begin{example}
+    {\bfseries Simplify the type one radical: $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$}\\%
+        First we should observe that the given radical really is a type one radical as each of the terms in the radicand is being multiplied against each other term. Thus, to simplify we will want to group each of the (multiplicative) terms of the radicand into ``perfect cube" pieces (since the root-value is $3$), and ``remainder'' pieces, just like we did with the prime factors in the numeric radical instance.
+        
+        \begin{tabular}{ll}
+            $\sqrt[3]{x^5z^{11}(x+2)^2(x-z)^7}$ & $= \sqrt[3]{(x^3)^1 x^2 \cdot (z^3)^3 z^2 \cdot (x+2)^2 \cdot ((x-z)^3)^2 (x-z)}$                 \\
+                                                &$= \left(\sqrt[3]{(x^3)^1(z^3)^3((x-z)^3)^2}\right) \left(\sqrt[3]{x^2 z^2 (x+2)^2 (x-z)}\right)$  \\
+                                                &$= \bigg(\answer{x z^3 (x-z)^2}\bigg) \sqrt[3]{\answer{x^2 z^2 (x+2)^2 (x-z)}}$                    \\
+%            {
+%                \begin{feedback}[incorrect]
+%                    Notice that the answer wants a factor that \textit{isn't} in a root, and another answer that \textit{is} in the cube root. So you should separate (and/or factor) your answer into those two pieces to put them in separately.
+%                    Also note that you do not need to include the radical itself since it's already included outside of the answer box.
+%                \end{feedback}
+%            }
+        \end{tabular}
+            
+    \end{example}% End example
+
+    The good news is that the simplification \textit{process} is the same as the numeric examples we've seen (albeit with a looser definition of `prime factor'). It should not be a total surprise that the factored form treats each (multiplicative) factor as a `prime factor' in terms of simplifying the radical in a similar fashion to simplifying numeric radicals. After all we've already seen that roots are analogous to `prime-numbers' when it comes to decomposing polynomials to their `most basic parts', so it shouldn't be surprising that they end up being treated similarly in other situations as well.
+
+    Unfortunately, the bad news is that the \textit{result} isn't quite as straightforward as in the case of the numeric radical case. To motivate the next part, we will first proceed with an example.
+
+    \begin{example}[Find all $x$ that satisfy the equation $\sqrt{x^2} = 2$]%
+        This example seems straight forward. According to our rules of simplifying it seems like $\sqrt{x^2} = x$. Indeed, if we do that then we get as an answer $x = 2$ and, plugging that back in to the original equation, we get $\sqrt{2^2} = \sqrt{4} = 2$. So far so good right? But what about $x = -2$? If we plug that in we will also get $\sqrt{(-2)^2} = \sqrt{4} = 2$, so $x = -2$ is \wordChoice{\choice{is irrelevant}\choice[correct]{also a solution}\choice{works, but isn't a solution since square roots are only positive}}. So, why didn't our method give us this answer as well?
+    \end{example}% end of Example.
+
+    If we look closely at the previous example it may become apparent that the reason that $x = -2$ is also a solution, is that the $x^2$ in the original equation obliterates the negative sign. Thus, since $2$ is a solution, and the even power nullifies the effect of the negative sign, then $-2$ is also a solution (ie since $2^2 = 4$ and $(-2)^2 = 4$, there is no difference between the two solutions once we square them in the equation). But understanding why the solution is valid is not quite the same thing as figuring out why we didn't find it the first time. After all if the our methodology were correct, it should have given us \textit{all} the valid solutions the first time around.
+
+    The key observation is that the radical (symbol) is defined to \textit{only give positive outputs}. To understand why this is the case though, we need to revisit the primary reason we have radicals... namely to `undo' powers.
+        
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

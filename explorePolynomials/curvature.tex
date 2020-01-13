@@ -1,0 +1,151 @@
+\documentclass{ximeraXloud}
+
+\title{Curvature and Graphing}
+\begin{document}
+\begin{abstract}
+    This section shows and explains graphical examples of function curvature.
+\end{abstract}
+\maketitle
+
+
+Another common aspect of a function, typically more often referred to on the graph of the function, is the functions \textit{curvature}. In general, curvature (like local extrema) are difficult to find and are a major area of study in calculus. However, for this class we will restrict ourselves to a description of what different types of curvature `look like' on a graph so that we can identify curvature types. One typically refers to the curvature as a combination of whether the function is increasing or decreasing, and whether it is concave up or concave down. We will describe each of these by themselves, but give graphical representations of their combinations which may be more enlightening.%
+\footnote{The graphical representation tends to be easier to understand than the description, so if you don't understand the description immediately try looking at the graphs and then return to the analytic descriptions to see if you can figure out what they are saying.}
+
+\begin{description}
+    \item[\textbf{Increasing:}] A function is increasing on an interval $(a,b)$ if, for \textit{every single pair of values} $x$ and $w$ so that  $a < x < w < b$, we have $f(x) < f(w)$. In `human speak' a function is increasing on an interval $(a,b)$, if larger numbers in that interval \textit{always} get sent to larger values by $f$.
+    \item[\textbf{Decreasing:}] A function is decreasing on an interval $(a,b)$ if, for \textit{every single pair of values} $x$ and $w$ so that  $a < x < w < b$, we have $f(x) > f(w)$. In `human speak' a function is increasing on an interval $(a,b)$, if larger numbers in that interval \textit{always} get sent to smaller values by $f$.
+    \item[\textbf{Concave Up:}] A function is concave up on an interval $(a,b)$ if, for \textit{every single pair of values} $x$ and $w$ so that  $a < x < w < b$, $\frac{f(a) - f(x)}{a-x} < \frac{f(w)-f(b)}{w-b}$ In `human speak' a function is concave up if the line connecting $x$ to $w$ is \textit{always above} the graph of $f$ for every value between $x$ and $w$. Alternatively, one can say an interval $(a,b)$ is concave up if the graph `bends upward' as you graph it from left to right.
+    \item[\textbf{Concave Down:}] A function is concave down on an interval $(a,b)$ if, for \textit{every single pair of values} $x$ and $w$ so that  $a < x < w < b$, $\frac{f(a) - f(x)}{a-x} > \frac{f(w)-f(b)}{w-b}$ In `human speak' a function is concave up if the line connecting $x$ to $w$ is \textit{always below} the graph of $f$ for every value between $x$ and $w$. Alternatively, one can say an interval $(a,b)$ is concave up if the graph `bends downward' as you graph it from left to right.
+\end{description}
+
+The following are graphical representations of various combinations of increasing/decreasing and concave up/down;
+
+\begin{description}
+    \item[\textbf{Increasing and Concave Up:}] Consider the graph for $f(x) = 2^x$ below;\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle,
+            axis y line=middle,
+            minor tick num=1,
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.5,1)},anchor=west},
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-4,
+            xmax=4,
+            ymin=-1,
+            ymax=10
+            ]
+        \addplot[<->,domain=-3:3, samples=300]{2^x};
+        \end{axis}
+    \end{tikzpicture}
+    
+    \newpage
+    \item[\textbf{Increasing and Concave down:}] Consider the graph for $f(x) = \ln(x)$ below;\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle,
+            axis y line=middle,
+            minor tick num=1,
+            x label style={at={(axis description cs:1,0.5)},anchor=south},
+            y label style={at={(axis description cs:0.1,1)},anchor=west},
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-1,
+            xmax=12,
+            ymin=-5,
+            ymax=5
+            ]
+        \addplot[<->,domain=0.1:10, samples=300]{ln(x)};
+        \end{axis}
+    \end{tikzpicture}
+    
+    \item[\textbf{Decreasing and Concave Up:}] Consider the graph for $f(x) = \frac{1}{x}$ below;\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle,
+            axis y line=middle,
+            minor tick num=1,
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.1,1)},anchor=west},
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-1,
+            xmax=12,
+            ymin=-1,
+            ymax=10
+            ]
+        \addplot[<->,domain=0.1:10, samples=300]{1/x};
+        \end{axis}
+    \end{tikzpicture}
+    
+    \item[\textbf{Decreasing and Concave Down:}] Consider the graph for $f(x) = -2^x + 10$ below;\\
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle,
+            axis y line=middle,
+            minor tick num=1,
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.5,1)},anchor=west},
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-4,
+            xmax=4,
+            ymin=-1,
+            ymax=10
+            ]
+        \addplot[<->,domain=-3:3, samples=300]{-(2^x) + 10};
+        \end{axis}
+    \end{tikzpicture}
+    
+    \item[\textbf{Combination of each of the above in the same graph:}] Consider the graph of the polynomial $f(x) = \frac{1}{10}(x-1)(x+1)(x+3)(x-2)$ below;%
+    \footnote{the $\frac{1}{10}$ is merely to make the graph a bit more readable, we could remove it and rescale the axis to make it work}
+    \\
+    
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle,
+            axis y line=middle,
+            minor tick num=1,
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.5,1)},anchor=west},
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-4,
+            xmax=4,
+            ymin=-2,
+            ymax=4.5
+            ]
+        \addplot[<->,domain=-3.5:2.5, samples=300]{1/10*(x^4 + x^3 - 7*x^2 - x + 6)};
+        \node at (axis cs:-3,2) [draw=none] {A};
+        \node at (axis cs:-1,-0.5) [draw=none] {B};
+        \node at (axis cs:1,0.3) [draw=none] {C};
+        \node at (axis cs:2.7,0.7) [draw=none] {D};
+        \end{axis}
+    \end{tikzpicture}
+    
+    Key:
+    \begin{itemize}
+        \item[\textbf{A:}] Decreasing and Concave Up
+        \item[\textbf{B:}] Increasing and Concave Down
+        \item[\textbf{C:}] Decreasing and Concave Down
+        \item[\textbf{D:}] Increasing and Concave Up.
+    \end{itemize}
+    Thus we have all four combinations in one polynomial, which is not unusual for higher degree polynomials.
+\end{description}
+
+
+
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+
+
+\end{document}

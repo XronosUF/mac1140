@@ -1,0 +1,137 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+%\usepackage{sagetex}
+\title{Exam One Review}
+\begin{document}
+\begin{abstract}
+This is an unlimited practice exam for Exam 1. It DOES NOT COUNT TOWARD A GRADE. This practice is entirely optional!
+\end{abstract}
+\maketitle
+
+\begin{sagesilent}
+    def RandInt(a,b):
+        """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+        """
+        return QQ(randint(int(a),int(b)))
+        # return choice(range(a,b+1))
+    
+    def NonZeroInt(b,c, avoid = [0]):
+        """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+            If `av` is not specified, defaults to a non-zero integer.
+        """
+        while True:
+            a = RandInt(b,c)
+            if a not in avoid:
+                return a
+    
+    #### Problem 1
+    p1c1 = RandInt(1,5)
+    p1c2 = RandInt(1,5)
+    p1c3 = RandInt(1,5)
+    
+    p1c4 = RandInt(1,5)
+    p1c5 = RandInt(1,5)
+    p1c6 = RandInt(1,5)
+    
+    p1ans1 = p1c1*p1c4 + p1c2*p1c5 + p1c3*p1c6
+    
+    #### Problem 2
+    p2c1 = RandInt(-10,10)
+    p2c2 = RandInt(-10,10)
+    
+    #### Problem 3
+    p3vec = [x, x^2, x^3, log(x), e^x, sqrt(x)]
+    p3c1 = NonZeroInt(-10,10)
+    p3c2 = NonZeroInt(-10,10)
+    p3c3 = RandInt(-10,10)
+    p3c4 = RandInt(-10,10)
+    p3f1 = choice(p3vec)
+    p3f2 = p3c1*p3f1(p3c2*x+p3c3)+p3c4
+    
+    #### Problem 4
+    p4vec = p3vec
+    p4f1t = choice(p4vec)
+    p4f2t = choice(p4vec)
+    
+    p4c1 = NonZeroInt(-10,10)
+    p4c2 = NonZeroInt(-10,10)
+    p4c3 = NonZeroInt(-10,10)
+    p4c4 = NonZeroInt(-10,10)
+    
+    p4f1 = p4c1*p4f1t(x-p4c2)
+    p4f2 = p4c3*p4f2t(x) + p4c4
+    p4f3 = choice(p4vec)
+    
+    p4ans1 = p4f1 + p4f2
+    p4ans2 = p4f1*p4f2
+    p4ans3 = p4f1*p4f2 - p4f1 - p4f2
+    p4ans4 = p4f1/p4f2
+    p4ans5 = (p4f1 + p4f2)/(p4f1 + p4f3)
+    
+    #### Problem EXPERIMENTAL
+    pEXf1 = piecewise( [ [(-2,1),x^2], [(1,2),x]] )
+    pEXg1 = plot(pEXf1, (-2,2), figsize = [3,3])
+    pEXg2 = plot(1/x,(-5,5), figsize = [3,3])
+    
+\end{sagesilent}
+
+\begin{problem}
+        You are walking through a flea market when you notice a table selling crystals. The crystals are broken down into a number of types, each with a cost, as follows;
+        
+        \begin{center}
+            \begin{tabular}{| l | l |}\hline
+            \textbf{Crystal Type} & \textbf{Cost} \\ \hline
+            Colored Crystals & \$ $\sage{p1c1}$ \\ \hline
+            Clear Crystals & \$ $\sage{p1c2}$ \\ \hline
+            Patterned Crystals & \$ $\sage{p1c3}$ \\ \hline
+            \end{tabular}
+        \end{center}
+        
+        Consider the relationship that tells you all the possible individual crystals you can buy based on how much money you have. Is this relationship a function? Note: you are considering specific individual crystals, not how many `types' of crystals you can buy.
+        
+        \begin{multipleChoice}
+            \choice[correct]{No, for one price you can buy many different crystals.}
+            \choice{Yes, for one price you can buy many different crystals.}
+            \choice{Yes, each crystal costs one specific amount.}
+            \choice{No, each crystal costs one specific amount.}
+        \end{multipleChoice}
+    
+        \begin{problem}
+            You decide to purchase $\sage{p1c4}$ colored crystals, $\sage{p1c5}$ clear crystals, and $\sage{p1c6}$ patterned crystals. How much does it cost? $\answer{\sage{p1ans1}}$
+        \end{problem}
+\end{problem}
+
+\begin{problem}
+    What are the coordinates of a point that is best described as ``moved $\sage{p2c1}$ units horizontally and $\sage{p2c2}$ units vertically"? (Note: positive is right/up and negative is left/down)
+    $(\answer{\sage{p2c1}},\answer{\sage{p2c2}})$
+\end{problem}
+
+\begin{problem}
+    Consider the function $f(x) = \sage{p3f2(x)}$. What is the parent function of $f(x)$? $\answer{\sage{p3f1}}$.
+\end{problem}
+
+\begin{problem}
+    Consider the functions $f(x) = \sage{p4f1(x)}$, $g(x) = \sage{p4f2(x)}$ and $h(x) = \sage{p4f3(x)}$.
+    
+    Compute $(f + g)(x) = \answer{\sage{p4ans1(x)}}$.
+    \begin{problem}
+        Compute $(fg)(x) = \answer{\sage{p4ans2(x)}}$.
+        \begin{problem}
+            Compute $(fg)(x) - f(x) - g(x) = \answer{\sage{p4ans3(x)}}$.
+            \begin{problem}
+                Compute $\left( \frac{f}{g} \right)(x) = \answer{\sage{p4ans4}}$
+                \begin{problem}
+                    Compute $\left( \frac{f + g}{f + h}\right)(x) = \answer{\sage{p4ans5}}$
+                \end{problem}
+            \end{problem}
+        \end{problem}
+    \end{problem}
+\end{problem}
+
+\begin{problem}
+    This is an experimental problem to try and fix graphing and is probably entirely non-functional... so ignore it.
+    
+    $\sageplot{pEXg1}$.
+\end{problem}
+
+\end{document}

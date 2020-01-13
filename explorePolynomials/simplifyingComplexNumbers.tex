@@ -1,0 +1,77 @@
+\documentclass{ximeraXloud}
+
+\title{Simplifying Complex Numbers}
+\begin{document}
+\begin{abstract}
+    Simplifying complex numbers
+\end{abstract}
+\maketitle
+
+
+Actually yes, it helps to know how to deal with the algebra of complex numbers. It turns out that the fact that $i^2 = -1$ gives a fascinating amount of structure to the set of the complex numbers.%
+\footnote{In fact this is a major area of study in mathematics, and one that I am also involved in, loosely speaking.}
+Specifically there are a number of common techniques one should be aware of to simplify complex numbers. Consider the following couple examples.
+
+\begin{example}%
+    Simply the complex number $\dfrac{3 + i}{2 - 2i}$.
+    
+    If we want to simplify an expression, it is always important to keep in mind what we mean when we say 'simplify'. Generally speaking students are often told that `complex values cannot be in the denominator'. Much like the `square roots cannot be in the denominator' this is patently false... however there is decent reason to do this anyway which we will explore now. It comes down to the not-obvious observation that, unlike square roots, we can \textit{always} eliminate complex numbers from the denominator without making the problem any more (numerically) complex... which is not to say the result may not be more complex in practice.
+    
+    In our example of $\dfrac{3 + i}{2 - 2i}$ let's consider what we mean when we say we want to `simplify'. Generally speaking non-fractions are easier to deal with than fractions, so a good place to start is to see if we can remove the fraction entirely... and if not, if we can at least make it somewhat simpler to handle. I mentioned that complex numbers have some kind of `added structure' to them that makes them easier (in a sense) to deal with... but the only thing we've seen so far is that complex conjugates seem to appear in pairs. Thus, let's see what happens when we use a complex conjugate in general, and then apply it to the expression have here.
+    
+    What happens if we multiply $(a + bi)$ by it's complex conjugate (meaning the sign in front of the $i$ term is changed, but everything else is the same), $(a - bi)$. We get:
+    \begin{align*}
+        (a+bi)(a-bi)    & = a(a-bi) + (bi)(a-bi)                 \\
+                        & = a^2 - abi + bia - (bi)^2             \\
+                        & = a^2 - abi + abi - i^2b^2             \\
+                        & = a^2 + (abi - abi) - (-1)(b^2)        \\
+                        & = a^2 + b^2
+    \end{align*}
+    In thus we end up getting $a^2 + b^2$, which is maybe a little surprising as this appears to be the infamous ``sum of squares" we can't factor. However; if we think about it further it's actually the \textit{difference of complex squares}, namely $a^2 - (bi)^2$ since $(bi)^2 = i^2b^2 = -(b^2)$.
+    
+    So, applying this to our goal; we could multiply the top and bottom (multiplying by one cleverly) of our fraction by the conjugate of the bottom to get:
+    \begin{align*}
+        \dfrac{3+ i}{2 - 2i}    & = \dfrac{3+ i}{2 - 2i} \cdot \dfrac{2 + 2i}{2 + 2i}      \\
+                                & = \dfrac{(3+i)(2 + 2i)}{(2-2i)(2+2i)}                    \\
+                                & = \dfrac{3(2 + 2i) + i(2 + 2i)}{4 - (2i)^2}              \\
+                                & = \dfrac{6 + 6i + 2i +2i^2}{4 - (-4)}                    \\
+                                & = \dfrac{6 + 8i -2}{8}                                   \\
+                                & = \dfrac{4 + 8i}{8}                                      \\
+                                & = \dfrac{1}{2} + i                                                             
+    \end{align*}
+    Notice that the last equality above is attained by separating the numerator to get $\dfrac{4}{8} + \dfrac{8i}{8}$ and then simplifying. Moreover notice that the result, $\frac{1}{2} + i$ is vastly easier to deal with than $\frac{3 + i}{2 - 2i}$.
+    
+    
+\end{example}% End of example
+
+It turns out there are other ways to ``see" what a complex number is doing, but this one technique is usually enough to get most complex numbers to simplify into something manageable. Moreover, as we saw above, any (purely) numeric expression or term that is a complex number, can always be reduced using this technique to the form $A + Bi$ where $A$ and $B$ are some real numbers. Because of this, we say that the form $A + Bi$ is the ``standard form" of a complex number. Really what we mean is it is the \textit{standard form to simply a complex number to} as it's universally possible, and the ``nicest" form to have a complex number in, in most situations.
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{3 + 6i}{1 - i} = \answer{-\frac{3}{2}} + \answer{\frac{9}{2}}\cdot i
+    \]
+\end{problem}
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{3 + 6i}{1 - i} = \answer{-\frac{3}{2}} + \answer{\frac{9}{2}}\cdot i
+    \]
+\end{problem}
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{2 - i}{1 + i} = \answer{\frac{1}{2}} + \answer{-\frac{3}{2}}\cdot i
+    \]
+\end{problem}
+
+\begin{problem}
+    Simplify the following complex expression into standard form.
+    \[
+        \frac{(3 + i)^2 - 7i}{3 - 2i} = \answer{2} + \answer{1}\cdot i
+    \]
+\end{problem}
+
+\end{document}

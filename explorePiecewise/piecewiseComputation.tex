@@ -1,0 +1,26 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+
+\title{Piecewise Functions: Computation}
+\begin{document}
+\begin{abstract}
+    This section discusses how to compute values using a piecewise function
+\end{abstract}
+\maketitle
+
+Computing values of a piecewise function is relatively straightforward, although perhaps not initially obvious. Recalling that the point of piecewise functions is to write out a list of functions that are `stitched together', if you wish to compute the value of the piecewise function at a specific point, it's a matter of finding which function your value is on, and using that function to compute the value. Consider the following function we developed to record profit over time of the newly founded company:
+\[
+    P(t) =
+        \begin{cases}
+            {\frac{1}{2}t^2} & 0\leq t < 2 \\
+            {2} & 2 \leq t \leq 4 \\
+            \sqrt{3t-8} & t > 3
+        \end{cases}
+\]
+
+If we want to determine the profit at, say, year 5 we first need to determine which of the three listed functions governs that year. To do this we check the list on the right hand side of each function to see which function has 5 in it's domain. After checking the values, we can see that 5 is recorded in the third function (since $5 > 3$) and so we would use the function on that line, ie $\left(3t-8\right)^{\frac{1}{2}}$ to determine the value. Finally, we plug in the value we want and compute:
+\[
+    P(5) = \sqrt{3(5)-8} = \sqrt{7}
+\]
+
+\end{document}

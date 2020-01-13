@@ -1,0 +1,61 @@
+\documentclass{ximeraXloud}
+
+\title{Terminology To Know}
+\begin{document}
+\begin{abstract}
+    These are important terms and notations for this section.
+\end{abstract}
+\maketitle
+
+
+\begin{definition}[Monomial]
+    A term of the form $ax^n$ for some constant $a$ and some non-negative integer $n$. From ``mono" meaning ``one" and ``nomen" meaning ``name".
+\end{definition} 
+
+\begin{definition}[Binomial]
+    An expression that is the sum or difference of two monomials. From "bi" meaning ``two".
+\end{definition} 
+
+ \begin{definition}[Polynomial]
+    A function or expression that is entirely composed of monomials. From ``poly" meaning ``many".
+\end{definition} 
+
+\begin{definition}[Leading Term (of a polynomial)]
+    The \textit{leading term} of a polynomial is the term with the highest power and it's coefficient. Another way to describe it (which is where this term gets its name) is that; if we arrange the polynomial from highest to lowest power, than the first term is the so-called `leading term'.\\
+    \textbf{For Example:} For the polynomial $p(x) = x^2 - 13x^3 + 4x - 1$ we could rewrite it in descending order of exponents, to get $p(x) = -13x^3 + x^2 + 4x - 1$ which makes clear that $-13x^3$ as the `leading term' of $p(x)$.
+\end{definition} 
+
+\begin{definition}[(Complex) Conjugate]
+    A pair of complex numbers whose real parts are the same, and whose imaginary parts differ only by a negative sign are called complex conjugates. \\
+    \textbf{Note:} We often ask for `the complex conjugate to' a complex number, in which case we are asking for the associated number in the pair. \\
+    \textbf{For Example:} The numbers $5 + 3i$ and $5 - 3i$ are complex conjugates. If one were to ask `what is the complex conjugate of $5 - 3i$ the answer would be the other number of the complex conjugate pair, ie $5 + 3i$.
+\end{definition} 
+
+\begin{definition}[Curvature]
+    Curvature refers to monotonicity and the concavity or `bend' of a curve.
+\end{definition} 
+
+\begin{definition}[Irreducible Polynomial]
+    A polynomial that cannot be factored any further. We will often specify under what type of numbers we are factoring the polynomial; eg real numbers or complex numbers. This indicates whether all numbers in the factored form must be real or complex numbers (respectively).\\
+    \textbf{For Example:} $(x^2+1)$ is \textit{irreducible under the real numbers} because there is no way to factor this quadratic with real numbers only. \textbf{However} $x^2+1$ is \textit{not} irreducible under the complex numbers, as we can write $x^2+1 = (x+i)(x-i)$.
+\end{definition} 
+
+\begin{definition}[Roots (of a polynomial)]
+    A root of a polynomial is an irreducible polynomial that is a factor of the given polynomial.\\
+    \textbf{For Example:} The polynomial $x + 1$ is a root of the polynomial $x^2 - 1$ because $(x+1)(x-1) = x^2 -1$. In comparison $x^2-1$ is \textit{not} a root of the polynomial $x^4-1$, even though $(x^2-1)(x^2+1) = x^4-1$ because $x^2-1$ is \textit{not} irreducible.
+\end{definition}
+
+\begin{definition}[Multiplicity (of a value)]
+    The multiplicity of a value is a count of how many times that value occurs. This is most often used in reference to the `multiplicity of a zero' or `multiplicity of a root'. \\
+    \textbf{For Example:} Let's say we have factored a polynomial into the form:
+    \[
+        p(x) = (x+1)^3(x-1)^2(x+5)(x+17)
+    \]
+    We would say that ``the root $(x+1)$ has multiplicity 3'', because the term $(x+1)$ occurs 3 times (hence the power of 3). Similarly the root $(x-1)$ has multiplicity 2, and the roots $(x+5)$ and $(x+17)$ both have multiplicity 1. This can be even easier to see if we re-write $p(x)$ without using exponents;
+    \[
+        p(x) = (x+1)(x+1)(x+1)(x-1)(x-1)(x+5)(x+17)
+    \]
+    When we say that a polynomial has $n$ roots ``up to multiplicity" what we mean is that if we add all the multiplicity numbers together of all the roots, we would get $n$. So in the case of $p(x)$ we would say $p(x)$ has 7 roots ``up to multiplicity" since there are 4 \textit{unique} ``roots", but two of them occur more than once, so there are a total of 7 roots if you account for repeats.
+\end{definition}
+
+\end{document}

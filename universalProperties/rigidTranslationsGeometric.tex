@@ -1,0 +1,87 @@
+\documentclass{ximeraXloud}
+
+\title{Rigid Translations}
+\begin{document}
+\begin{abstract}
+    This section describes the geometric perspective of what makes a Rigid Translation.
+\end{abstract}
+\maketitle
+
+\subsection*{The geometric view}
+    The result of a rigid translation is incredibly apparent when looking at the graph (before and after) of the function. The result is also more easily stated%
+    \footnote{%
+        `easily' and `quickly' are not the same thing in this case...%
+        } 
+    (at least in terms of what is happening to the graph) in geometric terms. In essence, a `rigid translation' changes the graph of the function in a very specific way; by ``picking up the function and moving it's location on the $x$-$y$ plane". The key observation%
+    \footnote{%
+        but easily overlooked due to how `obvious' it is%
+        }
+    is that the \textbf{only} thing that changes about the graph is its position on the $x$-$y$ plane. Take, for example, the following graph:
+    
+    \begin{minipage}{\textwidth}
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                            axis x line=middle,
+                            axis y line=middle,
+                            minor tick num=5,
+                            x label style={at={(axis description cs:1,0.5)},anchor=south},
+                            y label style={at={(axis description cs:0.5,1)},anchor=west},
+                            xlabel={$x$},
+                            ylabel={$y$},
+                            xmin=-8,
+                            xmax=8,
+                            ymin=-17,
+                            ymax=17
+                            ]
+                \addplot[<->,domain=-3.1:3.1, samples=300]{1/2*(x-3)*(x-2)*(x+1)*(x+3)};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{minipage}
+    
+    We wish to apply a rigid translation to this graph; specifically the rigid translation that moves the graph to the right by $4$ and down by $5$. That would change the above graph to the following:
+    
+    \begin{minipage}{\textwidth}
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis x line=middle,
+                    axis y line=middle,
+                    minor tick num=5,
+                    x label style={at={(axis description cs:1,0.5)},anchor=south},
+                    y label style={at={(axis description cs:0.5,1)},anchor=west},
+                    xlabel={$x$},
+                    ylabel={$y$},
+                    xmin=-8,
+                    xmax=8,
+                    ymin=-17,
+                    ymax=17
+                    ]
+                \addplot[<->,domain=0.9:7.1, samples=300]{1/2*(x-3-4)*(x-2-4)*(x+1-4)*(x+3-4) - 5};
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{minipage}
+    
+    As we can see, we appear to have the same curve (the same `graph') but it moved to a different location.\footnote{%
+        When we say move, we mean that it moved left/right up/down, it didn't rotate, stretch, or otherwise change it's orientation or shape/size on the $x$-$y$ plane.%
+        } 
+    This is how we know the transformation we applied is a \textit{rigid} transformation.\footnote{%
+        In fact, the name `rigid translation' is from the fact that the shape stays `rigid', like it's made of steel, while we pick it up and move (translate) it from one location to another.%
+        }
+    
+    Another way of putting this is that you can envision the curve that is graphed is made of cast iron or titanium and you are merely allowed to slide it; left/right, or up/down. In our example we slid it to the right by $4$ units and down by $5$ units, but the curve itself remained exactly as it was, rigid like a piece of metal.
+
+    \subsubsection*{Ok, I see that, but didn't I read a whole topic a bit ago on how we don't like writing this many words?}
+        Indeed you did, and don't fret, we have notation for this too! I know this is just all kinds of exciting for you to hear, and you are surely running away to go tell your friends. You'll be back right? ... right? ... hello?
+        
+        Really though, this is where the functional notation aka the `analytic view' helps immensely.
+
+
+
+    
+    
+    
+
+\end{document}

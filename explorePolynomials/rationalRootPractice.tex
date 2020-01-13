@@ -1,0 +1,190 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Factoring Practice}
+
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Polynomial Factoring.
+\end{abstract}
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem p1
+p1c1 = RandInt(-5,5)
+p1c2 = NonZeroInt(-5,5,[p1c1,-p1c1])
+p1c3 = NonZeroInt(-5,5,[p1c1,-p1c1, p1c2, -p1c2])
+p1c4 = NonZeroInt(-5,5,[p1c1,-p1c1, p1c2, -p1c2, p1c3, -p1c3])
+
+p1f1 = expand( (x-p1c1)*(x-p1c2)*(x-p1c3)*(x-p1c4) )
+p1ans1 = min(p1c1, p1c2, p1c3, p1c4)
+p1ans2 = max(p1c1, p1c2, p1c3, p1c4)
+p1ans3 = p1c1+p1c2+p1c3+p1c4
+
+
+### Problem p2
+p2c1 = RandInt(-5,5)
+p2c2 = NonZeroInt(-5,5,[p2c1,-p2c1])
+p2c3 = NonZeroInt(-5,5,[p2c1,-p2c1, p2c2, -p2c2])
+p2c4 = NonZeroInt(-5,5,[p2c1,-p2c1, p2c2, -p2c2, p2c3, -p2c3])
+
+p2f1 = expand( (x-p2c1)*(x-p2c2)*(x-p2c3)*(x-p2c4) )
+p2ans1 = min(p2c1, p2c2, p2c3, p2c4)
+p2ans2 = max(p2c1, p2c2, p2c3, p2c4)
+p2ans3 = p2c1+p2c2+p2c3+p2c4
+
+
+### Problem p3
+p3c1 = RandInt(-5,5)
+p3c2 = NonZeroInt(-5,5,[p3c1,-p3c1])
+p3c3 = NonZeroInt(-5,5,[p3c1,-p3c1, p3c2, -p3c2])
+p3c4 = NonZeroInt(-5,5,[p3c1,-p3c1, p3c2, -p3c2, p3c3, -p3c3])
+
+p3f1 = expand( (x-p3c1)*(x-p3c2)*(x-p3c3)*(x-p3c4) )
+p3ans1 = min(p3c1, p3c2, p3c3, p3c4)
+p3ans2 = max(p3c1, p3c2, p3c3, p3c4)
+p3ans3 = p3c1+p3c2+p3c3+p3c4
+
+
+### Problem p4
+p4c1 = RandInt(1,5)
+p4c2 = RandInt(1,5)
+p4c3 = NonZeroInt(-5,5)
+p4c4 = NonZeroInt(-5,5)
+p4c5 = NonZeroInt(-5,5)
+p4c6 = NonZeroInt(-5,5)
+
+p4f1 = expand( (x^2 + p4c1)*(x^2 + p4c2)*(p4c3*x-p4c4)*(p4c5*x - p4c6) )
+
+p4ans1 = p4c4/p4c3 + p4c6/p4c5
+
+
+### Problem p5
+p5c1 = RandInt(1,5)
+p5c2 = RandInt(1,5)
+p5c3 = NonZeroInt(-5,5)
+p5c4 = NonZeroInt(-5,5)
+p5c5 = NonZeroInt(-5,5)
+p5c6 = NonZeroInt(-5,5)
+
+p5f1 = expand( (x^2 + p5c1)*(x^2 + p5c2)*(p5c3*x-p5c4)*(p5c5*x - p5c6) )
+
+p5ans1 = p5c4/p5c3 + p5c6/p5c5
+
+
+### Problem p6
+p6c1 = RandInt(1,5)
+p6c2 = RandInt(1,5)
+p6c3 = NonZeroInt(-5,5)
+p6c4 = NonZeroInt(-5,5)
+p6c5 = NonZeroInt(-5,5)
+p6c6 = NonZeroInt(-5,5)
+
+p6f1 = expand( (x^2 + p6c1)*(x^2 + p6c2)*(p6c3*x-p6c4)*(p6c5*x - p6c6) )
+
+p6ans1 = p6c4/p6c3 + p6c6/p6c5
+
+\end{sagesilent}
+
+\begin{problem}% Problem p1
+    Fully factor the following polynomial (Hint: You likely need to use Rational Root Theorem to find at least one factor)
+    \[
+        p(x) = \sage{p1f1}
+    \]
+    The smallest (most negative) zero is: $\answer{\sage{p1ans1}}$\\
+    The largest (most positive) zero is: $\answer{\sage{p1ans2}}$\\
+    The sum of the zeros of $p(x)$ is: $\answer{\sage{p1ans3}}$
+\end{problem}
+
+
+\begin{problem}% Problem p2
+    Fully factor the following polynomial (Hint: You likely need to use Rational Root Theorem to find at least one factor)
+    \[
+        p(x) = \sage{p2f1}
+    \]
+    The smallest (most negative) zero is: $\answer{\sage{p2ans1}}$\\
+    The largest (most positive) zero is: $\answer{\sage{p2ans2}}$\\
+    The sum of the zeros of $p(x)$ is: $\answer{\sage{p2ans3}}$
+\end{problem}
+
+
+\begin{problem}% Problem p3
+    Fully factor the following polynomial (Hint: You likely need to use Rational Root Theorem to find at least one factor)
+    \[
+        p(x) = \sage{p3f1}
+    \]
+    The smallest (most negative) zero is: $\answer{\sage{p3ans1}}$\\
+    The largest (most positive) zero is: $\answer{\sage{p3ans2}}$\\
+    The sum of the zeros of $p(x)$ is: $\answer{\sage{p3ans3}}$
+\end{problem}
+
+
+\begin{problem}% Problem p4
+    Fully factor the following polynomial using \textit{real} coefficients.
+    \[
+        p(x) = \sage{p4f1}
+    \]
+    
+    How many real-valued zeros does $p(x)$ have? $\answer{2}$
+    
+    What is the sum of the real-valued zeros? $\answer{\sage{p4ans1}}$
+    
+    How many non-real-valued zeros does $p(x)$ have? $\answer{4}$
+\end{problem}
+
+\begin{problem}% Problem p5
+    Fully factor the following polynomial using \textit{real} coefficients.
+    \[
+        p(x) = \sage{p5f1}
+    \]
+    
+    How many real-valued zeros does $p(x)$ have? $\answer{2}$
+    
+    What is the sum of the real-valued zeros? $\answer{\sage{p5ans1}}$
+    
+    How many non-real-valued zeros does $p(x)$ have? $\answer{4}$
+\end{problem}
+
+\begin{problem}% Problem p6
+    Fully factor the following polynomial using \textit{real} coefficients.
+    \[
+        p(x) = \sage{p6f1}
+    \]
+    
+    How many real-valued zeros does $p(x)$ have? $\answer{2}$
+    
+    What is the sum of the real-valued zeros? $\answer{\sage{p6ans1}}$
+    
+    How many non-real-valued zeros does $p(x)$ have? $\answer{4}$
+\end{problem}
+
+
+\end{document}

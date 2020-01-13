@@ -1,0 +1,45 @@
+\documentclass{ximeraXloud}
+
+\title{Completing the Square}
+\begin{document}
+\begin{abstract}
+    Factor a function by completing the square
+\end{abstract}
+\maketitle
+
+\section*{Completing the Square}
+    We come next to a technique whose real value is often not seen until calculus, but in reality most students have been (unwittingly) using a variation of it very often in grade school. Completing the square is often overlooked but is actually quite powerful as it allows us to build a sum or difference of squares.%
+    \footnote{Usually we would like a difference of squares since we can factor these nicely, but it is actually often the case that even a sum of squares can be useful in calculus, especially integration techniques of calculus (usually calc 2). In that context however, sum of squares is used for a different kind of substitution/transform than factoring like how we tend to use the difference of squares.}
+    The most common use of completing the square in precalculus however is in getting the quadratic formula. Which is a shame, since the quadratic formula is actually not useful in most situations, as we will discuss later.
+    
+    The principle idea of completing the square, is that we can write a given quadratic form as a perfect square if we add or subtract enough to offset how close to a square the original polynomial actually is. Consider, for example, the polynomial $x^2 + 2x$. This is very close to the polynomial $(x+1)^2$. Indeed, if we expand out (distribute) the $(x+1)^2$ we would get that $(x+1)^2 = x^2 + 2x + 1$, so the difference is only $1$. So, if we were to \textit{add zero cleverly} by adding and subtracting 1, we could write: 
+    \[
+        x^2 + 2x = x^2 + 2x + 1 - 1 = (x^2 + 2x + 1) - 1 = (x+1)^2 - 1
+    \]
+    This process of producing a perfect square out of the $x^2$ and $x$ terms, by adding and subtracting some constant value (in the above case, we added and subtracted $1$) is completing the square.
+    
+    As is often the case however, we can do this algorithmically. Meaning that, we could figure out what we need to add and subtract in order to formulate this square, without guessing what the square should be and without guessing what constant value gets us there. To do this however, once again we will work backwards.
+    
+    Recall that our goal is to get rid of the $x^2$ and $x$ term in such a way that we end up with something of the form $(x - h)^2 + k$.%
+    \footnote{%
+        This form may seem strikingly familiar, and that's because this is the so-called `vertex form' of a quadratic. The point $(h,k)$ is where (according to our topic 8 material) the point $(0,0)$ is translated to, which is how we know the vertex (which is originally at the origin on the graph) is moved to the point $(h,j)$.%
+    }
+    If we expand this however, we would then get $(x-h)^2+k = x^2 - 2hx + h^2 + k$. So this tells us that, whatever the coefficient of the $x$ term is, we want half of that to get the value that we will add/subtract to/from $x$ in the square form. Moreover it tells us we need that same value (half the coefficient of $x$) squared as a constant value to get the squared form.
+    
+    \subsection*{Numbers man, use numbers!}
+        Ok, let's look at a specific example and see this in action then.
+        
+        \begin{example}
+            Complete the square for the expression $x^2 + 4x - 3$\\
+            
+            Ok, the first thing we want to do to complete the square, is figure out what the $h$ value would be; meaning what do we want for a value $h$ to write $(x - h)^2$ as \textit{part} of the completing the square. As we saw above, that value is half of the coefficient of $x$, so in our case $h = 2$. Moreover, we need to have $h^2$ as a constant, so the easiest way to do that would be to add it to the line... but again we can't change the expression so we have to \textit{add zero cleverly}. So, since $h^2 = 4$ we would write:
+            
+            \[
+                x^2 + 4x - 3 = x^2 + 4x + (4 - 4) - 3 = (x^2 + 4x + 4) - 4 - 3 = (x + 2)^2 - 7
+            \]
+        \end{example}
+
+
+
+
+\end{document}

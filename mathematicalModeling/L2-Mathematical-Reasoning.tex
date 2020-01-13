@@ -1,0 +1,96 @@
+\Lecture{Mathematical Reasoning}
+\injectBox{Terminology To Know}{
+\newTerm{Mathematical Reasoning}{A technique of problem solving that relies on deductive reasoning and symbolic manipulation.}
+\newTerm{Deductive Reasoning}{A form of inference that uses a set of given information, and extracts new information that \emph{must} be true as a result. \\For example (eg): Given the information:
+\begin{itemize}
+\item It has rained 
+\item There is no cover for the ground 
+\end{itemize}
+Then we can deduce that the ground is wet. This would be a logical deduction, or ``deductive reasoning".}
+}
+\injectBox{Questions To Answer}{
+What is Mathematical Reasoning?\\
+%What is the Difference between ``Normal Reasoning" and ``Mathematical Reasoning"?\\
+%What is the role of deductive reasoning in problem solving?\\
+}
+
+\ifcompletedNotes
+\injectBox{Goal for Lecture Content}{
+Introduce an example of "mathematical reasoning".\\
+Have a "toy example" to use as a guide to explain the process of modeling and deductive reasoning.\\
+%Math is a "language of deduction". It is a way to bring precision to your reasoning and problem solving.\\
+%When to apply mathematical reasoning, and when not to.\\
+%Memorizing vs learning, and what you should learn from this class.\\
+}
+\textbf{Estimated Lectures to complete topic: 1-2}
+\fi
+
+\subsection{Mathematical Reasoning; what is it?}
+Mathematical reasoning is a method to work through a problem. It is a very powerful tool, but it is important to remember that it is still only one possible approach. Throughout this class we will be focusing on this skill, but when you move on into your careers or post-graduate work, this will be one of several ways you will be able to approach problems. As such, it is useful to know when it is, or isn't, appropriate to use it.
+
+\subsubsection*{Ok... but really, what is it?}
+Simply put, mathematical reasoning is the process of quantifying generic information into data, and then using deductive reasoning to extrapolate the results you are after. That may not seem like it is ``simply put", but let's see an example.
+
+\example{How much would it cost to build a patio?}{
+    This is an example of a question that might occur to (or be asked of) you at some point in your life. If this is all you are given, then it seems impossible to answer the question. In reality it is most often the case that this is how a problem is presented; someone will ask a generic question or hand you a problem, with little information attached and tell you to "just figure it out". This means we must use our own problem solving skills to come to a solution.\\
+    {\large\bfseries Question Phase:} First we need to acquire information. In this case we might ask questions like:
+    \begin{itemize}
+    \item What do we want to make the patio out of?
+    \item What size is the patio?
+    \item What kind of expertise is required to build the patio?
+    \end{itemize}
+    Usually it's not clear what information is useful and what information is not (information that is not useful is often called \textit{extraneous} information). One way to determine this, and a way to figure out how to get to an answer to our original question, is to try and convert the information we have into quantified information or "data". Once we have done that, we can create a model which relates the data together, and then manipulate the model to arrive at our result (ie the answer to our problem).\\
+    {\large\bfseries Modeling Phase:}
+    Thus, we might end our process with something that looks like this:
+    \begin{itemize}
+    \item $x$ = The number of bricks needed to build our patio
+    \item $C$ = The cost of the patio (in dollars).
+    \item $A$ = The area of the patio (in square feet).
+    \item $C(x) = 2.5x$
+    \item $x(A) = \frac{A}{0.75}$
+    \item $C(A) = \frac{15}{8}A$
+    \end{itemize}
+    At first glance the above may seem confusing, and in fact it should be. The problem is that we've "jumped to the end" and have just a bunch of equations and variables. But, the intervening steps that let us go from the "questioning" phase to the "modeling" phase are where the "mathematical reasoning" comes into play.
+}
+\subsubsection*{Great. Now I'm even more confused}
+Don't worry, this is sort of like skipping to the end of a book you've never seen before and reading the last sentence, then thinking you should know the plot. Mathematical reasoning is something you need to practice and learn in order to understand and get good at. But the upside is that, once you do, you will have a very powerful tool at your disposal for solving problems. And if there is one thing that is ubiquitous in life (and careers), it's problems that need solving. If you get good at problem solving, you will be a powerful candidate at job applications, and you boss's favorite employee.
+
+
+
+\subsection{Logical Deduction Process}
+
+Let's revisit the previous example and work through it to get a solution. This will highlight the reasoning process, and in the following lectures we will work through each of the reasoning steps in more detail.
+
+\subsubsection*{Phase One: Statement and clarification of the problem}
+
+The first step in any problem, is the problem itself. This may seem obvious and trivial, but it's unfortunately the case that what someone \textit{asks} of you, and what they \textit{want} of you, are often not the same. So, even though it seems like the first phase is given for free (that is, that you have to be asked a problem in order to start problem solving) the truth is that often the first step is clarifying what someone has asked of you until you can concretely describe what they want. Let's look at our patio example.
+
+The original question was simply ``How much would it cost to build a patio?" However, this is entirely too vague. The desired answer is clearly quantifiable (they want cost, a number, as an answer after all), but the given information ``a patio" isn't quantifiable. Before we can give a quantified answer then, we need to clarify the question into something we can assign numbers to.
+
+How one goes about this can vary, but at the very least we should ask the most basic questions, such as:
+\begin{itemize}
+\item What is the patio made of?
+\item What \textit{is} a patio, or more specifically, what is a patio to the person asking the question? (Pro-tip: Never assume the person asking a question is using the same precise vocabulary you are).
+\item How big does the person want the patio? Specific dimensions (numbers!) are preferable.
+\end{itemize}
+
+After some back and forth questioning you determine that the patio is going to be made of cement paving stones, and encompass a flat area of between 15 and 20 feet on each side.
+
+\subsubsection*{Phase Two: Quantifying the situation, ie turning Information into Data}
+
+The next step is to start figuring out relevant numbers and their relationship. This is usually where you discover any other numbers that you need which are missing. Let's continue our patio example;
+
+We now know that the patio is made of cement paving stones, and that we want a surface between 15 and 20 feet on each side to be covered with them. Clearly, if we are trying to determine cost, we should know the cost of something. Hopefully it's clear that, since we are using cement paving stones to cover the surface, we need to know the cost of those paving stones, but that's not quite enough. We also need to know how many paving stones it will take to cover the given surface. After a quick trip to the local building supply store, you determine that cement paving stones are around \$$2.50$ each, and are about a foot and a half long and a half foot wide.
+
+\subsubsection*{Phase Three: Developing your (numeric) answer}
+
+Now we have all the information (data) that we need to determine an answer. Since the given question (and followup clarification) specified between 15 and 20 feet on a side (ie a range of possibilities), our answer should likewise be a range of possibilities. To get the minimum cost, it makes sense that we would build the smallest possible area, a fifteen by fifteen foot patio. Likewise, to get the highest cost we would build the largest patio, a twenty by twenty foot area.
+
+It would take ten pavers stacked end to end (the long way) to cover fifteen feet, and then it would take thirty of them stacked side by side to attain fifteen feet. Thus to completely cover a fifteen by fifteen foot patio with cement pavers, we would need $10 \cdot 30 = 300$ pavers at \$$2.50$ each, for a total cost of \$$750$. Using similar calculations we find that we need approximately 520 cement pavers to cover a twenty by twenty foot patio, for a total cost of \$$1300$.
+
+\subsubsection*{Is that it?}
+
+The above is a basic example of using mathematical reasoning to answer a problem. But it can be used to do much more than that. To do so, we will introduce the idea of Modeling in the next lecture, and see how mathematical reasoning can be used to build a more general answer (after all; where did those equations come from in the example box?) 
+
+
+

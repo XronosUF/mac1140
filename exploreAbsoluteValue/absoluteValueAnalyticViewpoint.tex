@@ -1,0 +1,50 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Absolute Value: Analytic View}
+\begin{document}
+\begin{abstract}
+    This discusses the absolute value analytically, ie how to manipulate absolute values algebraically.
+\end{abstract}
+\maketitle
+
+The most common algebraic description of absolute value that people know, tends to be that it is the thing that ``makes the value positive.'' Although this is not incorrect, it is a bit imprecise. In this section we discuss \textit{how} absolute values make something positive, and how one should go about algebraically manipulating absolute values.
+
+Firstly, there is no magic wand in mathematics that simply makes anything positive (or, perhaps we should say, absolute value \textit{is} the magic wand... so if we want to dive into the mechanics, we need a different tool!) However, that doesn't mean that we don't have a mechanism at our disposal to make negative things positive. Consider, by way of a demonstration, $|x|$. Since we are working in the real numbers%
+\footnote{This is actually \textit{really} important. If we were working in the complex numbers, absolute value behaves \textit{very} differently. So much so, in fact, that trying to use absolute value on a complex number will certainly go horribly astray without a much better grounding in complex numbers. For this reason, we even give it a different name, to distinguish how different it really is; we call it the \textit{modulus}.}
+we know that $x$ is going to be positive, negative, or zero. If $x$ is positive or zero, the absolute value will do nothing; after all the absolute value of a positive number is just that number, and the absolute value of zero is zero. 
+
+If, on the other hand, $x$ is a negative number, then the absolute value must change it to make it into a \textit{positive} number. So, the natural question to ask is, how do we make a negative number into a positive number? The answer: we multiply it by negative one! Using this, we can write the following piecewise definition of $|x|$.
+
+\[
+    |x| = 
+        \begin{cases}
+            -x & x < 0 \\
+            x & x \geq 0
+        \end{cases}
+\]
+
+At first glance it may seem rather counterintuitive that the absolute value appears to be placing a negative sign in front of $x$. After all, absolute value is suppose to only have positive output. But the key observation is that the negative sign is only being placed in front of $x$ \textit{when $x$ is already a negative number}. So even though $-x$ \textit{looks} like it will be negative, it will actually always give a positive value because we've restricted it to values of $x$ that are already negative, so we're taking a negative of a negative, which is positive!
+
+Another important observation is that the negative is being added in by the absolute value, not by the $x$. This means that, if we have a more complicated expression, we can end up with a more complicated looking piecewise function. Consider, for example, $3 + |x - 1|$. We write this in the piecewise form by doing the same thing, except now, it's not whether or not $x$ is negative that the absolute value cares about, it's whether or not $x-1$ is negative that the absolute value cares about. So we get an initial piecewise function like the following:
+
+\[
+    3 + |x-1| = 
+        \begin{cases}
+            3 + -(x-1) & (x-1) < 0 \\
+            3 + (x-1) & (x-1) \geq 0
+        \end{cases}
+\]
+
+Notice that the \textit{content} of the absolute value is what appears both in front of the negative \textbf{and} in the domain description. We should simplify this by solving the inequalities for $x$ and simplifying the associated functions, which would mean we would rewrite the piecewise function into the following:
+
+\[
+    3 + |x-1| = 
+        \begin{cases}
+            4 - x & x < 1 \\
+            2 + x & x \geq 1
+        \end{cases}
+\]
+
+
+
+\end{document}

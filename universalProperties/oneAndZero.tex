@@ -1,0 +1,81 @@
+\documentclass{ximeraXloud}
+
+\title{One and Zero; the Most Useful of Numbers}
+\begin{document}
+\begin{abstract}
+    This section describes the very special and often overlooked virtue the numbers Zero and One.
+\end{abstract}
+\maketitle
+
+\subsection*{One is the loneliest number...}
+    The number `one' has a special role in mathematics, which is one you almost certainly learned more than a decade ago as the simple rule that ``anything times one is itself".%
+    \footnote{%
+        This has an official name in mathematics; One is the `multiplicative identity', which is just math-person speak for `one doesn't do anything when you multiply by it' because we like to use fewer words and confuse people.%
+        }
+    But, it turns out that this seemingly simple rule can be extremely useful when we combine it with the other rule you probably learned long ago that `anything divided by itself is one'.%
+    \footnote{%
+        Tragically this has been taught for a long time, and it turns out it's blatantly untrue. This is of primary importance in calculus, but even in this course we will see circumstances where that isn't necessarily the case. Really what the rule should say is `any finite nonzero number divided by itself is one'%
+        }
+    You've actually already seen this trick in action when finding common denominators for fractions (see the appendix for full explanation), but it turns out that this is a fact we will abuse over and over to help us manipulate difficult functions and expressions. Thus we will very often multiply by a ``weird looking value of one" in order to simplify out some content.
+    
+    \begin{explanation}[Rationalizing the denominator]%
+        Let's say you have the expression $\dfrac{15}{\sqrt{5}}$ and you want to simplify this `somehow'. There are a few ways to do it, but remembering that a square root of a positive number times itself is just the number, we can construct a ``weird looking value of one" to use to simplify this fraction. Specifically we will use $\dfrac{\sqrt{5}}{\sqrt{5}}$. Notice that this last fraction is a finite (albeit annoying) nonzero number divided by itself, so it is equal to one. But, taking the original number and multiplying it by this value of one we can do a little manipulation to get something nice;
+        \[
+            \dfrac{15}{\sqrt{5}} \cdot \dfrac{\sqrt{5}}{\sqrt{5}}
+                = \dfrac{15 \cdot \sqrt{5}}{\sqrt{5}\cdot\sqrt{5}}
+                = \dfrac{15 \cdot \sqrt{5}}{5}
+                = \dfrac{5 \cdot 3 \cdot \sqrt{5}}{5}
+                = \dfrac{5}{5} \cdot\dfrac{3 \cdot \sqrt{5}}{1}
+                = \dfrac{3 \cdot \sqrt{5}}{1}
+                = 3 \cdot \sqrt{5}
+        \]
+        Thus, by multiplying by the `cleverly chosen' $\dfrac{\sqrt{5}}{\sqrt{5}}$ we were able to simplify the problem as we hoped.
+    \end{explanation}% End of example
+
+\subsection*{Zero isn't the hero we want... or deserve... but I suppose we need it on occasion.}
+    
+    Zero has two different primary roles that we will discuss here. The first is adding zero in a way that can help with simplifying a problem we have. The second is it's role in multiplication.
+    
+    First off we will consider the ``adding zero cleverly". The key aspect of zero is that ``anything plus zero is itself."%
+    \footnote{%
+        Again this has a fancy math name; the additive identity. I told you math people aren't all that clever about names.%
+        }
+    This is a little harder to see currently when it will be useful, but it will crop up a lot later on and becomes a more and more useful tool over time. Consider the following example of factoring, which will be explored very extensively in topic 9.
+    
+    \begin{explanation}[Factoring a quadratic by grouping]%
+        Let's say you have a quadratic function; $3x^2 -x - 2$. This might be challenging to factor using the standard techniques of factoring coefficients, but it becomes easier when we ``add and subtract zero cleverly" and factor by grouping. Specifically, if we add and subtract the same value (thus adding zero) of $2x$ we get the following;
+        \[
+            3x^2 + 2x - 2x -x - 2 = 3x^2 + 2x - 3x - 2 = (3x^2 - 3x) + (2x - 2) = 3x(x-1) + 2(x-1) = (3x+2)(x-1)
+        \]
+    
+        Thus adding and subtracting $2x$ (and thus ``adding zero cleverly" ends up making the factoring much easier to see and compute.
+    \end{explanation}% End of example
+    
+    As mentioned, further examples of ``adding zero  cleverly" will be seen as we explore future topics (and will become more and more prevalent if you move into higher level math courses, like calculus).
+    
+    The other major exploit we use with zero is it's role in multiplication. We observe that zero is incredibly special with multiplication; specifically that any (finite) number times zero is zero (math people have a special name for this too, zero is called the `annihilator of the real numbers'%
+    \footnote{%
+        Ok... sometimes math people come up with some pretty cool names. But everyone gets lucky once in a while.%
+        }
+    in this context).
+    
+    The key thing here though, is that zero is \textit{the only thing that does this} in the real numbers. Thus what we actually exploit is the fact that, if we know $a \cdot b = 0$ then one of $a$ or $b$ \textbf{must} be zero.
+    
+    \begin{explanation}[Zero is the only annihilator of real numbers]%
+        Pick your favorite non-zero number. Let's say you pick 73 (you can feel free to do this example with any other number except zero). We might wonder if it has a property similar to zero, meaning if we know that $a \cdot b = 73$, do we know anything about $a$ or $b$'s value?
+    
+        Unfortunately we can quickly see that we don't. If you want to try and claim that one of either $a$ or $b$ \textit{must} be a specific number, say $1$ (again, feel free to use any number you want here), we could easily come up with an example pair where neither $a$ nor $b$ are $1$. For example, $a = \frac{1}{2}$ and $b = 146$ would work, and neither of those are $1$. This is because we could let $a$ or $b$ be any number we want, and force the other to make the computation correct because of how the real numbers work. Specifically, if we fix the value $a$ as \textit{any} number we want, then making $b = \frac{73}{a}$ we have a valid pair of numbers so that $a \cdot b = a \cdot \frac{73}{a} =73$. This means that we can't really figure out anything about $a$ or $b$ without knowing at least one of the two.
+    
+        But in that statement of $b = \frac{73}{a}$ we can see why zero is a special case. If $a$ is zero then that fraction fails to exist. If $b$ is zero, then that fraction can't work for any value of $a$ (meaning that any value of $a$ will still not give a $b = 0$ result). So, in fact, a product of numbers is zero means one of those numbers is zero as well as the fact that, if a number is zero, then anything%
+        \footnote{%
+            Sadly, just like `anything divided by itself is one, this is also not actually always true. Fortunately the case where it isn't true involves infinity which we won't be addressing in this class, but \textit{is} a fundamental aspect of calculus 1.%
+            }
+        times zero is zero.
+    
+    \end{explanation}% End of Example
+
+
+
+
+
+\end{document}

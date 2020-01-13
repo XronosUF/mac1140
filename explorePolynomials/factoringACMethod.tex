@@ -1,0 +1,45 @@
+\documentclass{ximeraXloud}
+
+\title{Factoring; AC Method}
+\begin{document}
+\begin{abstract}
+    How to factor when the leading coefficient isn't one.
+\end{abstract}
+\maketitle
+
+\subsection*{A-C method... are we powering something?}
+    Yes, math! But seriously, the A-C method is as follows:
+    \begin{enumerate}
+        \item First, we re-write the polynomial into a new polynomial, let's call it $q(x)$, by setting the leading coefficient to 1, and then replacing the constant coefficient with $a \cdot c$. So instead of $p(x) = ax^2 + bx + c$ we are now looking at $q(x) = x^2 + bx + a\cdot c$.
+        \item Next we factor the new polynomial $q(x) = x^2 + bx + ac$. We can do this using the factor by coefficients method above... let's say we factor it into the roots $q(x) = (x + h)(x + k)$.
+        \item Now for the super weird part; we put the $a$ back in the front of the polynomial, and divide it out of both the roots' constant values, thus getting;
+        \[
+            p(x) = a\left(x + \frac{h}{a}\right)\left(x + \frac{k}{a}\right)
+        \]
+    \end{enumerate}
+
+\subsection*{Uh... what? Just... what?}
+    Fair... let's see an example with actual numbers, that will (hopefully) help clear up what's happening.
+    
+    \begin{example}
+        Factor $p(x) = 4x^2 - 13x + 9$.\\
+        
+        According to our A-C method we want to factor the related polynomial $q(x) = x^2 - 13x + 36$. This involves finding factors of $36$ that add to $-13$. After some work we can see that our factors are $-4$ and $-9$. Thus we get;
+        \[
+            q(x) = (x + -4)(x + -9) = (x - 4)(x - 9)
+        \]
+        Next, again according to our A-C method, we will put our old $a$ value (ie $4$) in front, and divide both constants by that value, giving;
+        \[
+            p(x) = 4\left(x - \frac{4}{4}\right)\left(x - \frac{9}{4}\right)
+            = (x - 1) \cdot 4 \cdot \left(x - \frac{9}{4}\right)
+            = (x - 1)\left(4x - 4 \cdot \frac{9}{4}\right)
+            = (x - 1)(4x - 9)
+        \]
+        Thus we have our final factorization $p(x) = (x - 1)(4x - 9)$.
+    
+        We should also mention that it is a perfectly acceptable factorization to have $p(x) = 4(x - 1)\left(x - \frac{9}{4}\right)$; we merely multiplied in the 4 to make the factors look nicer.
+    \end{example}% End example
+    
+    This kind of weird `just divide pieces of a polynomial but not others by some values' thing isn't usually a good idea. In fact, it's basically \textit{never} a good idea. It just so happens though that in this case it will always work, and in fact one can prove it works. I have included a proof for the curious in the appendix, but you need not know this for this course.
+
+\end{document}

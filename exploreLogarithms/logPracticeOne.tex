@@ -1,0 +1,439 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Logarithm Practice}
+
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Logarithms.
+\end{abstract}
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem p1
+
+p1b1 = NonZeroInt(2,15,[4,8,9])
+
+p1c1 = NonZeroInt(-15,15)
+p1c2 = NonZeroInt(-15,15,[0,p1c1])
+p1c3 = NonZeroInt(-15,15)
+p1c4 = NonZeroInt(-15,15,[0,p1c3])
+p1c5 = NonZeroInt(-15,15)
+p1c6 = NonZeroInt(-15,15,[0,p1c5])
+p1c7 = NonZeroInt(-15,15,[0,p1c1])
+p1c8 = NonZeroInt(-15,15,[0,p1c7])
+p1c9 = NonZeroInt(-15,15,[0,p1c2])
+p1c10 = NonZeroInt(-15,15,[0,p1c9])
+p1c11 = NonZeroInt(-15,15,[0,p1c3])
+p1c12 = NonZeroInt(-15,15,[0,p1c11])
+
+p1f1 = p1c1*x + p1c2
+p1f2 = p1c3*y + p1c4
+p1f3 = p1c5*z + p1c6
+p1f4 = p1c7*x + p1c8
+p1f5 = p1c9*y + p1c10
+p1f6 = p1c11*z + p1c12
+
+p1q1 = (p1f1*p1f2^2*p1f3^3)/(p1f4^4*p1f5^5*p1f6^6)
+
+
+
+### Problem p2
+
+p2b1 = NonZeroInt(2,15,[4,8,9])
+
+p2c1 = NonZeroInt(-15,15)
+p2c2 = NonZeroInt(-15,15,[0,p2c1])
+p2c3 = NonZeroInt(-15,15)
+p2c4 = NonZeroInt(-15,15,[0,p2c3])
+p2c5 = NonZeroInt(-15,15)
+p2c6 = NonZeroInt(-15,15,[0,p2c5])
+p2c7 = NonZeroInt(-15,15,[0,p2c1])
+p2c8 = NonZeroInt(-15,15,[0,p2c7])
+p2c9 = NonZeroInt(-15,15,[0,p2c2])
+p2c10 = NonZeroInt(-15,15,[0,p2c9])
+p2c11 = NonZeroInt(-15,15,[0,p2c3])
+p2c12 = NonZeroInt(-15,15,[0,p2c11])
+
+p2f1 = p2c1*x + p2c2
+p2f2 = p2c3*y + p2c4
+p2f3 = p2c5*z + p2c6
+p2f4 = p2c7*x + p2c8
+p2f5 = p2c9*y + p2c10
+p2f6 = p2c11*z + p2c12
+
+p2q1 = (p2f1*p2f2^2*p2f3^3)/(p2f4^4*p2f5^5*p2f6^6)
+
+
+
+### Problem p3
+
+p3b1 = NonZeroInt(2,15,[4,8,9])
+
+p3c1 = NonZeroInt(-15,15)
+p3c2 = NonZeroInt(-15,15,[0,p3c1])
+p3c3 = NonZeroInt(-15,15)
+p3c4 = NonZeroInt(-15,15,[0,p3c3])
+p3c5 = NonZeroInt(-15,15)
+p3c6 = NonZeroInt(-15,15,[0,p3c5])
+p3c7 = NonZeroInt(-15,15,[0,p3c1])
+p3c8 = NonZeroInt(-15,15,[0,p3c7])
+p3c9 = NonZeroInt(-15,15,[0,p3c2])
+p3c10 = NonZeroInt(-15,15,[0,p3c9])
+p3c11 = NonZeroInt(-15,15,[0,p3c3])
+p3c12 = NonZeroInt(-15,15,[0,p3c11])
+
+p3f1 = p3c1*x + p3c2
+p3f2 = p3c3*y + p3c4
+p3f3 = p3c5*z + p3c6
+p3f4 = p3c7*x + p3c8
+p3f5 = p3c9*y + p3c10
+p3f6 = p3c11*z + p3c12
+
+p3q1 = (p3f1*p3f2^2*p3f3^3)/(p3f4^4*p3f5^5*p3f6^6)
+
+
+
+### Problem p4
+
+p4b1 = NonZeroInt(2,15,[4,8,9])
+
+p4c1 = NonZeroInt(-15,15)
+p4c2 = NonZeroInt(-15,15,[0,p4c1])
+p4c3 = NonZeroInt(-15,15)
+p4c4 = NonZeroInt(-15,15,[0,p4c3])
+p4c5 = NonZeroInt(-15,15)
+p4c6 = NonZeroInt(-15,15,[0,p4c5])
+p4c7 = NonZeroInt(-15,15,[0,p4c1])
+p4c8 = NonZeroInt(-15,15,[0,p4c7])
+p4c9 = NonZeroInt(-15,15,[0,p4c2])
+p4c10 = NonZeroInt(-15,15,[0,p4c9])
+p4c11 = NonZeroInt(-15,15,[0,p4c3])
+p4c12 = NonZeroInt(-15,15,[0,p4c11])
+
+p4f1 = p4c1*x + p4c2
+p4f2 = p4c3*y + p4c4
+p4f3 = p4c5*z + p4c6
+p4f4 = p4c7*x + p4c8
+p4f5 = p4c9*y + p4c10
+p4f6 = p4c11*z + p4c12
+
+p4q1 = (p4f1*p4f2^2*p4f3^3)/(p4f4^4*p4f5^5*p4f6^6)
+
+
+
+### Problem p5
+
+p5b1 = NonZeroInt(2,15,[4,8,9])
+
+p5c1 = NonZeroInt(-15,15)
+p5c2 = NonZeroInt(-15,15,[0,p5c1, 2*p5c1, 3*p5c1, -p5c1, -2*p5c1,-3*p5c1])
+p5c3 = NonZeroInt(-15,15)
+p5c4 = NonZeroInt(-15,15,[0,p5c3, 2*p5c3, 3*p5c3, -p5c3, -2*p5c3,-3*p5c3])
+p5c5 = NonZeroInt(-15,15)
+p5c6 = NonZeroInt(-15,15,[0,p5c5, 2*p5c5, 3*p5c5, -p5c5, -2*p5c5,-3*p5c5])
+p5c7 = NonZeroInt(-15,15,[0,p5c1])
+p5c8 = NonZeroInt(-15,15,[0,p5c7, 2*p5c7, 3*p5c7, -p5c7, -2*p5c7,-3*p5c7])
+p5c9 = NonZeroInt(-15,15,[0,p5c2])
+p5c10 = NonZeroInt(-15,15,[0,p5c9, 2*p5c9, 3*p5c9, -p5c9, -2*p5c9,-3*p5c9])
+p5c11 = NonZeroInt(-15,15,[0,p5c3])
+p5c12 = NonZeroInt(-15,15,[0,p5c11, 2*p5c11, 3*p5c11, -p5c11, -2*p5c11,-3*p5c11])
+
+p5f1 = p5c1*x + p5c2
+p5f2 = p5c3*y + p5c4
+p5f3 = p5c5*z + p5c6
+p5f4 = p5c7*x + p5c8
+p5f5 = p5c9*y + p5c10
+p5f6 = p5c11*z + p5c12
+
+p5cc1 = NonZeroInt(-10,10, [0,1])
+p5cc2 = NonZeroInt(-10,10, [0,1])
+p5cc3 = NonZeroInt(-10,10, [0,1])
+p5cc4 = NonZeroInt(-10,10, [0,1])
+p5cc5 = NonZeroInt(-10,10, [0,1])
+p5cc6 = NonZeroInt(-10,10, [0,1])
+
+p5a1 = simplify(e^(p5cc1*ln(p5f1)+p5cc2*ln(p5f2)+p5cc3*ln(p5f3)+p5cc4*ln(p5f4)+p5cc5*ln(p5f5)+p5cc6*ln(p5f6)))
+
+
+### Problem p6
+
+p6b1 = NonZeroInt(2,15,[4,8,9])
+
+p6c1 = NonZeroInt(-15,15)
+p6c2 = NonZeroInt(-15,15,[0,p6c1, 2*p6c1, 3*p6c1, -p6c1, -2*p6c1,-3*p6c1])
+p6c3 = NonZeroInt(-15,15)
+p6c4 = NonZeroInt(-15,15,[0,p6c3, 2*p6c3, 3*p6c3, -p6c3, -2*p6c3,-3*p6c3])
+p6c5 = NonZeroInt(-15,15)
+p6c6 = NonZeroInt(-15,15,[0,p6c5, 2*p6c5, 3*p6c5, -p6c5, -2*p6c5,-3*p6c5])
+p6c7 = NonZeroInt(-15,15,[0,p6c1])
+p6c8 = NonZeroInt(-15,15,[0,p6c7, 2*p6c7, 3*p6c7, -p6c7, -2*p6c7,-3*p6c7])
+p6c9 = NonZeroInt(-15,15,[0,p6c2])
+p6c10 = NonZeroInt(-15,15,[0,p6c9, 2*p6c9, 3*p6c9, -p6c9, -2*p6c9,-3*p6c9])
+p6c11 = NonZeroInt(-15,15,[0,p6c3])
+p6c12 = NonZeroInt(-15,15,[0,p6c11, 2*p6c11, 3*p6c11, -p6c11, -2*p6c11,-3*p6c11])
+
+p6f1 = p6c1*x + p6c2
+p6f2 = p6c3*y + p6c4
+p6f3 = p6c5*z + p6c6
+p6f4 = p6c7*x + p6c8
+p6f5 = p6c9*y + p6c10
+p6f6 = p6c11*z + p6c12
+
+p6cc1 = NonZeroInt(-10,10, [0,1])
+p6cc2 = NonZeroInt(-10,10, [0,1])
+p6cc3 = NonZeroInt(-10,10, [0,1])
+p6cc4 = NonZeroInt(-10,10, [0,1])
+p6cc5 = NonZeroInt(-10,10, [0,1])
+p6cc6 = NonZeroInt(-10,10, [0,1])
+
+p6a1 = simplify(e^(p6cc1*ln(p6f1)+p6cc2*ln(p6f2)+p6cc3*ln(p6f3)+p6cc4*ln(p6f4)+p6cc5*ln(p6f5)+p6cc6*ln(p6f6)))
+
+
+### Problem p7
+
+p7b1 = NonZeroInt(2,15,[4,8,9])
+
+p7c1 = NonZeroInt(-15,15)
+p7c2 = NonZeroInt(-15,15,[0,p7c1, 2*p7c1, 3*p7c1, -p7c1, -2*p7c1,-3*p7c1])
+p7c3 = NonZeroInt(-15,15)
+p7c4 = NonZeroInt(-15,15,[0,p7c3, 2*p7c3, 3*p7c3, -p7c3, -2*p7c3,-3*p7c3])
+p7c5 = NonZeroInt(-15,15)
+p7c6 = NonZeroInt(-15,15,[0,p7c5, 2*p7c5, 3*p7c5, -p7c5, -2*p7c5,-3*p7c5])
+p7c7 = NonZeroInt(-15,15,[0,p7c1])
+p7c8 = NonZeroInt(-15,15,[0,p7c7, 2*p7c7, 3*p7c7, -p7c7, -2*p7c7,-3*p7c7])
+p7c9 = NonZeroInt(-15,15,[0,p7c2])
+p7c10 = NonZeroInt(-15,15,[0,p7c9, 2*p7c9, 3*p7c9, -p7c9, -2*p7c9,-3*p7c9])
+p7c11 = NonZeroInt(-15,15,[0,p7c3])
+p7c12 = NonZeroInt(-15,15,[0,p7c11, 2*p7c11, 3*p7c11, -p7c11, -2*p7c11,-3*p7c11])
+
+p7f1 = p7c1*x + p7c2
+p7f2 = p7c3*y + p7c4
+p7f3 = p7c5*z + p7c6
+p7f4 = p7c7*x + p7c8
+p7f5 = p7c9*y + p7c10
+p7f6 = p7c11*z + p7c12
+
+p7cc1 = NonZeroInt(-10,10, [0,1])
+p7cc2 = NonZeroInt(-10,10, [0,1])
+p7cc3 = NonZeroInt(-10,10, [0,1])
+p7cc4 = NonZeroInt(-10,10, [0,1])
+p7cc5 = NonZeroInt(-10,10, [0,1])
+p7cc6 = NonZeroInt(-10,10, [0,1])
+
+p7a1 = simplify(e^(p7cc1*ln(p7f1)+p7cc2*ln(p7f2)+p7cc3*ln(p7f3)+p7cc4*ln(p7f4)+p7cc5*ln(p7f5)+p7cc6*ln(p7f6)))
+
+
+### Problem p8
+
+p8b1 = NonZeroInt(2,15,[4,8,9])
+
+p8c1 = NonZeroInt(-15,15)
+p8c2 = NonZeroInt(-15,15,[0,p8c1, 2*p8c1, 3*p8c1, -p8c1, -2*p8c1,-3*p8c1])
+p8c3 = NonZeroInt(-15,15)
+p8c4 = NonZeroInt(-15,15,[0,p8c3, 2*p8c3, 3*p8c3, -p8c3, -2*p8c3,-3*p8c3])
+p8c5 = NonZeroInt(-15,15)
+p8c6 = NonZeroInt(-15,15,[0,p8c5, 2*p8c5, 3*p8c5, -p8c5, -2*p8c5,-3*p8c5])
+p8c7 = NonZeroInt(-15,15,[0,p8c1])
+p8c8 = NonZeroInt(-15,15,[0,p8c7, 2*p8c7, 3*p8c7, -p8c7, -2*p8c7,-3*p8c7])
+p8c9 = NonZeroInt(-15,15,[0,p8c2])
+p8c10 = NonZeroInt(-15,15,[0,p8c9, 2*p8c9, 3*p8c9, -p8c9, -2*p8c9,-3*p8c9])
+p8c11 = NonZeroInt(-15,15,[0,p8c3])
+p8c12 = NonZeroInt(-15,15,[0,p8c11, 2*p8c11, 3*p8c11, -p8c11, -2*p8c11,-3*p8c11])
+
+p8f1 = p8c1*x + p8c2
+p8f2 = p8c3*y + p8c4
+p8f3 = p8c5*z + p8c6
+p8f4 = p8c7*x + p8c8
+p8f5 = p8c9*y + p8c10
+p8f6 = p8c11*z + p8c12
+
+p8cc1 = NonZeroInt(-10,10, [0,1])
+p8cc2 = NonZeroInt(-10,10, [0,1])
+p8cc3 = NonZeroInt(-10,10, [0,1])
+p8cc4 = NonZeroInt(-10,10, [0,1])
+p8cc5 = NonZeroInt(-10,10, [0,1])
+p8cc6 = NonZeroInt(-10,10, [0,1])
+
+p8a1 = simplify(e^(p8cc1*ln(p8f1)+p8cc2*ln(p8f2)+p8cc3*ln(p8f3)+p8cc4*ln(p8f4)+p8cc5*ln(p8f5)+p8cc6*ln(p8f6)))
+
+
+
+
+
+\end{sagesilent}
+
+
+
+\begin{problem}
+    Fully expand the following logarithmic expression. (Hint: Don't factor out common factors from the linear terms, Xronos isn't that smart ... yet.)
+    
+    $
+    \logOld_{\sage{p1b1}}\left(\dfrac{(\sage{p1f1})(\sage{p1f2})^2(\sage{p1f3})^3}{(\sage{p1f4})^4(\sage{p1f5})^5(\sage{p1f6})^6}\right)
+    $
+    
+    \begin{tabular}{ll}
+            \hspace{2cm} & $= \logOld_{\sage{p1b1}}\left(\answer{\sage{p1f1}}\right) + 2\logOld_{\sage{p1b1}}\left(\answer{\sage{p1f2}}\right) + 3\logOld_{\sage{p1b1}}\left(\answer{\sage{p1f3}}\right)$ \\ 
+            & $-4\logOld_{\sage{p1b1}}\left(\answer{\sage{p1f4}}\right) - 5\logOld_{\sage{p1b1}}\left(\answer{\sage{p1f5}}\right) - 6\logOld_{\sage{p1b1}}\left(\answer{\sage{p1f6}}\right)$
+    \end{tabular}
+\end{problem}
+
+
+\begin{problem}
+    Fully expand the following logarithmic expression. (Hint: Don't factor out common factors from the linear terms, Xronos isn't that smart ... yet.)
+    
+    $
+    \logOld_{\sage{p2b1}}\left(\dfrac{(\sage{p2f1})(\sage{p2f2})^2(\sage{p2f3})^3}{(\sage{p2f4})^4(\sage{p2f5})^5(\sage{p2f6})^6}\right)
+    $
+    
+    \begin{tabular}{ll}
+            \hspace{2cm} & $= \logOld_{\sage{p2b1}}\left(\answer{\sage{p2f1}}\right) + 2\logOld_{\sage{p2b1}}\left(\answer{\sage{p2f2}}\right) + 3\logOld_{\sage{p2b1}}\left(\answer{\sage{p2f3}}\right)$ \\ 
+            & $-4\logOld_{\sage{p2b1}}\left(\answer{\sage{p2f4}}\right) - 5\logOld_{\sage{p2b1}}\left(\answer{\sage{p2f5}}\right) - 6\logOld_{\sage{p2b1}}\left(\answer{\sage{p2f6}}\right)$
+    \end{tabular}
+\end{problem}
+
+\begin{problem}
+    Fully expand the following logarithmic expression. (Hint: Don't factor out common factors from the linear terms, Xronos isn't that smart ... yet.)
+    
+    $
+    \logOld_{\sage{p3b1}}\left(\dfrac{(\sage{p3f1})(\sage{p3f2})^2(\sage{p3f3})^3}{(\sage{p3f4})^4(\sage{p3f5})^5(\sage{p3f6})^6}\right)
+    $
+    
+    \begin{tabular}{ll}
+            \hspace{2cm} & $= \logOld_{\sage{p3b1}}\left(\answer{\sage{p3f1}}\right) + 2\logOld_{\sage{p3b1}}\left(\answer{\sage{p3f2}}\right) + 3\logOld_{\sage{p3b1}}\left(\answer{\sage{p3f3}}\right)$ \\ 
+            & $-4\logOld_{\sage{p3b1}}\left(\answer{\sage{p3f4}}\right) - 5\logOld_{\sage{p3b1}}\left(\answer{\sage{p3f5}}\right) +\answer{-6}\logOld_{\sage{p3b1}}\left({\sage{p3f6}}\right)$
+    \end{tabular}
+\end{problem}
+
+
+\begin{problem}
+    Fully expand the following logarithmic expression. (Hint: Don't factor out common factors from the linear terms, Xronos isn't that smart ... yet.)
+    
+    $
+    \logOld_{\sage{p4b1}}\left(\dfrac{(\sage{p4f1})(\sage{p4f2})^2(\sage{p4f3})^3}{(\sage{p4f4})^4(\sage{p4f5})^5(\sage{p4f6})^6}\right)
+    $
+    
+    \begin{tabular}{ll}
+            \hspace{2cm} & $= \logOld_{\sage{p4b1}}\left(\answer{\sage{p4f1}}\right) + 2\logOld_{\sage{p4b1}}\left(\answer{\sage{p4f2}}\right) + 3\logOld_{\sage{p4b1}}\left(\answer{\sage{p4f3}}\right)$ \\ 
+            & $-4\logOld_{\sage{p4b1}}\left(\answer{\sage{p4f4}}\right) + \answer{-5}\logOld_{\sage{p4b1}}\left({\sage{p4f5}}\right) - 6\logOld_{\sage{p4b1}}\left(\answer{\sage{p4f6}}\right)$
+    \end{tabular}
+\end{problem}
+
+
+\begin{problem}
+    Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars everywhere)
+    
+    \begin{tabular}{lll}
+        $(\sage{p5cc1})\logOld_{\sage{p5b1}}\left(\sage{p5f1}\right)$& $+ 
+        (\sage{p5cc2})\logOld_{\sage{p5b1}}\left(\sage{p5f2}\right)$&$ + 
+        (\sage{p5cc3})\logOld_{\sage{p5b1}}\left(\sage{p5f3}\right)$ \\
+        &$+(\sage{p5cc4})\logOld_{\sage{p5b1}}\left(\sage{p5f4}\right)$&$ + 
+        (\sage{p5cc5})\logOld_{\sage{p5b1}}\left(\sage{p5f5}\right)$ \\
+        &$ + (\sage{p5cc6})\logOld_{\sage{p5b1}}\left(\sage{p5f6}\right)$
+    \end{tabular}
+    \[
+        \logOld_{\sage{p5b1}}\left( \answer{\sage{p5a1}} \right)
+    \]
+\end{problem}
+
+
+
+\begin{problem}
+    Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars everywhere)
+    
+    \begin{tabular}{lll}
+        $(\sage{p6cc1})\logOld_{\sage{p6b1}}\left(\sage{p6f1}\right)$& $+ 
+        (\sage{p6cc2})\logOld_{\sage{p6b1}}\left(\sage{p6f2}\right)$&$ + 
+        (\sage{p6cc3})\logOld_{\sage{p6b1}}\left(\sage{p6f3}\right)$ \\
+        &$+(\sage{p6cc4})\logOld_{\sage{p6b1}}\left(\sage{p6f4}\right)$&$ + 
+        (\sage{p6cc5})\logOld_{\sage{p6b1}}\left(\sage{p6f5}\right)$ \\
+        &$ + (\sage{p6cc6})\logOld_{\sage{p6b1}}\left(\sage{p6f6}\right)$
+    \end{tabular}
+    \[
+        \logOld_{\sage{p6b1}}\left( \answer{\sage{p6a1}} \right)
+    \]
+\end{problem}
+
+
+
+\begin{problem}
+    Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars everywhere)
+    
+    \begin{tabular}{lll}
+        $(\sage{p7cc1})\logOld_{\sage{p7b1}}\left(\sage{p7f1}\right)$& $+ 
+        (\sage{p7cc2})\logOld_{\sage{p7b1}}\left(\sage{p7f2}\right)$&$ + 
+        (\sage{p7cc3})\logOld_{\sage{p7b1}}\left(\sage{p7f3}\right)$ \\
+        &$+(\sage{p7cc4})\logOld_{\sage{p7b1}}\left(\sage{p7f4}\right)$&$ + 
+        (\sage{p7cc5})\logOld_{\sage{p7b1}}\left(\sage{p7f5}\right)$ \\
+        &$ + (\sage{p7cc6})\logOld_{\sage{p7b1}}\left(\sage{p7f6}\right)$
+    \end{tabular}
+    \[
+        \logOld_{\sage{p7b1}}\left( \answer{\sage{p7a1}} \right)
+    \]
+\end{problem}
+
+
+
+\begin{problem}
+    Fully condense the following logarithmic expression until there is only one logarithmic function remaining, with no coefficient. (Note: Formatting may look a little odd in order to get it to fit on a page correctly without getting crazy scroll bars everywhere)
+    
+    \begin{tabular}{lll}
+        $(\sage{p8cc1})\logOld_{\sage{p8b1}}\left(\sage{p8f1}\right)$& $+ 
+        (\sage{p8cc2})\logOld_{\sage{p8b1}}\left(\sage{p8f2}\right)$&$ + 
+        (\sage{p8cc3})\logOld_{\sage{p8b1}}\left(\sage{p8f3}\right)$ \\
+        &$+(\sage{p8cc4})\logOld_{\sage{p8b1}}\left(\sage{p8f4}\right)$&$ + 
+        (\sage{p8cc5})\logOld_{\sage{p8b1}}\left(\sage{p8f5}\right)$ \\
+        &$ + (\sage{p8cc6})\logOld_{\sage{p8b1}}\left(\sage{p8f6}\right)$
+    \end{tabular}
+    \[
+        \logOld_{\sage{p8b1}}\left( \answer{\sage{p8a1}} \right)
+    \]
+\end{problem}
+
+
+
+%\begin{problem}
+%    Expand the following exponential so that each exponent has at most one term.
+%    
+%    \begin{itemize}
+%        \item $\sage{p7q1} 
+%            = \answer{\sage{p7a1}} \cdot \sage{p7b1^p7b2}^{\answer{x^{\sage{p7r1}}}} \cdot  \sage{p7b1^p7b3}^{\answer{y^{\sage{p7r2}}}} \cdot \sage{p7b1^p7b4}^{\answer{z^{\sage{p7r3}}}}$
+%        \item $\sage{p8q1} 
+%            = \answer{\sage{p8a1}} \cdot \answer{\sage{p8b1^p8b2}}^{{x^{\sage{p8r1}}}} \cdot  \sage{p8b1^p8b3}^{\answer{y^{\sage{p8r2}}}} \cdot \answer{\sage{p8b1^p8b4}}^{{z^{\sage{p8r3}}}}$
+%        \item $\sage{p9q1} 
+%            = \answer{\sage{p9a1}} \cdot \sage{p9b1^p9b2}^{\answer{x^{\sage{p9r1}}}} \cdot  \answer{\sage{p9b1^p9b3}}^{y^{\answer{\sage{p9r2}}}} \cdot \sage{p9b1^p9b4}^{z^{\answer{\sage{p9r3}}}}$
+%        \item $\sage{p10q1} 
+%            = \answer{\sage{p10a1}} \cdot \sage{p10b1^p10b2}^{\answer{x^{\sage{p10r1}}}} \cdot  \sage{p10b1^p10b3}^{\answer{y^{\sage{p10r2}}}} \cdot \sage{p10b1^p10b4}^{\answer{z^{\sage{p7r3}}}}$
+%    \end{itemize}
+%\end{problem}
+
+
+\end{document}

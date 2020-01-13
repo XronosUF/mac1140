@@ -1,0 +1,136 @@
+\documentclass{ximeraXloud}
+
+\title{Exponential Growth and Decay}
+\begin{document}
+\begin{abstract}
+    This section discusses the two main modeling uses of exponentials; exponential growth, and exponential decay.
+\end{abstract}
+\maketitle
+    
+\subsection*{Exponentials in models}
+    
+    Exponential functions have a very specific purpose in models. Exponentials are used when growth/decay rate of something changes depending on how much of it you have. For example, a population of animals will increase faster the more animals you have. After all, if you have more animals, they can produce more baby animals, which thus increases the population faster. Similarly, the more debt you have, the more interest it accrues, so debt increases ``exponentially".
+    
+    Often people use the term ``increases exponentially" to mean that something grows fast. However, things can grow fast and not be exponential, and things can grow slowly but grow exponentially. Take the situation $10x^2$ (which is a polynomial, and thus not exponential) and $1.1^x$ (which is an exponential). Let's compare the values of these two things for $x=1$ to $x=6$.
+    
+    \begin{center}
+        \begin{tabular}{l|l|l}
+            $x$-values & $10x^2$ & $1.1^x$ \\\hline
+            $1$ & $10$ & $1.1$\\
+            $2$ & $40$ & $1.21$\\
+            $3$ & $90$ & $1.331$\\
+            $4$ & $160$ & $1.4641$\\
+            $5$ & $250$ & $1.61051$\\
+            $6$ & $360$ & $1.771561$
+        \end{tabular}
+    \end{center}
+    
+    As we can see, over the span of $x=1$ to $x=6$, the polynomial expression has gone from $10$ to $360$ whereas the exponential expression only went from $1.1$ to just over $1.77$. But we can also see that, as $x$ got bigger (and thus $1.1^x$ got bigger), increasing $x$ by 1 kept increasing the exponential value by \textit{more} than it increased before. The jump from $x=1$ to $x=2$ was $0.11$, but the jump from $x=5$ to $x=6$ was an increase of more than $0.16$... granted not exactly amazing, but that's a relative increase of over 50\%!
+    
+    Despite what it looks like above however, \textit{eventually} exponential growth will \textit{always} outpace polynomial growth... but it can take a \textit{very long time} to start doing so. Nonetheless it is important that growth speed isn't what makes something ``grow exponentially", rather it is the fact that the growth speed depends explicitly on how much of whatever is growing is present.
+    
+    Lets see a few more examples that are, perhaps, more relevant to you.
+    
+    \begin{explanation}[Calculate the principal of an unsubsidized student loan]%
+        Let's say that our student loan generates interest at $9$\% a year, compounded monthly. Since it is unsubsidized, it generates interest while the student is in their program. Let's say the student is in a 5 year undergraduate and masters degree program and the loan started with a principle (initial value) of \$$11,000$.
+        
+        First we need to determine how much interest is generated, and how often it is generated. A $9$\% interest rate compounded monthly means that they take $\frac{1}{12}$ of the total yearly interest rate ($9$\%) and apply that interest every month, ie 12 times a year. So the loan generates $\frac{9}{12}$\% additional debt every month the student is in school. Since this is \textit{additional} debt, it is added to the ($100$\% of the) current principle. This means that, every month the debt is multiplied by $1 + \frac{0.09}{12}$. Moreover, the student is in school for 5 years, which is 60 months. So we can calculate the final principal with the following formula;
+        \[
+            \$11,000\left(1 + \frac{0.09}{12}\right)^{60} = \$17,222.49
+        \]
+    \end{explanation}% End of example
+        
+    Buried in the above example is an explanation of the \textit{compound interest formula}. As with almost everything in this course, this formula seems mysterious at first, but is actually fairly straight forward once you know what you are looking at. The compound interest formula is as follows: If you have a principle value of $P$, an annual interest rate of $r$ (as a decimal) and it is compounded $N$ times a year, then the new principle value $P_n$ after $t$ years is:
+    \[
+        P_N = P\left(1 + \frac{r}{N}\right)^{t\cdot N}
+    \]
+    I realize that probably looks like another alphabet soup equation, but let's go through it carefully.
+    
+    \subsubsection*{Exponential Growth}
+    
+        Compound interest is an example of exponential growth. First we will work through a general example, and then we will look at specific application. 
+        
+        \begin{explanation}[General Exponential Growth Example]%
+        
+            The key to determining exponential growth is to write out a few iterations and look for the pattern that is occurring each iteration. This is easiest to see with an example, so let's do one. \\
+            Suppose you have bacterium that triples every three hours. If you start with $5$ cells, how many cells do you have after a week?\\
+            As mentioned, we want to write out a few iterations. But to do so we need to figure out the following:
+            \begin{itemize}
+                \item What is the growth/decay multiplier
+                \item How many growth iterations occur over the time interval
+                \item What is the starting size?
+            \end{itemize}
+            The first one in the list is a bit tricky; the best way to think of it (in terms of working the most generally) is to ask what multiple of the original value is added to the population each iteration. Since the bacteria triples, that means that the original population remains, but twice the original population is then added for a total of three times as much, thus our multiple is \textit{two}, \textbf{not} \textit{three}.\\
+            The starting size was given; 5 cells. The growth iteration is every 3 hours, so over a full week $\frac{24}{3}\cdot 7 = 56$ growth iterations occur.\\
+            
+            Now we write out a couple iterations. I'll write them out here and then explain after;
+            
+            \begin{center}
+                \begin{tabular}{l|l|l}
+                    Iteration   &   Population Value   & Simplified Result \\\hline
+                    0           &   $5$ & $= 5$                                                         \\
+                    1           &   $5 + 2 \cdot 5$ & $ = 5(1 + 2)^1$                                  \\
+                    2           &   $5(1 + 2) + 2 \cdot 5(1 + 2) = 5(1 + 2)[1 + 2] $ & $ = 5(1 + 2)^2$\\
+                    3           &   $5(1 + 2)^2 + 2 \cdot 5(1 + 2)^2 = 5(1 + 2)^2[1 + 2] $ & $ = 5(1 + 2)^3$\\
+                \end{tabular}
+            \end{center}
+            
+            There are a couple comments to be made for the above. First, it's important to notice that we are getting the ``$1 + 2$" factor by factoring out the greatest common factor in the equality which (repeatedly) gives the ``$1 + 2$" as a remainder after we factor out the GCF.\\
+            
+            The other thing to address is why I left it as $1 + 2$ instead of simplifying it to $3$. It is certainly fine to simplify it to $3$ at the end; but I have put it in this form deliberately to demonstrate the ``growth/decay multiplier", which will be useful when we look at other applications. For right now it is probably a good idea to go with it until you see the other applications, at which point this format may be clearer.\\
+            
+            Regardless, the pattern should have emerged when you look at the simplified result. After $N$ iterations, we will have $5(1 + 2)^N$ bacteria in our sample. We can notice this by looking at the simplified result and noting that the only change is the power of $(1+2)$, and that power is always the same as the iteration number.\\
+            
+            Finally we return to our list of information to recall that there are $56$ iterations spanning the time frame we are investigating. Thus we want iteration $56$, and so our value is $5(1+2)^{56} = 5\cdot 3^{56}$.
+            
+            \end{explanation}%
+        
+        As we have seen above, we can build an exceptionally generic ``exponential growth/decay equation." Specifically, given a growth/decay multiplier $r$ and initial population/value $P$, then after a number of iterations $N$ the population is:
+        \[
+            P(1 + r)^N
+        \]
+        In the above equation, the growth/decay multiplier $r$ is often the hardest part to understand. One should thing of $r$ as being the multiple of the population that changes (either increase or decrease) each iteration. Let's consider several examples.
+        
+        \begin{explanation}[An isotope has a half-life of 3 years. If you start with $200$kg, how much do you have after 30 years?]%
+            First we determine the initial population/value and the growth/decay multiplier. The initial population/value is given, $200$kg. The growth/decay multiplier is the multiple of the population/value that is added/removed each iteration. Since this is half life, it means half the substances decays away every iteration, so the growth/decay multiplier is $-0.5$ because half ($0.5$) of the substance is \textit{removed} (which means it's negative) each iteration. Finally we note that in $30$ years we have $\frac{30}{3} = 10$ iterations over our time interval. Thus our answer is:
+            \[
+                200\big(1 + (-0.5)\big)^{10} = 200\left(\frac{1}{2}\right)^{10}
+            \]
+        \end{explanation}%
+            
+        \begin{explanation}[You invest \$5,000 at 12\% APR compounded weekly. How much do you have at the end of 20 years?]%
+            Again we start by determining the initial population/value and the growth/decay multiplier, and again the initial value is given; \$5,000. The growth/decay multiplier is how much extra is added (or subtracted) to the value each iteration, which is exactly the interest rate that is applied each iteration. 12\% APR means 12\% is added every year, but it's compounded weekly, so that percentage is split up (evenly) across each week. So the multiplier that is applied \textit{each iteration} is $\frac{0.12}{52}$. Finally we need the number of iterations over our time period, which is $52$ weeks each year for $20$ years for a total of $52 \cdot 20 = 1040$ iterations. Thus our answer is;
+            \[
+                5,000\left(1 + \frac{0.12}{52}\right)^{1040}
+            \]
+            
+        \end{explanation}%
+        
+        The formulas that you have probably seen before can be explained in this same general context as well. Consider the classic ``compound interest formula" from before; the $P_N = P\left(1 + \frac{r}{N}\right)^{t \cdot N}$. If we actually interpret what these values are, we can see that $P$ is the initial value/population in both formulas, and in both formulas it has starts with $1 +$ in the parentheses. The first difference comes from the $r$ in the general formula versus $\frac{r}{N}$ in the compound-interest formula. \\
+        
+        In the general formula the $r$ stands for the growth/decay multiple; how much is added/subtracted each iteration. In the compound interest case, this is the annual percentage rate, divided by the number of times a year interest is compounded... which in the compound interest formula is exactly $\frac{r}{N}$. So, in fact, these two values are equal.
+        
+        The other place the two formulas are different are the exponents. In the general case it is just $N$, for the number of iterations that are applied. In the compound interest case, this is going to be the number of years we are spanning, times the number of times a year interest is applied... which again is exactly the $t \cdot N$ from the compound interest formula. 
+        
+        So one can see that these two formulas are exactly the same. Which may lead one to wonder why you should learn a ``new" formula if you already remember the compound interest formula. To answer that question though, let's have a look at half-life next.
+        
+        
+        The half-life formula that is typically taught is $A_0\left(\frac{1}{2}\right)^{\frac{t}{t_0}}$, or the even more obscure (and pointlessly convoluted) $Pe^{kt}$. In the second form $k$ is a ``catch-all magic constant" that ``fixes" everything to make it work, but it is incredibly difficult to see how or why the equation is working... which forces students to just memorize the formula and makes it incredibly difficult to use. The first example is at least a bit more enlightening, but fairly unwieldy. We will compare the ``General Growth/Decay" equation to the first one to see what is happening.
+        
+        In the general form $P$ is multiplied against everything and is the initial value, in the ``classic half-life formula" the same initial value is $A_0$. In the general formula the quantity inside the parentheses would be $(1 + r)$ for the growth/decay multiplier $r$. As we saw in one of the examples above, the decay multiplier for half-life is $-0.5$, which means the base of the exponent in the general equation will simplify to $\frac{1}{2}$, which is the same base as in the classic formula. Finally, the number of iterations that occur ($N$ in the general formula) is equal to the years that elapsed divided by the half-life in years.%
+        \footnote{
+            Actually, it's a bit worse than that because in the classic half-life formula there's nothing suggesting that these two units, ie the amount of time that passed and the amount of time needed for the half-life, are the same. For example, a question may say the half-life is 3 months and you wait 2 decades... in which case conversion is necessary before plugging it into the classic formula, whereas the general formula just asks you to determine the number of iterations.
+            }
+        In the classic formula that is represented by the elapsed time $t$ and the half-life time $t_0$. Again these things are a bit obscure (although not so bad as the $Pe^{kt}$ formula), but again we see that the general formula and the classic half-life formula result in the same formula in the half-life case.
+        
+        If we continue on with each of the applications, we would see that the general equation (when one correctly determines $r$) will always be equivalent to the various different dedicated ``special formulas" that are normally given for each specific case. Thus one could memorize all the various special-case formulas; compound interest, half-life, population increases, etc. Or one could learn the general formula... which even if you forget, can be figured out again by doing several iterations of the growth multiplier and re-discovering the pattern, which is how we originally deduced it back in the ``General Exponential Growth Example" earlier in this topic.
+
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+
+\end{document}

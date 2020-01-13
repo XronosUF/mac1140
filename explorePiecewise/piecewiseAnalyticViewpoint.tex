@@ -1,0 +1,124 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+
+\title{Piecewise Functions: The Analytic View}
+\begin{document}
+\begin{abstract}
+    This section discusses the analytic view of piecewise functions.
+\end{abstract}
+\maketitle
+
+Recall that the idea of piecewise functions is to stitch together several different functions, each one of which applies to a specific segment of the overall relation. Consider the graph from the previous section that depicted profit over time for a new company:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle, 
+            axis y line=middle, 
+            minor tick num=1, 
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.05,1)},anchor=west},
+            xlabel={Time (years)}, 
+            ylabel={Profit (\$100,000)},
+            xmin=-0.5, 
+            xmax=10.5, 
+            ymin=-0.5, 
+            ymax=5
+            ]
+        \addplot[domain=0:2, samples=300]{1/2*x^2};
+        \addplot[domain=2:4, samples=300]{2};
+        \addplot[->,domain=4:10, samples=300]{(3*x-8)^(1/2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+We can clearly break this graph into three pieces as so;
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle, 
+            axis y line=middle, 
+            minor tick num=1, 
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.05,1)},anchor=west},
+            xlabel={Time (years)}, 
+            ylabel={Profit (\$100,000)},
+            xmin=-0.5, 
+            xmax=10.5, 
+            ymin=-0.5, 
+            ymax=5
+            ]
+        \addplot[domain=0:2, samples=300, red]{1/2*x^2};
+        \addplot[domain=2:4, samples=300, blue]{2};
+        \addplot[->,domain=4:10, samples=300, green]{(3*x-8)^(1/2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Our goal is to write a (piecewise) function, $P(x)$, that is really a combination of each of these three functions. However, first we need to record the three functions themselves. In our case we have the following: 
+\begin{description}
+    \item[Red Segment:] {\color{red} $f(t) = \frac{1}{2}t^2$} is the segment from $t=0$ to $t=2$.
+    \item[Blue Segment:] {\color{blue} $g(t) = 2$} is the segment from $t=2$ to $t=4$.
+    \item[Green Segment:] {\color{green} $h(t) = \sqrt{3t-8}$} is the segment from $t=4$ to $t=10$.
+\end{description}
+
+We could simply use this descriptive method to define our piecewise function, but as usual we utilize a more compact form of notation. Consider the following piecewise function notation:
+
+\[
+    P(t) =
+        \begin{cases}
+            {\color{red}\frac{1}{2}t^2} & 0\leq t < 2 \\
+            {\color{blue} 2} & 2 \leq t \leq 4 \\
+            {\color{green} h(t) = \sqrt{3t-8}} & t > 4
+        \end{cases}
+\]
+
+This notation is deceptively dense and it is worth breaking down each part of it. 
+\begin{description}
+    \item[P(x)] As normal we name the function as the dependent variable $P$ and the independent variable $t$ as the input.
+    \item[Large Open Brace] The open brace encompasses all the lines that are all part of the piecewise definition. This way, if we have multiple horizontal lines of equations, we know that $P(t)$ is a piecewise function encompassing these three functions, and any other functions are not part of $P(x)$.
+    \item[Lines with Functions] Each line with a function has a left and a right component. The left side, eg ``{\color{red}$\frac{1}{2}t^2$}", ``{\color{blue} $2$}", or ``{\color{green} $h(t) = \sqrt{3t-8}$}", each denote a function in a specific segment. The right component, eg ``$0\leq t < 2$", ``$2 \leq t \leq 4$", or ``$t > 4$" gives the domain of that segment.\\
+    So, in particular, the line ``${\color{red}\frac{1}{2}t^2} \hspace{0.5cm} 0\leq t < 2$" is declaring that the function on the section of the graph for $t$ values between 0 and 2, is modeled by the function $\frac{1}{2}t^2$.
+\end{description}
+
+Something to keep in mind in the above function, is that the domains (the intervals of $t$ for each function) are disjoint, meaning that there \textit{should be no overlap between the intervals}. In particular, we have $0 \leq t < 2$ and $2 \leq t \leq 4$, rather than $0 \leq t \leq 2$ and $2 \leq t \leq 4$ which has $2$ in both intervals. In general, the chances of having a well defined function with overlapping intervals is almost nil. Having overlapping intervals in the function segments is how a piecewise relation fails the vertical line test. Consider from the geometric view tile the following piecewise relation graph:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis x line=middle, 
+            axis y line=middle, 
+            minor tick num=1, 
+            x label style={at={(axis description cs:1,0.1)},anchor=south},
+            y label style={at={(axis description cs:0.05,1)},anchor=west},
+            xlabel={Time (years)}, 
+            ylabel={Profit (\$100,000)},
+            xmin=-0.5, 
+            xmax=10.5, 
+            ymin=-0.5, 
+            ymax=5
+            ]
+        \addplot[domain=0:2, samples=300, red]{1/2*x^2};
+        \addplot[domain=2:4, samples=300, blue]{2};
+        \addplot[->,domain=3:10, samples=300, green]{(3*x-8)^(1/2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+This graph is generated by the following piecewise relation:
+
+
+\[
+    P(t) =
+        \begin{cases}
+            {\color{red}\frac{1}{2}t^2} & 0\leq t < 2 \\
+            {\color{blue} 2} & 2 \leq t \leq 4 \\
+            {\color{green} h(t) = \sqrt{3t-8}} & t > 3
+        \end{cases}
+\]
+
+Notice that the intervals above overlap because the second function is defined on $2 \leq t \leq 4$ and the third is defined on $t > 3$, which is why the piecewise relation fails the vertical line test on the interval $3 \leq t < 4$; ie on the overlap.
+
+
+\end{document}

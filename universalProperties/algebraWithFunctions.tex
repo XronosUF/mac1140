@@ -1,0 +1,65 @@
+\documentclass{ximeraXloud}
+
+\title{Algebra of Functions}
+\begin{document}
+\begin{abstract}
+    This section describes how to perform the familiar operations from algebra (eg add, subtract, multiply, and divide) on functions instead of numbers or variables.
+\end{abstract}
+\maketitle
+
+One of the key ideas of algebra (and mathematics in general) is to represent big problems as relations between smaller problems. So far we've done this primarily with variables; like when we say that the area of a patio is length times width we write it succinctly as $A = l\cdot w$.
+
+With functions however, we can take this one step further and discuss \textit{algebraic combinations of functions}. This may seem intimidating at first, but algebra with functions behaves (almost) identically to algebra of variables. Take, for example, the above formula we wrote; $A = l\cdot w$. If we envision $l$ and $w$ as variables that depend on something else; say available funds, we could write another equation to calculate $l$ based on how much money $m$ we have.
+
+\begin{example}[Determine Area as a function of Money]
+    A local housing initiative will provide bricks to lay a patio to raise the neighborhood property values. They specify that each foot of width costs \$5, and each foot of length costs \$6, to make a rectangular patio. We wish to write an equation that calculates the area of the patio we can make, as a function of how much money we have.
+
+    We start by assigning variables to the relevant pieces of information;
+    \begin{itemize}
+        \item $w$ is the \wordChoice{\choice[correct]{width}\choice{length}\choice{money}\choice{area}} of the patio
+        \item $l$ is the \wordChoice{\choice{width}\choice[correct]{length}\choice{money}\choice{area}} of the patio
+        \item $m$ is the \wordChoice{\choice{width}\choice{length}\choice[correct]{money}\choice{area}} we have to build the patio
+        \item $A$ is the \wordChoice{\choice{width}\choice{length}\choice{money}\choice[correct]{area}} of the patio
+    \end{itemize}
+    Next we write the relationships; We further decide (out of laziness) to spend half our money on width and half our money on length%
+    \footnote{%
+        We can actually determine exactly how much to spend on each to maximize the area we get per money spent, but this becomes a classic calculus problem. Strictly speaking we could do it in this course without calculus but we won't.%
+        }
+    \begin{itemize}
+        \item $w = \dfrac{m}{2}\cdot \dfrac{1}{5}$. Here we use $\dfrac{m}{2}$ to denote that we are using \textit{half} our money for each of the width and length. The $\dfrac{1}{5}$ is because it costs \$5 per 1 foot of width.
+        \item $l = \dfrac{m}{2}\cdot \dfrac{1}{6}$
+        \item $A = lw$
+    \end{itemize}
+    Thus, using substitution to plug in the $l$ and $w$ equations in the equation for area we get:
+    \[
+        A = lw = l(m) \cdot w(m) = \answer{\frac{m^2}{120}}
+    \]
+    \begin{feedback}[incorrect]
+        Remember: the only variable you should have in your answer is `$m$' (lowercase!)
+    \end{feedback}
+    But pause a moment and think what we just wrote. We wrote that the area was the product of the two \textit{functions} $l$ and $w$, which should properly be written $l(m)$ and $w(m)$ since they both are functions of money ($m$).
+
+    This is a demonstration that, in reality, we've been doing algebra with functions all along, it's just that we never really thought about a variable that depends on another variable (like how length depends on money in the above example) as a \textit{function}.
+
+\end{example}
+
+Really, most things can be viewed as functions if you want, although that's generally more effort than necessary. The important part here however is that (in most contexts) \textit{functions can also be thought of as variables} in terms of how we put functions together. Thus we can think of ``adding", ``subtracting", ``multiplying", or ``dividing" functions as being the same as doing that with variables. In general terms, given functions $f$ and $g$, we write the following notation:
+
+\begin{itemize}
+    \item $(f + g)(x)  = f(x) + g(x)$
+    \item $(f - g)(x) = f(x) - g(x)$
+    \item $(fg)(x) = (f(x))(g(x))$
+    \item $\left(\dfrac{f}{g}\right)(x) = \dfrac{f(x)}{g(x)}$
+\end{itemize}
+
+This is fancy notation%
+\footnote{%
+    It turns out that these facts are actually \textit{highly} non-trivial, but the reason is quite deep. It takes most of a semester of something called group and ring theory to explain why this isn't obvious, and unless you intend to take abstract algebra (senior level math-major course) it is beyond the scope of anything you are likely going to encounter or care about. Regardless, it is well outside the scope of this course.%
+    }
+for saying that, when we want to add, subtract, multiply, or divide \textit{functions} it is equivalent to doing it by just calculating each of the function values at the given $x$ value, and then taking the results of each function and putting them together with whatever algebra you wanted to use.%
+\footnote{%
+    This kind of combination of functions is called a ``point-wise" definition, as it involves calculating things at a specific domain point. Again, anything other than this kind of point-wise definition is outside the scope of this course, but many other options do exist and are studied in other courses such as `advanced calculus', `real analysis' or `modern analysis'%
+    }
+
+
+\end{document}

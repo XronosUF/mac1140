@@ -1,0 +1,88 @@
+\documentclass{ximeraXloud}
+
+\title{Numeric Model Walkthrough}
+\begin{document}
+\begin{abstract}
+    This is a detailed numeric model example and walkthrough.
+\end{abstract}
+\maketitle
+
+
+This is intended as a detailed walkthrough to give students an idea of what a \textit{complete and thorough} version of a numeric model is. Keep in mind this is the ideal, and in practice it is often the case that they are messier and/or lack some data. Moreover, because this is a numeric model (and a precalculus class) this model will be simplified in terms of the depth of detail we consider when we are modeling the given problem.
+
+\subsubsection*{The Given Problem}
+    You are a master carpenter with several apprentices and you have been subcontracted by a large construction company on one of their projects; building apartments in a new apartment building. You need to have a proposal for what to charge the company to put kitchen cabinetry in a single apartment.
+
+\subsubsection*{Phase One: Clarify and precisely state the problem.}
+    You know you need to come up with a number to charge for an apartment's kitchen cabinets, but more information is needed. How big is the apartment? How many cabinets are necessary? What kind/quality of wood is appropriate? (ie is it a high end luxury apartment, or a low end mass housing apartment for low income families?) You decide to sit down and brainstorm this initial list of possible things to consider and/or ask the construction company about to get a better idea of what you are expected to design.
+    \footnote{A master carpenter would more easily know which information to consider and which information is extraneous. You may consider trying to determine if there is any important information not considered here, or what information here might be extraneous and why?}
+    \begin{enumerate}
+        \item Wood quality (or specific type if available)
+        \item Solid wood construction, or paneled wood construction (ie particle board or equivalent with veneer facing attached)?
+        \item What cubic footage of storage (or other available dimensions) should be supplied?
+        \item How many occupants are expected in the apartment?
+        \item Is the cabinetry required to be finished (eg painted and ready for use) or unfinished (eg only raw wood construction, to be painted and finished by someone else)?
+    \end{enumerate}
+    
+    After further discussion with the construction company you determine you are expected to supply fully finished solid cherry construction cabinets with brass hardware, unpainted but sealed with appropriate chemical sealant. Moreover, they expect 2-3 occupants per apartment and request between 25 and 40 cubic feet of storage depending on your own professional recommendation for the space.
+
+\subsubsection*{Phase Two: Quantifying the Information.}
+
+    Now that you have a more technical and precise idea of what is expected, you get to work determining the structure of the cabinets, the amount of materials required, and the corresponding costs. You know you need to consider the following things that contribute to cost;
+    
+    \begin{itemize}
+        \item Labor: You expect to need 3 apprentice carpenters for three days, for a total of seventy two man-hours of work per apartment.
+        \item Travel: Travel to and from the work-site would account for \$100 per day in gas, insurance, and vehicle maintenance.
+        \item Raw Materials:
+        \begin{itemize}
+            \item Wood: Cherry wood is about \$9 a square foot
+            \item Hardware: Hinges, screws, finishing nails, and handles come to about \$8 per cabinet.
+            \item Finishing Supplies: An oil-based sealant, sanding supplies, and decorative carving come to about \$3 per cabinet (discounting labor).
+        \end{itemize}
+    \end{itemize}
+    
+    After looking through your blueprints and determining the build style and structure, you conclude that your design will have 37 cubic feet of storage and will need the following for raw materials;
+    
+    \begin{itemize}
+        \item Wood: 30 square feet of wood for the top cabinets and 26 square feet for the bottom cabinets, for a total of 56 square feet of Cherry.
+        \item Hardware: There will be a total of 6 top cabinets and 10 bottom cabinets (for the purposes of hardware, drawers are similarly counted as cabinets), for a total of 16 `cabinets'.
+        \item Finishing Supplies: Again there are a total of 16 cabinets.
+    \end{itemize}
+    
+    You will also need to account for your own salary, a profit margin, and ``slippage"
+    \footnote{In subcontracting and contracting work, the term slippage is often used to describe lost materials or labor due to mistakes in either planning or execution. For example, someone cutting a board too short by accident may mean that you lose a certain amount of wood that becomes entirely unusable, even for other aspects of your project.}
+
+\subsubsection*{Phase Three: Developing your (numeric) answer}
+    Once you have written down all the specifics and quantified them, it is time to determine the final number to send to the contractors. First you compute the actual raw cost to you (the master carpenter) of the apartment cabinets, assuming everything goes perfectly correctly.\footnote{Spoiler: it never does.}
+    
+    To determine this, we compute the following:
+    \begin{itemize}
+        \item Labor: 3 apprentice carpenters, each paid \$25/hr, for 72 man-hours comes to \wordChoice{\choice{\$1000}\choice[correct]{\$1800}\choice{\$2800}}. total.
+        \item Travel: 3 days at \$100 a day comes to \wordChoice{\choice{\$33}\choice[correct]{\$300}\choice{\$3000}} total.
+        \item Raw Materials:
+        \begin{itemize}
+            \item Wood: 56 square feet of wood at \$9 per square foot comes to \wordChoice{\choice[correct]{\$504}\choice{\$560}\choice{\$1000}} total.
+            \item Per-Cabinet Costs: For finishing supplies and hardware it was 16 cabinets at \$11 per cabinet for \wordChoice{\choice{\$80}\choice{\$100}\choice[correct]{\$176}} total.
+        \end{itemize}
+    \end{itemize}
+    Thus your total raw expenses are:
+    \[
+        (25\cdot 72) + (3\cdot 100) + (56\cdot 9) + (16\cdot 11) = \$1800 + \$300 + \$504 + \$176 = \$2780
+    \]
+    Thus your raw expenses as the subcontractor come to a total of \$2780 per apartment. A general rule of thumb for carpentry is to expect 10\%-15\% of raw expenses as `slippage`. You decide to play it a bit safe and round up, adding \$430 as a `slippage' factor. You also need to include your own salary which is billed at \$75 per hour, and you figure you had to contribute the planning and then oversight time for a total of about 40 hours of work, which is \wordChoice{\choice{\$300}\choice{\$1800}\choice[correct]{\$3000}}.
+    
+    So you official charging price comes to:
+    
+    \[
+        (\$2780 + \$430 + \$ 3000) = \$6210
+    \]
+    per apartment.
+    
+    Finally, you always make sure to include some profit margin to guard against unexpected delays, changes in planning, and various other possible mitigating factors. So you take the final number of \$6210 and add an extra ten percent to be safe. Thus your final charging price (including the extra ten percent) comes to: \wordChoice{\choice{\$6210}\choice[correct]{\$6831}\choice{\$7831}}.
+
+\subsubsection*{Conclusion}
+
+    After accounting for all the material costs, mitigating charges (charges against possible complications in the project that you may be held accountable for), maintenance and transport fees, and labor, you finally come up with a number for your contractor of \$6831 per apartment for cabinets.
+
+
+\end{document}

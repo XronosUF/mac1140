@@ -1,0 +1,117 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Inverse Functions}
+\begin{document}
+\begin{abstract}
+    This section covers invertibility, injective, surjective, and one-to-one functions
+\end{abstract}
+\maketitle
+
+\subsection{Inverse Functions - Geometric View}
+
+A recurring perspective as we move toward studying individual functions types will be the idea of \textit{inverting} a function. Remember that a function is a relationship between some domain and a codomain, where it ``maps" each domain point to a (single) point in the codomain. 
+
+\begin{center}
+    \begin{tikzpicture}[scale=2,filled dot/.style = {anchor=base,fill,circle,inner sep=0.5pt}]
+        \draw plot [smooth cycle] coordinates {(0,0) (1,0.1) (2,0.3) (2,1.4) (1.5,2.5) (0.8,2.5) (0.3,1.2) (-0.2,0.6) } node at (1,1) {Domain};
+        \draw plot [smooth cycle] coordinates {(4,0) (5,0.1) (6,0.3) (6,1.4) (5.5,2.5) (4.8,2.5) (4.3,1.2) (3.8,0.6) } node at (5,1) {Codomain};
+        \draw[-{Latex[length=3mm]}] plot [smooth,tension=1.2] coordinates {(1,1.5) (3,2.5) (5,1.5)} node at (3,2.7) {$f(x)$} node [filled dot] at (1,1.5){.}  node at (1,1.35) {$x_1$} node at (5,1.4) {$y_1$};
+    \end{tikzpicture}
+\end{center}
+
+Inverting a function is ``merely"%
+\footnote{%
+    Like most things, ``merely" is entirely misleading here... in fact this tends to be the hard part, and doesn't always work, as we'll see%
+    }
+the process of reversing the direction of $f(x)$. We will denote the inverse function by $f^{-1}(x)$ and we can see below what this looks like in terms of our domain and codomain.
+
+\begin{center}
+    \begin{tikzpicture}[scale=2,filled dot/.style = {anchor=base,fill,circle,inner sep=0.5pt}]
+        \draw plot [smooth cycle] coordinates {(0,0) (1,0.1) (2,0.3) (2,1.4) (1.5,2.5) (0.8,2.5) (0.3,1.2) (-0.2,0.6) } node at (1,1) {Domain};
+        \draw plot [smooth cycle] coordinates {(4,0) (5,0.1) (6,0.3) (6,1.4) (5.5,2.5) (4.8,2.5) (4.3,1.2) (3.8,0.6) } node at (5,1) {Codomain};
+        \draw[-{Latex[length=3mm]}] plot [smooth,tension=1.2] coordinates {(1,1.5) (3,2.5) (5,1.5)} node at (3,2.8) {$f(x)$} node [filled dot] at (1,1.5){.}  node at (1,1.35) {$x_1$} node at (5,1.4) {$y_1$};
+        \draw[-{Latex[length=3mm]}] plot [smooth,tension=1.2] coordinates {(5,0.55) (3,-0.5) (1,0.5)} node at (3.2,-0.8) {$f^{-1}(y)$} node [filled dot] at (5,0.55){.}  node at (5,0.7) {$y_2$} node at (1,0.6) {$x_2$};
+    \end{tikzpicture}
+\end{center}
+
+There are a few subtle and key observations that can be made from this seemingly simple diagram however. The most obvious,%
+\footnote{%
+    and most important it turns out%
+    }
+observation we can make is that the codomain of the original function becomes the domain of the inverse function, and the domain of the original function becomes the codomain of the inverse function... that is, the role of domain and codomain \textit{switch} for the inverse function.
+
+This is a lot more important than it might initially seem however, for two reasons. First, the inverse function taking an \textit{entire codomain} as it's domain could be rather problematic. Take, for example, the function $f:\mathbb{R}\rightarrow\mathbb{R}$ defined by $f(x) = e^x$. The inverse function for $f(x)$ would be $f^{-1}(x) = \ln(x)$ (you can just take this on faith for now, we'll cover this later). But if we try to use the entire codomain (ie $\mathbb{R}$) as the domain in the inverse, then we would have a problem because the domain of $\ln(x)$ is $\mathbb{R}^+$ not $\mathbb{R}$. It turns out though that the \textit{range} of $e^x$ is actually $\mathbb{R}^+$, not $\mathbb{R}$. 
+
+So, it is more helpful to take the \textit{range} of the function as the domain of it's inverse rather than the codomain. So our picture would more accurately look like:
+
+\begin{center}
+    \begin{tikzpicture}[scale=2, filled dot/.style = {anchor=base,fill,circle,inner sep=0.5pt}]
+        \draw plot [smooth cycle] coordinates {(0,0) (1,0.1) (2,0.3) (2,1.4) (1.5,2.5) (0.8,2.5) (0.3,1.2) (-0.2,0.6) } node at (1,1) {Domain};
+        \draw plot [smooth cycle] coordinates {(4,0) (5,0.1) (6,0.3) (6,1.4) (5.5,2.5) (4.8,2.5) (4.3,1.2) (3.8,0.6) } node at (5.15,2.3) {Codomain};
+        \draw plot [smooth cycle] coordinates {(4.3,0.1) (5,0.5) (5.7,0.8) (5.8,1.2) (5.5,2) (5,2) (4.8,1.4) (4,0.3) } node at (5,1.05) {Range};
+        \draw[-{Latex[length=3mm]}] plot [smooth,tension=1.2] coordinates {(1,1.5) (3,2.5) (5,1.5)} node at (3,2.8) {$f(x)$} node [filled dot] at (1,1.5){.}  node at (1,1.4) {$x_1$} node at (5,1.4) {$y_1$};
+        \draw[-{Latex[length=3mm]}] plot [smooth,tension=1.2] coordinates {(5,0.65) (3,-0.5) (1,0.5)} node at (3.2,-0.8) {$f^{-1}(y)$} node [filled dot] at (5,0.65){.}  node at (5,0.8) {$y_2$} node at (1,0.6) {$x_2$};
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{problem}
+    What is the difference between the codomain and the range of a function?
+    \begin{multipleChoice}
+        \choice[correct]{The codomain is the type of thing that the output is, whereas the range is the actual achieveable output.}
+        \choice{The range is the type of thing that the output is, whereas the codomain is the actual achieveable output.}
+        \choice{The codomain and the range are the same, so there is no difference.}
+        \choice{The codomain is the input, and the range is the output of a function.}
+        \choice{The codomain is the achieveable output of a function, and the range is the input of the inverse function.}
+    \end{multipleChoice}
+\end{problem}
+
+By using the range of $f(x)$ as the domain of $f^{-1}(y)$, we make sure that every point in the domain of $f^{-1}(y)$ is defined. Another way to say this is that we only consider the `points that actually came from some $x$-value' when we reverse the relationship to make the inverse relation.
+
+\subsection*{Inverse Function - The Analytic View}
+
+The geometric view is insightful to understanding what the inverse \textit{is}, but it doesn't really help us explicitly determine the inverse of a function. To do this, we use the analytic view (noticing a pattern yet?).
+
+Before we give a technique for explicitly obtaining an inverse, it is \textit{very important} to know how to check if a function \textit{actually is an inverse} analytically. This is because the process we have for obtaining an inverse can (and does) often fail, which means whenever you solve for an inverse of a function, you should \textit{always} check to ensure it is an inverse according to the following definition.
+
+\begin{definition}[Inverse Function]
+    A function $g(y)$ is an inverse to another function $f(x)$ if the following two compositions are true:
+    \[
+        f(g(y)) = y \text{ and } g(f(x)) = x
+    \]
+    In other words, to show that $g$ is the inverse function of $f$ (ie $g(y) = f^{-1}(y)$), we must show that $f(g(y)) = y$ and $g(f(x)) = x$.
+\end{definition}
+
+\begin{example}
+    Consider the function $f(x) = x^3$ and $g(y) = \sqrt[3]{y}$. We wish to show that $g$ is the inverse function of $f$.\\
+    
+    To do this we must show first that $f(g(y)) = y$;
+    \[
+        f(g(y)) = (g(y))^3 = (\sqrt[3]{y})^3 = y  \checkmark
+    \]
+    Next we must show that $g(f(x)) = x$;
+    \[
+        g(f(x)) = \sqrt[3]{f(x)} = \sqrt[3]{\answer{x^3}} = x  \checkmark
+    \]
+    Thus, since we have shown that $f(g(y)) = y$ and $g(f(x)) = x$ we can conclude that $g(y) = f^{-1}(y)$, ie that $g$ is the inverse function of $f$.
+\end{example}
+
+
+\subsubsection{How to solve for inverse analytically}
+
+Remember from our geometric view, that the inverse function is the function that reverses the process of $x$ and $y$. In essence, the inverse function is switching the roles for the input and output variable. So to find a function that does this, we `merely'%
+\footnote{There's that `merely' again... and yes this is the hard part} switch the independent and dependent variables, then solve for the independent variable again. Consider our previous example, but this time we will determine the inverse function.
+\begin{example}
+    {\large Find the inverse function for the function $f(x) = x^3$.}\\
+    
+    To find the inverse function we will first switch the input and output variable. Since there is no explicit output variable, we will assign one by setting $f(x) = y$, thus we switch the location of the $x$ and $y$ variables to go from$y = x^3$ to $\answer{x} = \answer{y}^3$.
+    
+    Next we want to solve for $y$ again. To do this we need to cube root both sides, which gives:
+    \[
+        \sqrt[3]{x} = \sqrt[3]{y^3} = y
+    \]
+    so our proposed inverse function is $y = \sqrt[3]{x}$. Keep in mind this is only a proposed inverse until we prove it is an inverse by showing that $f(g(y)) = y$ and $g(f(x)) = x$ (which we did in the previous example). Once we have shown that it is indeed the last inverse we can conclude that $f^{-1}(y) = \sqrt[3]{y}$ and we're done.
+\end{example}
+
+
+\end{document}

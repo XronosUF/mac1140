@@ -1,0 +1,56 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Rational Root Theorem}
+\begin{document}
+\begin{abstract}
+Find factors via rational root theorem
+\end{abstract}
+\maketitle
+
+The rational root theorem is one of the most powerful, but least efficient, mechanisms for finding roots of a polynomial. You may have noticed in our discussion of factoring quadratics by factoring their coefficients above, we had talked about how zeros of a polynomial are of the form $\frac{b}{a}$ where $a$ divided the leading coefficient, and $b$ divided the constant in the polynomial. In our specific example above we were looking at the factored form $(3x + 4)(2x - 6) = 6x^2 - 10x - 24$, and then we had noticed that the leading coefficient $6$ comes from the $(3x) \cdot (2x)$ to get $6x^2$ and the $-24$ came from the $4 \cdot (-6)$... which is to say, if a quadratic of the form $a_2x^2 + a_1x + a_0$ has a root of the form $(ax - b)$, then $a$ should divide evenly into $a_2$ and $b$ should divide evenly into $a_0$.
+
+\subsection*{Man, I had almost managed to forget that insanity... and now my head is hurting}
+    Well... sorry? The good news is, that we can (hopefully) see that this has nothing specifically to do with quadratics. If we chain a bunch of these roots together, the leading coefficient will always be formed by taking the product of all the $x$-terms in each of the roots, and the constant coefficient (of the polynomial) will be formed by taking the product of all the constant coefficients in the roots. This is the rational root theorem.
+    
+    \begin{theorem}
+        Let $p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0$ be a general polynomial with integer coefficients (ie $a_n, a_{n-1}, ..., a_1, a_0$ are all integers). If $(ax + b)$ is a root ($a$, $b$ integers), then  $a$ divides into $a_n$ evenly and $b$ divides into $a_0$ evenly.
+        
+        This has a number of equivalent forms but the following is often the most useful:
+        Every zero of $p(x)$ that is a rational number, is of the form: $\dfrac{\text{Factor of }a_0}{\text{Factor of }a_n}$.
+    \end{theorem}
+    
+    Before your head splits in half, this is much easier to see with an example.
+    
+    Consider $p(x) = 10x^5 - 13x^3 + 22x^2 - 3x + 14$. Let's say we want to know: ``what are all possible zeros of $p(x)$ and what are all possible roots of the form $(ax + b)$ for integers $a$ and $b$?"%
+        \footnote{Technically there are still infinitely many such roots, so we should include a line like `up to a constant multiple' to avoid the stupid case where one could have a root of, say, $(3x + 3)$ and $3(x + 1)$ which are arguably different roots.}
+    
+        Notice that the question says ``possible" zeros and roots, not the \textit{actual} zeros or roots. This seems like an impossible task, after all there are infinitely many integers we could randomly plug in... but this is where using the rational root theorem is helpful. To do this then, we need to find what the factors of 14 are and what the factors of 10 are. Writing these out we have the factors of 14 are 1, 2, 7, 14 and the factors of 10 are 1, 2, 5, 10. Notice however, that if a positive number divides evenly, then so does the negative version, so we are actually going to need to list the positive and negative versions of every zero.
+    
+        According to the rational root theorem then, we can list the possible zeros of $p(x)$ by taking every combination of a factor of the constant coefficient (ie 14) and divided by factors of the leading coefficient (ie 10). This gives us the following list;
+        \[
+            \pm \left(\frac{1}{1}, \frac{2}{1}, \frac{7}{1}, \frac{14}{1},
+            \frac{1}{2}, \frac{2}{2}, \frac{7}{2}, \frac{14}{2},
+            \frac{1}{5}, \frac{2}{5}, \frac{7}{5}, \frac{14}{5},
+            \frac{1}{10}, \frac{2}{10}, \frac{7}{10}, \frac{14}{10}\right)
+        \]
+        Which, after we clean it up a little and get rid of duplicates, gets us the following list:
+        \[
+            \pm \left( 1, 2, 7, 14,
+            \frac{1}{2}, \frac{7}{2},
+            \frac{1}{5}, \frac{2}{5}, \frac{7}{5}, \frac{14}{5}
+            \frac{1}{10}, \frac{7}{10}\right)
+        \]
+    
+        Next we wanted to write out the corresponding roots. Notice that zeros of the root $(ax + b)$ are $-\frac{b}{a}$. Thus, working backward, we can take each of the above zeros and form the corresponding root by taking the denominator as the `$a$' and the numerator as the `$b$' in the form $(ax + b)$. Since we need to have the positive and negative version of each zero we use the form $(ax \pm b)$, which is just saying `both the roots $(ax + b)$ and $(ax - b)$', to denote both at the same time.  %
+        So, we get the following list of possible roots:
+        \begin{align*}
+            (x &\pm 1),     &(x &\pm 2),    &(x &\pm 7),    &(x &\pm 14),   &(2x &\pm 1),   &(2x &\pm 7), \\
+            (5x &\pm 1),    &(5x &\pm 2),   &(5x &\pm 7),   &(5x &\pm 14),  &(10x &\pm 1),  &(10x &\pm 7)
+        \end{align*}
+
+You can also watch a video of using the rational root theorem to fully factor a polynomial!
+
+\youtube{3uoh4Kpsrq4}
+
+
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Absolute Value: Geometric View}
+
+\begin{document}
+\begin{abstract}
+    This discusses Absolute Value as a geometric idea, in terms of lengths and distances.
+\end{abstract}
+\maketitle
+
+\subsection*{A Quick History for Context}
+    Historically numbers were used most commonly for two things; counting, and distances.%
+    \footnote{In fact, the Ancient Greeks originally only considered numbers that were ratios of two distances, a fact that led to impressive development in geometry, but ultimately stagnated their abilities as they ran into problems conceiving of irrational numbers!}
+    As algebra and arithmetic developed however, negative numbers became a common tool and eventually with the advent of the Cartesian Plane, distances between points started getting a little weird. Intuitively we know that ``the distance between $1$ and $3$" should be the same as ``the distance between $3$ and $1$", yet mathematically this was hard to write down uniformly. At first it was simple enough to say you ``simply write down the larger number minus the smaller number" which would guarantee that the result was positive, but what if one of them was a variable? Then you don't know which is larger, and regardless, having the notation somehow inherently depend on something qualitative (rather than quantitative) was exactly what mathematics was trying to move away from. This is where the absolute value was brought into play.
+
+\subsection*{Notation and Usage}
+    Absolute value is often referred to as the function that ``makes the value positive". We will discuss how this is done in the analytic viewpoint section, but as to why it is useful, the absolute value has two common usages.%
+    \footnote{It actually has a lot more usages, that are somewhat less common, but come up again in calculus 3 aka multidimensional calculus, with the introduction of norms and inner products.}
+    
+    The first usage is the historical one; ie to define a distance between two values. We notate the absolute value using two vertical bars, and so we can notate the phrase ``the distance between $a$ and $b$" by $|a-b|$.%
+    \footnote{If you are wondering why we use $a - b$, this is because of the same reference frame problem we mentioned earlier. What the absolute value really does is find the distance between zero and a number; thus $|a|$ is the distance from some point of reference (which we call zero) and $a$. If we want the distance from a different point than zero, we need to ``make" that value zero, by subtracting it inside the absolute value. In other words, when we write $|a - b|$, the $a$ part is the distance to $a$ and the $ - b$ part is there to reset ``zero" to $b$ (since $b - b = 0$), and so we are finding the distance to $a$ from the point of reference, which is now $b$ thanks to the $-b$.}
+    Most commonly we have some bound or equality for the distance. Most of the phrases are fairly self evident, but there is a table below with a sample of various words and their corresponding mathematical in(equalities) for reference. Keep in mind this table is by no means exhaustive, but should give a general idea of the process.
+    
+    \begin{tabularx}{\textwidth}{|ccXX|}\hline
+        Key Word(s)         &   Math Symbol &   Example Phrase                                      & Corresponding Math\\ \hline
+        
+        ``is"               &   $=$         &   The distance between $a$ and $b$ is $5$             & $|a-b| = 5$\\\hdashline
+        ``at most"          &   $\leq$      &   The distance between $a$ and $b$ is, at most, $5$.  & $|a-b| \leq 5$\\\hdashline
+        ``at least"         &   $\geq$      &   The distance between $a$ and $b$ is at least $5$.   & $|a-b| \geq 5$\\\hdashline
+        ``larger than"   &   $>$            &   The distance between $a$ and $b$ is larger than $5$.& $|a-b| > 5$\\\hdashline
+        ``smaller than"  &   $<$            &   The distance between $a$ and $b$ is smaller than $5$.& $|a-b| < 5$\\ 
+        ``no more than"  &   $\leq$         &   The distance between $a$ and $b$ is no more than $5$.& $|a-b| \leq 5$\\\hdashline
+        ``no less than"  &   $\geq$         &   The distance between $a$ and $b$ is no less than $5$.& $|a-b| \geq 5$\\\hdashline
+        \hline
+    \end{tabularx}
+
+    \begin{problem}
+        Translate the following expressions into mathematical (in)equalities (for Xronos to grade your work correctly, you must write any expressions with variables in the left answer box).
+        \begin{itemize}
+            \item ``The distance between $x$ and $y$ is no more than $13$. $\answer{|x-y|}$ \wordChoice{\choice{$<$}\choice{$>$}\choice[correct]{$\leq$}\choice{$\geq$}\choice{$=$}} $\answer{13}$
+            \item ``The distance between $2x$ and $y$ is greater than $3$. $\answer{|2x-y|}$ \wordChoice{\choice{$<$}\choice[correct]{$>$}\choice{$\leq$}\choice{$\geq$}\choice{$=$}} $\answer{3}$
+            \item ``The distance between $2x$ and $3y^2$ is $12$. $\answer{|2x-3y^2|}$ \wordChoice{\choice{$<$}\choice{$>$}\choice{$\leq$}\choice{$\geq$}\choice[correct]{$=$}} $\answer{12}$
+        \end{itemize}
+    
+    \end{problem}
+
+
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass{ximeraXloud}
+\makeatletter
+\title{Function Notation}
+\begin{document}
+\begin{abstract}
+    This section covers function notation, why and how it is written.
+\end{abstract}
+\maketitle
+
+Functions are an integral part of mathematics and as a result a lot of time and effort has gone into increasing the efficiency of the notation used to represent them. This means there is a deceptively large amount of information being presented by even an incredibly simple (looking) declaration like $f(x) = x + 2$. This section will go into great detail about (most) of the information conveyed by this statement and how to translate function notation into normal(ish) English.
+
+Recall that functions are really the combination of three distinct things; a relationship, a domain, and a codomain. In normal-person\footnote{
+    Ok, so `normal' is a bit relative here, but let's go with 'non-math teacher' person?
+        }
+speak we would say that a `function' is really a machine that takes some kind of information in, and gives back (outputs) some kind of related information. The things you can feed \textit{into} the machine form the domain, and the things the machine puts back out is the codomain.
+
+Since this is the standard way most functions work, mathematicians have developed a universal short-hand to notate these pieces (the function, the domain, and the codomain). In particular we use the following notation:
+
+\begin{center}
+    (Relationship Name) : (Domain Name) $\rightarrow$ (Codomain Name)
+\end{center}
+
+The two symbols above (the colon and the right arrow) are very important. The colon is used to separate the name of the function from the domain, and the arrow is used to show the direction of the relation, ie that the relation goes `from' (takes elements within) the domain `to' (outputs things found in) the Codomain.
+
+For example, if we name our function $f$ and it has a domain of ``all real numbers" (which is the symbol $\mathbb{R}$) and the codomain is the set of natural numbers (which is the symbol $\mathbb{N}$) we could express all this with the mathematical notation
+
+\[
+    f: \mathbb{R} \rightarrow \mathbb{N}
+\]
+
+Mathematicians have some verbal shorthand that they use too. We often \textit{say} the relation $f$ is a ``map" that ``sends" or ``maps" the domain point to the (related) point in the codomain. Thus if we had the function: $f(x) = x + 2$, then we could calculate $f(3) = 3 + 2 = 5$, and we could (would) say; ``$f$ sends $3$ to $5$" or ``$f$ maps $3$ to $5$", because the relation $f$ takes in the value $3$ and returns the value $5$.
+
+This last bit is the $f(x)$ notation, which we explain more clearly in our next section.
+
+
+\begin{problem}
+    Which of the following are equivalent to the phrase ``$h$ maps $u$ to $u^2 + 1$?
+    \begin{selectAll}
+        \choice[correct]{$h(u) = u^2 + 1$}
+        \choice{$f(u) = u^2 + 1$}
+        \choice[correct]{$h$ sends $u$ to $u^2 + 1$}
+        \choice{$h(u^2+1) = u$}
+    \end{selectAll}
+\end{problem}
+
+\end{document}

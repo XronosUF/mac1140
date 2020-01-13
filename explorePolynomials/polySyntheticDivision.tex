@@ -1,0 +1,73 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Polynomial Synthetic Division}
+\begin{document}
+\begin{abstract}
+    Factor out a polynomial using synthetic division
+\end{abstract}%
+\maketitle
+
+Here is a shortcut method that computes the polynomial long division in \textit{specific circumstances}. Often this method, synthetic division, ends up getting used when it shouldn't because it is (in some ways) easier and faster, so it becomes the primary tool for students and they forget polynomial long division. Even more of an issue however is that the \textit{circumstances} when one \textit{must} use polynomial long division rather than synthetic division is also often forgotten.
+
+Synthetic division is appropriate when you want to divide out a degree one real root. Specifically if you have a root \textit{purely of the form }$(x-c)$ for some real number $c$. Notice that this means we must have $1$ as a coefficient in front of the $x$ and we can't use synthetic division to remove a root which is an irreducible quadratic.%
+\footnote{%
+    Technically $c$ doesn't \textit{have} to be a real number, it could be a complex number. \textit{However} in practice the computation becomes a bit of a nightmare and almost always ends up incorrect. For this reason I would \textbf{strongly} suggest not using synthetic division when you have a complex root. In fact, one should not do polynomial \textit{or} synthetic division with complex valued roots as there is a much better way to tackle that situation which we will discuss later.%
+    }
+
+Synthetic division is not dissimilar from polynomial long division, but we omit the powers of $x$. In essence, instead of copying down the polynomial (remembering to use a coefficient of zero for any missing powers of $x$), we write down the coefficients only, in a grid-like pattern, and then instead of writing along the top a polynomial that includes powers of $x$ we will write the coefficients only.
+
+The advantage to doing this, is that the algorithm for computing the number you need becomes a bit simpler. It turns out that the coefficients you need to use can be determined through a pattern of addition and multiplication rather than division and subtraction... this is because division and multiplication are really the same thing (multiplying by a fraction and dividing by the inverse of that fraction are the same for instance), as are addition and subtracting (adding a negative is the same as subtracting the positive). But often this is easier for you to compute quickly because of how much human brains like to add and multiply instead of divide and subtract. Consider the following example;
+
+\begin{image}
+    \includegraphics[width=\textwidth]{exPolySyntheticDivision.png}
+\end{image}%
+
+
+You can also watch a walkthrough of using polynomial synthetic division and its parallels to polynomial long division!
+
+\youtube{aV_gOAKWCKM}
+
+%\begin{example}%
+%    Use synthetic division to divide $3x^3 + 6x^2 - 12x - 24$ by $x - 2$.\\
+%    
+%    We will write the same kind of setup as we did before, except now we will use the zero that the root corresponds to, instead of the root itself. We write the zero in the top left of the grid, then beside it we write all the coefficients of the dividend. We then leave space for some calculations (one line of values) and write a line which will be the result of a running calculation. When all is said and done it should look like; 
+%    
+%    \begin{center}
+%        \polyhornerscheme[showbase=top,stage=1,x=2]{3x^3 + 6x^2 - 12x - 24}
+%    \end{center}
+%    
+%    Above, from left to right the numbers represent as follows: the $2$ to the left of the vertical line is the zero we are testing from the root $(x-2)$. To the right of the vertical line are the coefficients of the polynomial; $(3)x^3 + (6)x^2 + (-12)x + (-24)$
+%    
+%    Now is when things start to be different. Instead of dividing or subtracting, we will instead drop the first term to be below the line, then multiply that number by our proposed zero, and write the result below the next number in the line. Thus our work would look like:
+%    
+%    \begin{center}
+%        \polyhornerscheme[showbase=top,stage=3,tutor=true,x=2]{3x^3 + 6x^2 - 12x - 24}
+%    \end{center}
+%    
+%    The next step is to add the top line value to the value in the middle line to get a new bottom value.
+%    
+%    \begin{center}
+%        \polyhornerscheme[showbase=top,stage=4,tutor=true,x=2]{3x^3 + 6x^2 - 12x - 24}
+%    \end{center}
+%    
+%    Finally; then continue doing this until we run out of columns:
+%    
+%    \begin{center}
+%        \polyhornerscheme[showbase=top,x=2]{3x^3 + 6x^2 - 12x - 24}
+%    \end{center}
+%    
+%    Now we have a row of numbers, whose last value is 0 (which is good news, as we'll see in a moment). The values in this bottom row are the coefficients to the new polynomial that you form by doing the division, but the coefficients are all to powers of $x$ that are one number lower than the corresponding coefficients above them. Thus, for example, the first column had a $3$ as the coefficient for $x^3$. Thus the $3$ in the bottom row of that column is a coefficient for $x^{3-1} = x^2$. Doing this for each of the values we get that the new polynomial is $3x^2 + 12x + 12$. The $0$ at the end is the \textit{remainder} from the division. Since we have a remainder of $0$, this means that we can write the following;
+%
+%    \[
+%        \dfrac{3x^3 + 6x^2 - 12x - 24}{x-2} = 3x^2 + 12x + 12
+%    \]
+%    
+%    Which, again we can rewrite as:
+%    \[
+%        3x^3 + 6x^2 - 12x - 24 = (x-2)(3x^2 + 12x + 12)
+%    \]
+%    
+%    Which is the factored form we were looking for.
+%    \end{example}% End Example.
+
+\end{document}

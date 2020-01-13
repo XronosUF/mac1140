@@ -1,0 +1,261 @@
+\documentclass{ximeraXloud}
+
+\title{How to Use Xronos}
+\begin{document}
+\begin{abstract}
+A Tutorial to Interacting with Xronos
+\end{abstract}
+\maketitle
+
+
+Mathematics cannot be learned passively: it must be actively
+\link[constructed]{http://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)}
+by the person learning it.  With this in mind, this course is built
+around solving problems!
+ 
+Here are some examples.  Play around with it, get it wrong, try the
+hints out.  Don't be afraid to fail: \textbf{getting an answer wrong
+  never hurts you.}
+ 
+ 
+\begin{example}
+  Some problems are multiple-choice:
+  \begin{multipleChoice}
+    \choice{Don't pick me.}
+    \choice{Not me either.}
+    \choice[correct]{Pick me!}
+    \choice{Also an incorrect choice}
+  \end{multipleChoice}
+  \begin{feedback}
+    Click on the choice that says ``Pick me!''
+  \end{feedback}
+\end{example}
+ 
+ 
+\begin{example}
+  Some problems are select-all that are correct:
+  \begin{selectAll}
+    \choice{Don't pick me.}
+    \choice[correct]{Pick me!}
+    \choice[correct]{Pick me too!}
+    \choice[correct]{I'm a correct choice too.}
+  \end{selectAll}
+  \begin{feedback}
+    Click on the choices ``Pick me!'' ``Pick me too!'' and ``I'm a correct choice too.''
+  \end{feedback}
+\end{example}
+ 
+ 
+\begin{example}
+  $3\times 2 = \answer{6}$  
+  \begin{hint}
+    $3 \times 2$ is the number of objects in $3$ groups of $2$ objects
+  \end{hint}
+  \begin{hint}
+    \begin{image}
+      \begin{tikzpicture}
+        \draw (0,0) circle (4pt);
+        \draw (1,0) circle (4pt);
+        \draw (2,0) circle (4pt);
+        \draw (0,1) circle (4pt);
+        \draw (1,1) circle (4pt);
+        \draw (2,1) circle (4pt);
+      \end{tikzpicture}
+    \end{image}
+  \end{hint}
+  \begin{hint}
+    $3\times 2=6$
+  \end{hint}
+\end{example}
+ 
+For this course, you should always have a paper and pencil near at
+hand to make notes, doodle pictures, or solve complicated equations.
+We \textbf{strongly} recommend that you really \textbf{grapple} with a
+problem before getting a hint, or moving on.  The difference between
+what you learn by struggling with a problem on your own versus
+perusing someone else's solution is astonishing.
+ 
+With that said, even if you get an answer right you should
+\textbf{always} try the hints out afterwards.  They might explain the
+concept from a new point of view, or challenge you to think in a
+different way than you solved the problem.
+ 
+ 
+We support a few different answer types. Here are some example
+problems from the different answer types we support:
+ 
+\begin{example}
+  $\frac{x^2+y^2}{7} = \answer{\frac{x^2+y^2}{7}}$
+  \begin{feedback}
+    Type $\verb|(x^2+y^2)/7|$
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $\frac{\tan(x)}{2xa+b^2} = \answer{\frac{\tan(x)}{2xa+b^2} }$
+  \begin{feedback}
+    Type $\verb|tan(x)/(2xa+b^2)|$
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $\arcsin(x) = \answer{\arcsin(x)}$
+  \begin{feedback}
+    Type $\verb|arcsin(x)|$
+ 
+    Note that typing $\verb|sin^(-1)(x)|$ does not work.
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $|x| = \answer{|x|}$
+  \begin{feedback}
+    You can type $\verb! |x| !$ or $\verb! abs(x)!$, but
+    $\verb! abs(x) !$ may be preferable because it is easier to parse
+    appropriately.
+  \end{feedback}
+\end{example}
+\begin{example}
+  $\ln(x+1)= \answer{\ln(x+1)}$
+  \begin{feedback}
+    You could type $\verb|ln(x+1)|$ or $\verb|log(x+1)|$
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $ \sin(\theta) = \answer{\sin(\theta)}$
+  \begin{feedback}
+    Type $\verb|sin(theta)|$
+  \end{feedback}
+\end{example}
+ 
+ 
+\begin{example}
+  $ \varphi = \answer{\varphi}$
+  \begin{feedback}
+    Type $\verb|phi|$
+  \end{feedback}
+\end{example}
+ 
+ 
+\begin{example}
+  $ \rho = \answer{\rho}$
+  \begin{feedback}
+    Type $\verb|rho|$
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+    $\sqrt{x} = \answer{\sqrt{x}}$
+  \begin{feedback}
+    Type $\verb|sqrt(x)|$
+  \end{feedback}
+  \begin{feedback}
+    It would also work to type $\verb| x^(1/2)|$
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $\sqrt[3]{y} = \answer{y^{\frac{1}{3}}}$
+  \begin{feedback}
+    We do not have a ``slick" way to enter this, so you should just
+    type $\verb!y^(1/3)!$, which is equivalent.
+  \end{feedback}
+\end{example}
+ 
+ 
+\begin{example}
+  $DNE = \answer[format=string]{DNE}$
+  \begin{feedback}
+    Type $\verb|DNE|$.
+  \end{feedback}
+\end{example}
+ 
+\begin{example}
+  $\infty = \answer{\infty}$
+  \begin{feedback}
+    Type $\verb|infty|$ or $\verb|infinity|$ or $\verb|oo|$.
+  \end{feedback}
+\end{example}
+ 
+As you complete activities the green ``completion bar'' moves at the
+top of the page.  This lets you know how close you are to being done
+with an activity.
+ 
+You advance through pages either by completing them and clicking the
+``next activity'' button, or by navigating on the little scroll bar at
+the top of the page.
+  
+ 
+
+\subsection*{Xronos `Quirks'}
+    As a general rule, Xronos is remarkably forgiving with how it interprets answers. That being said, there are always things that are ``picky" for any online homework system. Often this is because it's ``picky" in actual mathematics, and thus this isn't so much a failure of the online system as it is a valid (but often rage-inducing) aspect of mathematics itself.
+    
+    First, one of the most important (and common) issues is that of \textit{capitalization}. This is true, even in mathematics, where $a$ and $A$ would be considered distinct variables. For this reason, Xronos treats them as such. For example, try the following problem;
+    
+    \begin{problem}
+        First, type in the letter $A$ and see what happens: $\answer{a}$
+        \begin{feedback}
+            Whoops, it didn't work... that's because the answer it wants is actually the lowercase letter:  $a$ . Try using that and see what happens...
+        \end{feedback}
+    \end{problem}
+    
+    As we see above, capitalization is important, so when looking at a problem, \textit{make sure you are using capital or lower case letters where needed!}
+    
+    Next up, order and format of expression being entered. Generally speaking, Xronos is quite good at interpreting what you hand it. Unless the question author has specifically designed the question to require a certain order of terms or expansion level of terms, Xronos will be able to take it regardless. For example;
+    
+    \begin{problem}
+        Try putting in the letters: $abcdefg$ in any order: $\answer{abcdefg}$.
+        \begin{problem}
+            Now try it again, and notice what happens if you don't enter them in the exact order they were given: $\answer[format=string]{abcdefg}$.
+        \end{problem}
+    \end{problem}
+    
+    Generally speaking, if Xronos doesn't like your answer, it's because your answer is not \textit{mathematically correct}. There are some exceptions to this, and we are always refining questions and looking for errors, so if you think your answer is correct but Xronos isn't taking it, \textit{you should email your TA} to verify your answer is correct. If the answer is correct and Xronos isn't taking it, your TA will contact either your lecturer or the Xronos team, and they will fix the problem to take the correct answer. If your answer is incorrect, the TA can help you figure out the correct answer.
+
+\subsection*{Xronos Features}
+
+    There are a number of features that are often missed until most of the way through the semester by students, that would have made their life \textit{vastly} easier. The first such item is the ``Math Editor".
+    
+    \begin{problem}
+        Look at the top of the page right now. Chances are you don't see anything that says ``Math Editor" right now... but click into the following answer box and look again: $\answer{4}$. Once you are `entering' an answer (ie you've clicked into an answer box) a light blue button should appear in the top right that says ``math editor" (you may have to scroll up to the top of the page depending on your browser). Clicking this box will bring up a large math palette to help you enter in various math expressions and give you a \textit{much} bigger math box to see what you type as you type it. Enter $4$ into the math palette and hit enter to put your answer into the answer box, and then click the button to see if you got the right answer.
+    \end{problem}
+    
+%    The next part to mention is nested problems. As you saw above when we were discussing entering letters in order (or not), sometimes when you (successfully) answer problems, more problems appear. Generally you must answer all questions of one level, before any questions of the next level appear.
+%    
+%    \begin{problem}
+%        So, for example, here we only see one problem. But go ahead and enter $4$ in the following box: $\answer{4}$.
+%        \begin{problem}
+%            Now you can see that both this problem appeared, as well as the problem below this one. This problem has another sub problem, but you won't be able to see it until you answer both this problem and the next one. 
+%            \[
+%            2 + 2 = \answer{4}
+%            \]
+%            \begin{problem}
+%                This problem won't appear until \textit{both} of the problems that were unlocked after the first problem was answered, have been correctly answered.
+%                \[
+%                4 - 2 = \answer{2}
+%                \]
+%                \begin{problem}
+%                    So, as we can see, there are lots of problems under that initial one. This means that, if you skip ``only one" problem, you might \textit{actually} be skipping a whole lot of problems without realizing it. This also means your overall grade may suffer what seems like a disproportionate amount for skipping ``one" problem. This is because you have, in fact, skipped a whole lot of problems without realizing it because they were ``hidden" waiting to be unlocked.
+%                    
+%                    So, in general, when answering problems you should...
+%                    \begin{multipleChoice}
+%                        \choice{Skip ones that look hard, since everything is worth the same.}
+%                        \choice{Ignore some subparts of problems that look harder than others.}
+%                        \choice[correct]{Answer all subparts of a problem and then check to see if any of those subparts unlocked new subparts.}
+%                        \choice{Don't bother checking previously marked `correct' problems for subparts, since they would have unlocked when you got them right originally.}
+%                    \end{multipleChoice}
+%                \end{problem}
+%            \end{problem}
+%        \end{problem}
+%        
+%        \begin{problem}
+%            This should ne the second problem that appeared,
+%            \[
+%            2 + 2 = \answer{4}
+%            \]
+%        \end{problem}
+%        
+%    \end{problem}
+
+\end{document}

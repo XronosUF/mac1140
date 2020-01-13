@@ -1,0 +1,70 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Absolute Value: Solving Equalities}
+\begin{document}
+\begin{abstract}
+    This section is on how to solve absolute value equalities.
+\end{abstract}
+\maketitle
+
+It's one thing to understand the analytic definition of an absolute value, but it can be remarkably tricky at times to understand how to utilize that definition to solve an equality that has an absolute value in it. This is especially true given the subtleties involved in the solution. Consider the following equation:
+
+\[
+    |x-1| = 13
+\]
+
+The first step to solving any absolute value equality is to break it into cases, according to the piecewise definition. In this case, we could rewrite the absolute value part as follows:
+
+\[
+    |x-1| = 
+        \begin{cases}
+            -x + 1 & x < 1 \\
+            x - 1 & x \geq 1
+        \end{cases}
+\]
+
+We then plug these two possibilities into the original equality in, but \textbf{we must keep track of the domain restriction}. 
+\begin{description}
+    \item[Case 1: (Assume $x < 1$)] Under this assumption we have that \hbox{$|x-1| = -(x-1)$}, so our original equality becomes $-(x-1) = 13$ which we can solve to get $x = -12$.
+    \item[Case 2: (Assume $x \geq 1$)] Under this assumption we have that $|x-1| = x-1$, so our original equality becomes $x-1 = 13$ which we can solve to get $x = 14$.
+\end{description}
+Finally, we want to verify that the solutions we came up with are in the correct domains. In our example, we have that $x = -12$ was a solution \textbf{under the requirement that $x < 1$}. Since $-12 < 1$, this is a valid solution. Similarly, the solution $x = 14$ is only a solution under the requirement that $x \geq 1$. Since $14 > 1$, this is also a valid solution. \textbf{If in doubt, you can always plug your solutions back into the original problem to verify that they work!}
+
+Now let's consider another example.
+\[
+    |3x + 3| = -x^2 + 1
+\]
+
+Again, we want to take the content of the absolute value and replace it with the piecewise definition. In this case we have:
+
+\[
+    |3x+3| = 
+        \begin{cases}
+            -3x - 3 & x < - 1 \\
+            3x + 3 & x \geq - 1
+        \end{cases}
+\]
+Thus we break our original equality into two cases, just as before:
+
+\begin{description}
+    \item[Case 1: (Assume $x < -1$)] Under this assumption we have that $|3x + 3| = -3x - 3$. So our original equality becomes $-3x - 3 = -x^2 + 1$ which we can rearrange and factor to get $(x -4)(x + 1) = 0$ which gives the solutions $x = 4$ and $x = -1$. 
+    \item[Case 2: (Assume $x \geq -1$)] Under this assumption we have that $|3x + 3| = 3x + 3$. So our original equality becomes $3x + 3 = -x^2 + 1$ which we can rearrange and factor to get $(x + 2)(x + 1) = 0$ which gives the solutions $x = -2$ and $x = -1$.
+\end{description}
+
+Thus we have the two solutions $x = 4$ and $x = -1$ \textbf{under the assumption $x < -1$}. Since neither of these solutions are (strictly) less than $-1$, neither of these solutions are valid.
+
+Next we have the two solutions $x = -1$ and $x = -2$ \textbf{under the assumption $x \geq -1$}. Since $-2$ is not greater than or equal to $-1$, that solution is not valid. However, the solution $x = -1$ is valid here.
+
+Notice that $-1$ was a solution \textit{in both cases} and, although $-1$ was not valid in the first case, it \textit{is} valid in the second case, which is why it \textit{is} a valid solution.
+
+Again, if this is somewhat difficult to parse, remember that you can always plug in all the potential solutions into your original equation to see which ones work. For example;
+
+\begin{tabularx}{\textwidth}{lllll}
+    Solution 1: $x = 4$     & $|3(4) + 3|$  & $= |12 + 3|$  & $= 15 \neq -15$   & $= -(4^2) + 1$\\
+    Solution 2: $x = -1$    & $|3(-1) + 3|$ & $= |0|$       & $= 0 $            & $= -(1^2) + 1$\\
+    Solution 3: $x = -2$    & $|3(-2) + 3|$ & $= |-6 + 3|$  & $= 3 \neq -3$     & $= -((-2)^2) + 1$
+\end{tabularx}
+
+The only one that satisfied our equation is the second solution, $x = -1$, as we saw earlier.
+
+\end{document}

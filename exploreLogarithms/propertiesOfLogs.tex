@@ -1,0 +1,86 @@
+\documentclass{ximeraXloud}
+
+\title{Properties Of Logs}
+\begin{document}
+\begin{abstract}
+    This is one of the most vital sections for logarithms. We cover primary and secondary properties of logs, which are pivotal in future math classes as these properties are often exploited in otherwise difficult mechanical situations.
+\end{abstract}
+\maketitle
+
+You can watch a video lesson on this section!
+
+\youtube{kftfvahCHps}
+
+There are a number of properties of logarithms. We will start by showing the ``primary" three properties, that is to say the three properties that are most often used, but we will also include many more properties that are occasionally useful and easily deduced from the primary ones.
+
+\subsection*{Primary Properties}
+    
+    We begin by listing the properties and then we will address each one to show why they work.
+    
+    \begin{enumerate}
+        \item $\log_b(xy) = \log_b(x) + \log_b(y)$
+        \item $\log_b(x^y) = y\log_b(x)$
+        \item $\log_b\left(\frac{x}{y}\right) = \log_b(x) - \log_b(y)$
+    \end{enumerate}
+    
+    \subsubsection*{Showing $\log_b(xy) = \log_b(x) + \log_b(y)$}
+        
+        First, let's consider the right-hand side, $\log_b(x) + \log_b(y)$. Remember that, for any $z$ we can write $\log_b(b^z) = z$, specifically (taking $z$ to be the right-hand side above) we have; $\log_b(x) + \log_b(y) = \log_b\left( b^{\log_b(x) + \log_b(y)} \right)$. Thus we can write the following:
+        \[
+            \log_b(x) + \log_b(y)   = \log_b\left( b^{\log_b(x) + \log_b(y)} \right) 
+                                    = \log_b\left( b^{\log_b(x)}\cdot b^{\log_b(y)}\right) 
+                                    = \log_b(x \cdot y).
+        \]
+        In essence, what is happening above is a consequence of the fact that everything inside the $\log_b$ function (the argument of the log) is occurring \textit{after} the exponent is canceled by the log, and everything that happens outside of the log function, is happening \textit{before} the exponent is canceled. Thus the sum of logs, ie $\log_b(x) + \log_b(y)$, because the addition symbol is \textit{outside} the logs argument, is happening \textit{inside} the exponent. In contrast, the product of the argument, ie $\log_b(xy)$ is happening \textit{inside} the argument, so it is happening \textit{after} the exponent. Thus the property above is telling us that addition inside an exponent is the same as the product outside the exponent... which means the this property is the logarithmic version of the \textit{exponential} property $b^{x+y} = b^xb^y$.
+        
+    \subsubsection*{Showing $\log_b(x^y) = y\log_b(x)$}
+        This property can be seen to easily follow from the previous property. Indeed, if you recall that exponentials are just repeated multiplication, then the left hand side is ``$y$" products of $x$ which, by the first property above, is equivalent to ``$y$" additions of $\log_b(x)$, which is simply $y\log_b(x)$. This may be easier to see in a concrete example, so let us consider the example $\log_b (x^3)$. Then;
+        \[
+            \log_b(x^3) = \log_b(x\cdot x\cdot x) = \log_b(x) + \log_b(x) + \log_b(x) = 3\log_b(x)
+        \]
+    
+    \subsubsection*{Showing $\log_b\left(\frac{x}{y}\right) = \log_b(x) - \log_b(y)$}
+        This property once again follows from the previous two rather directly. Recall that we can write $\frac{1}{y}$ as $y^{-1}$. So we may rewrite the above log as $\log_b\left(\frac{x}{y}\right) = \log_b\left(x \cdot \frac{1}{y}\right) = \log_b\left(x\cdot y^{-1}\right)$. By using this and the above two properties we have;
+        \[
+            \log_b\left(\frac{x}{y}\right)  = \log_b\left(x\cdot y^{-1}\right) 
+                                            = \log_b(x) + \log_b\left(y^{-1}\right) 
+                                            = \log_b(x) + (-1)\log_b(y)
+                                            = \log_b(x) - \log_b(y) 
+        \]
+        
+        Again, this property can be understood in the light of the exponential form as well. The subtraction \textit{outside} the logs is happening \textit{inside} the exponent, whereas the division \textit{inside} the logs is happening \textit{outside} the exponent. So this property is equivalent to the \textit{exponential} property of $b^{x-y}=\frac{b^x}{b^y}$.
+
+\subsection*{Secondary Properties}
+
+    The properties below are occasionally useful, but much like the second and third properties above, they are easily deduced/derived from the already existing properties. For this reason I would generally not bother memorizing these properties, rather I would suggest `learning' these as they are easy to reproduce if you don't remember the exact formulas, as long as you understand where the formulas came from. Obviously this is up to the reader however.
+    
+    As before, we start by listing the properties, and then we will show where each comes from afterward.
+    
+    \begin{enumerate}
+        \item $\log_b(1) = 0$
+        \item $\log_b(b) = 1$
+        \item $\log_b\left(x^{-1}\right) = \log_b\left(\frac{1}{x}\right) = -\log_b(x)$
+    \end{enumerate}
+    
+    The proof for each of the above is easily seen as just a specific application of the primary property $\log_b\left(x^y\right) = y\log_b(x)$ above. Specifically for each of the above properties the ``proof" is as follows:
+    
+    \begin{enumerate}
+        \item Use $y=0$ to see that $\log_b(1) = \log_b\left(x^0\right) = 0 \cdot \log_b(x) = 0$.%
+        \footnote{Notice that the last equality here follows as $\log_b(x)$ is some finite number, so multiplying it by zero annihilates it to zero.}
+        \item Use $x = b$ and $y = 1$ and recall the inverse function property to see that $\log_b\left(b^1\right) = 1$.
+        \item Use $y = -1$ to immediately see that $\log_b\left(x^{-1}\right) = (-1)\cdot \log_b (x) = -\log_b(x)$.
+    \end{enumerate}
+    
+    A curious student may ask why the above three are even considered ``properties". Technically these \textit{are} properties in the sense that they are (valid) features of logs, however they are often included in the list of properties because of how often they show up in work. Nonetheless in my experience, labeling these, along with the less obvious properties above (the so-called ``primary" properties) often causes students to mix up features of various properties which generates added confusion.
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+
+\end{document}

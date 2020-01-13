@@ -1,0 +1,44 @@
+\documentclass{ximeraXloud}
+
+\title{Introduction and Notation of Logarithms}
+\begin{document}
+\begin{abstract}
+    This section is a quick introduction to logarithms and notation (and ways to avoid the notation).
+\end{abstract}
+\maketitle
+
+You can watch a video lecture on this!
+
+\youtube{zKN_MSiO61I}
+
+Logarithms are perhaps the most artificial feeling function in our library of functions. If we remember, exponential functions were one-to-one (passing the vertical \textit{and} horizontal line tests) and are thus invertible. Logarithms are precisely the inverse functions that correspond to the exponential functions of our last topic.
+
+\subsection*{Notation and how to avoid it!}
+
+    It turns out that logarithms are extremely useful in many unexpected ways.%
+    \footnote{Indeed, there are large portions of differential and integral calculus that exploit the properties of logs to get around computationally unpleasant, or even impossible, problems to do them in a relatively easy and straightforward manner.}
+    Nonetheless, until we are comfortable with logarithmic notation, it can often be helpful to translate a logarithm from it's log notation to the corresponding exponential function that they are the inverses of. The notation $\log_b(a) = v$ would be stated as ``log base $b$ of $a$ is equal to $v$". The corresponding exponential form for this equation would then be $b^v = a$. In particular, $f^{-1}(x) = \log_b(x)$ is a function that is the inverse function of the exponential $f(x)=b^x$. Thus, utilizing the inverse function property,%
+    \footnote{Recall that the inverse function property says that $f^{-1}(f(x)) = f(f^{-1}(x)) = x$}
+    we have;
+    \[
+        \log_b(b^x) = b^{\log_b(x)} = x
+    \]
+    This can also be used to rewrite any log in an equivalent exponential form. In general we have;
+    \[
+        \log_b(a)=v \iff b^v = a
+    \]
+    In some sense, this motivates why we say ``log base $b$", as that ``base" is the same ``base" of the exponential that the log is the inverse of. Again, our goal is to get comfortable with the logarithmic notation itself, but until we reach that point, it will often be helpful to consider the exponential form of an expression in order to ``see" what is happening during a simplification step, or why a property works.
+
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

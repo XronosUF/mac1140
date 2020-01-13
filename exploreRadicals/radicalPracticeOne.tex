@@ -1,0 +1,245 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Radical Practice}
+
+\begin{document}
+\begin{abstract}
+    Unlimited Practice for Radicals.
+\end{abstract}
+\maketitle
+
+\textbf{NOTE:} These are all randomized problems. As a result, it is entirely possible to get pretty awful numbers if you are suitably unlucky. Some of these may look bad until you start doing them, but if you see problems that look excessively awful, remember that you can always hit the `Another' button in the top (green refresh arrow) to get new numbers. If you find yourself doing this frequently, you may want to discuss it with your TA to see if you have a gap in your understanding, or to see if the problems are just really that bad (in which case the TA will forward the info to the content authors).
+
+%\input{Useful-Sage-Macros}
+
+\begin{sagesilent}
+#####Define default Sage variables.
+#Default function variables
+var('x,y,z,X,Y,Z')
+#Default function names
+var('f,g,h,dx,dy,dz,dh,df')
+#Default Wild cards
+w0 = SR.wild(0)
+
+def RandInt(a,b):
+    """ Returns a random integer in [`a`,`b`]. Note that `a` and `b` should be integers themselves to avoid unexpected behavior.
+    """
+    return QQ(randint(int(a),int(b)))
+    # return choice(range(a,b+1))
+
+def NonZeroInt(b,c, avoid = [0]):
+    """ Returns a random integer in [`b`,`c`] which is not in `av`. 
+        If `av` is not specified, defaults to a non-zero integer.
+    """
+    while True:
+        a = RandInt(b,c)
+        if a not in avoid:
+            return a
+
+\end{sagesilent}
+\begin{sagesilent}
+### Problem p1
+
+p1c1 = RandInt(1,5)*RandInt(1,5)
+p1c2 = NonZeroInt(2,20,[4,8,9,16])
+p1r1 = RandInt(2,4)
+p1q1 = (p1c1^p1r1*p1c2)
+
+p1c3 = RandInt(1,5)*RandInt(1,5)
+p1c4 = NonZeroInt(2,20,[4,8,9,16])
+p1r2 = RandInt(2,4)
+p1q2 = (p1c3^p1r2*p1c4)
+
+p1c5 = RandInt(1,5)*RandInt(1,5)
+p1c6 = NonZeroInt(2,20,[4,8,9,16])
+p1r3 = RandInt(2,4)
+p1q3 = (p1c5^p1r3*p1c6)
+
+p1c7 = RandInt(1,5)*RandInt(1,5)
+p1c8 = NonZeroInt(2,20,[4,8,9,16])
+p1r4 = RandInt(2,4)
+p1q4 = (p1c7^p1r4*p1c8)
+
+
+### Problem p2
+
+p2c1 = RandInt(-15,15)
+p2c2 = RandInt(-15,15)
+p2c3 = RandInt(-15,15)
+p2r1 = RandInt(2,5)
+p2r2 = 2*p2r1
+
+p2x1 = p2c1%p2r1
+p2x1f = floor(p2c1/p2r1)
+p2y1 = p2c2%p2r1
+p2y1f = floor(p2c2/p2r1)
+p2z1 = p2c3%p2r1
+p2z1f = floor(p2c3/p2r1)
+
+p2q1 = x^p2c1*y^p2c2*z^p2c3
+
+if p2r1%2==0:
+    if p2c1%p2r1==0 and p2c1%p2r2>0:
+        p2xa1 = abs(x^p2x1f)
+    else:
+        p2xa1 = x^p2x1f
+    if p2c2%p2r1==0 and p2c2%p2r2>0:
+        p2ya1 = abs(y^p2y1f)
+    else:
+        p2ya1 = y^p2y1f
+    if p2c3%p2r1==0 and p2c3%p2r2>0:
+        p2za1 = abs(z^p2z1f)
+    else:
+        p2za1 = z^p2z1f
+else:
+    p2xa1 = x^p2x1f
+    p2ya1 = y^p2y1f
+    p2za1 = z^p2z1f
+
+p2a1 = p2xa1*p2ya1*p2za1
+p2a2 = x^p2x1*y^p2y1*z^p2z1
+
+
+### Problem p3
+
+p3c1 = RandInt(-15,15)
+p3c2 = RandInt(-15,15)
+p3c3 = RandInt(-15,15)
+p3r1 = RandInt(2,5)
+p3r2 = 2*p3r1
+
+p3x1 = p3c1%p3r1
+p3x1f = floor(p3c1/p3r1)
+p3y1 = p3c2%p3r1
+p3y1f = floor(p3c2/p3r1)
+p3z1 = p3c3%p3r1
+p3z1f = floor(p3c3/p3r1)
+
+p3q1 = x^p3c1*y^p3c2*z^p3c3
+
+if p3r1%2==0:
+    if p3c1%p3r1==0 and p3c1%p3r2>0:
+        p3xa1 = abs(x^p3x1f)
+    else:
+        p3xa1 = x^p3x1f
+    if p3c2%p3r1==0 and p3c2%p3r2>0:
+        p3ya1 = abs(y^p3y1f)
+    else:
+        p3ya1 = y^p3y1f
+    if p3c3%p3r1==0 and p3c3%p3r2>0:
+        p3za1 = abs(z^p3z1f)
+    else:
+        p3za1 = z^p3z1f
+else:
+    p3xa1 = x^p3x1f
+    p3ya1 = y^p3y1f
+    p3za1 = z^p3z1f
+
+p3a1 = p3xa1*p3ya1*p3za1
+p3a2 = x^p3x1*y^p3y1*z^p3z1
+
+
+### Problem p4
+
+p4c1 = RandInt(-15,15)
+p4c2 = RandInt(-15,15)
+p4c3 = RandInt(-15,15)
+p4r1 = RandInt(2,5)
+p4r2 = 2*p4r1
+
+p4x1 = p4c1%p4r1
+p4x1f = floor(p4c1/p4r1)
+p4y1 = p4c2%p4r1
+p4y1f = floor(p4c2/p4r1)
+p4z1 = p4c3%p4r1
+p4z1f = floor(p4c3/p4r1)
+
+p4q1 = x^p4c1*y^p4c2*z^p4c3
+
+if p4r1%2==0:
+    if p4c1%p4r1==0 and p4c1%p4r2>0:
+        p4xa1 = abs(x^p4x1f)
+    else:
+        p4xa1 = x^p4x1f
+    if p4c2%p4r1==0 and p4c2%p4r2>0:
+        p4ya1 = abs(y^p4y1f)
+    else:
+        p4ya1 = y^p4y1f
+    if p4c3%p4r1==0 and p4c3%p4r2>0:
+        p4za1 = abs(z^p4z1f)
+    else:
+        p4za1 = z^p4z1f
+else:
+    p4xa1 = x^p4x1f
+    p4ya1 = y^p4y1f
+    p4za1 = z^p4z1f
+
+p4a1 = p4xa1*p4ya1*p4za1
+p4a2 = x^p4x1*y^p4y1*z^p4z1
+
+
+### Problem p5
+
+p5c1 = RandInt(-15,15)
+p5c2 = RandInt(-15,15)
+p5c3 = RandInt(-15,15)
+p5r1 = RandInt(2,5)
+p5r2 = 2*p5r1
+
+p5x1 = p5c1%p5r1
+p5x1f = floor(p5c1/p5r1)
+p5y1 = p5c2%p5r1
+p5y1f = floor(p5c2/p5r1)
+p5z1 = p5c3%p5r1
+p5z1f = floor(p5c3/p5r1)
+
+p5q1 = x^p5c1*y^p5c2*z^p5c3
+
+if p5r1%2==0:
+    if p5c1%p5r1==0 and p5c1%p5r2>0:
+        p5xa1 = abs(x^p5x1f)
+    else:
+        p5xa1 = x^p5x1f
+    if p5c2%p5r1==0 and p5c2%p5r2>0:
+        p5ya1 = abs(y^p5y1f)
+    else:
+        p5ya1 = y^p5y1f
+    if p5c3%p5r1==0 and p5c3%p5r2>0:
+        p5za1 = abs(z^p5z1f)
+    else:
+        p5za1 = z^p5z1f
+else:
+    p5xa1 = x^p5x1f
+    p5ya1 = y^p5y1f
+    p5za1 = z^p5z1f
+
+p5a1 = p5xa1*p5ya1*p5za1
+p5a2 = x^p5x1*y^p5y1*z^p5z1
+
+
+\end{sagesilent}
+
+\begin{problem}% Problem p1
+    Simplify the following numeric radicals
+\begin{itemize}
+\item $\sqrt[\sage{p1r1}]{\sage{p1q1}} = \answer{\sage{p1c1}}\sqrt[\sage{p1r1}]{\sage{p1c2}}$
+\item $\sqrt[\sage{p1r2}]{\sage{p1q2}} = \answer{\sage{p1c3}}\sqrt[\sage{p1r2}]{\sage{p1c4}}$
+\item $\sqrt[\sage{p1r3}]{\sage{p1q3}} = \answer{\sage{p1c5}}\sqrt[\sage{p1r3}]{\sage{p1c6}}$
+\item $\sqrt[\sage{p1r4}]{\sage{p1q4}} = \answer{\sage{p1c7}}\sqrt[\sage{p1r4}]{\sage{p1c8}}$
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+    Simplify the following radical. Make sure there are \textbf{no fractions} in the resulting radicand, and all exponents are \textbf{positive}. 
+    \begin{itemize}
+        \item $\sqrt[\sage{p2r1}]{\sage{p2q1}} = \answer{\sage{p2a1}}\sqrt[\sage{p2r1}]{\answer{\sage{p2a2}}}$
+        \item $\sqrt[\sage{p3r1}]{\sage{p3q1}} = \answer{\sage{p3a1}}\sqrt[\sage{p3r1}]{\answer{\sage{p3a2}}}$
+        \item $\sqrt[\sage{p4r1}]{\sage{p4q1}} = \answer{\sage{p4a1}}\sqrt[\sage{p4r1}]{\answer{\sage{p4a2}}}$
+        \item $\sqrt[\sage{p5r1}]{\sage{p5q1}} = \answer{\sage{p5a1}}\sqrt[\sage{p5r1}]{\answer{\sage{p5a2}}}$
+    \end{itemize}
+\end{problem}
+
+
+
+
+\end{document}

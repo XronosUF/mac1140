@@ -1,0 +1,100 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Exponents and Extrema 2: Local Extrema}
+\begin{document}
+\begin{abstract}
+    This section contains information on how exponents effect local extrema
+\end{abstract}
+\maketitle
+
+
+\section*{Local extrema}
+
+Although we lack the analytic methods to tackle local extrema properly%
+\footnote{Indeed, this is a major area of study in the first calculus class, comprising about a third of the course}
+there is some information we can gather just from the equation itself. Consider the following three graphs;
+
+\begin{description}
+    \item The graph of $y = x$;\\
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        minor tick num=1,
+        x label style={at={(axis description cs:1,0.5)},anchor=south},
+        y label style={at={(axis description cs:0.5,1)},anchor=west},
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=-5,
+        xmax=5,
+        ymin=-5,
+        ymax=5
+        ]
+    \addplot[<->,domain=-4.5:4.5, samples=300]{x};
+    \end{axis}
+\end{tikzpicture}
+\newpage
+\item The graph of $y = x^2$;\\
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        minor tick num=1,
+        x label style={at={(axis description cs:1,0.1)},anchor=south},
+        y label style={at={(axis description cs:0.5,1)},anchor=west},
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=-4,
+        xmax=4,
+        ymin=-1,
+        ymax=10
+        ]
+    \addplot[<->,domain=-3:3, samples=300]{x^2};
+    \end{axis}
+\end{tikzpicture}
+\item The graph of $y = \frac{1}{3}x^3 - 3x$; \footnote{Note: This one seems a little strange, but the numbers are chosen just to emphasize the curve and aren't too important, the important thing is that it's a cubic function.}\\
+\begin{tikzpicture}
+    \begin{axis}[
+        axis x line=middle,
+        axis y line=middle,
+        minor tick num=1,
+        x label style={at={(axis description cs:1,0.5)},anchor=south},
+        y label style={at={(axis description cs:0.5,1)},anchor=west},
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=-5,
+        xmax=5,
+        ymin=-5,
+        ymax=5
+        ]
+    \addplot[<->,domain=-3.5:3.5, samples=300]{1/3*x*(x-3)*(x+3)};
+    \end{axis}
+\end{tikzpicture}
+\end{description}
+
+As we can see, each time we increase the exponent we get another `bend' in the graph. But this need not always happen, after all the graph of $x^3$ doesn't have the same number of bends as the graph of $\frac{1}{3}x^3 - 3x$ that we showed above. Nonetheless, we know that a parabola will always have one bend, and a line will never have any. Continuing this pattern we can eventually come to the following observation; the number of bends in the graph of a polynomial will be, at most, one less than the degree of the polynomial. But notice that each bend is really a local extrema, so a more precise (or mathematical) way to state this observation is;
+
+\begin{lemma}
+if $p(x) = a_nx^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0$ is a polynomial of degree $n$, then there are \textbf{at most} $n-1$ local extrema on the graph of $p(x)$.
+\end{lemma}
+
+For example, based on our lemma, if we have a fifth degree polynomial, we know that it will have at most four local extrema, even if we don't know what the graph actually looks like. 
+
+\begin{problem}
+    Consider the polynomial $p(x) = 3x^2 -12 x^4 + x^3 - 2x + 1$. What can be said about the extrema of $p(x)$? (Select all that apply)
+    \begin{selectAll}
+        \choice[correct]{$p(x)$ has an absolute extrema.}
+        \choice{$p(x)$ has no absolute extrema.}
+        \choice{$p(x)$ has at most one local extrema.}
+        \choice{$p(x)$ has at most four local extrema.}
+        \choice[correct]{$p(x)$ has, at most, three local extrema.}
+        \choice{$p(x)$ has no local extrema.}
+        \choice{$p(x)$ has exactly one local extrema.}
+    \end{selectAll}
+\end{problem}
+
+
+
+
+
+\end{document}

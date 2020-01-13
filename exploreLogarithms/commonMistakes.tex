@@ -1,0 +1,54 @@
+\documentclass{ximeraXloud}
+
+\title{Common Mistakes Of Logs}
+\begin{document}
+\begin{abstract}
+This is one of the most vital sections for logarithms. We cover primary and secondary properties of logs, which are pivotal in future math classes as these properties are often exploited in otherwise difficult mechanical situations.
+\end{abstract}
+\maketitle
+
+You can watch a video lecture on this!
+
+\youtube{uZFJLy-q-QI}
+
+\subsection*{Non-Properties of Logarithms... aka Common Mistakes of Logs}
+    
+    You may be wondering why I would bother including ``non-properties" of logs, but as it turns out the properties of logs are reversed with incredible frequency and is hands-down the most common error students make when trying to deal with logs.
+    
+    When simplifying logs, you would do well to consider the log as you consider roots when you try to simplify those. In fact, the processes are nearly identical, the primary difference being that with roots you need a certain multiplicity of a factor, whereas with logarithms you do not. Just like with roots, we can only ``break apart" aka ``simplify" aka ``expand" a log if \textit{all factors inside are multiplied together}, that is to say, the logarithm's argument must be in a \textit{fully factored form} before it can be simplified. Consider the following example.
+    
+    \begin{explanation}[Expand the expression $\log_b\left(\dfrac{x^3z^2(x-1)^4(x+1)}{(x-1)^2(z-1)^2}\right)$]%
+        Using our log properties above (often referred to as the `log rules') we can immediately split this log apart into it's individual pieces. I will show an exhaustive number of steps, but showing all these steps is not necessary. However, keep in mind that the fewer steps you show, the less partial credit you can earn on graded work, and the more likely you are to make an error.
+        
+        \begin{center}
+        %\renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{ll}
+                $\log_b\left(\dfrac{x^3z^2(x-1)^4(x+1)}{(x-1)^2(z-1)^2}\right)$ &= $\log_b\left(x^3z^2(x-1)^4(x+1)\right) - \log_b\left((x-1)^2(z-1)^2\right)$ \\
+                    & $= \left[ \log_b\left(x^3\right) + \log_b\left(z^2\right) + \log_b\left((x-1)^4\right) + \log_b(x+1)\right]$ \\
+                        & \hspace*{1cm}$-\left[ \log_b\left((x-1)^2\right) + \log_b\left((z-1)^2\right)\right]$ \\
+                    & $= (3)\log_b(x) + (2)\log_b(z) + (4)\log_b(x-1) + \log_b(x+1)$ \\
+                        & \hspace*{1cm}$ - \left[ (2)\log_b(x-1) + (2)\log_b(z-1)\right]$\\
+                    & $= 3\log_b(x) + 2\log_b(z) + 2\log_b(x-1) + \log_b(x+1) - 2\log_b(z-1)$
+            \end{tabular}
+        \end{center}
+        
+    \end{explanation}% End Example
+    
+    The above example works well because everything was already in a fully factored form. However, if you were asked to expand the expression $\log_b(x^2-1)$ for example, you cannot do so (at least, not without factoring first). \textit{By far} the most common mistake made by students with log properties, is that they remember there is a link between addition and multiplication, and between division and subtraction, but \textit{they don't remember which direction the property goes}. Thus, it is very common to see, for example, with the example $\log_b(x^2-1)$ to be ``simplified" as $\frac{\log_b(x^2)}{\log_b(1)}$, because the student remembers the link between subtraction and division, but this is clearly not a valid simplification... after all, $\log_b(1) = 0$ so that simplification is dividing by zero! So almost as important as remembering the properties of logs \textit{is remembering the direction that the property goes}, that is to say, multiplication or division \textit{inside} the log becomes addition or subtraction \textit{outside} the log.\\
+    
+    Another way to know if something is simplifiable or not, is to consider the argument of the log as if it were an argument of a root. Just like roots, you can think of arguments of logs as having (the same) ``type 1" and ``type 2" arguments. If there are any addition or subtraction of terms in the argument of a log (ie the argument is not in fully factored form) then you cannot apply any of the log rules. If the argument of the log has all products or division (ie the argument is in fully factored form), \textit{then} you may apply log rules to expand it.
+    
+%    
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

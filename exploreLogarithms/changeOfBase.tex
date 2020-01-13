@@ -1,0 +1,43 @@
+\documentclass{ximeraXloud}
+
+\title{Change of Base formula}
+\begin{document}
+\begin{abstract}
+    This is one of the most vital sections for logarithms. We cover primary and secondary properties of logs, which are pivotal in future math classes as these properties are often exploited in otherwise difficult mechanical situations.
+\end{abstract}
+\maketitle
+
+You can watch a lecture on this section!
+
+\youtube{YPPZXeFVwQg}
+
+The previous examples work nicely as long as we have logs with matching bases. In the unfortunate (but likely) situation where the bases don't match, we will need a way to manipulate the bases so that we can use our above properties. This leads us to the `change of base' formula for logarithms.
+
+\begin{explanation}[Write the logarithm $\log_2 x^2$ as a log with a base of $5$]%
+    We want to rewrite the log above as $\log_5($something$)$. Perhaps the easiest way to do this involves using the exponential form of the log, that is, if $\log_2(x^2) = y$, then $x^2 = 2^y$. We know we want log base 5, so we can apply this to both sides; getting $\log_5(x^2) = \log_5(2^y) = y\log_5(2)$. Remember that $y$ is actually our original expression, so if we divide both sides by $\log_5(2)$ to solve for $y$ we get;
+    \[
+        \log_2(x^2) = y = \frac{\log_5 \left(x^2\right)}{\log_5(2)}
+    \]
+    Which means we have successfully written our original expression as an expression involving only $\log_5$ logs.
+\end{explanation}% End of Example
+
+If we generalize the previous example, we can actually derive the fully generalized change of base formula. If you want to change the base from $b$ to the base $c$, then you can use the following equation;
+
+\[
+    \log_b(x) = \frac{\log_c(x)}{\log_c(b)}
+\]
+
+%    
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+%
+
+\end{document}

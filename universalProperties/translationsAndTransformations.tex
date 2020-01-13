@@ -1,0 +1,122 @@
+\documentclass{ximeraXloud}
+\input{../preamble}
+\title{Transform And Translates}
+\begin{document}
+\begin{abstract}
+    This covers doing transformations and translations at the same time, and how to determine what order to do them in.
+\end{abstract}
+\maketitle
+
+    Now, I know what you're thinking... ``But can I do translations and transformations at the same time!?''
+    
+    \subsection*{Can't say I was thinking that. More like; is this on the exam? Please tell me it's not on the exam}
+    It's almost certainly on the exam. Oh look, you came back, I knew you wanted to know!
+    
+    The general rule of thumb, is that the order of the translations/transformations you want to have happen, should match the order of operations that they occur in the analytic form.%
+    \footnote{%
+        But remember, everything involving $x$ is backward!%
+        }
+    So, let's say we have the following $f(x)$ graph;
+    
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-12, 
+                xmax=12, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-4:4, samples=300]{sin(deg(x))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Now, let's say we wanted to figure out what happens when we do $2 \cdot f\left(\frac{x+1}{2}\right) + 1$. There is a lot to unpack here, but we just want to do it in the order of operations. So let's pretend we plug in an $x$ value and want to figure out what order we would compute that in. 
+    
+    First let's consider the $x$ values. If we were to plug in number for $x$ the first thing we would do is add 1. This appears to be a shift to the right one, but remember everything about $x$ is backwards, so it's really a shift to the \textit{left} one. Next we would divide the $x$-value by 2, which (again because $x$ value changes are the opposite of what we would expect) means we stretch the $x$ value to twice it's original width. Thus in total it looks like we would shift left 1 and then make the graph twice as wide as it was originally... but \textit{again} $x$ values do everything backward, so we \textit{actually} want to make everything twice as wide \textit{and then} make everything shifted left one.
+    
+    Now we tackle the $y$ values. The first change (once we have applied whatever `$f$' does) would be to multiply the function result by 2, which means stretching the $y$-value to twice it's height.%
+    \footnote{%
+        Thankfully $y$ changes work like they should, so no need to flip our thinking here%
+        }
+    Finally, adding one to the overall function means we will shift everything up one. 
+    
+    It may help to do a concrete computation to see that our translation/transformations occur in this order. Let's compute $x = 3$.
+    \begin{enumerate}
+        \item The first thing we do if we plug in an $x = 3$ into $2 \cdot f\left(\frac{x+1}{2}\right) + 1$ is compute $3+1$. This is a shift \wordChoice{\choice{to the right}\choice[correct]{to the left}\choice{up}\choice{down}} 1.
+        \item The second thing is the `divide by 2' in $2 \cdot f\left(\frac{4}{2}\right) + 1$, which is a horizontal \textit{stretch} by 2.
+        \item Since $x$ does everything backwards we want to reverse those last two instructions; so we will ``stretch horizontally by 2" \textit{then} ``shift left by 1".
+        \item Next we would compute the actual functional value of $f(2)$ which we will denote with $f(2) = y_2$. So we want to compute $2y_2+1$
+        \item So the next order of operations would be to multiply $y_2$ by 2, which is a vertical \textit{stretch} by a factor of 2.
+        \item Finally we add 1 to our result, which is a shift \wordChoice{\choice{to the right}\choice{to the left}\choice[correct]{up}\choice{down}} 1.
+    \end{enumerate}
+    
+    All this yields the following graph;
+
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis x line=middle, 
+                axis y line=middle, 
+                minor tick num=5, 
+                x label style={at={(axis description cs:1,0.5)},anchor=south},
+                y label style={at={(axis description cs:0.5,1)},anchor=west},
+                xlabel={$x$}, 
+                ylabel={$y$},
+                xmin=-12, 
+                xmax=12, 
+                ymin=-5, 
+                ymax=5
+                ]
+            \addplot[<->,domain=-10:8, samples=300]{2*sin(deg((x+1)/2))+1};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Notice that this works the other direction as well. Let's say we want to take the original $f(x)$ and we want to move it right 3, then constrict it by a factor of 4, then move it up 1 and then stretch vertically by a factor of 2. We can write the analytic form of this description by making sure that the order of operations agrees with the order the instructions were given (reversing the effects on $x$ as usual).%
+    \footnote{%
+        Note that the $x$ and $y$ changes can be separated and done independently. Thus the description `move left 1, then move up 1, then stretch horizontally by a factor of 3' could be re-written as `move left 1, then stretch horizontally by a factor of 3, then move up 1' since we can switch around directions that are applied to different variables.%
+        }
+    \begin{exploration}
+        So let's break down the instructions to an order of changes;
+        \begin{enumerate}
+            \item Move right 3
+            \item Constrict horizontally by a factor of 4 (aka to $\frac{1}{4}$ of it's normal width)
+            \item Move up 1
+            \item Stretch vertically by a factor of 2.
+        \end{enumerate}
+        
+        So we want to move (translate) before we stretch (transform) $x$. But because it's $x$ we want to write it in the reverse order of operation; thus we want the stretch \textit{before} the \textit{translate} according to the order of operations.
+        \[
+            f\left(\left(\frac{1}{b}x\right) - c \right) = f\left(\left(\frac{1}{\frac{1}{4}}x\right) - 3 \right)
+        \]
+        Next we want to put in the vertical changes. Our directions had movement (the $\pm$ translation) before the transformation (the $\times 2$ multiplier) as before so we need parentheses again, and using the $x$ changes above we will have;
+        
+        \[
+            a\cdot \left( f\left(\left(\frac{1}{\frac{1}{4}}x\right) - 3 \right) + k \right) 
+            = 2\cdot \left( f\left(\left(\frac{1}{\frac{1}{4}}x\right) - 3 \right) + 1 \right) 
+        \]
+        
+        Thus, our final analytic form to describe the previous translations and transformations is;
+        \[
+            \answer{2}\left(f \left( \answer{4x-3} \right) + \answer{1} \right)
+        \]
+    \end{exploration}
+    Play with the following graph to see what happens as you change the parameters.
+    
+    \desmos{ryvd3xeltm}{}{500}
+    
+    You can also watch a short video giving an in-depth walkthrough example on this topic;
+    
+    \youtube{FVJewJ93Oc8}
+
+
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{ximeraXloud}
+
+\title{Complex Numbers}
+\begin{document}
+\begin{abstract}
+    Intro to complex numbers and conjugates
+\end{abstract}
+\maketitle
+
+Thus far we have focused on real numbers. However, we mentioned at the beginning that we can fully factor any polynomial of degree $n$ into $n$ linear factors \textit{if we used complex valued numbers}. This means that we need to explore what complex valued numbers actually are.
+
+Let's start by considering the dreaded sum of squares, specifically let's consider the example $p(x) = x^4 - 1$. Up to this point we would factor this as $p(x) = (x - 1)(x + 1)(x^2 + 1)$ and conclude that $p(x)$ has two \textit{real} roots, $x - 1$ and $x + 1$. But, we just mentioned that $p(x)$ (since it is degree 4) must have 4 roots... so that means we are missing two. Moreover, we can see where the missing root is coming from; the $x^2 + 1$ term. To find the ``zeros'' of the function (and thus the corresponding roots) we could set this equal to zero to find the missing zeros.%
+\footnote{Recall that if we are trying to solve for the zeros, we are trying to solve for $(x^2 + 1)(x+1)(x-1)=p(x) = 0$, so we can apply our property that we discovered earlier; the product of things being zero means that one of those things is zero. The two real zeros we found, $1$ and $-1$, correspond to setting $(x-1)$ and $(x+1)$ to $0$ respectively. So we are really just checking the one remaining factor.}
+Doing this however ends up leading to a problem, because we end up trying to solve $x^2 = -1$ to which there is no (real) answer. This is asking us ``what number, squared, is negative one?" but both negative and positive numbers squared give positives, so we can't get a negative result.
+
+\subsection*{Great, we're done right?}
+    Oh no you don't, come back! We have a solution; we `define' something that gives $-1$ when we square it. We denote this thing $i$ and it's called an imaginary number.%
+    \footnote{%
+        The term `imaginary number' is actually a derogative term used by mathematicians that thought such things shouldn't exist... they would mock the mathematicians that used $i$ by saying they were playing with their `imaginary numbers'. Unfortunately for these bullies however, it turns out $i$ is pivotal and ubiquitous in things like electrical engineering and even mechanical engineering. Basically anything you use and almost every structure you stand on or in is governed by complex numbers... score one for the little guys!%
+        }
+    
+    At first glance it may seem like only defining $i$ so that $i^2 = -1$ won't be sufficient to solve all our problems with these `non-real roots'. In fact we can do so by using $i$ to remove the major impediment to solving for these roots/zeros by using $i$ to eliminate the negative in the square root and then continuing on from there. Let's see an example.
+    
+    \begin{example}
+        Find the roots of $p(x) = x^2 + 2x + 5$\\
+        
+        First we might try factoring, but it turns out factoring here won't work (after all, there is only one pair of factors of 2, and they add to 3, not 2). The next easiest way to find the roots is to recall that we can determine the roots of polynomial by finding the zeros to the polynomial, so we will start by finding the zeros of the polynomial, ie solving;
+        \[
+            x^2 + 2x + 5 = p(x) = 0
+        \]
+        Now, unfortunately we don't (officially) have the quadratic formula yet, but that's ok... we have completing the square, which is basically the same thing! So we will start by completing the square. Thus we will take half the coefficient of the $x$ term, and square it, then add and subtract that value. So we have;
+        \begin{align*}
+            p(x) = 0    &= x^2 + 2x + 5                 \\
+                        &= x^2 + 2x + (1^2 - 1^2) + 5   \\
+                        &= (x^2 + 2x + 1) - 1 + 5       \\
+                        &= (x+1)^2 + 4
+        \end{align*}
+        
+        So now we want to solve for when $(x+1)^2 + 4 = 0$. So, using the $i$ above we want...
+        
+        \begin{align*}
+            (x+1)^2 + 4 &= 0                                \\
+            (x+1)^2     &= -4                               \\
+            x+1         &= \pm \sqrt{-4}                    \\
+            x + 1       &= \pm \sqrt{i^2 \cdot 4}           \\
+            x + 1       &= \pm (\sqrt{i^2}\cdot \sqrt{4})   \\
+            x + 1       &= \pm i\sqrt{4}                    \\
+            x+1         &= \pm 2i                           \\
+            x           &= -1 + 2i \text{ and } -1 - 2i 
+        \end{align*}
+        
+        So, now that we've found the (complx-valued) values of $x$ that are the zeros of the polynomial we can write the roots, which are always of the form $(x - $(zeros of the polynomial)$)$, so our polynomial factors to the roots:
+        \[
+            p(x) = \bigg(x- (-1 + 2i)\bigg)\bigg(x - (-1 - 2i)\bigg)
+        \]
+    \end{example}% End of example.
+    
+    You may notice that the zeros in the above example are incredibly similar. In fact, purely by how they were found you can see that the only difference is in the sign of the part that has $i$. An astute student may even notice that, because of how the $\pm$ sign came to be (by square rooting) and how $i$ must be brought into the answer (inside a square root), that in fact these things will \textit{always} come together. This phenomena is actually true and is (one of) the reason(s) we give this relationship between these two complex values a special name, they are called `conjugate pairs' or `complex conjugates'. In general, if some complex-valued number is a zero of a polynomial, then \textit{the complex conjugate \textbf{must} also be a zero of the polynomial}.
+
+
+\end{document}

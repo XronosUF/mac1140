@@ -1,0 +1,41 @@
+\documentclass{ximeraXloud}
+
+\title{Why Radicals?}
+\begin{document}
+\begin{abstract}
+    This section introduces radicals and some common uses for them.
+\end{abstract}
+\maketitle
+    Radicals are often a source of mild confusion mechanically, if not conceptually. However, it is worth giving at least a cursory motivation as to how radicals appear in practice, which will also motivate our alternate method of writing radicals (as powers) in the next topic.
+
+    Recall that a radical is the symbol used or the entire expression that involves the symbol (as determined by context), and the radicand is the content of the radical as mentioned in the definitions above. We will use this terminology in the sections below.
+
+    \subsubsection*{Where do we find a radical in the wild?}
+        A radical is most often found in practice by trying to isolate something that is being raised to a power. In fact, the most common way to encounter a radical is when we know some end-result information we want, but need to determine some initial information in order to get to the end-result... ie when we are trying to ``work backward" to find a solution. This is often the case because we are usually working in the real-world of three dimensional space and powers occur rather naturally in the geometry of the real world.%
+        \footnote{In fact, this is especially true because most optimal conditions tend to involve finding spaces that maximize or minimize a dimension-level relative to another. Specifically you may want to ``maximize volume while minimizing surface area" to minimize costs to build a container. It turns out that, without other constraints, almost always the answers to these problems are ``regular" polygons, ie things like cubes or spheres, which involve a single dimension raised to a power. A cube has volume $w^3$ and each face has area $w^2$ for example.}
+        Let's see an example of the kind of problem we aim to solve by the end of this topic.
+
+        \textbf{Note:} the below example contains most of the things we aim to learn, but not all, which means it's ok if you don't follow every step yet. Make sure to return to this example at the end of the topic, at which point this should seem like an `obviously easy' problem.
+
+        \begin{example}[Find the dimensions of a cube if its total volume is 400 cubic units]%
+            We know the formula for the volume of a box is length ($l$) times width ($w$) times height ($h$). In the special case where our box is a cube, all these dimensions are equal, so we have that $w = l = h$ and our equation for volume ($V$) becomes:
+            \[
+                400 = V = l \times w \times h = w \times w \times w = w^3
+            \]
+            Thus, to find the width (which is also the length and height) we need to solve the equation $w^3 = 400$, which involves taking a cube root. So we have $w = \sqrt[3]{400} = 2\sqrt[3]{50}$. So our answer is that the box has dimensions $\answer{2(50^{\frac{1}{3}})} \times \answer{2(50^{\frac{1}{3}})} \times \answer{2(50^{\frac{1}{3}})}$.
+        \end{example}% End example
+            
+%            
+%
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+%
+%
+
+
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass{ximeraXloud}
+
+\title{Properties of the Exponential Function}
+\begin{document}
+\begin{abstract}
+    This section gives the properties of exponential \textit{functions}. There is a subtlety between the function and the expression form which will be explored, as well as common errors made with exponential functions.
+\end{abstract}
+\maketitle
+    
+We have seen the key properties of exponential expressions and how to manipulate exponents, but there are significant features of the exponential as a function that are also important. 
+
+\subsection*{Inverting the exponential function}
+
+    One of the more important observations is that the exponential function is one-to-one, that is it passes the horizontal line test. This means that there exists an inverse function which we call a logarithm. We will cover the log function in the next topic, but this is also helpful as it tells us that there \textit{is} an inverse, and thus we can figure out how to `cancel' an exponential in some sense.\\
+    
+    {\bfseries Identifying the difference between Polynomial Functions and Exponential Functions}\\%
+    
+        It is surprisingly easy to mix up the polynomial functions and exponential function terms.\\
+        In general, a polynomial term is one where the base is unknown, but the exponent is a fixed number. For example $(x+1)^3$ has an unknown base of $x + 1$, but the exponent is the (fixed) number $3$.\\
+        In contrast, an exponential function is one where the base is a fixed number, but the power is unknown. For example the function $3^{x^2+1}$ is an exponential function since the base is the (fixed) number $3$ but the exponent is the (unknown) value $x^2 + 1$.
+        
+        Importantly, this means situations that involve \textit{both} the base \textit{and} the exponent being unknown aren't really polynomials \textit{or} exponential functions. For example the function $x^x$ is a surprisingly difficult function to deal with. Despite looking almost like a polynomial and almost like an exponential, it's really neither and behaves very unlike either one depending on what $x$ value range you are considering. Often functions like this require calculus or numerical approximation methods to understand.
+        
+    
+    To see how knowing the inverse of a function exists, even if we don't know what it is, consider the following equality: $3^{2x} = 3^{x+1}$. We may not know enough about logs (yet) to solve this directly using analytic methods, however we know that the function is one-to-one, meaning that two exponentials with the same base can \textit{only} be equal if the powers are equal. Thus in our equality, $3^{2x}$ and $3^{x+1}$ both have the same base, so they can only be equal if the exponents are equal. That is, $3^{2x} = 3^{x+1}$ if, and \textit{only if} $2x = x+1$. Now we have a simple linear polynomial, so we can solve to find that $x = 1$. But what if we have something a bit more complicated?
+    
+    \begin{explanation}[Determine all $x$ values that satisfy $2^{x^2 + 3} = 16^{x}$]%
+        Ideally we would want to solve this using the fact that exponentials with the same base must have the same exponents if they are equal, but unfortunately we don't have the same base. However, we could notice that one base is a power of the other base, specifically $16 = 2^4$. So the key to this problem is to replace the larger base with a power of the smaller base;
+        \[
+            2^{x^2 + 3} = 16^x = \left(2^4\right)^x = 2^{4x}
+        \]
+        So we know (by the one-to-one property) that $x^2 + 3 = 4x$. So, moving the $4x$ over and factoring gives us $(x-3)(x-1) = 0$, ie $x = 1$ and $x = 3$. Sure enough, plugging in these values of $x$ works and we have found our answer.
+    \end{explanation}% End of example
+
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+
+\end{document}

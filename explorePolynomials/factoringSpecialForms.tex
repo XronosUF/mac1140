@@ -1,0 +1,82 @@
+\documentclass{ximeraXloud}
+
+\title{Factoring; Special Forms}
+\begin{document}
+\begin{abstract}
+    Factor polynomials quickly when they are in special forms
+\end{abstract}
+\maketitle
+
+There are a couple ``special forms" that are exactly that, special forms that we have very fast factoring formulas for. These aren't special in the sense that they must be memorized to use... each of the following forms can be determined using one of the previous methods eventually (or rational root theorem, discussed below). However, these special forms occur so often than it is often useful to remember these factoring formulae in order to save time (and sanity) when doing lots of factoring.%
+\footnote{%
+    Indeed, in calculus it is the case that they use these special forms often, even artificially setting them up so that they can be used in circumstances where they wouldn't otherwise be used.
+    }%
+
+\subsection*{Great... but you realize you haven't actually said what those forms are yet right?}
+    Man, everyone's a critic. \\
+    The first special form is the \textit{difference of squares}. The difference of squares is exactly as it sounds; the difference (subtraction) of perfect squares. Thus it is things of the form $a^2 - b^2$. In order to see how to factor this, we will do one of our `add 0 cleverly' bits and then factor by grouping;
+    \[
+        a^2 - b^2 = a^2 + ab - ab - b^2
+        = a(a + b) - b(a + b)
+        = (a - b)(a + b)
+    \]
+    There isn't much deep going on in terms of how this factoring is happening, the `special' part of the `special forms' is that it tends to crop up a \textit{lot}, rather than how clever the factoring process is.
+    
+    What can be a bit difficult however, is recognizing that something is in this form. Remember that a `perfect square' is... ``more of a guideline really". What we want, is to recognize that we can often \textit{force} something to be a `perfect square' if we bend the definition of `perfect' enough. First, consider the polynomial; $p(x) = 9x^2 - 4$. We can rewrite this into the form $p(x) = (3x)^2 - (2)^2$. Taking $a = 3x$ and $b = 2$ in our formula we have;
+    \[
+        p(x) = 9x^2 - 4
+        = (3x)^2 - (2)^2
+        = ((3x) - (2))((3x) + (2))
+        = (3x - 2)(3x + 2)
+    \]
+    This example may seem pretty accessible (or so I hope...), but what about the polynomial $q(x) = 3x^2 - 15$? It is clearly the case that there is no `nice' perfect square to use here, but there are some \textit{not-so-nice} perfect squares. Indeed we can factor it as;
+    \[
+        q(x) = 3x^2 - 15
+        = (\sqrt{3}x)^2 - (\sqrt{15})^2
+        = (\sqrt{3}x - \sqrt{15})(\sqrt{3}x + \sqrt{15})
+    \]
+    
+    Thus, by being a little loose with the `perfect' part in `perfect square' we have the ability to factor anything of the form $ax^2 - b$. Notice there is no $x^1$ term, ie in the general polynomial form of $a_2x^2 + a_1x + a_0$ we have $a_1 = 0$ .
+
+\subsection*{Ok, difference of perfect squares. Check}
+    Check indeed, but this next part often leads to some crossover confusion so I will pre-emptively say: \textit{\textbf{There is no sum of squares formula using real coefficients}}. You might be thinking `duh, you said difference, not sum', but the next special form is \textit{sum and difference of cubes}, hence the crossover confusion. Cubes can have a sum formula, but squares cannot.
+    
+    You likely have heard the `sum and different of cubes' formula before. You have also likely been annoyed or panicky trying to remember which sign went where. Fear not, as usual you have been lied to, and I am here to clear it up!%
+    \footnote{%
+        or lie more... you'll never know buahahaha! Er, I mean... no; clear it up. Yea... that's it...%
+        }
+    In reality there is only one formula you need to remember if you can keep track of negative signs. For any $a$ and $b$ we can have the `sum' of cubes formula;
+    \[
+        a^3 + b^3 = (a + b)(a^2 - ab + b^2)
+    \]
+    
+    Consider the following two examples;
+    
+    \begin{example}
+        Factor $p(x) = 8x^3 + 27$ and $q(x) = 64x^3 - 8$.\\
+        
+        At first it seems like we are looking at a ``sum of cubes" and a ``difference of cubes" problem here... but in fact they are \textit{both} sum of cubes. The key observation to see this however is that $- (b^3) = (-b)^3$. Thus we can put \textit{both} of these into the form $a^3 + b^3$ by doing the following;
+        \[
+            p(x) = 8x^3 + 27 = (2x)^3 + (3)^3. \hspace{2cm} q(x) = 81x^3 - 8 = (4x)^3 + (-2)^3
+        \]
+        Thus, according to our cubes formula, these will factor into;
+        \[
+            p(x) = (2x)^3 + (3)^3 = [ (2x) + (3) ] \cdot [ (2x)^2 - (2x)(3) + (3)^2 ]
+            = (2x + 3)(4x^2 - 6x + 9)
+        \]
+        and
+        \[
+            q(x) = [ (4x) + (-2) ]\cdot [ (4x)^2 - (4x)(-2) + (-2)^2 ]
+            = (4x - 2)(16x^2 - (-8x) + 4)
+            = (4x - 2)(16x^2 + 8x + 4)
+        \]
+    \end{example}
+    
+    Thus, we can see that if you can keep track of the negative sign for $b$, there is no need to memorize a ``difference of cubes". This has the added benefit of helping your memory keep track by remembering the \textit{difference} of squares and the \textit{sum} of cubes. That being said, it is \textit{more} important to be able to recognize the sum and difference of cubes when they appear and factor them correctly. Much like our squares example however, we should think of the `perfect cubes' as guidelines. The real key is that we have a leading term whose power is divisible by 3, a constant term, and nothing else.%
+    \footnote{%
+        As in the squares formula the power doesn't technically even have to be divisible by 3. We can force anything to be divisible by three with adequate use of fractions. This is occasionally useful in calculus and other courses, but in this course we will only concern ourselves with the case where the power is `nicely' divisible by three.%
+        }
+    That is to say, if the general polynomial looks something like $a_3x^3 + a_2x^2 + a_1x + a_0$, then $a_2 = 0$ and $a_1 = 0$.
+
+
+\end{document}

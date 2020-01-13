@@ -1,0 +1,49 @@
+\documentclass{ximeraXloud}
+
+\title{Exponents and Extrema: an Example}
+\begin{document}
+\begin{abstract}
+    This section contains a demonstration of how odd versus even powers can effect extrema.
+\end{abstract}
+\maketitle
+
+\subsection*{Exponents are odd... unless they are even?}
+
+    We want to see what the leading term does to global extrema. Let's initially consider two monomials; $p(x) = x^3$ and $q(x) = x^4$. If we plug in some positive numbers, they seem similar (although $q(x)$ does increase much faster), but the negative values are where the more noteworthy differences lay. Consider the following table of values;\\
+    
+    \begin{center}
+        \begin{tabular}{| l l l |}\hline
+            $x$-values      & $p(x) = x^3$      & $q(x) = x^4$  \\ \hline
+            $x = -3$        & $p(-3) = -27$     & $q(-3) = 81$  \\
+            $x = -2$        & $p(-2) = -8$      & $q(-2) = 16$  \\
+            $x = -1$        & $p(-1) = 1$       & $q(-1) = 1$   \\
+            $x = 0$         & $p(0) = 0$        & $q(0) = 0$    \\
+            $x = 1$         & $p(1) = 1$        & $q(1) = 1$    \\
+            $x = 2$         & $p(2) = 8$        & $q(2) = 16$   \\
+            $x = 3$         & $p(3) = 27$       & $q(3) = 81$   \\\hline
+        \end{tabular}
+    \end{center}
+    
+    We can see that, for $p(x)$ we have positive and negative values, whereas with $q(x)$ all the values are positive.  Why is that? After some consideration we can probably see that it's because when you substitute a negative value for $x$ in $x^4$ the fourth power makes the value positive (it kills the negative off). But the cube power, ie $x^3$, keeps it negative. But is this a special property of the fourth and third powers? Naturally not... it's a property of even versus odd powers. Specifically, odd powers preserve the negatives, whereas even powers annihilate them.
+    
+    So we can see that, for $p(x) = x^3$, the bigger a positive number is, the bigger (and still positive) the output gets; so if we put a very large positive $x$-value into $p(x)$, like $p(100000)$, the result will be very large and positive. Similarly if we were to use a large negative, we would get a very large (and negative) value. With a bit more thought we can see that $p(x)$ won't have a global maximum \textit{or} minimum, because we can always just take larger and larger positive numbers to overcome any proposed maximum number, or large negative numbers to overcome any proposed minimum number.
+    
+    With $q(x) = x^4$ on the other hand, if we put in very large positive \textit{or} negative numbers, $q(x)$ will return large positive numbers. This means that, eventually $q(x)$ goes up to very large positive values, so there is no maximum value. But this \textit{also} means there \textit{must} be a minimum somewhere, because it never gets large and negative.
+    
+    We should also recall that, if we use a negative coefficient, it flips the overall function over the $x$ axis... so maximums become minimums and minimums become maximums. Thus $p(x) = x^3$ still doesn't have a max or min, but $q(x) = x^4$ would go from having a minimum with a positive coefficient, to having a maximum when it has a negative coefficient.
+    
+    Thus, the general result is that a polynomial whose leading term has an odd power can't have any global max or min, but if the leading term has an even power, then it has a global minimum if the leading coefficient is positive, and a global maximum if the leading coefficient is negative.
+
+
+%
+%\begin{question}
+%    This is a purely Place Holder type question that will be replaced.
+%    \begin{multipleChoice}
+%        \choice{This question shouldn't be possible to get correct.}
+%    \end{multipleChoice}
+%\end{question}
+
+
+
+
+\end{document}

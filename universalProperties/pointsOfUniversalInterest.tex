@@ -1,0 +1,109 @@
+\documentclass{ximeraXloud}
+
+\title{Points of Universal Interest of Functions}
+\begin{document}
+\begin{abstract}
+    This section describes several points that are almost always of interest of a function
+\end{abstract}
+\maketitle
+
+
+    There are several specific properties and points/values of functions that are often of interest regardless of the actual function involved. Actually finding these specific things tends to depend on the specific function type and we will cover that in the exploration future lectures and topics, but we will discuss the properties/points of interest, as well as why they might be of interest, here.
+
+\subsection*{Zeros of a function}
+    The zeros of a function are the domain values that yield zero when you calculate the function at those values. In essence, they are the `$x$-values' that have a `$y$-value' of 0. It turns out that these points are incredibly useful in most models as zero is a fairly special and meaningful value. For example, a profit equation equaling zero means you have hit your break-even point (an important point in economics and business). A function that is determining height of an object being launched (like a bullet, rocket, or baseball) equaling zero typically means that the object has returned to `ground level', ie that the object's travel has concluded.
+    
+    Mathematically zero holds a number of very special roles and properties. It's important enough that we will conclude this topic with more discussion about zero (as well as the value 1, and why equal signs are so important and undervalued). Suffice it to say that, something equaling zero enables a whole litany of mathematical options to extract useful information from our functions, so knowing where it equals zero can be incredibly powerful information.
+    
+    Unfortunately, how to determine when (or even if) a function equals zero can be quite difficult.%
+    \footnote{%
+        Actually, it turns out, that there are problems in mathematics that are as `simple' as determining where a certain function is zero, and there are thousands (and even a million) dollar reward for determining the answer... and some of those problems have stood unsolved for over a century.%
+        }
+    Fortunately we will be discussing particular types of functions and established methods to find zeros of particular functions. This is especially important (and useful) in calculus courses, where determining when a function is zero is a major part of the necessary algebra in almost every topic.
+    
+    \begin{problem}
+        Which of the following might be a reason to care about the zeros of a function?
+        \begin{multipleChoice}
+            \choice{They are easy to calculate.}
+            \choice[correct]{The zero is the output, so it may represent something like the break-even point on a profit curve, or when an object hits the ground on a height function.}
+            \choice{The zero is the input, so it tells you something about the initial condition of the problem.}
+            \choice{The zero of a function is something I'll need to calcualte for calculus, so I might as well get use to it now.}
+        \end{multipleChoice}
+    \end{problem}
+
+\subsection*{Intercepts of a function}
+    Now, you may be wondering what is so special about the $y$-value, specifically, being zero. The answer is a \textit{lot}, but that doesn't mean we don't care about $x$. We also often want to know what happens when the domain (aka $x$) is zero, but this is also generally easier to find (since the domain values are controlled, so you can simply `plug in' the value 0 to see what happens). The set of \textit{points} where a function equals zero are the `$x$-intercepts', and the \textit{point} where the `$x$-value' is zero is called the $y$-intercept.%
+    \footnote{%
+        Notice that intercepts are \textit{points}. This means an intercept should \textit{always} be written as some kind of point, like a coordinate pair. Thus an intercept at $x=3$ and $y=0$ would be properly labeled or declared as `the $x$-intercept at $(3,0)$. You should \textbf{not} say `the $x$-intercept is 3.'%
+        }
+        
+    \begin{problem}
+        Which of the following might be a good reason to care about the intercepts of a function?
+        \begin{multipleChoice}
+            \choice[correct]{Using zero as the input to get the y-intercept tells you something about the initial condition of the problem.}
+            \choice{The x-intercepts aren't ever useful.}
+            \choice{The intercepts can be helpful because they might be on an exam.}
+            \choice{The intercepts in general are rarely useful, so I'll never care about them.}
+        \end{multipleChoice}
+    \end{problem}
+
+\subsection*{Extrema of a function}
+
+    In a similar way to the intercepts, we will often be interested in the extrema of a function, that is the maximum and minimum values. Extrema come in two variations in addition to being either a max or min; specifically we are interested in the local (also referred to as relative) extrema, and global (aka absolute) extrema.
+    
+    Absolute extrema are typically the easier to state simply; they are the (absolutely) largest and smallest%
+    \footnote{%
+        The terms 'largest' and 'smallest' are often ambiguous in mathematics. Here, we mean the largest as in the most positive number (or the value that is furthest right on a number line) possible, and the 'smallest' means the number furthest toward the negative side (or the furthest left on the number line) possible.%
+        }
+    values that a function attains in it's entire domain. Note that the absolute minimum can be positive, just as the absolute maximum can be negative. Moreover, one should note that a function may not attain a maximum (or a minimum) value%
+    \footnote{%
+        For example, $f(x) = x^3$ on the domain of all real numbers has no maximum or minimum value. The function $f(x) = x^2$ has no maximum value but has an absolute minimum. The function $f(x) = -\sqrt{x}$ has a maximum but no minimum value%
+        }
+    and even if it does, the maximum and minimum values are (certainly) unique, however \textbf{the number of points that attain absolute extrema can be quite large, and even infinite}. 
+    
+    For example, a function that constantly oscillates between $-1$ and $1$ (such as $\sin(x)$) attains it's maximum value (specifically the value $1$) and it's minimum value (specifically the value $-1$) \textit{infinitely many times}. It's important to draw the distinction between how many absolute maximum (or minumum) \textit{values} there are (at most one) and \textit{how many points} attain an absolute maximum (or minimum) which could be anything between 0 (no absolute extrema) and infinity.
+    
+    The other type of extrema are the local (or relative) extrema. These are points that represent extreme values in some small 'neighborhood' of the function. Essentially these are points that are at the bottom of a valley or at the top of a hill on the graph. The formal definition is a bit intimidating, and locating these values without a graph can be exceptionally challenging.%
+    \footnote{%
+        In fact, this is a major area of study in calculus 1 and comes down to figuring out the zeros of a related function to the one you are using, specifically the derivative.%
+        }
+    Nonetheless we will visit how to find local extrema in some specific cases in the coming topics, further exploration of this aspect will be a major focus in calculus for those that continue.
+    
+    
+    \begin{problem}
+        What is a good explanation of what an extrema of a function is?
+        \begin{multipleChoice}
+            \choice{The extrema are points where the function attains an important value, like a break-even point of a profit function.}
+            \choice{The extrema of a function is the lowest or highest point a function might attain over all real numbers.}
+            \choice[correct]{Extrema represent the maximum and minimum values of a function within some defined interval of it's domain.}
+            \choice{There aren't always extrema of a function, so there is no good explanation.}
+        \end{multipleChoice}
+    \end{problem}
+
+\subsection*{Discontinuities of a function}
+
+    Discontinuities originate in a variety of ways and are a topic of extensive study at several levels of mathematics. The nature of a given discontinuity can be informative about what is happening either within the model (eg the model is failing to properly represent reality at a specific point), or within the context of the model (some naturally occurring phenomena that the model is somehow 'capturing' and representing as a discontinuity). For example, discontinuities occur in models of the formation of black holes, the basics of quantum mechanics, and even (simplified) models of objects traveling through the air and colliding with surfaces. There are three common types of discontinuities;
+    \begin{description}
+        \item[Holes:] Holes are when a function seems to be nice and continuous, but is lacking a singular point somewhere in the domain causing a small `hole' in the graph.%
+            \footnote{%
+                Mathematicians really aren't clever about naming things, so chances are good that the name of some property is closely related to some obvious feature of whatever it is you're trying to name.%
+                }
+        \item[Asymptotic (Infinite):] Asymptotic (sometimes called `infinite') discontinuities are when the function bends up or down and approaches a vertical line as it gets close to the point of discontinuity. This typically demonstrates that something very strange is happening, since reality rarely tries to push something to `infinity'; so typically an infinite discontinuity is a sign that your model is either capturing a truly spectacular moment (like the formation of a singularity of a black hole), or you are trying to do something you \textit{really} shouldn't be trying to do with that model, like when stock market algorithms cause chaotic feedback and create unstable markets.%
+            \footnote{%
+                This is one of the reasons some experts think that the so-called `flash-crash of May 6th' occurred, in which the stock market dropped over 9\% (about 1 \textit{trillion} dollars in value), only to spontaneously pop back up 36 minutes later.%
+                }
+        \item[Jump:] Jump discontinuities occur when the function suddenly `jumps' from one value to another without covering the space between. This typically happens because the model is either not inherently continuous (eg the model is rounding to the nearest whole number, so it will skip from one whole number to the next without hitting any numbers between), or some sort of important threshold in the model's context is being hit, such as entering a new tax bracket when calculating taxes.
+    \end{description}
+
+    \begin{problem}
+        What is the importance of discontinuities?
+        \begin{multipleChoice}
+            \choice[correct]{Discontinuities represent the places where your function (and thus your model) is behaving in a weird way; which suggests further study may be worthwhile.}
+            \choice{Discontinuities represent where your model is broken, and thus you should determine a new model to remove them.}
+            \choice{Discontinuities are important in other areas of math, so we should learn them now.}
+            \choice{Discontinuities aren't ever useful in the real world, so they don't have importance outside of the classroom.}
+        \end{multipleChoice}
+    \end{problem}
+
+
+\end{document}

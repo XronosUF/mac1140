@@ -1,0 +1,119 @@
+\documentclass{ximeraXloud}
+
+\title{Generalized Model Walkthrough}
+\begin{document}
+\begin{abstract}
+    This is an example of a detailed generalized model walkthrough
+\end{abstract}
+\maketitle
+
+\begin{example}
+
+    This is intended as a detailed walkthrough to give students an idea of what a \textit{complete and thorough} process of generalizing a model looks like. Keep in mind this is the ideal, and in practice it is often the case that they are messier and/or lack some data. Moreover, because this is still early in the precalculus class, this model will be simplified in terms of the depth of detail we consider when we are building the generalized model.
+    
+    \subsubsection*{The Given Problem}
+        You have recently been hired by a local company to streamline their billing and customer interaction process. The company specializes in building brick patios, and they supply you with the following information;
+        
+        \begin{itemize}
+            \item They make primarily rectangular patios, so they wish to have some kind of model to provide the cost of any requested rectangular patio.
+            \item The bricks they currently use are 6 inches by 3 inches and cost \$$1.25$ per brick.
+            \item The company charges \$$100$ per hour for labor, and they can usually put down about fifty square feet worth of brick in that time.
+            \item The company doesn't charge for travel or terrain preparation (they only do local work).
+        \end{itemize}
+    
+    \subsubsection*{Step One: Identifying data worth generalizing}
+    
+        Armed with the information they provided, you decide to start by determining what individual pieces of data there are, and then determining which might be worthy of generalizing into variables. You come up with the following list of (possibly relevant) data;
+        
+        \begin{itemize}
+            \item The dimensions of the bricks that are used.
+            \item The dimensions of the patio that they are going to build
+            \item The cost of the bricks that are used.
+            \item The amount and cost of labor that is necessary to build the patio.
+            \item the incidental costs such as; travel, stone dust, terrain preparation, lunches, etc.
+        \end{itemize}
+        
+        Upon further reflection on your list, you determine that the incidental costs \wordChoice{\choice{are}\choice[correct]{aren't}} relevant because the company's owner specifically told you that they don't charge for these things and that it is considered somewhere else in the price system that they gave you. Moreover, the dimensions and cost of the bricks are \wordChoice{\choice{variable}\choice[correct]{constant}\choice{arbitrary constants}} , and the cost of labor \textit{per hour} is \wordChoice{\choice{variable}\choice[correct]{constant}\choice{arbitrary constants}}, although the amount of hours necessary for a given job will vary according to the size of the patio. So, you need to at least generalize the dimensions of the patio that is being built (this is supplied by the customer after all). Moreover you will need to have some kind of \wordChoice{\choice[correct]{variable}\choice{constant}\choice{arbitrary constants}} for the amount of labor needed and thus the cost of labor. 
+    
+    \subsubsection*{Step Two: Assigning and recording variables explicitly (and carefully)}
+        Using the above data, you research and create the following references:
+        
+        \begin{itemize}
+            \item The dimensions of bricks are 3 inches by 6 inches; which means you need 8 bricks to fill 1 square foot.
+            \item The dimensions of the patio are unknown and are specifically assigned as independent variables. We will choose:
+            \begin{itemize}
+                \item $L =$ \wordChoice{\choice[correct]{length}\choice{width}} of patio
+                \item $W =$ \wordChoice{\choice{length}\choice[correct]{width}} of patio
+                \item You determine that knowing the explicit area of the patio may be helpful, so you denote this with $A$.
+            \end{itemize}
+            
+            \item The cost of the bricks are known to be \$$1.25$ per brick. Since 1 square foot is \wordChoice{\choice{12}\choice[correct]{8}\choice{4}} bricks, brick costs work out to \wordChoice{\choice{\$$15$}\choice[correct]{\$$10$}\choice{\$$5$}} per square foot.
+            
+            \begin{itemize}
+                \item You decide to denote the total cost for bricks by $T_B$.
+            \end{itemize}
+            
+            \item The amount of labor is unknown, and is a \wordChoice{\choice{independant variable}\choice[correct]{dependant variable}\choice{arbitrary constant}} because it depends on how big the patio is.
+            
+            \begin{itemize}
+            \item $H =$ hours of work necessary to build the patio.
+            \end{itemize}
+            
+            \item The cost per hour of labor is a set rate of \$$100$ an hour, so it is \wordChoice{\choice[correct]{constant}\choice{arbitrary constant}} and doesn't need a variable.
+            
+            \begin{itemize}
+                \item The total cost for labor will depend on how long they need to work, and will be denote $T_W$.
+            \end{itemize}
+        \end{itemize}
+    
+    \subsubsection*{Building relations between variables}
+        Now that you have an explicit reference sheet with variable names and the constants you may need, you assemble the following relationships between the variables;
+        
+        \begin{itemize}
+            \item Area of the patio is Length times Width.
+            
+            \begin{itemize}
+                \item We record this with the equation: $A = LW$.
+            \end{itemize}
+            
+            \item The cost of the bricks will be the cost per square foot of bricks, times the area (in square feet) of the patio.
+            
+            \begin{itemize}
+                \item We record this with the equation: $T_B = 10 \cdot A$
+            \end{itemize}
+            
+            \item The amount of labor will be the total area of the patio divided by the \wordChoice{\choice{20}\choice{40}\choice[correct]{50}} square feet per hour they can lay.
+            
+            \begin{itemize}
+                \item We record this with the equation: $H = \dfrac{A}{50}$
+            \end{itemize}
+            
+            \item The cost of labor will be the hourly wage times the number of hours.
+            
+            \begin{itemize}
+                \item We record this with the equation: $T_W = 100H$
+            \end{itemize}
+            
+            \item Finally, our end goal, the total cost for the patio is the total cost of bricks and total cost of labor; which we can write out and simplify using the above equations as follows:
+        
+        \[
+            \begin{array}{ll | r}
+            T_P &= T_B + T_W & \text{ \textbf{Step explanation}}\\
+            &= (10A) + (100H) & \text{ Since }T_B = 10A and T_W = 100H\\
+            &= 10(LW) + 100\left(\dfrac{A}{50}\right) & \text{ Since }A = LW and H = \dfrac{A}{50}\\
+            &= 10(LW) + 100\left(\dfrac{LW}{50}\right) & \text{ Since }A = LW\\
+            &= 10LW + 2LW & \text{ Simplifying the fraction}\\
+            &= 12LW
+            \end{array}
+        \]
+        
+        \end{itemize}
+        
+    
+    \subsubsection*{Conclusion}
+    
+        So we have built a generalized model to calculate the cost of a patio that is $L$ feet long by $W$ feet wide, and come up with the final answer: $T_P = 9.5LW$. Notice that many of the variables we originally defined for convenience, all ended up being simplified out during the process of simplifying $T_P$ in the last part above, this is very common when you use generalized models. It is still helpful to have those variables `lurking' in the background however; in case, for instance, the company's owner wants to know how much of his bill is actually materials versus labor... all the information is already there in your model, it just isn't displayed by the `final calculation' that you supply at the end.
+
+\end{example}
+
+\end{document}

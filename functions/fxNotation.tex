@@ -1,0 +1,96 @@
+\documentclass{ximeraXloud}
+
+\title{$f(x)$ Notation}
+\begin{document}
+\begin{abstract}
+    This section covers $f(x)$ notation.
+\end{abstract}
+\maketitle
+
+
+\subsection*{\textbf{f(x) notation and what it means:}}
+
+    Mathematical notation is designed to be as precise and concise as possible. There is a downside to this however, which is that anything that has been studied in mathematics for a \textit{very long time} like functions, tends to have remarkably dense notation. This is the case for the $f(x)$ notation which we discuss here.
+    
+    Recall that a function is really a relation with context; the domain and codomain. We established in the last section that a function ``takes in a point of the domain and outputs a point in the codomain''. Trying to write this out for every function we want to work with would get tiresome and clunky, not to mention it lacks precision (which is one of our chief goals!) so we establish the $f(x)$ notation as a shorthand for this (and much more).
+    
+    There are many ways to approach the $f(x)$ notation and it can get very technical. For this class (and through calculus) we restrict ourselves to the two most common ways it is used.
+    
+    \subsection*{Defining the relationship between the input and output.}
+        The most common way to use $f(x)$ notation is to define the relationship between the input and output variable. This is what is being done when you see something like ``$f(x) = x^2 - 1$''. There are really three things being done here simultaneously. 
+        \begin{enumerate}[label=\alph*)]
+            \item The first (and most obvious) is that we are giving the name of the function that is relating the input and output variables; the $f$ in the $f(x)$. 
+            \item The second thing is that we are giving a name to a ``dummy'' input variable (this is actually \textit{incredibly} important as we'll see soon), which in this case is $x$. This is the $(x)$ part of the $f(x)$.
+            \item Lastly we are giving the relationship between the input (the $x$) and the output by telling you how to transform the input into the correct output. This is the $= x^2 - 1$ part of the $f(x) = x^2 - 1$. 
+        \end{enumerate}
+        In this case it is important to notice that there is nothing special about the $x$ itself in the expression $f(x) = x^2 - 1$; it is just a dummy variable we are using because we need to use \textit{something} to represent the input. We could just as happily written $f(y) = y^2 - 1$ or $f(w) = w^2 - 1$; these are all the same function because they are all the same relationship.%
+        \footnote{we also assume that all these have the same context, ie domain and codomain. In particular, the only thing that changed is what letter we call the representative from the domain.}%
+        
+        This is easiest to understand if we consider a translation of the mathematical equality in English. The function $f(x) = x^2 - 1$ is (best) translated as ``The function $f$ takes whatever input you give it, squares that value, and then subtracts one from it.'' Notice that I didn't need to give the input a name in the English version. This is because the specific name ``$x$'' didn't matter, it was a placeholder name to represent ``the input'', so I used that phrase ``the input'' in the English translation instead of giving it a name like ``$x$''.
+        
+        \subsection*{Providing a naming scheme for the input and output.}
+        The next most common way to see $f(x)$ notation used, is to declare the names of the independent and dependent variable. This is most commonly done with an equality such as ``$f(x) = y$'', but it is important to know that this is \textit{actually a naming scheme}. We are saying $f$ is a relation ``taking in a point named $x$" (thus we have named the independent variable ``$x$'' here) and ``it returns (or maps to) a point named $y$'' (thus we have named the dependent variable ``$y$'' here). 
+        
+        This is most often used in preparation of some kind of graphical representation of your function. For example you would want to say that $f(x) = y$ before you present an $x-y$ graph of $f(x)$, otherwise the ''$y$'' value has no meaning in the graph. We often take this assignment for granted, but we can use this method for more complicated graphs. Consider figure \ref{profitProjections}
+        
+        \begin{figure}[h]
+            \begin{center}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                                axis x line=middle,
+                                axis y line=middle,
+                                minor tick num=5,
+                                x label style={at={(axis description cs:1,0)},anchor=south},
+                                y label style={at={(axis description cs:0,1)},anchor=west},
+                                xlabel={$x$},
+                                ylabel={$y$},
+                                %xmin=-3.5,
+                                xmax=3.5,
+                                %ymin=-11,
+                                ymax=5
+                                ]
+                    \addplot[->,domain=0:3,samples=250,thick, blue] {sqrt(x)}
+                                node[above] at (200,60) {\footnotesize $f(x)=$ projected profits};
+                    \addplot[->,domain=-0:3.1, samples=300,thick, violet]{sqrt(4*x)}
+                                node [above] at (200,340) {\footnotesize $g(x)$ = actual profits};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+            \caption{
+                As we see, the assignment for the output need not be a variable. The shorthand for $f(x)$ notation should only be used when it makes sense, and abandoned when it makes more sense to do something else, like in this graph.
+            }
+            \label{profitProjections}
+        \end{figure}
+            
+    \subsection*{What's Next?}
+    
+    
+    The real strength of $f(x)$ notation is that it allows us to figure out what happens when we modify the input before the function even takes place. This is called function composition, which is what we will cover in the next section!
+
+
+
+    
+%    By way of example, pretend I give you a general function like $f(x) = x^2 + x + 1$. In words this says ``we have a relation, which we call $f$, that sends points of the domain, which we will call $x$, to points in the codomain; specifically it sends each $x$ to the point you can calculate by taking the original value and multiplying it by itself, then adding the original value, and then adding one more."%
+%    \footnote{%
+%        Much shorter to just use the math notation right?!%
+%        } 
+%    But then you could ask (for example), ``ok but if that's true, then what happens when I put in a point from the domain that is 3 units bigger than some other point? How much bigger does the relation make it?" How would we figure this out?
+%    
+%    On the one hand, you could give the ``bigger" number a name too, say $w$. Then the function sends $w$ to a point in the codomain in the same way that it sent $x$. So, since $f(x) = x^2 + x + 1$ we have that $f(w) = w^2 + w + 1$.%
+%    \footnote{%
+%        Remember, the whole point of writing the relation $f$ in this notation is that it tells you what to do with \textit{every} point in the domain. So no matter what we decided to name it; $x$, $w$, pickle, yellow-duck-of-destruction, it will always be sent, by $f$, to a related point determined in the same way. Thus $f($yellow-duck-of-destruction$)$ would be sent to the point: \\$($yellow-duck-of-destruction$)^2 + ($yellow-duck-of-destruction$) + 1$. Moreover, because the domain of $f$ is (implicitly) all real numbers, the ``yellow-duck-of-destruction" is (an awesome) name for a real number, meaning it's a stand-in shorthand for any real number you want to choose. We just generally use $x$ since it's easier to write than ``yellow-duck-of-destruction" despite being objectively less entertaining.%
+%        }
+%    Unfortunately, this doesn't really give us any way of comparing the two... we just have the same thing with two different names. Instead, it would be helpful to ask ``what is the difference between $x$ and $w$", ie how is $x$ `related' to $w$. Since we specifically said the bigger point ($w$) was 3 units bigger than the smaller point ($x$), we have that $w = x + 3$. Notice however that the equality sign is saying that what is on the left is exactly the same as what is on the right, meaning so we can substitute one for the other. So we could take the expression $w^2 + w + 1$ and replace all the ``$w$"s with $x + 3$ to get $(x+3)^2 + (x+3) + 1$.
+%    
+%    But, in fact we could skip a lot of this effort (sensing a theme? Mathematical notation is all about short-hand efficiency and skipping effort). Instead of writing a new name for the bigger unit, we could simply choose a point of the domain that is ``3 units bigger than $x$" to start with. Thus, if we enter that value into the relation $f$, we would like to see where it maps, ie we want to figure out what $f(x+3)$ is. To know where $f$ maps this, we do thee same thing as above (remember, this is just shorthand of what we already did previously).
+%    
+%    
+%    Thus we \textbf{could} substitute $w$ for the $x+3$, then plug $w$ into the relationship $f$, write out what that is ($w^2 + w + 1$) and then substitute $x+3$ for $w$ to get $(x+3)^2 + (x+3) + 1$. 
+%    \textbf{OR} we could skip all that $w$ busiwork, and just write in the $x+3$ everywhere that the original $x$ is. Thus $f(x) = x^2 + x + 1$ means when we write $f(x+3)$ we want to take the ``$(x+3)$" and plug it in as the ``$x$" everywhere that the ``$x$" appears in the original relation.%
+%    \footnote{%
+%        This is sort of lazy of us though. It's not really that we are ``plugging in $x+3$ as $x$ everywhere, but rather that we are doing the $x+3=w$ and computing $f(w)$ substitution all in one step in our head, which makes it \textit{look} like we are ``plugging in $x+3$ for $x$" if we look from one line of work to another. This is actually a great demonstration of why one should show work, as not showing work in this instance can easily lead to a misunderstand of what is happening with this `substitution'.%
+%        }
+%    Thus $f(x+3) = (x+3)^2 + (x+3) + 1$.
+%    
+%    This is called ``function composition". We will cover this in more detail next. 
+\end{document}

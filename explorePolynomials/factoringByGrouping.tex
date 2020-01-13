@@ -1,0 +1,29 @@
+\documentclass{ximeraXloud}
+
+\title{Factoring; Grouping Method}
+\begin{document}
+\begin{abstract}
+    Factor higher polynomials by grouping terms
+\end{abstract}
+\maketitle
+
+The next most common way to factor is by grouping. This is a convenient (and yet again, not-so-clever) name for when we factor by grouping terms we think are ``similar" together and then factoring out any common terms in an effort to see if what remains becomes a common term between all the grouped terms. Consider the polynomial $p(x) = 5x^3 + 15x^2 - 3x - 9$. We see that there are some similar terms within this polynomial; specifically the first two terms $5x^3$ and $15x^2$, both share a common coefficient ($5$, as well as a power of $x$). Likewise the last two terms; specifically $-3x$ and $-9$ both share a common coefficient ($-3$). Thus we decide to group these terms together and factor out the greatest common factor (also known as GCF) which gives us the following;
+
+\[
+    p(x) = 5x^3 + 15x^2 - 3x - 9 = (5x^3 + 15x^2) + (-3x -9) = 5x^2(x + 3) + -3(x + 3) = 5x^2(x + 3) -3(x + 3)
+\]
+
+As we can see, our hunch paid off, there is in fact a `common factor' of $(x + 3)$ in the first and second groups that we formed. This is \textbf{vital}, that \textit{both of the leftover factors are \textbf{exactly} the same}. We can now factor out the common factor just as we did a moment ago, only this time the common factor is $(x + 3)$. So we have;
+
+\[
+    p(x) = 5x^2(x + 3) -3(x + 3) = (x + 3)(5x^2 - 3)
+\]
+
+\noindent The $5x^2$ and the $-3$ are the `left over' parts when we pull out the common $(x + 3)$ factor.
+
+The key idea here is that the grouping can be done with any number of terms in any combination, so long as what we have leftover is \textit{\textbf{exactly} the same} in each group after factoring out the GCF from each group. But this means that the grouping needs to have groups of the \textit{same size}. That is to say, you could group a function that has 9 terms as 3 groups of 3 terms, but not 1 group of 4 terms and 1 group of 5 terms.
+
+
+
+
+\end{document}

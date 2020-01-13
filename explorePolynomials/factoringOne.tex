@@ -1,0 +1,72 @@
+\documentclass{ximeraXloud}
+
+\title{Factoring; Round One!}
+\begin{document}
+\begin{abstract}
+    First dive into factoring polynomials.
+\end{abstract}
+\maketitle
+
+There are several techniques we can use by making a few key observations. The two most common techniques are factoring quadratic forms by coefficients and factoring by grouping which we will begin with here.
+
+\subsection{Factoring Quadratics by factoring coefficients}
+    The first thing we will cover is factoring quadratic forms. Before we get into factoring though, it helps to look at what we want to accomplish, but in reverse. Like many problems, we can extract some useful information by starting at the end and working backwards, and thus trying to reverse-engineer what we want. Let's look at the following distribution;
+    \[
+        (3x + 4)(2x - 6) = 3x(2x - 6) + 4(2x - 6) = 6x^2 -18x + 8x - 24 = 6x^2 - 10x - 24
+    \]
+    If we want to factor the polynomial $6x^2 - 10x - 24$, we would (hopefully) eventually get $(3x + 4)(2x - 6)$ as we saw above, but how would we get there?
+    
+    First it helps to notice that in both the roots $(3x + 4)$ and $(2x - 6)$, the coefficient of the $x$ terms (specifically the $3$ and $2$) both divide%
+    \footnote{%
+        When we say one number, like $2$ `divides' another number, like $6$, we mean that it goes into it an whole-number of times, in this case $6 \div 2 = 3$.%
+        }
+    the leading coefficient (specifically the $6$ of $6x^2$). Similarly, the constant term of both roots (specifically the $+4$ and the $-6$) both divide the constant term of the quadratic (specifically $-24$). In both cases, not only do the root values divide the quadratic coefficients, their products \textit{equal} the quadratic's coefficients. Namely;
+    
+    \[
+        3 \cdot 2 = 6 \hspace{2cm} 4 \cdot -6 = -24
+    \]
+    
+    Finally we might make the observation that the middle term in our quadratic (the $-10x$) was formed by multiplying each $x$ term by the constant term of the other factor, that is to say that the $-10$ was formed by getting $(3) \cdot (-6) + (2) \cdot (4)$.
+    
+    \subsection*{Sure... a computer would definitely make those observations. How about for us normal humans?}
+        Touché. Let's simplify this down to the case where the leading coefficient is one. In that case, if the zeros are some numbers, say $a$ and $b$ we would have;%
+        \footnote{%
+            It may help to make $a$ and $b$ as the negatives of the zeros so the distribution that follows can be of the form $x^2 + (a + b)x + ab$ instead of $x^2 - (a + b)x + ab$. The negative sign may imbue confusion otherwise. Although by making $a$ and $b$ the negatives of the zeros we are actually just hiding the negative in the letter instead of writing it explicitly.%
+            }% End footnote
+        \[
+            (x-a)(x-b) = x(x-b) + -a(x-b) = x^2 - bx - ax + ab = x^2 - (a + b)x + ab
+        \]
+        
+        In this case, we can see that the zeros will multiply to give the constant coefficient in the quadratic, but add to give the (negative of the) coefficient to the middle term. This is something we can use to figure out how to factor a quadratic.
+        
+        \begin{example}
+            Factor the quadratic $x^2 + 10x - 75$\\
+            
+            According to the previous discussion we are looking for two numbers that multiply to $-75$ but add to $10$. We can start by listing all the pairs of numbers that multiply to $-75$. This list will be the same as the list for (positive) $75$, but we will need one of the numbers to be negative, so we will start by writing out the factors of $75$. Those would be;
+            
+            \begin{center}
+                $1 \cdot 75$, \hspace{2cm} $3 \cdot 25$, \hspace{2cm} $5 \cdot 15$
+            \end{center}
+            
+            The above are the possible factors, but one of them must be negative in order for the product to be $-75$. So we really want to see which combination of the above factors add to $10$ \textit{if one of those two factors is negative}. For example, we might consider $3 \cdot 25$ and check the sum if the $3$ is negative, which gets $25 + -3 = 22$...  which isn't the $10$ we are after. After some trial and error we will eventually figure out that the pair we want is $15$ and $-5$. This means we have the factorization;
+            \[
+                x^2 + 10x - 75 = (x + 15)(x - 5)
+            \]
+            
+            If we weren't sure, we could distribute the proposed roots to make sure we get the original polynomial back;
+            
+            \[
+                (x + 15)(x - 5) = x(x - 5) + 15(x - 5) = x^2 - 5x + 15x - 75 = x^2 + 10x - 75 \hspace{1cm} \checkmark
+            \]
+        \end{example}% End of example.
+        
+    \subsection*{Ok, I guess I get that... minus your obsession with letters instead of numbers. What about if the leading coefficient isn't one?}
+        I like letters and so does math. I hope you're not an English major... but I digress.\\
+        If the leading coefficient is not one then we could try to do the more elaborate combination of factors at the start of this section. That would be pretty annoying though and luckily there is a shortcut to consider a related polynomial which a leading coefficient of one instead. Let's consider the quadratic in the general form;
+        \[
+            p(x) = ax^2 + bx + c
+        \]
+        If $a \neq 1$ then we can transform this polynomial into another polynomial where the leading coefficient is $1$ and factor the new polynomial, then transform the factors back to one that will yield the original polynomial. This is the so-called ``A-C Method".
+        
+
+\end{document}
