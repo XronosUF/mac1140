@@ -12,9 +12,32 @@ Some text above everything to see if this vanishes.
 
 And how about this text?
 
-\definecolor{problemBackgroundColor}{RGB}{255, 230, 179}% A light tan color
+\mdfdefinestyle{problem-env}{% This is the (default) style for problem environments.
+%%%         Line information for borders.
+        linewidth=          1pt,%
+        roundcorner=        8pt,%   This rounds the corner a bit to improve aesthetic.
+%    outerlinewidth=     1pt,%  Suggest only using linewidth for universal borders.
+%    innerlinewidth=     1pt,%  Suggest only using linewidth for universal borders.
+%%%         Spacing Information
+        skipabove=          10pt,%                      Space above the background coloring and the previous text line.
+        skipbelow=          10pt,%                      Space below the background coloring and the next text line.
+        innertopmargin=     6pt,%                       Space between the first text line within a colored box and the top of the color box.
+        innerbottommargin=  6pt,%                       Space between the bottom text line within a colored box and the bottom of the color box.
+        leftmargin =        10pt,%                      Space between the colored box and the left margin of the page.
+        rightmargin =       10pt,%                      Space between the colored box and the right margin of the page.
+        innerleftmargin=    6pt,%                       Space between the colored box and the text within the color box on the left.
+        innerrightmargin=   6pt,%                       Space between the colored box and the text within the color box on the right.
+%%%         Coloring Information
+        linecolor=          blue,%        Set the border line coloring to a defined color, so users can change it as desired.
+        backgroundcolor=purple,%        Set the background coloring to a user definable color.
+%%%         Box Breaking Behavior
+        nobreak=everyline,%                             Allow the box to break if it needs to, but still gives a full frame after breaking.
+%                                                           Thus if a problem is broken mid-frame it will give both halves a full frame.
+        needspace=30pt,%                                If there isn't at least a 30pt space before the bottom of the
+%                                                           page when TeX tries to draw a problem environment, it will go to the next page.
+    }% End problem environment styling.
 
-%\subsection*{\textbf{f(x) notation and what it means:}}
+\subsection*{\textbf{f(x) notation and what it means:}}
 
     Mathematical notation is designed to be as precise and concise as possible. There is a downside to this however, which is that anything that has been studied in mathematics for a \textit{very long time} like functions, tends to have remarkably dense notation. This is the case for the $f(x)$ notation which we discuss here.
     
