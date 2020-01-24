@@ -1,5 +1,7 @@
 \documentclass{ximera}
 
+\newenvironment{htmlCom}{\special{html <h1>}}{\special{html </ht>}}
+
 \title{$f(x)$ Notation}
 \begin{document}
 \begin{abstract}
@@ -14,11 +16,9 @@ And how about this text?
 
 \definecolor{problemBackgroundColor}{RGB}{255, 230, 179}% A light tan color
 
-\ifweb\special{html
-<h1>Products</h1>
-<p>We have developed more than 10 products till now.</p>
-</body>
-}\fi
+\begin{htmlCom}
+Products
+\end{htmlCom}
 
 \subsection*{\textbf{f(x) notation and what it means:}}
 
