@@ -14,13 +14,13 @@ And how about this text?
 
 \definecolor{problemBackgroundColor}{RGB}{255, 230, 179}% A light tan color
 
-\special{html
+\ifweb\special{html
 <h1>Products</h1>
 <p>We have developed more than 10 products till now.</p>
 </body>
-}
+}\fi
 
-%\subsection*{\textbf{f(x) notation and what it means:}}
+\subsection*{\textbf{f(x) notation and what it means:}}
 
     Mathematical notation is designed to be as precise and concise as possible. There is a downside to this however, which is that anything that has been studied in mathematics for a \textit{very long time} like functions, tends to have remarkably dense notation. This is the case for the $f(x)$ notation which we discuss here.
     
